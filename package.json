@@ -60,6 +60,7 @@
     "rehype-slug": "^5.0.1",
     "remark-gfm": "^3.0.1",
     "remark-smartypants": "^2.0.0",
+    "rollup": "^3.20.2",
     "sass": "^1.52.3"
   },
   "engines": {
