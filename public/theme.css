@@ -27,6 +27,34 @@
 	--o-font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
 	--o-font-body: var(--o-font-sans);
 
+	--o-size-000: -0.5rem;
+	--o-size-00: -0.25rem;
+	--o-size-1: 0.25rem;
+	--o-size-2: 0.5rem;
+	--o-size-3: 1rem;
+	--o-size-4: 1.25rem;
+	--o-size-5: 1.5rem;
+	--o-size-6: 1.75rem;
+	--o-size-7: 2rem;
+	--o-size-8: 3rem;
+	--o-size-9: 4rem;
+	--o-size-10: 5rem;
+	--o-size-11: 7.5rem;
+	--o-size-12: 10rem;
+	--o-size-13: 15rem;
+	--o-size-14: 20rem;
+	--o-size-15: 30rem;
+	--o-size-fluid-1: max(0.5rem, min(1vw, 1rem));
+	--o-size-fluid-2: max(1rem, min(2vw, 1.5rem));
+	--o-size-fluid-3: max(1.5rem, min(3vw, 2rem));
+	--o-size-fluid-4: max(2rem, min(4vw, 3rem));
+	--o-size-fluid-5: max(4rem, min(5vw, 5rem));
+	--o-size-fluid-6: max(5rem, min(7vw, 7.5rem));
+	--o-size-fluid-7: max(7.5rem, min(10vw, 10rem));
+	--o-size-fluid-8: max(10rem, min(20vw, 15rem));
+	--o-size-fluid-9: max(15rem, min(30vw, 20rem));
+	--o-size-fluid-10: max(20rem, min(40vw, 30rem));
+
 	--o-font-size-fluid-00: clamp(0.5rem, 1vw, 0.75rem);
 	--o-font-size-fluid-0: clamp(0.75rem, 2vw, 1rem);
 	--o-font-size-fluid-1: clamp(1rem, 3vw, 1.5rem);
@@ -58,14 +86,14 @@
 	--o-color-base-slate: 214, 29%;
 	--o-color-base-zinc: 240, 4%;
 
-    /* Chromatic */
+	/* Chromatic */
 	--o-color-base-gold: 38, 92%;
 	--o-color-base-lime: 84, 81%;
 	--o-color-base-purple: 271, 82%;
 	--o-color-base-teal: 173, 80%;
 	--o-color-base-yellow: 60, 100%;
 	--o-color-base-ochre: 25, 95%;
-	
+
 	--o-color-base-white: 0, 0%;
 	--o-color-base-black: 240, 100%;
 	--o-color-base-blue: 212, 100%;
@@ -73,12 +101,12 @@
 	--o-color-base-green: 158, 79%;
 	--o-color-base-purple: 269, 79%;
 	--o-color-base-red: 351, 100%;
-    
-    --o-color-base-canvas: var(--o-color-base-slate);
-    --o-color-base-brand: var(--o-color-base-purple);
-    --o-color-base-accent: var(--o-color-base-teal);
-    --o-color-base-links: var(--o-color-base-yellow);
-    --o-color-base-visited: var(--o-color-base-ochre);
+
+	--o-color-base-canvas: var(--o-color-base-slate);
+	--o-color-base-brand: var(--o-color-base-purple);
+	--o-color-base-accent: var(--o-color-base-teal);
+	--o-color-base-links: var(--o-color-base-yellow);
+	--o-color-base-visited: var(--o-color-base-ochre);
 
 	/*
    * Color palettes are made using --o-color-base 
@@ -86,8 +114,8 @@
    * define different variants.
    *
    */
-	
-    --o-color-slate-5: var(--o-color-base-slate), 5%;
+
+	--o-color-slate-5: var(--o-color-base-slate), 5%;
 	--o-color-slate-10: var(--o-color-base-slate), 10%;
 	--o-color-slate-20: var(--o-color-base-slate), 20%;
 	--o-color-slate-30: var(--o-color-base-slate), 30%;
@@ -109,6 +137,63 @@
 	--o-color-purple: var(--o-color-base-purple), 54%;
 	--o-color-red: var(--o-color-base-red), 54%;
 	--o-color-yellow: var(--o-color-base-yellow), 59%;
+
+    --o-shadow-color: 220 3% 15%;
+  --o-shadow-strength: 1%;
+  --o-shadow-1: 0 1px 2px -1px hsl(var(--o-shadow-color) /
+        calc(var(--o-shadow-strength) + 9%));
+  --o-shadow-2: 0 3px 5px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 3%)),
+    0 7px 14px -5px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 5%));
+  --o-shadow-3: 0 -1px 3px 0 hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 2%)),
+    0 1px 2px -5px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 2%)),
+    0 2px 5px -5px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 4%)),
+    0 4px 12px -5px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 5%)),
+    0 12px 15px -5px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 7%));
+  --o-shadow-4: 0 -2px 5px 0 hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 2%)),
+    0 1px 1px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 3%)),
+    0 2px 2px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 3%)),
+    0 5px 5px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 4%)),
+    0 9px 9px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 5%)),
+    0 16px 16px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 6%));
+  --o-shadow-5: 0 -1px 2px 0 hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 2%)),
+    0 2px 1px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 3%)),
+    0 5px 5px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 3%)),
+    0 10px 10px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 4%)),
+    0 20px 20px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 5%)),
+    0 40px 40px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 7%));
+  --o-shadow-6: 0 -1px 2px 0 hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 2%)),
+    0 3px 2px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 3%)),
+    0 7px 5px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 3%)),
+    0 12px 10px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 4%)),
+    0 22px 18px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 5%)),
+    0 41px 33px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 6%)),
+    0 100px 80px -2px hsl(var(--o-shadow-color) /
+          calc(var(--o-shadow-strength) + 7%));
 }
 
 :root {
@@ -117,17 +202,17 @@
 	--o-theme-brand-secondary: hsla(var(--o-color-lime), 1);
 
 	--o-surface-1: var(--o-color-base-canvas), 100%;
-    --o-surface-2: var(--o-color-base-canvas), 98%;
-    --o-surface-3: var(--o-color-base-canvas), 96%;
-    --o-surface-4: var(--o-color-base-canvas), 90%;
+	--o-surface-2: var(--o-color-base-canvas), 98%;
+	--o-surface-3: var(--o-color-base-canvas), 96%;
+	--o-surface-4: var(--o-color-base-canvas), 90%;
 
-    --o-text-1: var(--o-color-base-canvas), 0%;
-    --o-text-2: var(--o-color-base-canvas), 10%;
+	--o-text-1: var(--o-color-base-canvas), 0%;
+	--o-text-2: var(--o-color-base-canvas), 10%;
 
-    --o-brand: var(--o-color-base-purple), 51%;
-    --o-accent : var(--o-color-base-teal), 30%;
-    --o-links: var(--o-color-base-yellow), 40%;
-    --o-visited: var(--o-color-base-ochre), 43%;
+	--o-brand: var(--o-color-base-purple), 51%;
+	--o-accent: var(--o-color-base-teal), 30%;
+	--o-links: var(--o-color-base-yellow), 40%;
+	--o-visited: var(--o-color-base-ochre), 43%;
 
 	--o-theme-success: hsla(var(--o-color-green), 1);
 
@@ -184,18 +269,18 @@ body {
 	--o-color-gold: var(--o-color-base-gold), 60%;
 	--o-color-teal: var(--o-color-base-teal), 60%;
 
-    --o-surface-1: var(--o-color-base-canvas), 12%;
-    --o-surface-2: var(--o-color-base-canvas), 16%;
-    --o-surface-3: var(--o-color-base-canvas), 20%;
-    --o-surface-4: var(--o-color-base-canvas), 29%;
+	--o-surface-1: var(--o-color-base-canvas), 12%;
+	--o-surface-2: var(--o-color-base-canvas), 16%;
+	--o-surface-3: var(--o-color-base-canvas), 20%;
+	--o-surface-4: var(--o-color-base-canvas), 29%;
 
-    --o-text-1: var(--o-color-base-canvas), 100%;
-    --o-text-2: var(--o-color-base-canvas), 90%;
+	--o-text-1: var(--o-color-base-canvas), 100%;
+	--o-text-2: var(--o-color-base-canvas), 90%;
 
-    --o-brand: var(--o-color-base-purple), 61%;
-    --o-accent : var(--o-color-base-teal), 40%;
-    --o-links: var(--o-color-base-yellow), 50%;
-    --o-visited: var(--o-color-base-ochre), 53%;
+	--o-brand: var(--o-color-base-purple), 61%;
+	--o-accent: var(--o-color-base-teal), 40%;
+	--o-links: var(--o-color-base-yellow), 50%;
+	--o-visited: var(--o-color-base-ochre), 53%;
 
 	--o-theme-success: hsla(var(--o-color-green), 1);
 
@@ -230,8 +315,7 @@ body {
 	--o-theme-selection-bg: hsla(var(--o-color-teal), var(--o-theme-brand-opacity));
 
 	--o-theme-glow-highlight: hsla(var(--o-color-base-teal), 50%, 0.5);
-    --o-theme-glow-diffuse: hsla(var(--o-color-base-teal), 65%, 0.1);
-
+	--o-theme-glow-diffuse: hsla(var(--o-color-base-teal), 65%, 0.1);
 
 	/* DocSearch [Algolia] */
 	--o-docsearch-primary-color: var(--o-theme-brand);

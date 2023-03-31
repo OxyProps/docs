@@ -6,6 +6,7 @@ import { toString } from 'hast-util-to-string';
 import { h } from 'hastscript';
 import { tokens, foregroundPrimary, backgroundPrimary } from './syntax-highlighting-theme';
 import mdx from "@astrojs/mdx";
+import image from "@astrojs/image";
 const AnchorLinkIcon = h('svg', {
   width: 16,
   height: 16,
@@ -23,10 +24,11 @@ const createSROnlyLabel = (text: string) => {
   return node;
 };
 
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://docs.oxyprops.com/',
-  integrations: [preact(), react(), sitemap(), mdx()],
+  integrations: [preact(), react(), sitemap(), mdx(), image()],
   markdown: {
     syntaxHighlight: 'shiki',
     shikiConfig: {
