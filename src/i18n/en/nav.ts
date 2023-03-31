@@ -12,7 +12,6 @@ export default [
 	{ text: 'Getting Started', slug: 'getting-started-with-oxyprops', key: 'getting-started' },
 	{ text: 'Installation', slug: 'install', key: 'install' },
 	{ text: 'Plugin Settings', slug: 'plugin-settings', key: 'plugin-settings' },
-	// { text: 'OxyProps vs. X', slug: 'comparing-oxyprops-vs-other-plugins', key: 'comparing-oxyprops-vs-other-plugins' },
 
 	{ text: 'Core Concepts', header: true, type: 'learn', key: 'coreConcepts' },
 	{ text: 'Design Tokens', slug: 'core-concepts/design-tokens', key: 'core-concepts/design-tokens' },

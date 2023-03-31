@@ -6,7 +6,6 @@ export default NavDictionary({
 	'getting-started': 'Bien démarrer',
 	install: 'Installation',
 	'plugin-settings': 'Configuration du plug-in',
-	// 'comparing-oxyprops-vs-other-plugins': 'Oxyprops vs. X',
 
 	// Core Concepts
 	coreConcepts: 'Concepts Clés',
