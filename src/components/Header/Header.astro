@@ -18,14 +18,14 @@ const t = useTranslations(Astro);
 	<SkipToContent />
 	<nav class="nav-wrapper" title={t('navbar.a11yTitle')}>
 		<div dir="ltr" lang="en" class="logo flex">
-			<a class="astro" href="https://oxyprops.com/">
+			<a class="oxyprops" href="https://oxyprops.com/">
 				<h1 class="sr-only">OxyProps</h1>
-				<OxyPropsLogo size="50" />
-				OXYPROPS
+				<OxyPropsLogo size="26" />
+				oxyprops
 			</a>
 			<a class="docs" href={`/${lang || 'en'}/`}>
 				<h1 class="sr-only">Docs</h1>
-				DOCS
+				docs
 			</a>
 		</div>
 
@@ -44,7 +44,8 @@ const t = useTranslations(Astro);
 	header {
 		z-index: 11;
 		height: var(--o-theme-navbar-height);
-		padding: 2rem 0;
+		padding-block: 2rem;
+		padding-inline: 0;
 		background-color: var(--o-theme-navbar-bg);
 		display: flex;
 		align-items: center;
@@ -77,9 +78,9 @@ const t = useTranslations(Astro);
 		font-size: 1rem;
 		flex-grow: 1;
 		flex-shrink: 0;
-		font-weight: 600;
+		font-weight: 700;
 		line-height: 1;
-		color: hsla(var(--o-color-base-white), 100%, 1);
+		color: hsla(var(--o-text-1), 1);
 		text-decoration: none;
 		gap: 0.5em;
 	}
@@ -97,7 +98,7 @@ const t = useTranslations(Astro);
 		margin: -0.5em -0.25em;
 		text-decoration: none;
 		color: var(--o-theme-text);
-		font-weight: var(--o-font-weight-2);
+		font-weight: var(--o-font-weight-7);
 		font-size: var(--o-font-size-fluid-1);
 	}
 
@@ -105,7 +106,7 @@ const t = useTranslations(Astro);
 		height: 40px;
 		width: auto;
 		display: block;
-		color: var(--o-theme-accent);
+		color: var(--o-theme-brand);
 	}
 
 	.logo .hover {
@@ -131,18 +132,19 @@ const t = useTranslations(Astro);
 		margin: 0;
 	}
 
-	.astro {
+	.oxyprops {
 		overflow: hidden;
 		width: 41px;
+        font-weight: var(--o-font-weight-7);
 	}
-
+    
 	.docs {
-		display: none;
+        display: none;
 	}
-
+    
 	.logo a.docs {
-		color: var(--o-theme-accent);
-		font-weight: var(--o-font-weight-6);
+        color: var(--o-theme-brand);
+        font-weight: var(--o-font-weight-4);
 	}
 
 	@media (min-width: 20em) {
@@ -171,7 +173,7 @@ const t = useTranslations(Astro);
 			padding-left: 1.5rem;
 			padding-right: 1.5rem;
 		}
-		.astro {
+		.oxyprops {
 			width: auto;
 		}
 	}

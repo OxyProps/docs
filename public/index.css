@@ -92,7 +92,7 @@ h4,
 h5,
 h6 {
 	margin-bottom: 1rem;
-	font-weight: var(--o-font-weight-5);
+	font-weight: var(--o-font-weight-7);
 	line-height: var(--o-font-lineheight-1);
 }
 
@@ -113,12 +113,14 @@ h2 {
 	--o-border-radius: 4px;
 	--o-padding-block: 0.1rem;
 	--o-padding-inline: 0.4rem;
+}
+
+code {
 	font-weight: var(--o-font-weight-4);
 }
 
 h1 {
 	font-size: var(--o-font-size-fluid-4);
-	font-weight: var(--o-font-weight-6);
 }
 
 h2 {
@@ -221,7 +223,7 @@ small,
 }
 
 a {
-	color: var(--o-theme-accent-secondary);
+	color: var(--o-theme-links);
 	text-underline-offset: 0.08em;
 	align-items: center;
 	gap: 0.5rem;
@@ -276,7 +278,7 @@ a:focus {
 }
 
 strong {
-	font-weight: 600;
+	font-weight: var(--o-font-weight-7);
 	color: inherit;
 }
 
@@ -358,7 +360,7 @@ pre {
 }
 
 blockquote code {
-	background-color: var(--o-theme-bg);
+	background-color: hsla(var(--o-surface-1), 1);
 }
 
 @media (min-width: 37.75em) {
@@ -378,7 +380,7 @@ blockquote {
 	margin-block: 2rem;
 	padding: 1.25em 1.5rem;
 	border-left: 8px solid var(--o-theme-accent);
-	background-color: var(--o-theme-bg-offset);
+	background-color: hsla(var(--o-surface-3), 1);
 	border-radius: 0 0.25rem 0.25rem 0;
 	line-height: 1.7;
 }
@@ -412,7 +414,7 @@ button {
 h2.heading {
 	font-size: 1rem;
 	font-weight: 700;
-	text-transform: uppercase;
+	text-transform: capitalize;
 	margin-bottom: 0.5rem;
 	margin-top: 1.5rem;
 }
@@ -435,7 +437,7 @@ h2.heading {
 .header-link:hover,
 .header-link:focus,
 .header-link:focus-within {
-	border-inline-start-color: var(--o-theme-accent-secondary);
+	border-inline-start-color: var(--o-theme-links);
 }
 
 .header-link:hover a,

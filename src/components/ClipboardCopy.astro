@@ -1,0 +1,65 @@
+---
+export interface Props {
+	value?: string;
+	for?: string;
+}
+const { ...attrs } = Astro.props as Props;
+---
+
+<script>
+	import '@github/clipboard-copy-element';
+</script>
+
+<clipboard-copy class="o-copy" {...attrs}>
+	<slot />
+</clipboard-copy>
+
+<style>
+	.o-copy {
+		cursor: copy;
+	}
+
+	.o-copy::after {
+        content: 'Copied to Clipboard!';
+
+		position: fixed;
+        top: 1rem;
+        right: 1rem;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        padding-block: 0.25rem;
+        padding-inline: 0.5rem;
+        
+        background-color: green;
+        border: 1px solid chartreuse;        
+        border-radius: 0.25rem;
+
+        font-size: 0.75em;
+        color: white;
+        opacity: 0;
+        z-index: 1000;
+        box-shadow: 0 0 5px 20px hsla(0, 0%, 0%, 0.8));
+        transition: opacity 0.2s ease-in-out;
+        pointer-events: none;
+	}
+    .o-copy--copied::after {
+        opacity: 1;
+    }
+</style>
+
+<script>
+	const clipboardButtons = document.querySelectorAll('clipboard-copy');
+	if (clipboardButtons) {
+		clipboardButtons.forEach((button) => {
+            button.addEventListener('clipboard-copy', (e) => {
+                e.target.classList.add('o-copy--copied');
+                setTimeout(() => {
+                    e.target.classList.remove('o-copy--copied');
+                }, 2000);
+            });
+        });
+	}
+</script>

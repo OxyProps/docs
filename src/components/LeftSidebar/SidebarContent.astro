@@ -69,7 +69,7 @@ const lang = getLanguageFromURL(Astro.url.pathname);
 		font-size: 1rem;
 		font-weight: 700;
 		padding: 0.1rem 2rem;
-		text-transform: uppercase;
+		text-transform: capitalize;
 		margin-bottom: 0.5rem;
 	}
 
@@ -88,9 +88,9 @@ const lang = getLanguageFromURL(Astro.url.pathname);
 		}
 
 		&[aria-current='page'] {
-			color: var(--o-theme-text-accent);
+			color: hsla(var(--o-text-1),1);
 			background-color: var(--o-theme-bg-accent);
-			font-weight: 600;
+			font-weight: var(--o-font-weight-7);
 		}
 	}
 

@@ -18,7 +18,7 @@
 }
 .TabGroup .active {
 	color: var(--o-theme-text);
-	border-bottom-color: var(--o-theme-accent);
+	border-bottom-color: var(--o-theme-links);
 	font-weight: bold;
 }
 

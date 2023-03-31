@@ -19,7 +19,7 @@ const { before, after } = Astro.slots;
 <style>
     .pixel {
         --o-link-color-stop-a: var(--o-theme-accent);
-        --o-link-color-stop-b: var(--o-theme-accent-secondary);
+        --o-link-color-stop-b: var(--o-theme-links);
 
         --o-border-radius: 8;
         --o-pixel-size: 4;
@@ -137,11 +137,11 @@ const { before, after } = Astro.slots;
     .variant-primary:hover,
     .variant-primary:focus-within {
         --o-link-color-stop-a: var(--o-theme-accent);
-        --o-link-color-stop-b: var(--o-theme-accent-secondary);
+        --o-link-color-stop-b: var(--o-theme-links);
     }
     .variant-primary:active {
         --o-link-color-stop-a: var(--o-theme-accent);
-        --o-link-color-stop-b: var(--o-theme-accent-secondary);
+        --o-link-color-stop-b: var(--o-theme-links);
     }
 
     .variant-outline {

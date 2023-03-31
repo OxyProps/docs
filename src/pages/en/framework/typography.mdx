@@ -1,0 +1,226 @@
+---
+layout: ~/layouts/MainLayout.astro
+title: Typography
+description: An intro to the OxyProps Typography properties and classes syntax.
+i18nReady: false
+---
+
+import ClipboardCopy from '../../../components/ClipboardCopy.astro'
+
+Typography is an important aspect of web design that can greatly affect the readability and overall aesthetic of your website. With OxyProps, you have access to a powerful CSS framework that includes a wide range of font families, CSS variables, and utility classes to help you achieve the perfect typographic style for your website.
+
+## TL, DR
+
+If you don't need explanations but just want the props and classes, the flull list is at the bottom of this page.
+
+<a href="#cheat-sheet">Skip to full list</a>
+
+## Font Families
+
+The font-family property in CSS allows you to specify the font that will be used for text content on your website. OxyProps provides a range of font families that can be easily used in your CSS styles or with utility classes.
+
+To use a font family with CSS, you can set the font-family property to the name of the font you want to use, like this:
+
+```css
+body {
+  font-family: "Open Sans", sans-serif;
+}
+```
+
+In this example, we're setting the font-family of the body element to "Open Sans", which is a popular sans-serif font. The sans-serif fallback ensures that if "Open Sans" is not available on the user's device, a generic sans-serif font will be used instead.
+
+### OxyProps Framework
+
+OxyProps includes four font families available as CSS variables:
+
+```css
+:where(html) {
+  --o-font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, sans-serif, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans,
+    sans-serif, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  --o-font-serif: ui-serif, serif;
+  --o-font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace,
+    SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
+}
+```
+
+<ClipboardCopy value="var(--o-font-sans)"><code>--o-font-sans</code></ClipboardCopy>: This family stack includes popular sans-serif fonts such as Roboto, Ubuntu, and Noto Sans. It also includes system fonts like Segoe UI and -apple-system, making it a versatile option for UI design.
+
+`--o-font-serif`: This family stack includes ui-serif, a system font commonly used for serif text, as well as other serif options.
+
+`--o-font-mono`: This family stack includes popular monospace fonts like Inconsolata and Fira Mono, as well as system fonts like SF Mono and Droid Sans Mono.
+
+These 3 stacks use system fonts. This means that the fonts will be automatically updated when the user updates their operating system. This is a great way to ensure that your website will always look great on the latest operating systems.
+
+Using system fonts instead of external fonts from services like Google Fonts can have several benefits:
+
+1. **Faster Page Load**: Since system fonts are already installed on the user's device, they don't need to be downloaded, which can significantly reduce page load times.
+2. **Consistency**: System fonts are consistent across different devices and platforms. This means that the fonts on your website will look the same regardless of the device or platform that the user is using. In contrast, external fonts may not be available on all devices, and their appearance may vary depending on the device's settings.
+3. **Privacy**: External fonts are loaded from third-party servers, which means that the user's data is being sent to those servers. Using system fonts eliminates this potential privacy concern.
+4. **Design integrity**: System fonts are designed to work well in various scenarios, such as different font sizes, weights, and styles. This is because system fonts are optimized for the operating system they are used on. On the other hand, external fonts can sometimes appear distorted or blurry when used in certain scenarios.
+
+Overall, using system fonts can result in a faster, more consistent, and more private user experience while maintaining the design integrity of your website.
+
+`--o-font-atkinson`: This family stack includes "Atkinson Hyperlegible", a font named after Braille Institute founder, J. Robert Atkinson. Atkinson Hyperlegible focuses on letterform distinction to increase character recognition and improve readability.
+
+This one is a self hosted font. Using self-hosted fonts means that the font files are stored on the same server as your website or application, rather than being loaded from a third-party service like Google Fonts. There are several benefits to using self-hosted fonts instead of external fonts:
+
+1. **Improved page load speed**: By hosting the font files on your own server, you can reduce the number of external requests your website needs to make, which can help to improve page load times.
+2. **Increased control**: When you self-host your fonts, you have complete control over the font files and how they are served. This means that you can optimize the font files for your specific use case and ensure that they are served in the most efficient way possible.
+3. **Better privacy and security**: By not relying on third-party services to serve your fonts, you can help to protect your users' privacy and security. When you use external font services, you are effectively outsourcing a part of your website to a third party, which could potentially compromise your users' data.
+
+To use these font families in your project, you can use the following utility classes:
+
+`.o-sans`: Sets the font family to `var(--o-font-sans)`  
+`.o-serif`: Sets the font family to `var(--o-font-serif)`  
+`.o-mono`: Sets the font family to `var(--o-font-mono)`  
+`.o-atkinson`: Sets the font family to `var(--o-font-atkinson)`  
+
+To apply any of these classes, simply add the appropriate class to your HTML element. For example, to set the font family to `--o-font-sans`, add the class `o-sans` to your element:
+
+```html
+<p class="o-sans">This text will use the sans-serif font family.</p>
+```
+
+## Cheat Sheet
+
+### Font Families
+
+| Description | CSS Variable | Utility Class|
+| --- | --- | --- |
+|Sans serif, user system|<ClipboardCopy value="var(--o-font-sans)">`--o-font-sans`</ClipboardCopy>|<ClipboardCopy value="o-sans">`o-sans`</ClipboardCopy>|
+|Serif, user system|<ClipboardCopy value="var(--o-font-serif)">`--o-font-serif`</ClipboardCopy>|<ClipboardCopy value="o-serif">`o-serif`</ClipboardCopy>| 
+|Monotype, user system|<ClipboardCopy value="var(--o-font-mono)">`--o-font-mono`</ClipboardCopy>|<ClipboardCopy value="o-mono">`o-mono`</ClipboardCopy>|
+|Hyperlegible,  self-hosted|<ClipboardCopy value="var(--o-font-atkinson)">`--o-font-atkinson`</ClipboardCopy>|<ClipboardCopy value="o-atkinson">`o-atkinson`</ClipboardCopy>|
+
+### Font Weights
+
+| Description | CSS Variable | Utility Class|
+| --- | --- | --- |
+|Thin|<ClipboardCopy value="var(--o-font-weight-1)">`--o-font-weight-1`</ClipboardCopy>|<ClipboardCopy value="o-thin">`o-thin`</ClipboardCopy>|
+|Extra-light|<ClipboardCopy value="var(--o-font-weight-2)">`--o-font-weight-2`</ClipboardCopy>|<ClipboardCopy value="o-extra-light">`o-extra-light`</ClipboardCopy> or <ClipboardCopy value="o-ultra-light">`o-ultra-light`</ClipboardCopy>|
+|Light|<ClipboardCopy value="var(--o-font-weight-3)">`--o-font-weight-3`</ClipboardCopy>|<ClipboardCopy value="o-light">`o-light`</ClipboardCopy>|
+|Normal|<ClipboardCopy value="var(--o-font-weight-4)">`--o-font-weight-4`</ClipboardCopy>|<ClipboardCopy value="o-normal">`o-normal`</ClipboardCopy>|
+|Medium|<ClipboardCopy value="var(--o-font-weight-5)">`--o-font-weight-5`</ClipboardCopy>|<ClipboardCopy value="o-medium">`o-medium`</ClipboardCopy>|
+|Semi-Bold|<ClipboardCopy value="var(--o-font-weight-6)">`--o-font-weight-6`</ClipboardCopy>|<ClipboardCopy value="o-semi-bold">`o-semi-bold`</ClipboardCopy>|
+|Bold|<ClipboardCopy value="var(--o-font-weight-7)">`--o-font-weight-7`</ClipboardCopy>|<ClipboardCopy value="o-bold">`o-bold`</ClipboardCopy>|
+|Extra-bold|<ClipboardCopy value="var(--o-font-weight-8)">`--o-font-weight-8`</ClipboardCopy>|<ClipboardCopy value="o-extra-bold">`o-extra-bold`</ClipboardCopy> or <ClipboardCopy value="o-ultra-bold">`o-ultra-bold`</ClipboardCopy>|
+|Black|<ClipboardCopy value="var(--o-font-weight-9)">`--o-font-weight-9`</ClipboardCopy>|<ClipboardCopy value="o-black">`o-black`</ClipboardCopy>|
+
+### Letter Spacing *(aka Tracking)*
+
+| Default value | CSS Variable | Utility Class|
+| --- | --- | --- |
+|-0.5 em|<ClipboardCopy value="var(--o-font-letterspacing-0)">`--o-font-letterspacing-0`</ClipboardCopy>|<ClipboardCopy value="o-tracking-0">`o-tracking-0`</ClipboardCopy>|
+|0.025 em|<ClipboardCopy value="var(--o-font-letterspacing-1)">`--o-font-letterspacing-1`</ClipboardCopy>|<ClipboardCopy value="o-tracking-1">`o-tracking-1`</ClipboardCopy>|
+|0.05 em|<ClipboardCopy value="var(--o-font-letterspacing-2)">`--o-font-letterspacing-2`</ClipboardCopy>|<ClipboardCopy value="o-tracking-2">`o-tracking-2`</ClipboardCopy>|
+|0.075 em|<ClipboardCopy value="var(--o-font-letterspacing-3)">`--o-font-letterspacing-3`</ClipboardCopy>|<ClipboardCopy value="o-tracking-3">`o-tracking-3`</ClipboardCopy>|
+|0.15 em|<ClipboardCopy value="var(--o-font-letterspacing-4)">`--o-font-letterspacing-4`</ClipboardCopy>|<ClipboardCopy value="o-tracking-4">`o-tracking-4`</ClipboardCopy>|
+|0.5 em|<ClipboardCopy value="var(--o-font-letterspacing-5)">`--o-font-letterspacing-5`</ClipboardCopy>|<ClipboardCopy value="o-tracking-5">`o-tracking-5`</ClipboardCopy>|
+|0.75 em|<ClipboardCopy value="var(--o-font-letterspacing-6)">`--o-font-letterspacing-6`</ClipboardCopy>|<ClipboardCopy value="o-tracking-6">`o-tracking-6`</ClipboardCopy>|
+|1 em|<ClipboardCopy value="var(--o-font-letterspacing-7)">`--o-font-letterspacing-7`</ClipboardCopy>|<ClipboardCopy value="o-tracking-7">`o-tracking-7`</ClipboardCopy>|
+
+### Line Height *(aka Leading)*
+
+| Default value | CSS Variable | Utility Class|
+| --- | --- | --- |
+|0.95|<ClipboardCopy value="var(--o-font-lineheight-00)">`--o-font-lineheight-00`</ClipboardCopy>|<ClipboardCopy value="o-leading-00">`o-leading-00`</ClipboardCopy>|
+|1.1|<ClipboardCopy value="var(--o-font-lineheight-0)">`--o-font-lineheight-0`</ClipboardCopy>|<ClipboardCopy value="o-leading-0">`o-leading-0`</ClipboardCopy>|
+|1.25|<ClipboardCopy value="var(--o-font-lineheight-1)">`--o-font-lineheight-1`</ClipboardCopy>|<ClipboardCopy value="o-leading-1">`o-leading-1`</ClipboardCopy>|
+|1.375|<ClipboardCopy value="var(--o-font-lineheight-2)">`--o-font-lineheight-2`</ClipboardCopy>|<ClipboardCopy value="o-leading-2">`o-leading-2`</ClipboardCopy>|
+|1.5|<ClipboardCopy value="var(--o-font-lineheight-3)">`--o-font-lineheight-3`</ClipboardCopy>|<ClipboardCopy value="o-leading-3">`o-leading-3`</ClipboardCopy>|
+|1.75|<ClipboardCopy value="var(--o-font-lineheight-4)">`--o-font-lineheight-4`</ClipboardCopy>|<ClipboardCopy value="o-leading-4">`o-leading-4`</ClipboardCopy>|
+|2|<ClipboardCopy value="var(--o-font-lineheight-5)">`--o-font-lineheight-5`</ClipboardCopy>|<ClipboardCopy value="o-leading-5">`o-leading-5`</ClipboardCopy>|
+
+### Font Sizes
+
+| Default value | CSS Variable | Utility Class|
+| --- | --- | --- |
+|0.5 rem|<ClipboardCopy value="var(--o-font-size-00)">`--o-font-size-00`</ClipboardCopy>|<ClipboardCopy value="o-font-00">`o-font-00`</ClipboardCopy>|
+|0.75 rem|<ClipboardCopy value="var(--o-font-size-0)">`--o-font-size-0`</ClipboardCopy>|<ClipboardCopy value="o-font-0">`o-font-0`</ClipboardCopy>|
+|1 rem|<ClipboardCopy value="var(--o-font-size-1)">`--o-font-size-1`</ClipboardCopy>|<ClipboardCopy value="o-font-1">`o-font-1`</ClipboardCopy>|
+|1.1 rem|<ClipboardCopy value="var(--o-font-size-2)">`--o-font-size-2`</ClipboardCopy>|<ClipboardCopy value="o-font-2">`o-font-2`</ClipboardCopy>|
+|1.25 rem|<ClipboardCopy value="var(--o-font-size-3)">`--o-font-size-3`</ClipboardCopy>|<ClipboardCopy value="o-font-3">`o-font-3`</ClipboardCopy>|
+|1.5 rem|<ClipboardCopy value="var(--o-font-size-4)">`--o-font-size-4`</ClipboardCopy>|<ClipboardCopy value="o-font-4">`o-font-4`</ClipboardCopy>|
+|2 rem|<ClipboardCopy value="var(--o-font-size-5)">`--o-font-size-5`</ClipboardCopy>|<ClipboardCopy value="o-font-5">`o-font-5`</ClipboardCopy>|
+|2.5 rem|<ClipboardCopy value="var(--o-font-size-6)">`--o-font-size-6`</ClipboardCopy>|<ClipboardCopy value="o-font-6">`o-font-6`</ClipboardCopy>|
+|3 rem|<ClipboardCopy value="var(--o-font-size-7)">`--o-font-size-7`</ClipboardCopy>|<ClipboardCopy value="o-font-7">`o-font-7`</ClipboardCopy>|
+|3.5 rem|<ClipboardCopy value="var(--o-font-size-8)">`--o-font-size-8`</ClipboardCopy>|<ClipboardCopy value="o-font-8">`o-font-8`</ClipboardCopy>|
+
+### Fluid Font Sizes
+
+| Default value | CSS Variable | Utility Class|
+| --- | --- | --- |
+|clamp(.75rem, 1.5vw, 1rem)|<ClipboardCopy value="var(--o-font-size-fluid-0)">`--o-font-size-fluid-0`</ClipboardCopy>|<ClipboardCopy value="o-font-fluid-0">`o-font-fluid-0`</ClipboardCopy>|
+|clamp(1rem, 2vw, 1.5rem)|<ClipboardCopy value="var(--o-font-size-fluid-1)">`--o-font-size-fluid-1`</ClipboardCopy>|<ClipboardCopy value="o-font-fluid-1">`o-font-fluid-1`</ClipboardCopy>|
+|clamp(1.5rem, 3vw, 2.5rem)|<ClipboardCopy value="var(--o-font-size-fluid-2)">`--o-font-size-fluid-2`</ClipboardCopy>|<ClipboardCopy value="o-font-fluid-2">`o-font-fluid-2`</ClipboardCopy>|
+|clamp(2rem, 4vw, 3.5rem)|<ClipboardCopy value="var(--o-font-size-fluid-3)">`--o-font-size-fluid-3`</ClipboardCopy>|<ClipboardCopy value="o-font-fluid-3">`o-font-fluid-3`</ClipboardCopy>|
+
+### Advanced Fluid Font Sizes
+
+| Default value | CSS Variable | Utility Class|
+| --- | --- | --- |
+|00: base ÷ scale ratio|<ClipboardCopy value="var(--o-fluid-font-00)">`--o-fluid-font-00`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-00">`o-fluid-font-00`</ClipboardCopy>|
+|0 = base font size|<ClipboardCopy value="var(--o-fluid-font-0)">`--o-fluid-font-0`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-0">`o-fluid-font-0`</ClipboardCopy>|
+|1: base × scale ratio|<ClipboardCopy value="var(--o-fluid-font-1)">`--o-fluid-font-1`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-1">`o-fluid-font-1`</ClipboardCopy>|
+|2: base × scale ratio^2|<ClipboardCopy value="var(--o-fluid-font-2)">`--o-fluid-font-2`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-2">`o-fluid-font-2`</ClipboardCopy>|
+|3: base × scale ratio^3|<ClipboardCopy value="var(--o-fluid-font-3)">`--o-fluid-font-3`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-3">`o-fluid-font-3`</ClipboardCopy>|
+|4: base × scale ratio^4|<ClipboardCopy value="var(--o-fluid-font-4)">`--o-fluid-font-4`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-4">`o-fluid-font-4`</ClipboardCopy>|
+|5: base × scale ratio^5|<ClipboardCopy value="var(--o-fluid-font-5)">`--o-fluid-font-5`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-5">`o-fluid-font-5`</ClipboardCopy>|
+|6: base × scale ratio^6|<ClipboardCopy value="var(--o-fluid-font-6)">`--o-fluid-font-6`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-6">`o-fluid-font-6`</ClipboardCopy>|
+|7: base × scale ratio^7|<ClipboardCopy value="var(--o-fluid-font-7)">`--o-fluid-font-7`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-7">`o-fluid-font-7`</ClipboardCopy>|
+|8: base × scale ratio^8|<ClipboardCopy value="var(--o-fluid-font-8)">`--o-fluid-font-8`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-8">`o-fluid-font-8`</ClipboardCopy>|
+|00 sub: 00 × subheading ratio|<ClipboardCopy value="var(--o-fluid-font-00-sub)">`--o-fluid-font-00-sub`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-00-sub">`o-fluid-font-00-sub`</ClipboardCopy>|
+|0 sub: 0 × subheading ratio|<ClipboardCopy value="var(--o-fluid-font-0-sub)">`--o-fluid-font-0-sub`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-0-sub">`o-fluid-font-0-sub`</ClipboardCopy>|
+|1 sub: 1 × subheading ratio|<ClipboardCopy value="var(--o-fluid-font-1-sub)">`--o-fluid-font-1-sub`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-1-sub">`o-fluid-font-1-sub`</ClipboardCopy>|
+|2 sub: 2 × subheading ratio|<ClipboardCopy value="var(--o-fluid-font-2-sub)">`--o-fluid-font-2-sub`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-2-sub">`o-fluid-font-2-sub`</ClipboardCopy>|
+|3 sub: 3 × subheading ratio|<ClipboardCopy value="var(--o-fluid-font-3-sub)">`--o-fluid-font-3-sub`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-3-sub">`o-fluid-font-3-sub`</ClipboardCopy>|
+|4 sub: 4 × subheading ratio|<ClipboardCopy value="var(--o-fluid-font-4-sub)">`--o-fluid-font-4-sub`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-4-sub">`o-fluid-font-4-sub`</ClipboardCopy>|
+|5 sub: 5 × subheading ratio|<ClipboardCopy value="var(--o-fluid-font-5-sub)">`--o-fluid-font-5-sub`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-5-sub">`o-fluid-font-5-sub`</ClipboardCopy>|
+|6 sub: 6 × subheading ratio|<ClipboardCopy value="var(--o-fluid-font-6-sub)">`--o-fluid-font-6-sub`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-6-sub">`o-fluid-font-6-sub`</ClipboardCopy>|
+|7 sub: 7 × subheading ratio|<ClipboardCopy value="var(--o-fluid-font-7-sub)">`--o-fluid-font-7-sub`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-7-sub">`o-fluid-font-7-sub`</ClipboardCopy>|
+|8 sub: 8 × subheading ratio|<ClipboardCopy value="var(--o-fluid-font-8-sub)">`--o-fluid-font-8-sub`</ClipboardCopy>|<ClipboardCopy value="o-fluid-font-8-sub">`o-fluid-font-8-sub`</ClipboardCopy>|
+
+### Text Orientation
+
+| Description | Utility Class|
+| --- | --- |
+|Vertical top to bottom|<ClipboardCopy value="o-text-down">`o-text-down`</ClipboardCopy>|
+|Vertical bottom to top|<ClipboardCopy value="o-text-up">`o-text-up`</ClipboardCopy>|
+|With upright caracter orientation|<ClipboardCopy value="o-upright">`o-upright`</ClipboardCopy>|
+
+### Text Direction
+
+| Description | Utility Class|
+| --- | --- |
+|Left to Right|<ClipboardCopy value="o-ltr">`o-ltr`</ClipboardCopy>|
+|Right to Left|<ClipboardCopy value="o-rtl">`o-rtl`</ClipboardCopy>|
+
+### Text Alignment
+
+| Description | Utility Class|
+| --- | --- |
+|Left|<ClipboardCopy value="o-text-left">`o-text-left`</ClipboardCopy>|
+|Right|<ClipboardCopy value="o-text-right">`o-text-right`</ClipboardCopy>|
+|Center|<ClipboardCopy value="o-text-center">`o-text-center`</ClipboardCopy>|
+|Justify|<ClipboardCopy value="o-text-justify">`o-text-justify`</ClipboardCopy>|
+|Start|<ClipboardCopy value="o-text-start">`o-text-start`</ClipboardCopy>|
+|End|<ClipboardCopy value="o-text-end">`o-text-end`</ClipboardCopy>|
+
+### Text Decoration
+
+| Description | Utility Class|
+| --- | --- |
+|Wing on left side|<ClipboardCopy value="o-wings-l">`o-wings-l`</ClipboardCopy>|
+|Wing on right side|<ClipboardCopy value="o-wings-r">`o-wings-r`</ClipboardCopy>|
+|Wing on both sides|<ClipboardCopy value="o-wings-2">`o-wings-2`</ClipboardCopy>|
+|Underline with your Brand Color|<ClipboardCopy value="o-underline-brand">`o-underline-brand`</ClipboardCopy>|
+|Underline with your Accent Color|<ClipboardCopy value="o-underline-accent">`o-underline-accent`</ClipboardCopy>|
+|Underline with your Links Color|<ClipboardCopy value="o-underline-links">`o-underline-links`</ClipboardCopy>|
+|Underline with your Visited Color|<ClipboardCopy value="o-underline-visited">`o-underline-visited`</ClipboardCopy>|
+|Squiggly with your Brand Color|<ClipboardCopy value="o-wavy-brand">`o-wavy-brand`</ClipboardCopy>|
+|Squiggly with your Accent Color|<ClipboardCopy value="o-wavy-accent">`o-wavy-accent`</ClipboardCopy>|
+|Squiggly with your Links Color|<ClipboardCopy value="o-wavy-links">`o-wavy-links`</ClipboardCopy>|
+|Squiggly with your Visited Color|<ClipboardCopy value="o-wavy-visited">`o-wavy-visited`</ClipboardCopy>|
+
+
