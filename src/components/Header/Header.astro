@@ -2,11 +2,12 @@
 import SkipToContent from './SkipToContent.astro';
 import SidebarToggle from './SidebarToggle';
 import LanguageSelect from './LanguageSelect';
-import Search from './Search';
+import Search from './Search.astro';
 import ThemeToggleButton from './ThemeToggleButton';
+import OxyPropsLogo from './OxyPropsLogo.astro';
+
 import { getLanguageFromURL } from '../../util';
 import { getDocSearchStrings, useTranslations } from '../../i18n/util';
-import OxyPropsLogo from './OxyPropsLogo.astro';
 
 const { currentPage } = Astro.props;
 const lang = currentPage && getLanguageFromURL(currentPage);
@@ -16,43 +17,47 @@ const t = useTranslations(Astro);
 
 <header>
 	<SkipToContent />
-	<nav class="nav-wrapper" title={t('navbar.a11yTitle')}>
+	<nav class="nav-wrapper" aria-label={t('navbar.a11yTitle')}>
 		<div dir="ltr" lang="en" class="logo flex">
-			<a class="oxyprops" href="https://oxyprops.com/">
-				<h1 class="sr-only">OxyProps</h1>
-				<OxyPropsLogo size="26" />
-				oxyprops
-			</a>
-			<a class="docs" href={`/${lang || 'en'}/`}>
-				<h1 class="sr-only">Docs</h1>
-				docs
-			</a>
+			<ul>
+				<li>
+					<a class="oxyprops" href="https://oxyprops.com/">
+						<OxyPropsLogo size="32" />
+						oxyprops
+					</a>
+				</li>
+				<li>
+					<a class="docs" href={`/${lang || 'en'}/getting-started/`}> docs</a>
+				</li>
+			</ul>
 		</div>
-
-		{lang && <LanguageSelect lang={lang} client:idle />}
-		<!-- <Search {lang} client:idle labels={docsearchStrings} /> -->
-		<ThemeToggleButton 
-		client:visible 
-		labels={{  useLight: t('themeToggle.useLight'), useDark: t('themeToggle.useDark')  }}
-		isInsideHeader={true} 
-	/>
+		<ThemeToggleButton client:visible labels={{ useLight: t('themeToggle.useLight'), useDark: t('themeToggle.useDark') }} isInsideHeader={true} />
+		{lang && <LanguageSelect lang={lang} label={t('languageSelect.label')} client:idle />}
+		<Search {lang} labels={docsearchStrings} />
 		<SidebarToggle client:idle />
 	</nav>
 </header>
 
 <style>
 	header {
+		position: fixed;
+		left: 0;
+		top: 0;
+		right: 0;
+		height: var(--theme-navbar-height);
 		z-index: 11;
-		height: var(--o-theme-navbar-height);
-		padding-block: 2rem;
-		padding-inline: 0;
-		background-color: var(--o-theme-navbar-bg);
+		padding: 2rem 0;
+		background-color: var(--theme-navbar-bg);
 		display: flex;
 		align-items: center;
 		justify-content: left;
 		overflow: hidden;
-		position: sticky;
-		top: 0;
+	}
+
+	ul,
+	li {
+		all: inherit;
+		flex-grow: 0;
 	}
 
 	.nav-wrapper {
@@ -61,8 +66,7 @@ const t = useTranslations(Astro);
 		justify-content: center;
 		gap: 0.75rem;
 		width: 100%;
-		padding-left: 1rem;
-		padding-right: 1rem;
+		padding-inline: var(--min-spacing-inline);
 	}
 
 	/* If the device is likely to show a scrollbar gutter, reserve space for it */
@@ -78,9 +82,9 @@ const t = useTranslations(Astro);
 		font-size: 1rem;
 		flex-grow: 1;
 		flex-shrink: 0;
-		font-weight: 700;
+		font-weight: var(--o-font-weight-7);
 		line-height: 1;
-		color: hsla(var(--o-text-1), 1);
+		color: var(--o-text-1);
 		text-decoration: none;
 		gap: 0.5em;
 	}
@@ -97,16 +101,7 @@ const t = useTranslations(Astro);
 		padding: 0.5em 0.25em;
 		margin: -0.5em -0.25em;
 		text-decoration: none;
-		color: var(--o-theme-text);
-		font-weight: var(--o-font-weight-7);
 		font-size: var(--o-font-size-fluid-1);
-	}
-
-	.logo svg {
-		height: 40px;
-		width: auto;
-		display: block;
-		color: var(--o-theme-brand);
 	}
 
 	.logo .hover {
@@ -135,22 +130,21 @@ const t = useTranslations(Astro);
 	.oxyprops {
 		overflow: hidden;
 		width: 41px;
-        font-weight: var(--o-font-weight-7);
+        color: var(--theme-text);
+		font-weight: var(--o-font-weight-7);
 	}
-    
+
 	.docs {
-        display: none;
-	}
-    
-	.logo a.docs {
-        color: var(--o-theme-brand);
-        font-weight: var(--o-font-weight-4);
+		display: none;
 	}
 
 	@media (min-width: 20em) {
 		.docs {
 			display: inherit;
 			max-width: 80px;
+            color: var(--theme-accent);
+            font-weight: var(--o-font-weight-4);
+
 		}
 	}
 
@@ -165,16 +159,19 @@ const t = useTranslations(Astro);
 
 	@media (min-width: 50em) {
 		header {
-			position: static;
-			background-color: transparent;
 			padding: 2.5rem 0 1.5rem 0;
-		}
-		.nav-wrapper {
-			padding-left: 1.5rem;
-			padding-right: 1.5rem;
 		}
 		.oxyprops {
 			width: auto;
+		}
+	}
+
+	@media (forced-colors: active) {
+		.text {
+			fill: LinkText;
+		}
+		.docs-path {
+			fill: ActiveText;
 		}
 	}
 </style>

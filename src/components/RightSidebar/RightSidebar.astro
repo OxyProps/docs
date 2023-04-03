@@ -2,46 +2,28 @@
 import TableOfContents from './TableOfContents';
 import ContributeMenu from './ContributeMenu.astro';
 import CommunityMenu from './CommunityMenu.astro';
-import FeedBackMenu from './FeedBackMenu.astro';
-import { useTranslations } from "../../i18n/util";
+import FeedbackMenu from './FeedbackMenu.astro';
+import { useTranslations } from '../../i18n/util';
+import generateToc from '../../util/generateToc';
 
 const t = useTranslations(Astro);
 
-const { headings, content, githubEditUrl } = Astro.props;
+const { content, githubEditUrl, headings } = Astro.props;
+const overview = t('rightSidebar.overview');
 ---
 
-<nav class="sidebar-nav" aria-label={t('rightSidebar.a11yTitle')}>
-	<div class="sidebar-nav-inner">
-		{headings && (
-			<TableOfContents
-				client:media="(min-width: 50em)"
-				headers={headings}
-				labels={{ onThisPage: t('rightSidebar.onThisPage')!, overview: t('rightSidebar.overview')! }}
-			/>
-		)}
-		<FeedBackMenu />
-		<ContributeMenu editHref={githubEditUrl} />
-		<CommunityMenu />
-	</div>
+<nav aria-label={t('rightSidebar.a11yTitle')}>
+	{headings && <TableOfContents client:media="(min-width: 50em)" toc={generateToc(headings, overview)} labels={{ onThisPage: t('rightSidebar.onThisPage') }} isMobile={false} />}
+	<ContributeMenu i18nReady={content.i18nReady} editHref={githubEditUrl} />
+	<CommunityMenu />
+    <FeedbackMenu />
 </nav>
 
 <style>
-	.sidebar-nav {
+	nav {
 		width: 100%;
-		position: sticky;
-		top: 0;
-	}
-
-	.sidebar-nav-inner {
-		height: 100%;
-		padding: var(--doc-padding) 0;
+		padding: var(--doc-padding-block) 0;
 		overflow: auto;
-	}
-
-	/* style applied only on Firefox, this avoids scrollbars overlapping. */
-	@supports (-moz-appearance: none) {
-		.sidebar-nav {
-			padding-inline-end: 1.5rem;
-		}
+		font-size: var(--theme-text-xs);
 	}
 </style>

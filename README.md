@@ -1,16 +1,19 @@
-# OxyProps Docs <img align="right" valign="center" height="52" width="52" src="https://avatars.githubusercontent.com/u/105321554" alt="OxyProps logo" />
+# Astro Docs <picture><source media="(prefers-color-scheme: dark)" srcset="https://astro.build/assets/press/astro-icon-light.png"><source media="(prefers-color-scheme: light)" srcset="https://astro.build/assets/press/astro-icon-dark.png"><img align="right" valign="center" height="79" width="63" src="https://astro.build/assets/press/astro-icon-dark.png" alt="Astro logo" /></picture>
+
 
 To all who come to this happy place: welcome.
 
-This is the repo for [docs.oxyprops.com](https://docs.oxyprops.com/).
+This is the repo for [docs.astro.build](https://docs.astro.build/).
 This repo contains all the source code we use to build our docs site.
-It is built on a fork from Astro docs site [docs.astro.build](https://docs.astro.build/).
-You can find the [source repo here](https://github.com/withastro/docs).
 
-## About OxyProps
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/withastro/docs)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/github/withastro/docs)
+[![Open in Codeflow](https://developer.stackblitz.com/img/open_in_codeflow.svg)](https://pr.new/github.com/withastro/docs)
 
-OxyProps is a premium WordPress plugin helping website creators build their sites faster.
-It brings a CSS framework, builder UI features, and custom elements to [Oxygen Builder](https://oxygenbuilder.com/).
+## We are Astro
+
+Astro is an all-in-one web framework for building fast, content-focused websites.
+We want everyone to be successful building sites, and that means helping everyone understand how Astro works.
 
 ## You are Awesome
 
@@ -21,18 +24,17 @@ You being a part of our community is welcome.
 
 ## Chat with Us
 
-You can learn more about OxyProps, get support, and meet other users in
-- [our Discord community](https://discord.gg/Np88J479Hr).
-- [our Facebook community](https://www.facebook.com/groups/oxyprops).
+You can learn more about Astro, get support, and meet other devs in [our Discord community](https://astro.build/chat).
 
 ## Raise an Issue
 
 Is something missing?
+Is something confusing?
 Is something wrong?
 
-Reporting a new Issue puts a problem on our radar and help us improve!
+Creating a new Issue puts a problem on our radar!
 
-[See if your issue has already been reported](https://feedback.oxyprops.com/bugs), and if not, [create a new one](https://feedback.oxyprops.com/bugs).
+[See if your issue has already been reported](https://github.com/withastro/docs/issues), and if not, [create a new one](https://github.com/withastro/docs/issues/new/choose).
 
 ## Share an Idea
 
@@ -41,60 +43,28 @@ Want to share an idea with us?
 
 Discussions are threads where you can offer feedback on things that might not exactly be problems to be fixed but are ideas to be explored. 
 
-[See if your idea is on our roadmap or has already been suggested](https://feedback.oxyprops.com/bugs), and if not, [submit your idea](https://feedback.oxyprops.com/ideas).
+[Join the Docs Discussions](https://github.com/withastro/docs/discussions) where we brainstorm, ask questions, share hopes and dreams...
 
-## Make a Fix or Contribution to the Docs
+## Make a Fix or Contribution
 
-If you found somethig wrong or missing in the documentation, and can see what the problem is, and you know how to fix it, then you can make a PR (pull request) with the change and contribute to the docs repo yourself!
+Did you find a typo, a broken link, or another item with an obvious quick fix?
 
-Every page on [docs.oxyprops.com](https://docs.oxyprops.com/) has an **Edit this page** button in the sidebar.
-You can click that button to edit the source code for that page in **GitHub**.
+If you can see what the problem is, and you know how to fix it, then you can make a PR (pull request) with the change and contribute to the docs repo yourself.
 
-After you make your changes, click **Commit changes**.
-This will automatically create a [fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks) of the docs in your GitHub account with the changes.
-
-Once your edits are ready in GitHub, follow the prompts to **create a pull request** and submit your changes for review.
-Every pull request needs to be reviewed and approved by us.
-
-**Important Note re: Internationalization (i18n)**
-
-Please only add new text content to the docs **in English**, only modifying **`.md` files located within `src/pages/en/`**. 
+> Want to make a larger contribution? Please see [CONTRIBUTING.md](CONTRIBUTING.md) first! 
 
 ## Translate a Page
 
-Speak another language natively? You can help with translating or reviewing translations!
+Speak another language natively? 
 
-## Develop
+Join our i18n gang on Discord or jump into the PRs to help with reviewing existing draft translations!
 
-To begin developing locally, checkout this project from your machine.
+Check out the dedicated [i18n guide](TRANSLATING.md) for more details.
 
-```shell
-git clone git@github.com:withastro/docs.git
-```
+## Next Steps
 
-You can install and run the project locally using [pnpm](https://pnpm.io/). Head to [the pnpm installation guide](https://pnpm.io/installation) to get that set up. Then, run the following from your terminal:
+- [Read the docs](https://docs.astro.build/)
+- [Raise an issue](https://github.com/withastro/docs/issues/new)
+- [Participate in a discussion](https://github.com/withastro/docs/discussions)
+- [Join the #docs channel on Discord](https://discord.gg/cZDZU3hJHc)
 
-```shell
-pnpm install
-
-pnpm start
-```
-
-If you’re copying these instructions, remember to [configure this project as a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/configuring-a-remote-for-a-fork).
-
-```shell
-git remote add upstream git@github.com:csstools/docs.git
-```
-
-At any point, create a branch for your contribution.
-We are not strict about branch names.
-
-```shell
-git checkout -b add/partial-hydration-typo-fix
-```
-
-That’s it.
-As you [open a pull request](https://github.com/withastro/astro/compare), please include a clear title. The description will be pre-filled with questions that you can answer by editing right in the text field.
-
-Thank you for helping make the docs awesome.
-And please, come chat with us on [Discord](https://discord.gg/Np88J479Hr) or [Facebook](https://www.facebook.com/groups/oxyprops) if you have any questions.

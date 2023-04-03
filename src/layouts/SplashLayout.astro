@@ -1,39 +1,40 @@
 ---
+import Footer from '../components/Footer/Footer.astro';
 import HeadCommon from '../components/HeadCommon.astro';
 import Header from '../components/Header/Header.astro';
-import { getLanguageFromURL } from '../util';
+import { normalizeLangTag } from '../i18n/bcp-normalize';
+import { rtlLanguages } from '../i18n/languages';
 import { useTranslations } from '../i18n/util';
+import { getLanguageFromURL } from '../util';
 
-const { title, dir = 'ltr' } = Astro.props;
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
 const lang = getLanguageFromURL(new URL(Astro.request.url).pathname);
+const bcpLang = normalizeLangTag(lang);
+const dir = rtlLanguages.has(lang) ? 'rtl' : 'ltr';
 const t = useTranslations(Astro);
 ---
 
-<html {dir} {lang} class="initial">
+<html dir={dir} lang={bcpLang} class="initial">
 	<head>
 		<HeadCommon />
 		<title>{`${title} 🚀 ${t('site.title')}`}</title>
 		<style>
-			body {
-				width: 100%;
-				display: grid;
-				grid-template-rows: var(--o-theme-navbar-height) 1fr;
-			}
-			.layout {
-				display: grid;
-				grid-auto-flow: column;
-				grid-template-columns:
-					minmax(var(--o-gutter), 1fr)
-					minmax(0, var(--o-max-width))
-					minmax(var(--o-gutter), 1fr);
-				overflow-x: hidden;
-			}
-			article {
-				padding: var(--o-doc-padding) var(--o-gutter);
-				grid-column: 2;
-				display: flex;
-				flex-direction: column;
+			html,
+			body,
+			main {
 				height: 100%;
+			}
+			main {
+				display: grid;
+				place-items: center;
+				padding-inline: var(--min-spacing-inline);
+			}
+			:global(#menu-toggle) {
+				display: none;
 			}
 		</style>
 	</head>
@@ -45,5 +46,6 @@ const t = useTranslations(Astro);
 				<slot />
 			</article>
 		</main>
+		<Footer />
 	</body>
 </html>

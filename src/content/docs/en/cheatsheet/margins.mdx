@@ -1,0 +1,135 @@
+---
+title: Margins
+description: Cheat Sheet for the OxyProps Margins CSS Variables and Utility Classes.
+i18nReady: true
+---
+
+import ClipboardCopy from '~/components/ClipboardCopy.astro';
+
+This page lists all Margins CSS custom properties available in the OxyProps Framework
+
+## No Margin
+
+| Value                | Utility Class                                              |
+| -------------------- | ---------------------------------------------------------- |
+| 0: cancels a margin | <ClipboardCopy value="o-nomrg">`o-nomrg`</ClipboardCopy> |
+
+## Fluid Margins
+
+| Value                      | CSS Variable                                                                      | Utility Class                                                |
+| -------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| clamp(.5rem, 1vw, 1rem)    | <ClipboardCopy value="var(--o-size-fluid-1)">`--o-size-fluid-1`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-1">`o-mrg-1`</ClipboardCopy>   |
+| clamp(1rem, 2vw, 1.5rem)   | <ClipboardCopy value="var(--o-size-fluid-2)">`--o-size-fluid-2`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-2">`o-mrg-2`</ClipboardCopy>   |
+| clamp(1.5rem, 3vw, 2rem)   | <ClipboardCopy value="var(--o-size-fluid-3)">`--o-size-fluid-3`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-3">`o-mrg-3`</ClipboardCopy>   |
+| clamp(2rem, 4vw, 3rem)     | <ClipboardCopy value="var(--o-size-fluid-4)">`--o-size-fluid-4`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-4">`o-mrg-4`</ClipboardCopy>   |
+| clamp(4rem, 5vw, 5rem)     | <ClipboardCopy value="var(--o-size-fluid-5)">`--o-size-fluid-5`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-5">`o-mrg-5`</ClipboardCopy>   |
+| clamp(5rem, 7vw, 7.5rem)   | <ClipboardCopy value="var(--o-size-fluid-6)">`--o-size-fluid-6`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-6">`o-mrg-6`</ClipboardCopy>   |
+| clamp(7.5rem, 10vw, 10rem) | <ClipboardCopy value="var(--o-size-fluid-7)">`--o-size-fluid-7`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-7">`o-mrg-7`</ClipboardCopy>   |
+| clamp(10rem, 20vw, 15rem)  | <ClipboardCopy value="var(--o-size-fluid-8)">`--o-size-fluid-8`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-8">`o-mrg-8`</ClipboardCopy>   |
+| clamp(15rem, 30vw, 20rem)  | <ClipboardCopy value="var(--o-size-fluid-9)">`--o-size-fluid-9`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-9">`o-mrg-9`</ClipboardCopy>   |
+| clamp(20rem, 40vw, 30rem)  | <ClipboardCopy value="var(--o-size-fluid-10)">`--o-size-fluid-10`</ClipboardCopy> | <ClipboardCopy value="o-mrg-10">`o-mrg-10`</ClipboardCopy> |
+
+## Fluid Margins (Block and Inline)
+
+| Value                      | Margin Block                                                      | Margin Inline                                                     |
+| -------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| clamp(.5rem, 1vw, 1rem)    | <ClipboardCopy value="o-mrg-bl-1">`o-mrg-bl-1`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-1">`o-mrg-in-1`</ClipboardCopy>   |
+| clamp(1rem, 2vw, 1.5rem)   | <ClipboardCopy value="o-mrg-bl-2">`o-mrg-bl-2`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-2">`o-mrg-in-2`</ClipboardCopy>   |
+| clamp(1.5rem, 3vw, 2rem)   | <ClipboardCopy value="o-mrg-bl-3">`o-mrg-bl-3`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-3">`o-mrg-in-3`</ClipboardCopy>   |
+| clamp(2rem, 4vw, 3rem)     | <ClipboardCopy value="o-mrg-bl-4">`o-mrg-bl-4`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-4">`o-mrg-in-4`</ClipboardCopy>   |
+| clamp(4rem, 5vw, 5rem)     | <ClipboardCopy value="o-mrg-bl-5">`o-mrg-bl-5`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-5">`o-mrg-in-5`</ClipboardCopy>   |
+| clamp(5rem, 7vw, 7.5rem)   | <ClipboardCopy value="o-mrg-bl-6">`o-mrg-bl-6`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-6">`o-mrg-in-6`</ClipboardCopy>   |
+| clamp(7.5rem, 10vw, 10rem) | <ClipboardCopy value="o-mrg-bl-7">`o-mrg-bl-7`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-7">`o-mrg-in-7`</ClipboardCopy>   |
+| clamp(10rem, 20vw, 15rem)  | <ClipboardCopy value="o-mrg-bl-8">`o-mrg-bl-8`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-8">`o-mrg-in-8`</ClipboardCopy>   |
+| clamp(15rem, 30vw, 20rem)  | <ClipboardCopy value="o-mrg-bl-9">`o-mrg-bl-9`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-9">`o-mrg-in-9`</ClipboardCopy>   |
+| clamp(20rem, 40vw, 30rem)  | <ClipboardCopy value="o-mrg-bl-10">`o-mrg-bl-10`</ClipboardCopy> | <ClipboardCopy value="o-mrg-in-10">`o-mrg-in-10`</ClipboardCopy> |
+
+## Fluid Margins (Top, Right, Bottom, Left)
+
+:::tip[Wording]
+I use the terms Top, Right, Bottom, Left to describe the margin directions. This is for being easily understood by everyone. However, the actual CSS properties are `margin-block-start`, `margin-inline-end`, `margin-block-end`, `margin-inline-start`. The `start` and `end` are relative to the writing mode. For example, if the writing mode is `ltr`, the `start` is `left` and the `end` is `right`. If the writing mode is `rtl`, the `start` is `right` and the `end` is `left`.
+:::
+
+| Value                      | Margin Top                                                      | Margin Right                                                    | Margin Bottom                                                   | Margin Left                                                     |
+| -------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| clamp(.5rem, 1vw, 1rem)    | <ClipboardCopy value="o-mrg-t-1">`o-mrg-t-1`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-r-1">`o-mrg-r-1`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-b-1">`o-mrg-b-1`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-l-1">`o-mrg-l-1`</ClipboardCopy>   |
+| clamp(1rem, 2vw, 1.5rem)   | <ClipboardCopy value="o-mrg-t-2">`o-mrg-t-2`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-r-2">`o-mrg-r-2`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-b-2">`o-mrg-b-2`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-l-2">`o-mrg-l-2`</ClipboardCopy>   |
+| clamp(1.5rem, 3vw, 2rem)   | <ClipboardCopy value="o-mrg-t-3">`o-mrg-t-3`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-r-3">`o-mrg-r-3`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-b-3">`o-mrg-b-3`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-l-3">`o-mrg-l-3`</ClipboardCopy>   |
+| clamp(2rem, 4vw, 3rem)     | <ClipboardCopy value="o-mrg-t-4">`o-mrg-t-4`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-r-4">`o-mrg-r-4`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-b-4">`o-mrg-b-4`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-l-4">`o-mrg-l-4`</ClipboardCopy>   |
+| clamp(4rem, 5vw, 5rem)     | <ClipboardCopy value="o-mrg-t-5">`o-mrg-t-5`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-r-5">`o-mrg-r-5`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-b-5">`o-mrg-b-5`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-l-5">`o-mrg-l-5`</ClipboardCopy>   |
+| clamp(5rem, 7vw, 7.5rem)   | <ClipboardCopy value="o-mrg-t-6">`o-mrg-t-6`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-r-6">`o-mrg-r-6`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-b-6">`o-mrg-b-6`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-l-6">`o-mrg-l-6`</ClipboardCopy>   |
+| clamp(7.5rem, 10vw, 10rem) | <ClipboardCopy value="o-mrg-t-7">`o-mrg-t-7`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-r-7">`o-mrg-r-7`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-b-7">`o-mrg-b-7`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-l-7">`o-mrg-l-7`</ClipboardCopy>   |
+| clamp(10rem, 20vw, 15rem)  | <ClipboardCopy value="o-mrg-t-8">`o-mrg-t-8`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-r-8">`o-mrg-r-8`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-b-8">`o-mrg-b-8`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-l-8">`o-mrg-l-8`</ClipboardCopy>   |
+| clamp(15rem, 30vw, 20rem)  | <ClipboardCopy value="o-mrg-t-9">`o-mrg-t-9`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-r-9">`o-mrg-r-9`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-b-9">`o-mrg-b-9`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-l-9">`o-mrg-l-9`</ClipboardCopy>   |
+| clamp(20rem, 40vw, 30rem)  | <ClipboardCopy value="o-mrg-t-10">`o-mrg-t-10`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-10">`o-mrg-r-10`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-10">`o-mrg-b-10`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-10">`o-mrg-l-10`</ClipboardCopy> |
+
+## Fixed Margins
+
+| Value   | CSS Variable                                                            | Utility Class                                                              |
+| ------- | ----------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| -.5rem  | <ClipboardCopy value="var(--o-size-000)">`--o-size-000`</ClipboardCopy> | <ClipboardCopy value="o-mrg-fixed-000">`o-mrg-fixed-000`</ClipboardCopy> |
+| -.25rem | <ClipboardCopy value="var(--o-size-00)">`--o-size-00`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-fixed-00">`o-mrg-fixed-00`</ClipboardCopy>   |
+| .25rem  | <ClipboardCopy value="var(--o-size-1)">`--o-size-1`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-fixed-1">`o-mrg-fixed-1`</ClipboardCopy>     |
+| .5rem   | <ClipboardCopy value="var(--o-size-2)">`--o-size-2`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-fixed-2">`o-mrg-fixed-2`</ClipboardCopy>     |
+| 1rem    | <ClipboardCopy value="var(--o-size-3)">`--o-size-3`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-fixed-3">`o-mrg-fixed-3`</ClipboardCopy>     |
+| 1.25rem | <ClipboardCopy value="var(--o-size-4)">`--o-size-4`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-fixed-4">`o-mrg-fixed-4`</ClipboardCopy>     |
+| 1.5rem  | <ClipboardCopy value="var(--o-size-5)">`--o-size-5`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-fixed-5">`o-mrg-fixed-5`</ClipboardCopy>     |
+| 1.75rem | <ClipboardCopy value="var(--o-size-6)">`--o-size-6`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-fixed-6">`o-mrg-fixed-6`</ClipboardCopy>     |
+| 2rem    | <ClipboardCopy value="var(--o-size-7)">`--o-size-7`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-fixed-7">`o-mrg-fixed-7`</ClipboardCopy>     |
+| 3rem    | <ClipboardCopy value="var(--o-size-8)">`--o-size-8`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-fixed-8">`o-mrg-fixed-8`</ClipboardCopy>     |
+| 4rem    | <ClipboardCopy value="var(--o-size-9)">`--o-size-9`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-fixed-9">`o-mrg-fixed-9`</ClipboardCopy>     |
+| 5rem    | <ClipboardCopy value="var(--o-size-10)">`--o-size-10`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-fixed-10">`o-mrg-fixed-10`</ClipboardCopy>   |
+| 7.5rem  | <ClipboardCopy value="var(--o-size-11)">`--o-size-11`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-fixed-11">`o-mrg-fixed-11`</ClipboardCopy>   |
+| 10rem   | <ClipboardCopy value="var(--o-size-12)">`--o-size-12`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-fixed-12">`o-mrg-fixed-12`</ClipboardCopy>   |
+| 15rem   | <ClipboardCopy value="var(--o-size-13)">`--o-size-13`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-fixed-13">`o-mrg-fixed-13`</ClipboardCopy>   |
+| 20rem   | <ClipboardCopy value="var(--o-size-14)">`--o-size-14`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-fixed-14">`o-mrg-fixed-14`</ClipboardCopy>   |
+| 30rem   | <ClipboardCopy value="var(--o-size-15)">`--o-size-15`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-fixed-15">`o-mrg-fixed-15`</ClipboardCopy>   |
+
+## Fixed Margins (Block and Inline)
+
+| Value   | Margin Block                                                                    | Margin Inline                                                                   |
+| ------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| -.5rem  | <ClipboardCopy value="o-mrg-bl-fixed-000">`o-mrg-bl-fixed-000`</ClipboardCopy> | <ClipboardCopy value="o-mrg-in-fixed-000">`o-mrg-in-fixed-000`</ClipboardCopy> |
+| -.25rem | <ClipboardCopy value="o-mrg-bl-fixed-00">`o-mrg-bl-fixed-00`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-fixed-00">`o-mrg-in-fixed-00`</ClipboardCopy>   |
+| .25rem  | <ClipboardCopy value="o-mrg-bl-fixed-1">`o-mrg-bl-fixed-1`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-in-fixed-1">`o-mrg-in-fixed-1`</ClipboardCopy>     |
+| .5rem   | <ClipboardCopy value="o-mrg-bl-fixed-2">`o-mrg-bl-fixed-2`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-in-fixed-2">`o-mrg-in-fixed-2`</ClipboardCopy>     |
+| 1rem    | <ClipboardCopy value="o-mrg-bl-fixed-3">`o-mrg-bl-fixed-3`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-in-fixed-3">`o-mrg-in-fixed-3`</ClipboardCopy>     |
+| 1.25rem | <ClipboardCopy value="o-mrg-bl-fixed-4">`o-mrg-bl-fixed-4`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-in-fixed-4">`o-mrg-in-fixed-4`</ClipboardCopy>     |
+| 1.5rem  | <ClipboardCopy value="o-mrg-bl-fixed-5">`o-mrg-bl-fixed-5`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-in-fixed-5">`o-mrg-in-fixed-5`</ClipboardCopy>     |
+| 1.75rem | <ClipboardCopy value="o-mrg-bl-fixed-6">`o-mrg-bl-fixed-6`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-in-fixed-6">`o-mrg-in-fixed-6`</ClipboardCopy>     |
+| 2rem    | <ClipboardCopy value="o-mrg-bl-fixed-7">`o-mrg-bl-fixed-7`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-in-fixed-7">`o-mrg-in-fixed-7`</ClipboardCopy>     |
+| 3rem    | <ClipboardCopy value="o-mrg-bl-fixed-8">`o-mrg-bl-fixed-8`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-in-fixed-8">`o-mrg-in-fixed-8`</ClipboardCopy>     |
+| 4rem    | <ClipboardCopy value="o-mrg-bl-fixed-9">`o-mrg-bl-fixed-9`</ClipboardCopy>     | <ClipboardCopy value="o-mrg-in-fixed-9">`o-mrg-in-fixed-9`</ClipboardCopy>     |
+| 5rem    | <ClipboardCopy value="o-mrg-bl-fixed-10">`o-mrg-bl-fixed-10`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-fixed-10">`o-mrg-in-fixed-10`</ClipboardCopy>   |
+| 7.5rem  | <ClipboardCopy value="o-mrg-bl-fixed-11">`o-mrg-bl-fixed-11`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-fixed-11">`o-mrg-in-fixed-11`</ClipboardCopy>   |
+| 10rem   | <ClipboardCopy value="o-mrg-bl-fixed-12">`o-mrg-bl-fixed-12`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-fixed-12">`o-mrg-in-fixed-12`</ClipboardCopy>   |
+| 15rem   | <ClipboardCopy value="o-mrg-bl-fixed-13">`o-mrg-bl-fixed-13`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-fixed-13">`o-mrg-in-fixed-13`</ClipboardCopy>   |
+| 20rem   | <ClipboardCopy value="o-mrg-bl-fixed-14">`o-mrg-bl-fixed-14`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-fixed-14">`o-mrg-in-fixed-14`</ClipboardCopy>   |
+| 30rem   | <ClipboardCopy value="o-mrg-bl-fixed-15">`o-mrg-bl-fixed-15`</ClipboardCopy>   | <ClipboardCopy value="o-mrg-in-fixed-15">`o-mrg-in-fixed-15`</ClipboardCopy>   |
+
+## Fixed Margins (Top, Right, Bottom, Left)
+
+:::tip[Wording]
+I use the terms Top, Right, Bottom, Left to describe the margin directions. This is for being easily understood by everyone. However, the actual CSS properties are `margin-block-start`, `margin-inline-end`, `margin-block-end`, `margin-inline-start`. The `start` and `end` are relative to the writing mode. For example, if the writing mode is `ltr`, the `start` is `left` and the `end` is `right`. If the writing mode is `rtl`, the `start` is `right` and the `end` is `left`.
+:::
+
+| Value | Margin Top | Margin Right | Margin Bottom | Margin Left |
+| ----- | ----------- | ------------- | -------------- | ------------ |
+| -.5rem | <ClipboardCopy value="o-mrg-t-fixed-000">`o-mrg-t-fixed-000`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-000">`o-mrg-r-fixed-000`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-000">`o-mrg-b-fixed-000`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-000">`o-mrg-l-fixed-000`</ClipboardCopy> |
+| -.25rem | <ClipboardCopy value="o-mrg-t-fixed-00">`o-mrg-t-fixed-00`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-00">`o-mrg-r-fixed-00`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-00">`o-mrg-b-fixed-00`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-00">`o-mrg-l-fixed-00`</ClipboardCopy> |
+| .25rem | <ClipboardCopy value="o-mrg-t-fixed-1">`o-mrg-t-fixed-1`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-1">`o-mrg-r-fixed-1`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-1">`o-mrg-b-fixed-1`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-1">`o-mrg-l-fixed-1`</ClipboardCopy> |
+| .5rem | <ClipboardCopy value="o-mrg-t-fixed-2">`o-mrg-t-fixed-2`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-2">`o-mrg-r-fixed-2`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-2">`o-mrg-b-fixed-2`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-2">`o-mrg-l-fixed-2`</ClipboardCopy> |
+| 1rem | <ClipboardCopy value="o-mrg-t-fixed-3">`o-mrg-t-fixed-3`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-3">`o-mrg-r-fixed-3`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-3">`o-mrg-b-fixed-3`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-3">`o-mrg-l-fixed-3`</ClipboardCopy> |
+| 1.25rem | <ClipboardCopy value="o-mrg-t-fixed-4">`o-mrg-t-fixed-4`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-4">`o-mrg-r-fixed-4`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-4">`o-mrg-b-fixed-4`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-4">`o-mrg-l-fixed-4`</ClipboardCopy> |
+| 1.5rem | <ClipboardCopy value="o-mrg-t-fixed-5">`o-mrg-t-fixed-5`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-5">`o-mrg-r-fixed-5`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-5">`o-mrg-b-fixed-5`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-5">`o-mrg-l-fixed-5`</ClipboardCopy> |
+| 1.75rem | <ClipboardCopy value="o-mrg-t-fixed-6">`o-mrg-t-fixed-6`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-6">`o-mrg-r-fixed-6`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-6">`o-mrg-b-fixed-6`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-6">`o-mrg-l-fixed-6`</ClipboardCopy> |
+| 2rem | <ClipboardCopy value="o-mrg-t-fixed-7">`o-mrg-t-fixed-7`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-7">`o-mrg-r-fixed-7`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-7">`o-mrg-b-fixed-7`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-7">`o-mrg-l-fixed-7`</ClipboardCopy> |
+| 3rem | <ClipboardCopy value="o-mrg-t-fixed-8">`o-mrg-t-fixed-8`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-8">`o-mrg-r-fixed-8`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-8">`o-mrg-b-fixed-8`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-8">`o-mrg-l-fixed-8`</ClipboardCopy> |
+| 4rem | <ClipboardCopy value="o-mrg-t-fixed-9">`o-mrg-t-fixed-9`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-9">`o-mrg-r-fixed-9`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-9">`o-mrg-b-fixed-9`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-9">`o-mrg-l-fixed-9`</ClipboardCopy> |
+| 5rem | <ClipboardCopy value="o-mrg-t-fixed-10">`o-mrg-t-fixed-10`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-10">`o-mrg-r-fixed-10`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-10">`o-mrg-b-fixed-10`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-10">`o-mrg-l-fixed-10`</ClipboardCopy> |
+| 7.5rem | <ClipboardCopy value="o-mrg-t-fixed-11">`o-mrg-t-fixed-11`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-11">`o-mrg-r-fixed-11`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-11">`o-mrg-b-fixed-11`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-11">`o-mrg-l-fixed-11`</ClipboardCopy> |
+| 10rem | <ClipboardCopy value="o-mrg-t-fixed-12">`o-mrg-t-fixed-12`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-12">`o-mrg-r-fixed-12`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-12">`o-mrg-b-fixed-12`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-12">`o-mrg-l-fixed-12`</ClipboardCopy> |
+| 15rem | <ClipboardCopy value="o-mrg-t-fixed-13">`o-mrg-t-fixed-13`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-13">`o-mrg-r-fixed-13`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-13">`o-mrg-b-fixed-13`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-13">`o-mrg-l-fixed-13`</ClipboardCopy> |
+| 20rem | <ClipboardCopy value="o-mrg-t-fixed-14">`o-mrg-t-fixed-14`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-14">`o-mrg-r-fixed-14`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-14">`o-mrg-b-fixed-14`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-14">`o-mrg-l-fixed-14`</ClipboardCopy> |
+| 30rem | <ClipboardCopy value="o-mrg-t-fixed-15">`o-mrg-t-fixed-15`</ClipboardCopy> | <ClipboardCopy value="o-mrg-r-fixed-15">`o-mrg-r-fixed-15`</ClipboardCopy> | <ClipboardCopy value="o-mrg-b-fixed-15">`o-mrg-b-fixed-15`</ClipboardCopy> | <ClipboardCopy value="o-mrg-l-fixed-15">`o-mrg-l-fixed-15`</ClipboardCopy> |
+

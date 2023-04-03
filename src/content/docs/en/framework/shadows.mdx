@@ -1,0 +1,71 @@
+---
+title: Shadows
+description: Cheat Sheet for the OxyProps Shadows CSS Variables and Utility Classes.
+i18nReady: true
+---
+
+import ClipboardCopy from '~/components/ClipboardCopy.astro';
+import BuilderTabs from '~/components/tabs/BuilderTabs.astro';
+
+This page lists all Shadows CSS custom properties available in the OxyProps Framework
+
+## Shadow Parameters
+
+Example usage in custom CSS:
+
+<BuilderTabs>
+	<Fragment slot="bricks">
+		```css
+        root {
+            --o-shadow-color: var(--o-surface-1);
+            --o-shadow-strength: 63%;
+        }
+        ```
+	</Fragment>
+	<Fragment slot="oxygen">
+    ```css
+    --o-shadow-color: var(--o-surface-1);
+    --o-shadow-strength: 63%;
+    ```
+    </Fragment>
+</BuilderTabs>
+
+| Description             | CSS Variable                                                                | Utility Class                                            |
+| ----------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------- |
+| Sans serif, user system | <ClipboardCopy value="var(--o-font-sans)">`--o-font-sans`</ClipboardCopy>   | <ClipboardCopy value="o-sans">`o-sans`</ClipboardCopy>   |
+| Serif, user system      | <ClipboardCopy value="var(--o-font-serif)">`--o-font-serif`</ClipboardCopy> | <ClipboardCopy value="o-serif">`o-serif`</ClipboardCopy> |
+| Monotype, user system   | <ClipboardCopy value="var(--o-font-mono)">`--o-font-mono`</ClipboardCopy>   | <ClipboardCopy value="o-mono">`o-mono`</ClipboardCopy>   |
+
+## Shadows
+
+```css
+  --o-shadow-1
+  --o-shadow-2
+  --o-shadow-3
+  --o-shadow-4
+  --o-shadow-5
+  --o-shadow-6
+```
+
+## Inner Shadows
+
+```css
+  --o-inner-shadow-0
+  --o-inner-shadow-1
+  --o-inner-shadow-2
+  --o-inner-shadow-3
+  --o-inner-shadow-4
+```
+
+## Font Weights as Shadows
+
+```css
+  --o-shadoweight-1
+  --o-shadoweight-2
+  --o-shadoweight-3
+  --o-shadoweight-4
+  --o-shadoweight-5
+  --o-shadoweight-6
+  --o-shadoweight-7
+  --o-shadoweight-8
+```

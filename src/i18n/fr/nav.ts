@@ -1,3 +1,7 @@
+/**
+ * Ceci configure la barre latérale de navigation.
+ * Toutes les autres langues suivent cet ordre/structure et reviendront à l'anglais pour toutes les entrées non traduites.
+ */
 import { NavDictionary } from '../translation-checkers';
 
 export default NavDictionary({
@@ -5,61 +9,54 @@ export default NavDictionary({
 	startHere: 'Commencez ici',
 	'getting-started': 'Bien démarrer',
 	install: 'Installation',
-	'plugin-settings': 'Configuration du plug-in',
+	'editor-setup': "Configuration de l'éditeur de code",
 
 	// Core Concepts
-	coreConcepts: 'Concepts Clés',
-	'core-concepts/design-tokens': 'Jetons Design',
-	'core-concepts/css-custom-properties': 'Propriétés CSS personnalisées',
+	coreConcepts: 'Concepts Fondamentaux',
+	'concepts/why-astro': 'Pourquoi Astro ?',
+	'concepts/mpa-vs-spa': 'MPA vs. SPA',
+	'concepts/islands': 'Les îles Astro',
 
 	// Basics
-	framework: 'Le Framework CSS',
-	'framework/animations': 'Animations',
-	'framework/borders': 'Bordure',
-	'framework/buttons': 'Boutons',
-	'framework/cards': 'Cartes',
-	'framework/layers': 'Couches',
-	'framework/colors': 'Couleurs',
-	'framework/cursors': 'Curseurs',
-	'framework/color-schemes': 'Thèmes Couleurs',
-	'framework/easing': 'Amortissements',
-	'framework/gradients': 'Gradients',
-	'framework/grids': 'Grilles Simples',
-	'framework/grids12': 'Grille 12 colonnes',
-	'framework/ram': 'Grilles RAM',
-	'framework/layouts': 'Mise en page',
-	'framework/masks': 'Masques',
-	'framework/normalize': 'Normalize',
-	'framework/shadows': 'Ombres',
-	'framework/typography': 'Typographie',
-	'framework/sizes': 'Tailles',
-	'framework/aspect-ratios': "Ratio d'affichage",
-	'framework/media-queries': 'Requetes média',
+	basics: 'Les Bases',
+	'core-concepts/project-structure': 'Structure du Projet',
+	'core-concepts/astro-components': 'Composants',
+	'core-concepts/astro-pages': 'Pages',
+	'core-concepts/layouts': 'Layouts',
+	'guides/markdown-content': 'Markdown et MDX',
+	'guides/imports': 'Fichiers Statiques',
+	'guides/troubleshooting': 'Dépannage',
+
+	// Recipes
+	examples: 'Recettes',
+	'guides/cms': 'Utiliser un CMS avec Astro',
+	'guides/migrate-to-astro': 'Migrer vers Astro',
+	'guides/integrations-guide': 'Intégrations',
+	'guides/deploy': 'Déployer',
 
 	// Features
 	features: 'Fonctionnalités',
-	'features/context-menu': 'Menu contextuel',
-	'features/global-colors': 'Couleurs globales',
-	'features/global-settings': 'Paramètres globaux',
-	'features/selectors': 'Sélecteurs',
-	'features/stylesheets': 'Feuilles de style',
+	'guides/configuring-astro': 'Configurer Astro',
+	'guides/styling': 'CSS et Style',
+	// 'guides/fonts': 'Polices de Caractères',
+	'guides/data-fetching': 'Récupération de Données',
+	'guides/environment-variables': "Variables d'Environnement",
+	'guides/aliases': 'Alias d’Importation',
+	// 'guides/rss': 'Flux RSS',
+	'guides/testing': 'Test',
+	'guides/server-side-rendering': 'Rendu côté serveur (SSR)',
+	'guides/typescript': 'TypeScript',
+	'core-concepts/framework-components': 'Composants de Frameworks',
 
-	// Elements
-	elements: 'Éléments',
-	'elements/light-dark-toggle': 'Bouton Clair/Sombre',
-
-	// Reference
+	// Référence
 	reference: 'Référence',
-	'reference/12-grid-utilities': 'Classes 12-grid',
-	'reference/layouts-props': 'Props Layouts',
-	'reference/colors-props': 'Props Couleurs',
-	'reference/gradients-props': 'Props Gradients',
-	'reference/shadows-props': 'Props Ombres',
-	'reference/aspect-ratios-props': "Props Ratios d'aspect",
-	'reference/typography-props': 'Props Typographie',
-	'reference/easings-props': 'Props Amortissement',
-	'reference/animations-props': 'Props Animations',
-	'reference/sizes-props': 'Props Tailles',
-	'reference/borders-props': 'Props Contours',
-	'reference/layers-props': 'Props Calques',
+	'reference/configuration-reference': 'Configuration',
+	'reference/cli-reference': 'Lignes de Commandes',
+	'reference/api-reference': "API d'Exécution",
+	'reference/integrations-reference': "API d'Intégration",
+	'reference/adapter-reference': 'API des adaptateurs (expérimental)',
+	'reference/error-reference': 'Référence des erreurs',
+	'core-concepts/routing': 'Règles de Routage',
+	'reference/directives-reference': 'Utilisation des Directives',
+	'guides/publish-to-npm': 'Format de Packet NPM',
 });

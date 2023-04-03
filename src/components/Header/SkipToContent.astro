@@ -1,6 +1,7 @@
 ---
 import UIString from '../UIString.astro';
 ---
+
 <a href="#article" class="sr-only focus:not-sr-only skiplink">
 	<span><UIString key="a11y.skipLink" /></span>
 </a>
@@ -18,10 +19,8 @@ import UIString from '../UIString.astro';
 		z-index: 9;
 		display: block;
 		text-align: center;
-		background-color: var(--o-theme-links);
-		color: black;
-		border-radius: 0.25em;
-		outline: var(--o-theme-bg) solid 1px;
+		background-color: var(--theme-bg-gradient-bottom);
+		outline: 2px solid currentColor;
 		outline-offset: 0;
 	}
 </style>

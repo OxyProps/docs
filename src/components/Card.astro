@@ -3,11 +3,11 @@ const { data } = Astro.props;
 const hasScreenshot = !!data.demo;
 const backgroundStyle = hasScreenshot
 	? `url('https://v1.screenshot.11ty.dev/${encodeURIComponent(data.demo)}/medium/9:16/')`
-	: `linear-gradient(60deg, var(--o-theme-bg-accent), var(--o-theme-accent)) var(--o-theme-glow-diffuse)`;
+	: `linear-gradient(60deg, var(--theme-bg-accent), var(--theme-accent)) var(--theme-glow-diffuse)`;
 ---
 
 <article class={`card ${hasScreenshot ? 'has-screenshot' : ''}`} style={`background: ${backgroundStyle}; background-size: cover;`}>
-	{hasScreenshot && <div class="background-dimmer"></div>}
+	{hasScreenshot && <div class="background-dimmer" />}
 	<div class="card-body">
 		<a href={data.github} class="card-header" target="_blank">
 			{data.name}
@@ -30,10 +30,8 @@ const backgroundStyle = hasScreenshot
 		text-align: center;
 		/* Neon glow effect */
 		border-radius: 2px;
-		border: 1px solid var(--o-theme-glow-highlight);
-		box-shadow:
-			0 0 var(--o-theme-glow-blur) var(--o-theme-glow-diffuse),
-			inset 0 0 var(--o-theme-glow-blur) var(--o-theme-glow-diffuse);
+		border: 1px solid var(--theme-glow-highlight);
+		box-shadow: 0 0 var(--theme-glow-blur) var(--theme-glow-diffuse), inset 0 0 var(--theme-glow-blur) var(--theme-glow-diffuse);
 	}
 	.card-header {
 		display: block;
@@ -43,7 +41,8 @@ const backgroundStyle = hasScreenshot
 		text-decoration: none;
 		transition: transform 180ms ease-out;
 	}
-	.card-header:hover, .card-header:focus {
+	.card-header:hover,
+	.card-header:focus {
 		transform: translateY(-2px);
 	}
 	.background-dimmer {
@@ -52,7 +51,7 @@ const backgroundStyle = hasScreenshot
 		left: 0;
 		height: 100%;
 		width: 100%;
-		background: linear-gradient(45deg, #0004, #000b) var(--o-theme-glow-diffuse);
+		background: linear-gradient(45deg, #0004, #000b) var(--theme-glow-diffuse);
 		z-index: 2;
 	}
 	.card-body,

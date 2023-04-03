@@ -1,0 +1,101 @@
+---
+title: Border Radius
+description: Cheat Sheet for the OxyProps Border Radius CSS Variables and Utility Classes.
+i18nReady: true
+---
+
+import ClipboardCopy from '~/components/ClipboardCopy.astro';
+
+This page lists all Border Radius CSS custom properties and utility classes available in the OxyProps Framework
+
+## Border Radius
+
+| Description               | CSS Variable                                                                    | Utility Class                                                          |
+| ------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Removes border radius.    |                                                                                 | <ClipboardCopy value="o-noradius">`o-noradius`</ClipboardCopy>         |
+| Creates a subtle radius.  | <ClipboardCopy value="var(--o-radius-1)">`--o-radius-1`</ClipboardCopy>         | <ClipboardCopy value="o-radius-1">`o-radius-1`</ClipboardCopy>         |
+| Creates a small radius.   | <ClipboardCopy value="var(--o-radius-2)">`--o-radius-2`</ClipboardCopy>         | <ClipboardCopy value="o-radius-2">`o-radius-2`</ClipboardCopy>         |
+| Creates a medium radius.  | <ClipboardCopy value="var(--o-radius-3)">`--o-radius-3`</ClipboardCopy>         | <ClipboardCopy value="o-radius-3">`o-radius-3`</ClipboardCopy>         |
+| Creates a large radius.   | <ClipboardCopy value="var(--o-radius-4)">`--o-radius-4`</ClipboardCopy>         | <ClipboardCopy value="o-radius-4">`o-radius-4`</ClipboardCopy>         |
+| Creates a xlarge radius.  | <ClipboardCopy value="var(--o-radius-5)">`--o-radius-5`</ClipboardCopy>         | <ClipboardCopy value="o-radius-5">`o-radius-5`</ClipboardCopy>         |
+| Creates a xxlarge radius. | <ClipboardCopy value="var(--o-radius-6)">`--o-radius-6`</ClipboardCopy>         | <ClipboardCopy value="o-radius-6">`o-radius-6`</ClipboardCopy>         |
+| Created a round radius    | <ClipboardCopy value="var(--o-radius-round)">`--o-radius-round`</ClipboardCopy> | <ClipboardCopy value="o-radius-round">`o-radius-round`</ClipboardCopy> |
+
+## Individual sides
+
+:::note
+This applies a radius to the 2 corners of the chosen side.
+:::
+
+| Size    | Top                                                                            | Right                                                                              | Bottom                                                                               | Left                                                                             |
+| ------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| subtle  | <ClipboardCopy value="o-radius-top-1">`o-radius-top-1`</ClipboardCopy>         | <ClipboardCopy value="o-radius-right-1">`o-radius-right-1`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-1">`o-radius-bottom-1`</ClipboardCopy>         | <ClipboardCopy value="o-radius-left-1">`o-radius-left-1`</ClipboardCopy>         |
+| small   | <ClipboardCopy value="o-radius-top-2">`o-radius-top-2`</ClipboardCopy>         | <ClipboardCopy value="o-radius-right-2">`o-radius-right-2`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-2">`o-radius-bottom-2`</ClipboardCopy>         | <ClipboardCopy value="o-radius-left-2">`o-radius-left-2`</ClipboardCopy>         |
+| medium  | <ClipboardCopy value="o-radius-top-3">`o-radius-top-3`</ClipboardCopy>         | <ClipboardCopy value="o-radius-right-3">`o-radius-right-3`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-3">`o-radius-bottom-3`</ClipboardCopy>         | <ClipboardCopy value="o-radius-left-3">`o-radius-left-3`</ClipboardCopy>         |
+| large   | <ClipboardCopy value="o-radius-top-4">`o-radius-top-4`</ClipboardCopy>         | <ClipboardCopy value="o-radius-right-4">`o-radius-right-4`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-4">`o-radius-bottom-4`</ClipboardCopy>         | <ClipboardCopy value="o-radius-left-4">`o-radius-left-4`</ClipboardCopy>         |
+| xlarge  | <ClipboardCopy value="o-radius-top-5">`o-radius-top-5`</ClipboardCopy>         | <ClipboardCopy value="o-radius-right-5">`o-radius-right-5`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-5">`o-radius-bottom-5`</ClipboardCopy>         | <ClipboardCopy value="o-radius-left-5">`o-radius-left-5`</ClipboardCopy>         |
+| xxlarge | <ClipboardCopy value="o-radius-top-6">`o-radius-top-6`</ClipboardCopy>         | <ClipboardCopy value="o-radius-right-6">`o-radius-right-6`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-6">`o-radius-bottom-6`</ClipboardCopy>         | <ClipboardCopy value="o-radius-left-6">`o-radius-left-6`</ClipboardCopy>         |
+| round   | <ClipboardCopy value="o-radius-top-round">`o-radius-top-round`</ClipboardCopy> | <ClipboardCopy value="o-radius-right-round">`o-radius-right-round`</ClipboardCopy> | <ClipboardCopy value="o-radius-bottom-round">`o-radius-bottom-round`</ClipboardCopy> | <ClipboardCopy value="o-radius-left-round">`o-radius-left-round`</ClipboardCopy> |
+
+## Individual corners
+
+:::note
+Applies a radius to the chosen corner.
+:::
+
+| Size    | Top left                                                                                 | Top right                                                                                  | Bottom right                                                                                     | Bottom left                                                                                    |
+| ------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| subtle  | <ClipboardCopy value="o-radius-top-left-1">`o-radius-top-left-1`</ClipboardCopy>         | <ClipboardCopy value="o-radius-top-right-1">`o-radius-top-right-1`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-right-1">`o-radius-bottom-right-1`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-left-1">`o-radius-bottom-left-1`</ClipboardCopy>         |
+| small   | <ClipboardCopy value="o-radius-top-left-2">`o-radius-top-left-2`</ClipboardCopy>         | <ClipboardCopy value="o-radius-top-right-2">`o-radius-top-right-2`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-right-2">`o-radius-bottom-right-2`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-left-2">`o-radius-bottom-left-2`</ClipboardCopy>         |
+| medium  | <ClipboardCopy value="o-radius-top-left-3">`o-radius-top-left-3`</ClipboardCopy>         | <ClipboardCopy value="o-radius-top-right-3">`o-radius-top-right-3`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-right-3">`o-radius-bottom-right-3`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-left-3">`o-radius-bottom-left-3`</ClipboardCopy>         |
+| large   | <ClipboardCopy value="o-radius-top-left-4">`o-radius-top-left-4`</ClipboardCopy>         | <ClipboardCopy value="o-radius-top-right-4">`o-radius-top-right-4`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-right-4">`o-radius-bottom-right-4`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-left-4">`o-radius-bottom-left-4`</ClipboardCopy>         |
+| xlarge  | <ClipboardCopy value="o-radius-top-left-5">`o-radius-top-left-5`</ClipboardCopy>         | <ClipboardCopy value="o-radius-top-right-5">`o-radius-top-right-5`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-right-5">`o-radius-bottom-right-5`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-left-5">`o-radius-bottom-left-5`</ClipboardCopy>         |
+| xxlarge | <ClipboardCopy value="o-radius-top-left-6">`o-radius-top-left-6`</ClipboardCopy>         | <ClipboardCopy value="o-radius-top-right-6">`o-radius-top-right-6`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-right-6">`o-radius-bottom-right-6`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-left-6">`o-radius-bottom-left-6`</ClipboardCopy>         |
+| round   | <ClipboardCopy value="o-radius-top-left-round">`o-radius-top-left-round`</ClipboardCopy> | <ClipboardCopy value="o-radius-top-right-round">`o-radius-top-right-round`</ClipboardCopy> | <ClipboardCopy value="o-radius-bottom-right-round">`o-radius-bottom-right-round`</ClipboardCopy> | <ClipboardCopy value="o-radius-bottom-left-round">`o-radius-bottom-left-round`</ClipboardCopy> |
+
+## Blobs
+
+| Description               | CSS Variable                                                                      | Utility Class                                              |
+| ------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Creates a blob version 1. | <ClipboardCopy value="var(--o-radius-blob-1)">`--o-radius-blob-1`</ClipboardCopy> | <ClipboardCopy value="o-blob-1">`o-blob-1`</ClipboardCopy> |
+| Creates a blob version 2. | <ClipboardCopy value="var(--o-radius-blob-2)">`--o-radius-blob-2`</ClipboardCopy> | <ClipboardCopy value="o-blob-2">`o-blob-2`</ClipboardCopy> |
+| Creates a blob version 3. | <ClipboardCopy value="var(--o-radius-blob-3)">`--o-radius-blob-3`</ClipboardCopy> | <ClipboardCopy value="o-blob-3">`o-blob-3`</ClipboardCopy> |
+| Creates a blob version 4. | <ClipboardCopy value="var(--o-radius-blob-4)">`--o-radius-blob-4`</ClipboardCopy> | <ClipboardCopy value="o-blob-4">`o-blob-4`</ClipboardCopy> |
+| Creates a blob version 5. | <ClipboardCopy value="var(--o-radius-blob-5)">`--o-radius-blob-5`</ClipboardCopy> | <ClipboardCopy value="o-blob-5">`o-blob-5`</ClipboardCopy> |
+
+## Conditional Radius
+
+| Description               | CSS Variable                                                                    | Utility Class                                                          |
+| ------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| Creates a subtle conditional radius.  | <ClipboardCopy value="var(--o-radius-conditional-1)">`--o-radius-conditional-1`</ClipboardCopy>         | <ClipboardCopy value="o-radius-conditional-1">`o-radius-conditional-1`</ClipboardCopy>         |
+| Creates a small conditional radius.  | <ClipboardCopy value="var(--o-radius-conditional-2)">`--o-radius-conditional-2`</ClipboardCopy>         | <ClipboardCopy value="o-radius-conditional-2">`o-radius-conditional-2`</ClipboardCopy>         |
+| Creates a medium conditional radius.  | <ClipboardCopy value="var(--o-radius-conditional-3)">`--o-radius-conditional-3`</ClipboardCopy>         | <ClipboardCopy value="o-radius-conditional-3">`o-radius-conditional-3`</ClipboardCopy>         |
+| Creates a large conditional radius.  | <ClipboardCopy value="var(--o-radius-conditional-4)">`--o-radius-conditional-4`</ClipboardCopy>         | <ClipboardCopy value="o-radius-conditional-4">`o-radius-conditional-4`</ClipboardCopy>         |
+| Creates a xlarge conditional radius.  | <ClipboardCopy value="var(--o-radius-conditional-5)">`--o-radius-conditional-5`</ClipboardCopy>         | <ClipboardCopy value="o-radius-conditional-5">`o-radius-conditional-5`</ClipboardCopy>         |
+| Creates a xxlarge conditional radius.  | <ClipboardCopy value="var(--o-radius-conditional-6)">`--o-radius-conditional-6`</ClipboardCopy>         | <ClipboardCopy value="o-radius-conditional-6">`o-radius-conditional-6`</ClipboardCopy>         |
+
+### Individual borders utility classes
+
+Applies a conditional radius to the 2 corners of the chosen side.
+
+| Size    | Top                                                                            | Right                                                                              | Bottom                                                                               | Left                                                                             |
+| ------- | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| subtle  | <ClipboardCopy value="o-radius-top-conditional-1">`o-radius-top-conditional-1`</ClipboardCopy>         | <ClipboardCopy value="o-radius-right-conditional-1">`o-radius-right-conditional-1`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-conditional-1">`o-radius-bottom-conditional-1`</ClipboardCopy>         | <ClipboardCopy value="o-radius-left-conditional-1">`o-radius-left-conditional-1`</ClipboardCopy>         |
+| small   | <ClipboardCopy value="o-radius-top-conditional-2">`o-radius-top-conditional-2`</ClipboardCopy>         | <ClipboardCopy value="o-radius-right-conditional-2">`o-radius-right-conditional-2`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-conditional-2">`o-radius-bottom-conditional-2`</ClipboardCopy>         | <ClipboardCopy value="o-radius-left-conditional-2">`o-radius-left-conditional-2`</ClipboardCopy>         |
+| medium  | <ClipboardCopy value="o-radius-top-conditional-3">`o-radius-top-conditional-3`</ClipboardCopy>         | <ClipboardCopy value="o-radius-right-conditional-3">`o-radius-right-conditional-3`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-conditional-3">`o-radius-bottom-conditional-3`</ClipboardCopy>         | <ClipboardCopy value="o-radius-left-conditional-3">`o-radius-left-conditional-3`</ClipboardCopy>         |
+| large   | <ClipboardCopy value="o-radius-top-conditional-4">`o-radius-top-conditional-4`</ClipboardCopy>         | <ClipboardCopy value="o-radius-right-conditional-4">`o-radius-right-conditional-4`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-conditional-4">`o-radius-bottom-conditional-4`</ClipboardCopy>         | <ClipboardCopy value="o-radius-left-conditional-4">`o-radius-left-conditional-4`</ClipboardCopy>         |
+| xlarge  | <ClipboardCopy value="o-radius-top-conditional-5">`o-radius-top-conditional-5`</ClipboardCopy>         | <ClipboardCopy value="o-radius-right-conditional-5">`o-radius-right-conditional-5`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-conditional-5">`o-radius-bottom-conditional-5`</ClipboardCopy>         | <ClipboardCopy value="o-radius-left-conditional-5">`o-radius-left-conditional-5`</ClipboardCopy>         |
+| xxlarge | <ClipboardCopy value="o-radius-top-conditional-6">`o-radius-top-conditional-6`</ClipboardCopy>         | <ClipboardCopy value="o-radius-right-conditional-6">`o-radius-right-conditional-6`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-conditional-6">`o-radius-bottom-conditional-6`</ClipboardCopy>         | <ClipboardCopy value="o-radius-left-conditional-6">`o-radius-left-conditional-6`</ClipboardCopy>         |
+
+### Individual corners utility classes
+
+Applies a conditional radius to the chosen corner.
+
+| Size    | Top left                                                                 | Top right                                                                 | Bottom right                                                                 | Bottom left                                                                 |
+| ------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| subtle  | <ClipboardCopy value="o-radius-top-left-conditional-1">`o-radius-top-left-conditional-1`</ClipboardCopy>         | <ClipboardCopy value="o-radius-top-right-conditional-1">`o-radius-top-right-conditional-1`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-right-conditional-1">`o-radius-bottom-right-conditional-1`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-left-conditional-1">`o-radius-bottom-left-conditional-1`</ClipboardCopy>         |
+| small   | <ClipboardCopy value="o-radius-top-left-conditional-2">`o-radius-top-left-conditional-2`</ClipboardCopy>         | <ClipboardCopy value="o-radius-top-right-conditional-2">`o-radius-top-right-conditional-2`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-right-conditional-2">`o-radius-bottom-right-conditional-2`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-left-conditional-2">`o-radius-bottom-left-conditional-2`</ClipboardCopy>         |
+| medium  | <ClipboardCopy value="o-radius-top-left-conditional-3">`o-radius-top-left-conditional-3`</ClipboardCopy>         | <ClipboardCopy value="o-radius-top-right-conditional-3">`o-radius-top-right-conditional-3`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-right-conditional-3">`o-radius-bottom-right-conditional-3`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-left-conditional-3">`o-radius-bottom-left-conditional-3`</ClipboardCopy>         |
+| large   | <ClipboardCopy value="o-radius-top-left-conditional-4">`o-radius-top-left-conditional-4`</ClipboardCopy>         | <ClipboardCopy value="o-radius-top-right-conditional-4">`o-radius-top-right-conditional-4`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-right-conditional-4">`o-radius-bottom-right-conditional-4`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-left-conditional-4">`o-radius-bottom-left-conditional-4`</ClipboardCopy>         |
+| xlarge  | <ClipboardCopy value="o-radius-top-left-conditional-5">`o-radius-top-left-conditional-5`</ClipboardCopy>         | <ClipboardCopy value="o-radius-top-right-conditional-5">`o-radius-top-right-conditional-5`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-right-conditional-5">`o-radius-bottom-right-conditional-5`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-left-conditional-5">`o-radius-bottom-left-conditional-5`</ClipboardCopy>         |
+| xxlarge | <ClipboardCopy value="o-radius-top-left-conditional-6">`o-radius-top-left-conditional-6`</ClipboardCopy>         | <ClipboardCopy value="o-radius-top-right-conditional-6">`o-radius-top-right-conditional-6`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-right-conditional-6">`o-radius-bottom-right-conditional-6`</ClipboardCopy>         | <ClipboardCopy value="o-radius-bottom-left-conditional-6">`o-radius-bottom-left-conditional-6`</ClipboardCopy>         |

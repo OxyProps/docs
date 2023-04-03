@@ -4,5 +4,6 @@
  */
 export default {
 	en: 'English',
-	fr: 'Français',
-};
+} as const;
+
+export const rtlLanguages = new Set(['ar']);

@@ -1,0 +1,46 @@
+---
+title: Grid Preset Layouts
+description: Cheat Sheet for the OxyProps Grid Preset Layouts CSS Variables and Utility Classes.
+i18nReady: true
+---
+
+import ClipboardCopy from '~/components/ClipboardCopy.astro';
+
+This page lists all Grid Preset Layouts CSS custom properties and utility classes available in the OxyProps Framework
+
+## The Stack
+
+:::note
+The <ClipboardCopy value="var(--o-stack-template)">`--o-stack-template`</ClipboardCopy> CSS variable applies to the grid-remplate-rows property.
+:::
+
+| Description                         | CSS Variable                                                                        | Utility Class                                            |
+| ----------------------------------- | ----------------------------------------------------------------------------------- | -------------------------------------------------------- |
+| Creates a vertical sandwich layout. | <ClipboardCopy value="var(--o-stack-template)">`--o-stack-template`</ClipboardCopy> | <ClipboardCopy value="o-stack">`o-stack`</ClipboardCopy> |
+
+## The Sidebars
+
+:::note
+The `--o-<side>-sidebar-<min-size>` CSS variable applies to the grid-remplate-columns property.
+:::
+
+| Description                                                         | CSS Variable                                                                          | Utility Class                                                                |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Creates a 25% wide left sidebar<br/>with a header 1 minimum width.  | <ClipboardCopy value="var(--o-left-sidebar-1)">`--o-left-sidebar-1`</ClipboardCopy>   | <ClipboardCopy value="o-left-sidebar-1">`o-left-sidebar-1`</ClipboardCopy>   |
+| Creates a 25% wide left sidebar<br/>with a header 2 minimum width.  | <ClipboardCopy value="var(--o-left-sidebar-2)">`--o-left-sidebar-2`</ClipboardCopy>   | <ClipboardCopy value="o-left-sidebar-2">`o-left-sidebar-2`</ClipboardCopy>   |
+| Creates a 25% wide left sidebar<br/>with a header 3 minimum width.  | <ClipboardCopy value="var(--o-left-sidebar-3)">`--o-left-sidebar-3`</ClipboardCopy>   | <ClipboardCopy value="o-left-sidebar-3">`o-left-sidebar-3`</ClipboardCopy>   |
+| Creates a 25% wide right sidebar<br/>with a header 1 minimum width. | <ClipboardCopy value="var(--o-right-sidebar-1)">`--o-right-sidebar-1`</ClipboardCopy> | <ClipboardCopy value="o-right-sidebar-1">`o-right-sidebar-1`</ClipboardCopy> |
+| Creates a 25% wide right sidebar<br/>with a header 2 minimum width. | <ClipboardCopy value="var(--o-right-sidebar-2)">`--o-right-sidebar-2`</ClipboardCopy> | <ClipboardCopy value="o-right-sidebar-2">`o-right-sidebar-2`</ClipboardCopy> |
+| Creates a 25% wide right sidebar<br/>with a header 3 minimum width. | <ClipboardCopy value="var(--o-right-sidebar-3)">`--o-right-sidebar-3`</ClipboardCopy> | <ClipboardCopy value="o-right-sidebar-3">`o-right-sidebar-3`</ClipboardCopy> |
+
+## The Holy Grail
+
+:::note
+The <ClipboardCopy value="var(--o-holy-grail-template)">`--o-holy-grail-template`</ClipboardCopy> CSS variable applies to the `grid-template` property.  
+The <ClipboardCopy value="var(--o-holy-grail-template-areas)">`--o-holy-grail-template-areas`</ClipboardCopy> CSS variable applies to the `grid-template-areas` property.
+:::
+
+| Description                                 | CSS Variable                                                                                              | Utility Class                                                      |
+| ------------------------------------------- | --------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Creates a vertical sandwich layout with     | <ClipboardCopy value="var(--o-holy-grail-template)">`--o-holy-grail-template`</ClipboardCopy>             | <ClipboardCopy value="o-holy-grail">`o-holy-grail`</ClipboardCopy> |
+| left and right sidebars in the middle area. | <ClipboardCopy value="var(--o-holy-grail-template-areas)">`--o-holy-grail-template-areas`</ClipboardCopy> |                                                                    |

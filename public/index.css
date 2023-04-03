@@ -10,7 +10,7 @@
 
 /* Firefox */
 * {
-	scrollbar-color: var(--o-theme-dim-light) transparent;
+	scrollbar-color: var(--theme-dim-light) transparent;
 }
 
 /* Webkit */
@@ -21,25 +21,14 @@
 }
 body::-webkit-scrollbar,
 body::-webkit-scrollbar-track {
-	/* same as --o-theme-bg-gradient but without 'fixed' */
-	background: linear-gradient(180deg, var(--o-theme-bg-gradient-top), var(--o-theme-bg-gradient-top) var(--o-theme-navbar-height), var(--o-theme-bg-gradient-bottom));
+	background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: var(--o-theme-dim-light);
+	background-color: var(--theme-dim-light);
 	border: 4px solid transparent;
 	background-clip: content-box;
 	border-radius: 10px;
-}
-
-:root {
-	--o-max-width: calc(100% - 1rem);
-}
-
-@media (min-width: 50em) {
-	:root {
-		--o-max-width: 46em;
-	}
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -48,22 +37,42 @@ body::-webkit-scrollbar-track {
 	}
 }
 
+/*
+	Ensure that the auto-hiding/showing address bar on iOS Safari
+	always has a background color matching our theme.
+*/
+html {
+	background: var(--theme-bg-gradient-bottom);
+}
+
+/*
+	Use a pseudo-element to add a gradient background that covers the entire viewport.
+	Using a regular fixed background does not work properly on mobile browsers like iOS Safari.
+*/
+body::before {
+	content: '';
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -999;
+	background: var(--theme-bg-gradient), var(--o-noise-4);
+    filter: var(--o-noise-filter-1);
+     background-blend-mode: overlay;
+    -webkit-mask-image: var(--_mask-gradient);
+    mask-image: var(--_mask-gradient);
+}
+
 body {
+	color: var(--theme-text);
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	font-family: var(--o-font-body);
-	font-size: var(--o-font-size-fluid-0);
-	line-height: var(--o-font-lineheight-3);
-	max-width: 100vw;
-	--o-gutter: 0.5rem;
-	--o-doc-padding: 0.5rem;
-}
-
-@media (min-width: 50em) {
-	body {
-		--o-doc-padding: 2rem;
-	}
+	font-family: var(--font-body);
+	font-size: 16px;
+	line-height: 1.5;
 }
 
 nav ul {
@@ -72,92 +81,112 @@ nav ul {
 }
 
 .content > section > * + *,
-.content > section > blockquote > * + * {
+.content > section > blockquote > * + *,
+.content > section > :is(ul, ol) > li > * + *,
+.content details > * + *,
+.content * > astro-slot > * + * {
 	margin-top: 1.25rem;
 }
 
-.content > section > * + :is(ul, ol) {
-	margin-top: 0.3rem;
+.content > section > :is(ul, ol) > li > * + * {
+	margin-bottom: 1.25rem;
+}
+
+.content > section > :is(ul, ol) > li,
+.content > section > :is(ul, ol) > li > * + *,
+.content > section > :is(ul, ol) > li > :is(ul, ol) > li,
+.content > section > :is(ul, ol) > li > :is(ul, ol) > li > * + * {
+	margin-top: 0.5rem;
 }
 
 .content > section > :first-child {
 	margin-top: 0;
 }
 
+.content > section > :is(ul, ol),
+.content > section > :is(ul, ol) :is(ul, ol) {
+	padding-inline-start: 1.5em;
+}
+
 /* Typography */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+:is(h1, h2, h3, h4, h5, h6),
+.content > section > .heading-wrapper {
 	margin-bottom: 1rem;
-	font-weight: var(--o-font-weight-7);
-	line-height: var(--o-font-lineheight-1);
+	font-weight: bold;
+	line-height: 1.3;
+}
+
+:is(h1, h2, h3, h4, h5, h6) + *,
+.content > section > .heading-wrapper + * {
+	margin-top: 0;
 }
 
 h1,
 h2 {
-	max-width: var(--o-size-header-3);
+	max-width: 40ch;
 }
 
-:is(h2, h3):not(:first-child) {
+:is(h2):not(:first-child),
+.heading-wrapper:not(:first-child):is(.level-h2) {
+	margin-top: 4rem;
+}
+
+:is(h3, h4):not(:first-child),
+.heading-wrapper:not(:first-child):is(.level-h3, .level-h4) {
 	margin-top: 3rem;
 }
 
-:is(h4, h5, h6):not(:first-child) {
+:is(h5, h6):not(:first-child),
+.heading-wrapper:not(:first-child):is(.level-h5, .level-h6) {
 	margin-top: 2rem;
 }
 
-:is(h1, h2, h3, h4, h5) code {
-	--o-border-radius: 4px;
-	--o-padding-block: 0.1rem;
-	--o-padding-inline: 0.4rem;
+:is(h1, h2, h3, h4, h5, h6, .heading-wrapper) + :is(h1, h2, h3, h4, h5, h6, .heading-wrapper):not(:first-child) {
+	margin-top: 0;
 }
 
-code {
-	font-weight: var(--o-font-weight-4);
+:is(h1, h2, h3, h4, h5) code {
+	--border-radius: 4px;
+	--padding-block: 0.1rem;
+	--padding-inline: 0.4rem;
+	font-weight: 400;
 }
 
 h1 {
-	font-size: var(--o-font-size-fluid-4);
+	font-size: 2.5rem; /* 40px */
+	font-weight: 900;
+}
+
+@media (min-width: 37.75em) {
+	h1 {
+		font-size: 3rem; /* 48px */
+	}
 }
 
 h2 {
-	font-size: var(--o-font-size-fluid-3);
+	font-size: 1.875rem; /* 30px */
 }
 
 h3 {
-	font-size: var(--o-font-size-fluid-2);
+	font-size: 1.5rem; /* 24px */
 }
 
 h4 {
-	font-size: var(--o-font-size-fluid-1);
+	font-size: 1.25rem; /* 20px */
 }
 
 h5 {
-	font-size: var(--o-font-size-fluid-0);
-}
-
-h6 {
-	font-size: var(--o-font-size-fluid-00);
+	font-size: 1rem; /* 16px */
 }
 
 .heading-wrapper {
-	--o-icon-size-x: 2rem;
-	--o-icon-size-y: 1.5rem;
-	margin-inline-end: var(--o-icon-size-x);
+	--icon-size-x: 2rem;
+	--icon-size-y: 1.5rem;
+	margin-inline-end: var(--icon-size-x);
 }
 
 .heading-wrapper:not(:first-child) {
 	margin-block: 0;
-}
-.heading-wrapper:not(:first-child):is(.level-h2, .level-h3) {
-	margin-top: 3rem;
-}
-
-.heading-wrapper:not(:first-child):is(.level-h4, .level-h5, .level-h6) {
-	margin-top: 2rem;
 }
 
 .heading-wrapper > * {
@@ -168,10 +197,10 @@ h6 {
 .heading-wrapper > .anchor-link {
 	position: relative;
 	display: inline-flex;
-	margin-inline-end: calc(-1 * var(--o-icon-size-x));
-	width: var(--o-icon-size-x);
-	height: var(--o-icon-size-y);
-	color: var(--o-theme-text-light);
+	margin-inline-end: calc(-1 * var(--icon-size-x));
+	width: var(--icon-size-x);
+	height: var(--icon-size-y);
+	color: var(--theme-text-light);
 	text-decoration: none;
 	justify-content: center;
 	vertical-align: baseline;
@@ -184,7 +213,7 @@ h6 {
 		flex-direction: row-reverse;
 		justify-content: flex-end;
 		align-items: baseline;
-		margin-inline-start: calc(-1 * var(--o-icon-size-x));
+		margin-inline-start: calc(-1 * var(--icon-size-x));
 	}
 
 	.heading-wrapper > .anchor-link {
@@ -208,22 +237,23 @@ h6 {
 }
 
 p,
-.content ul {
-	line-height: 1.65;
+.content ul,
+.content ol {
+	line-height: 1.75;
 }
 
 p,
 .content ul {
-	color: var(--o-theme-text-light);
+	color: var(--theme-text-light);
 }
 
 small,
 .text_small {
-	font-size: var(--o-font-size-fluid-00);
+	font-size: 0.833rem;
 }
 
 a {
-	color: var(--o-theme-links);
+	color: var(--theme-accent-secondary);
 	text-underline-offset: 0.08em;
 	align-items: center;
 	gap: 0.5rem;
@@ -237,12 +267,12 @@ article > section nav :is(ul, ol) > * + * {
 	margin-top: inherit;
 }
 
-article > section li > :is(p, pre, blockquote):not(:first-child) {
+article > section li > :is(p, pre, .code-snippet, blockquote):not(:first-child) {
 	margin-top: 1rem;
 }
 
 article > section nav :is(ul, ol) {
-	padding-left: inherit;
+	padding-inline-start: inherit;
 }
 
 article > section nav {
@@ -252,7 +282,7 @@ article > section nav {
 
 article > section ::marker {
 	font-weight: bold;
-	color: var(--o-theme-text-light);
+	color: var(--theme-text-light);
 }
 
 article > section iframe {
@@ -263,8 +293,8 @@ article > section iframe {
 
 a > code {
 	position: relative;
-	color: var(--o-theme-text-accent);
-	text-underline-offset: var(--o-padding-block);
+	color: var(--theme-text-accent);
+	text-underline-offset: var(--padding-block);
 }
 
 a:hover,
@@ -278,44 +308,51 @@ a:focus {
 }
 
 strong {
-	font-weight: var(--o-font-weight-7);
+	font-weight: 600;
 	color: inherit;
 }
 
 /* Supporting Content */
 code {
-	--o-border-radius: 3px;
-	--o-padding-block: 0.2rem;
-	--o-padding-inline: 0.3rem;
-	font-family: var(--o-font-mono);
+	--border-radius: 3px;
+	--padding-block: 0.2rem;
+	--padding-inline: 0.3rem;
+	font-family: var(--font-mono);
 	font-size: 0.85em;
-	color: var(--o-theme-code-inline-text);
-	background-color: var(--o-theme-code-inline-bg);
-	padding: var(--o-padding-block) var(--o-padding-inline);
-	margin: calc(var(--o-padding-block) * -1) 0;
-	border-radius: var(--o-border-radius);
+	color: var(--theme-code-inline-text);
+	background-color: var(--theme-code-inline-bg);
+	padding: var(--padding-block) var(--padding-inline);
+	margin: calc(var(--padding-block) * -1) 0;
+	border-radius: var(--border-radius);
 	word-break: break-word;
 }
 
-pre.astro-code > code {
-	all: unset;
-}
-
-/*RTL Fix Code dir*/
+/*RTL Fix Code dir for inline code*/
 [dir='rtl'] code {
 	unicode-bidi: plaintext;
+}
+
+/*RTL Fix codeBlock base in Shiki output*/
+[dir='rtl'] span.line {
+	direction: ltr;
+	unicode-bidi: isolate;
+}
+
+/*RTL Fix Arrows*/
+[dir='rtl'] .toc-mobile-container svg {
+	transform: rotateY(180deg);
 }
 
 table,
 pre {
 	position: relative;
-	--o-padding-block: 1rem;
-	--o-padding-inline: 2rem;
-	padding: var(--o-padding-block) var(--o-padding-inline);
-	padding-right: calc(var(--o-padding-inline) * 2);
-	margin-left: calc(var(--o-padding-inline) * -1);
-	margin-right: calc(var(--o-padding-inline) * -1);
-	font-family: var(--o-font-mono);
+	--padding-block: 1rem;
+	--padding-inline: 2rem;
+	padding: var(--padding-block) var(--padding-inline);
+	padding-inline-end: calc(var(--padding-inline) * 2);
+	margin-left: calc(var(--padding-inline) * -1);
+	margin-right: calc(var(--padding-inline) * -1);
+	font-family: var(--font-mono);
 
 	font-size: 0.85rem;
 	overflow-y: hidden;
@@ -323,13 +360,29 @@ pre {
 	-webkit-text-size-adjust: none;
 }
 
+.content kbd {
+	font-family: var(--font-body);
+	font-size: 0.9375rem;
+	border-radius: 0.25rem;
+	padding: 0.0625rem 0.375rem;
+	border: 1px solid var(--theme-shade-subtle);
+	box-shadow: 0 2px var(--theme-shade-subtle);
+	background-color: var(--theme-bg-offset);
+	white-space: nowrap;
+}
+
+.theme-dark .content kbd {
+	border-color: var(--theme-divider);
+	background-color: var(--theme-divider);
+}
+
 thead {
-	font-family: var(--o-font-body);
+	font-family: var(--font-body);
 }
 
 table {
 	width: 100%;
-	padding: var(--o-padding-block) 0;
+	padding: var(--padding-block) 0;
 	margin: 0;
 	border-collapse: collapse;
 	line-height: 1.8;
@@ -337,7 +390,7 @@ table {
 
 /* Zebra striping */
 tbody tr:nth-of-type(odd) {
-	background: var(--o-theme-divider);
+	background: var(--theme-divider);
 }
 th {
 	font-weight: bold;
@@ -345,48 +398,72 @@ th {
 td,
 th {
 	padding: 6px;
-	text-align: left;
-}
-
-pre {
-	--o-glow-border: 1px solid var(--o-theme-glow-highlight);
-	border-top: var(--o-glow-border);
-	border-bottom: var(--o-glow-border);
-	box-shadow: 0 0 var(--o-theme-glow-blur) var(--o-theme-glow-diffuse), inset 0 0 var(--o-theme-glow-blur) var(--o-theme-glow-diffuse);
-	/* override inline styles generated by shiki */
-	background-color: var(--o-theme-code-bg) !important;
-	color: var(--o-theme-code-text) !important;
-	line-height: 1.65;
+	text-align: start;
 }
 
 blockquote code {
-	background-color: hsla(var(--o-surface-1), 1);
-}
-
-@media (min-width: 37.75em) {
-	pre {
-		--o-padding-inline: 1.25rem;
-		border: var(--o-glow-border);
-		margin-left: 0;
-		margin-right: 0;
-	}
-}
-
-pre:focus {
-	outline: 4px solid var(--o-theme-accent);
+	background-color: var(--theme-bg);
 }
 
 blockquote {
-	margin-block: 2rem;
+	margin: 2rem 0 2rem 0;
 	padding: 1.25em 1.5rem;
-	border-left: 8px solid var(--o-theme-accent);
-	background-color: hsla(var(--o-surface-3), 1);
+	border-inline-start: 8px solid var(--theme-divider);
+	background-color: var(--theme-bg-offset);
 	border-radius: 0 0.25rem 0.25rem 0;
 	line-height: 1.7;
+	/* Indicates the blockquote boundaries for forced colors users, transparent is changed to a solid color */
+	outline: 1px solid transparent;
 }
 
-img {
+img,
+video {
 	max-width: 100%;
+}
+
+.content video {
+	box-shadow: 0 0 var(--theme-glow-blur) var(--theme-glow-diffuse);
+}
+
+.content details {
+	--details-padding-block: 0.25rem;
+	--details-padding-inline: 1rem;
+	--details-corners: 0.5rem;
+	border-radius: var(--details-corners);
+	border: 1px solid var(--theme-shade-subtle);
+	padding: var(--details-padding-block) var(--details-padding-inline);
+}
+
+.content details:hover {
+	background: var(--theme-bg-offset);
+}
+
+.content details[open] {
+	background: var(--theme-bg-offset);
+	padding-bottom: 1rem;
+}
+
+.content details summary {
+	margin: calc(-1 * var(--details-padding-block)) calc(-1 * var(--details-padding-inline));
+	padding: var(--details-padding-block) var(--details-padding-inline);
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.content details summary::marker,
+.content details summary::-webkit-details-marker {
+	color: var(--theme-accent-secondary);
+}
+
+.content details[open] > summary {
+	border-bottom: 1px solid var(--theme-shade-subtle);
+}
+
+.content details pre {
+	--padding-inline: 1.25rem;
+	border: var(--glow-border);
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .flex {
@@ -395,54 +472,52 @@ img {
 }
 
 button {
-	display: flex;
-	align-items: center;
-	justify-items: center;
-	gap: 0.25em;
-	padding: 0.33em 0.67em;
 	border: 0;
-	background: var(--o-theme-bg);
-	display: flex;
 	font-size: 1rem;
-	align-items: center;
-	gap: 0.25em;
-	border-radius: 99em;
-	color: var(--o-theme-text);
-	background-color: var(--o-theme-bg);
+	padding: 0.33em 0.67em;
 }
 
 h2.heading {
-	font-size: 1rem;
-	font-weight: 700;
-	text-transform: capitalize;
+	font-size: 1em;
+	font-weight: 600;
 	margin-bottom: 0.5rem;
 	margin-top: 1.5rem;
 }
 
 .header-link {
-	font-size: 1rem;
-	padding: 0.1rem 0 0.1rem 0;
+	font-size: 1em;
 	transition: border-inline-start-color 100ms ease-out, background-color 200ms ease-out;
 }
 
-.header-link a {
+a.header-link {
 	display: inline-flex;
 	gap: 0.5em;
 	width: 100%;
 	font: inherit;
-	color: var(--o-theme-text-lighter);
+	padding-top: 0.4rem;
+	padding-bottom: 0.4rem;
+	line-height: 1.3;
+	color: var(--theme-text-lighter);
 	text-decoration: none;
+	unicode-bidi: plaintext;
+}
+
+@media (min-width: 50em) {
+	a.header-link {
+		padding-top: 0.275rem;
+		padding-bottom: 0.275rem;
+	}
 }
 
 .header-link:hover,
 .header-link:focus,
 .header-link:focus-within {
-	border-inline-start-color: var(--o-theme-links);
+	border-inline-start-color: var(--theme-accent-secondary);
 }
 
-.header-link:hover a,
-.header-link a:focus {
-	color: var(--o-theme-text);
+a.header-link:hover,
+a.header-link:focus {
+	color: var(--theme-text);
 	text-decoration: underline;
 }
 .header-link svg {
@@ -452,17 +527,9 @@ h2.heading {
 	opacity: 0.8;
 }
 
-.header-link.depth-3 {
-	padding-inline-start: 1rem;
-}
-.header-link.depth-4 {
-	padding-inline-start: 2rem;
-}
-
 /* Add line and padding on the left side */
 .header-link {
 	padding-inline-start: 1rem;
-	border-inline-start: 3px solid var(--o-theme-divider);
 }
 .header-link.depth-3 {
 	padding-inline-start: 2rem;
@@ -474,20 +541,29 @@ h2.heading {
 /* Apply different TOC styling for wide viewports showing the right sidebar */
 @media (min-width: 72em) {
 	h2.heading {
-		padding-left: calc(1rem + 4px);
+		padding-inline-start: calc(1rem + 4px);
 	}
 
 	.header-link {
-		border-inline-start-width: 4px;
+		border-inline-start: 4px solid var(--theme-divider);
 	}
+}
 
-	/* Highlight TOC header link matching the current scroll position */
-	.current-header-link {
-		background-color: var(--o-theme-bg-accent);
+/* Highlight TOC header link matching the current scroll position */
+a.current-header-link {
+	background-color: var(--theme-bg-accent);
+	/* Indicates the current heading for forced colors users in older browsers */
+	outline: 1px solid transparent;
+}
+
+@media (forced-colors: active) {
+	a.current-header-link {
+		border: 1px solid CanvasText;
 	}
-	.current-header-link a {
-		color: var(--o-theme-text);
-	}
+}
+
+a.current-header-link {
+	color: var(--theme-text);
 }
 
 /* Screenreader Only Text */
@@ -515,17 +591,28 @@ h2.heading {
 	white-space: normal;
 }
 
-/* Add a bit of scroll padding to the top of scroll targets */
-.content > section :target {
-	padding-top: 1rem;
-}
-.content > section > :first-child {
-	padding-top: 0;
+/*
+	Add the correct amount of scroll padding to ensure that linked headings are always visible
+	and have enough distance to the viewport edge and potential fixed navigation bars.
+
+	Please note that this can't be done with `scroll-margin` on the scroll targets themselves
+	due to lack of iOS Safari browser support.
+*/
+html {
+	/* Mobile TOC is displayed above page content */
+	scroll-padding-top: calc(1.5rem + var(--theme-navbar-height) + var(--theme-mobile-toc-height));
 }
 
-/* Increase scroll padding when the sticky navbar is visible */
-@media not screen and (min-width: 50em) {
-	.content > section :target {
-		padding-top: calc(1rem + var(--o-theme-navbar-height));
+@media (min-width: 72em) {
+	html {
+		/* Regular TOC is displayed as a sidebar */
+		scroll-padding-top: calc(1.5rem + var(--theme-navbar-height));
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	details svg {
+		/* Removes the collapsible sidebar svg animation */
+		transition: none !important;
 	}
 }

@@ -1,30 +1,36 @@
 ---
+import type { CollectionEntry } from 'astro:content';
 import { OPEN_GRAPH } from '../config';
-import { getLanguageFromURL } from '../util';
+import { normalizeLangTag } from '../i18n/bcp-normalize';
 import languages from '../i18n/languages';
 import { useTranslations } from '../i18n/util';
+import { getLanguageFromURL } from '../util';
+import { getOgImageUrl } from '../util/getOgImageUrl';
+
 export interface Props {
-	content: any;
-	site: any;
+	content: CollectionEntry<'docs'>['data'];
 	canonicalURL: URL;
 }
-const { content = {}, canonicalURL } = Astro.props;
+
+const { content, canonicalURL } = Astro.props;
 const t = useTranslations(Astro);
-const imageSrc = content?.image?.src ?? t('site.og.imageSrc');
+const ogImageUrl = getOgImageUrl(canonicalURL.pathname, !!Astro.params.fallback);
+const imageSrc = ogImageUrl ?? t('site.og.imageSrc');
 const canonicalImageSrc = new URL(imageSrc, Astro.site);
-const imageAlt = content?.image?.alt ?? t('site.og.imageAlt');
+const imageAlt = imageSrc === ogImageUrl ? '' : t('site.og.imageAlt');
 const lang = getLanguageFromURL(canonicalURL?.pathname || '/');
-const ogLocale = lang.replace(/-/g, '_');
+const bcpLang = normalizeLangTag(lang);
+const ogLocale = bcpLang.replace(/-/g, '_');
 ---
 
 <!-- Page Metadata -->
 <link rel="canonical" href={canonicalURL} />
 
 {/* Language alternates. See https://developers.google.com/search/docs/advanced/crawling/localized-versions#html */}
-{Object.keys(languages).map(altLang => <link rel="alternate" href={canonicalURL.href.replace(lang, altLang) || '/'} hreflang={altLang} />)}
+{Object.keys(languages).map((altLang) => <link rel="alternate" href={canonicalURL.href.replace(lang, altLang) || '/'} hreflang={normalizeLangTag(altLang)} />)}
 
 <!-- Algolia docsearch language facet -->
-<meta name="docsearch:language" content={lang} />
+<meta name="docsearch:language" content={bcpLang} />
 
 <!-- OpenGraph Tags -->
 <meta property="og:title" content={content.title ?? t('site.title')} />
@@ -32,7 +38,6 @@ const ogLocale = lang.replace(/-/g, '_');
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:locale" content={ogLocale} />
 <meta property="og:image" content={canonicalImageSrc} />
-<meta property="og:image:secure_url" content={canonicalImageSrc} />
 <meta property="og:image:alt" content={imageAlt} />
 <meta name="description" property="og:description" content={content.description ? content.description : t('site.description')} />
 <meta property="og:site_name" content={t('site.title')} />

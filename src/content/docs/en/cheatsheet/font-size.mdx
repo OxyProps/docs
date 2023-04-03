@@ -1,0 +1,68 @@
+---
+title: Font Size
+description: Cheat Sheet for the OxyProps Font Size CSS Variables and Utility Classes.
+i18nReady: true
+---
+
+import ClipboardCopy from '~/components/ClipboardCopy.astro';
+
+This page lists all Font Size CSS custom properties available in the OxyProps Framework
+
+## Font Sizes Fixed
+
+| Default value | CSS Variable                                                                    | Utility Class                                                |
+| ------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| 0.5 rem       | <ClipboardCopy value="var(--o-font-size-00)">`--o-font-size-00`</ClipboardCopy> | <ClipboardCopy value="o-font-00">`o-font-00`</ClipboardCopy> |
+| 0.75 rem      | <ClipboardCopy value="var(--o-font-size-0)">`--o-font-size-0`</ClipboardCopy>   | <ClipboardCopy value="o-font-0">`o-font-0`</ClipboardCopy>   |
+| 1 rem         | <ClipboardCopy value="var(--o-font-size-1)">`--o-font-size-1`</ClipboardCopy>   | <ClipboardCopy value="o-font-1">`o-font-1`</ClipboardCopy>   |
+| 1.1 rem       | <ClipboardCopy value="var(--o-font-size-2)">`--o-font-size-2`</ClipboardCopy>   | <ClipboardCopy value="o-font-2">`o-font-2`</ClipboardCopy>   |
+| 1.25 rem      | <ClipboardCopy value="var(--o-font-size-3)">`--o-font-size-3`</ClipboardCopy>   | <ClipboardCopy value="o-font-3">`o-font-3`</ClipboardCopy>   |
+| 1.5 rem       | <ClipboardCopy value="var(--o-font-size-4)">`--o-font-size-4`</ClipboardCopy>   | <ClipboardCopy value="o-font-4">`o-font-4`</ClipboardCopy>   |
+| 2 rem         | <ClipboardCopy value="var(--o-font-size-5)">`--o-font-size-5`</ClipboardCopy>   | <ClipboardCopy value="o-font-5">`o-font-5`</ClipboardCopy>   |
+| 2.5 rem       | <ClipboardCopy value="var(--o-font-size-6)">`--o-font-size-6`</ClipboardCopy>   | <ClipboardCopy value="o-font-6">`o-font-6`</ClipboardCopy>   |
+| 3 rem         | <ClipboardCopy value="var(--o-font-size-7)">`--o-font-size-7`</ClipboardCopy>   | <ClipboardCopy value="o-font-7">`o-font-7`</ClipboardCopy>   |
+| 3.5 rem       | <ClipboardCopy value="var(--o-font-size-8)">`--o-font-size-8`</ClipboardCopy>   | <ClipboardCopy value="o-font-8">`o-font-8`</ClipboardCopy>   |
+
+## Fluid Font Sizes
+
+| Default value              | CSS Variable                                                                              | Utility Class                                                          |
+| -------------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| clamp(.75rem, 1.5vw, 1rem) | <ClipboardCopy value="var(--o-font-size-fluid-0)">`--o-font-size-fluid-0`</ClipboardCopy> | <ClipboardCopy value="o-font-fluid-0">`o-font-fluid-0`</ClipboardCopy> |
+| clamp(1rem, 2vw, 1.5rem)   | <ClipboardCopy value="var(--o-font-size-fluid-1)">`--o-font-size-fluid-1`</ClipboardCopy> | <ClipboardCopy value="o-font-fluid-1">`o-font-fluid-1`</ClipboardCopy> |
+| clamp(1.5rem, 3vw, 2.5rem) | <ClipboardCopy value="var(--o-font-size-fluid-2)">`--o-font-size-fluid-2`</ClipboardCopy> | <ClipboardCopy value="o-font-fluid-2">`o-font-fluid-2`</ClipboardCopy> |
+| clamp(2rem, 4vw, 3.5rem)   | <ClipboardCopy value="var(--o-font-size-fluid-3)">`--o-font-size-fluid-3`</ClipboardCopy> | <ClipboardCopy value="o-font-fluid-3">`o-font-fluid-3`</ClipboardCopy> |
+
+## Advanced Fluid Font Sizes
+
+| Default value                        | CSS Variable                                                                              | Utility Class                                                                    |
+| ------------------------------------ | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Automatic size based on html element | <ClipboardCopy value="var(--o-fluid-font)">`--o-fluid-font`</ClipboardCopy>               | <ClipboardCopy value="o-fluid-font">`o-fluid-font`</ClipboardCopy>               |
+| 00: base ÷ scale ratio               | <ClipboardCopy value="var(--o-fluid-font-00)">`--o-fluid-font-00`</ClipboardCopy>         | <ClipboardCopy value="o-fluid-font-00">`o-fluid-font-00`</ClipboardCopy>         |
+| 0 = base font size                   | <ClipboardCopy value="var(--o-fluid-font-0)">`--o-fluid-font-0`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-0">`o-fluid-font-0`</ClipboardCopy>           |
+| 1: base × scale ratio                | <ClipboardCopy value="var(--o-fluid-font-1)">`--o-fluid-font-1`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-1">`o-fluid-font-1`</ClipboardCopy>           |
+| 2: base × scale ratio^2              | <ClipboardCopy value="var(--o-fluid-font-2)">`--o-fluid-font-2`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-2">`o-fluid-font-2`</ClipboardCopy>           |
+| 3: base × scale ratio^3              | <ClipboardCopy value="var(--o-fluid-font-3)">`--o-fluid-font-3`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-3">`o-fluid-font-3`</ClipboardCopy>           |
+| 4: base × scale ratio^4              | <ClipboardCopy value="var(--o-fluid-font-4)">`--o-fluid-font-4`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-4">`o-fluid-font-4`</ClipboardCopy>           |
+| 5: base × scale ratio^5              | <ClipboardCopy value="var(--o-fluid-font-5)">`--o-fluid-font-5`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-5">`o-fluid-font-5`</ClipboardCopy>           |
+| 6: base × scale ratio^6              | <ClipboardCopy value="var(--o-fluid-font-6)">`--o-fluid-font-6`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-6">`o-fluid-font-6`</ClipboardCopy>           |
+| 7: base × scale ratio^7              | <ClipboardCopy value="var(--o-fluid-font-7)">`--o-fluid-font-7`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-7">`o-fluid-font-7`</ClipboardCopy>           |
+| 8: base × scale ratio^8              | <ClipboardCopy value="var(--o-fluid-font-8)">`--o-fluid-font-8`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-8">`o-fluid-font-8`</ClipboardCopy>           |
+| 00 sub: 00 × subheading ratio        | <ClipboardCopy value="var(--o-fluid-font-00-sub)">`--o-fluid-font-00-sub`</ClipboardCopy> | <ClipboardCopy value="o-fluid-font-00-sub">`o-fluid-font-00-sub`</ClipboardCopy> |
+| 0 sub: 0 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-0-sub)">`--o-fluid-font-0-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-0-sub">`o-fluid-font-0-sub`</ClipboardCopy>   |
+| 1 sub: 1 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-1-sub)">`--o-fluid-font-1-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-1-sub">`o-fluid-font-1-sub`</ClipboardCopy>   |
+| 2 sub: 2 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-2-sub)">`--o-fluid-font-2-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-2-sub">`o-fluid-font-2-sub`</ClipboardCopy>   |
+| 3 sub: 3 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-3-sub)">`--o-fluid-font-3-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-3-sub">`o-fluid-font-3-sub`</ClipboardCopy>   |
+| 4 sub: 4 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-4-sub)">`--o-fluid-font-4-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-4-sub">`o-fluid-font-4-sub`</ClipboardCopy>   |
+| 5 sub: 5 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-5-sub)">`--o-fluid-font-5-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-5-sub">`o-fluid-font-5-sub`</ClipboardCopy>   |
+| 6 sub: 6 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-6-sub)">`--o-fluid-font-6-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-6-sub">`o-fluid-font-6-sub`</ClipboardCopy>   |
+| 7 sub: 7 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-7-sub)">`--o-fluid-font-7-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-7-sub">`o-fluid-font-7-sub`</ClipboardCopy>   |
+| 8 sub: 8 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-8-sub)">`--o-fluid-font-8-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-8-sub">`o-fluid-font-8-sub`</ClipboardCopy>   |
+
+| Default value                              | Utility Class                                            |
+| ------------------------------------------ | -------------------------------------------------------- |
+| Subheading Lvl 1 to match a `<h1>` heading | <ClipboardCopy value="o-subh1">`o-subh1`</ClipboardCopy> |
+| Subheading Lvl 2 to match a `<h2>` heading | <ClipboardCopy value="o-subh2">`o-subh2`</ClipboardCopy> |
+| Subheading Lvl 3 to match a `<h3>` heading | <ClipboardCopy value="o-subh3">`o-subh3`</ClipboardCopy> |
+| Subheading Lvl 4 to match a `<h4>` heading | <ClipboardCopy value="o-subh4">`o-subh4`</ClipboardCopy> |
+| Subheading Lvl 5 to match a `<h5>` heading | <ClipboardCopy value="o-subh5">`o-subh5`</ClipboardCopy> |
+| Subheading Lvl 6 to match a `<h6>` heading | <ClipboardCopy value="o-subh6">`o-subh6`</ClipboardCopy> |
