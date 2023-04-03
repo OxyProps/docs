@@ -38,6 +38,7 @@
     "@babel/core": "^7.21.4",
     "@docsearch/css": "^3.3.3",
     "@docsearch/react": "^3.3.3",
+    "@rollup/plugin-node-resolve": "^15.0.1",
     "@types/canvas-confetti": "^1.6.0",
     "@types/chroma-js": "^2.4.0",
     "@types/hast": "^2.3.4",
