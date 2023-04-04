@@ -9,7 +9,7 @@ export class HtmlPage {
 	/**
 	 * The full page URL.
 	 *
-	 * Example: `https://docs.astro.build/en/getting-started/`
+	 * Example: `https://docs.oxyprops.com/en/getting-started/`
 	 */
 	readonly href: string;
 	/**

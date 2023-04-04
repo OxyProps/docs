@@ -1,14 +1,70 @@
 ---
-title: Plugin Settings
+title: Basic Setup
 description: Set up your OxyProps plugin form the WordPress dashboard.
 i18nReady: true
 ---
 
-Customize your OxyProps plugin to improve the Oxygen developer experience and unlock new features.
+import BuilderTabs from '~/components/tabs/BuilderTabs.astro';
+import ContentImage from '~/components/ContentImage.astro';
 
-In your OxyProps dashboard, you will find 3 main areas: Color Selection, Builder Features, Utility Stylesheets.
+Are you ready to take your productivity to the next level? If so, OxyProps is the tool you've been waiting for. Whether you're a busy professional or a freelancer looking to streamline your workflow, OxyProps can help you get more done in less time. To help you get started, here are a few simple steps to follow after installing the software:
 
-## Color Selection
+:::tip[Quick Start]
+This page gives you a quick overview of the basic setup of OxyProps. If you want to learn more about the plugin, you can read the [OxyProps User Guide](/en/).
+:::
+
+## Dashboard
+
+The OxyProps dashboard is the place where you can manage your OxyProps settings. To access the dashboard, click on the OxyProps icon in the WordPress admin menu bar.
+
+On the dashboard home page, you will find:
+
+1. The detected site builder and its compatibility with OxyProps.
+2. The Download Settings button. To download you settigns in a JSON file.
+3. The Upload Settings button. To upload a JSON file with your settings. This is handy to share your settings with your team or to import settings from another site.
+4. The Reset Settings button. To reset your settings to the default values.
+
+{' '}
+<ContentImage
+	coverImage="/images/oxyprops-dashboard.webp"
+	caption="The OxyProps tracking (aka letter spacing) context menu in Bricks editor."
+	alt="Preview of the OxyProps tracking context menu in Bricks editor."
+	aspectRatio="16:9"
+/>
+
+:::caution[Reset Settings]
+Resetting your settings will delete all your OxyProps settings and reset them to the default values. This action is irreversible. Make sure you have downloaded a backup of your settings before resetting them.
+:::
+
+## Settings
+
+In the settings page, you will find the “Builder Features” section. This is where you can enable or disable the OxyProps features for your site builder. The settigns will slightly differ depending on the site builder you are using.
+
+We will not dive into all settings, but ss a quick start, I want to highlight a few of them.
+
+<BuilderTabs>
+<Fragment slot="bricks">
+  <ContentImage coverImage="/images/oxyprops-settings-bricks.webp" caption="The builder features settings for Bricks." alt="Screenshot of the OxyProps dashboard for Bricks." aspectRatio="16:9" />
+1. **Create a Bricks Styles Theme**.  
+*Disabled by default - Activation recommended.*  
+Unless you are installing OxyProps on an existing site with existing styles, enable this feature. When enabled, OxyProps will create a new theme in the Bricks Theme Styles feature. This theme will contain the default minimal OxyProps styles. You can then use this theme as a starting point for your own theme and safely tweak any initial setting to fit your need.
+2. **Apply normalize**.  
+*Enabled by default - Activation recommended.*  
+Normalize is an opinionated stylesheet that sets a lot of small detail styles so you don’t have to. For example, it sets maximum length for the text elements (headings and paragraphs), it applies you color scheme to html elements, it gives default outlines for keyboard navugation, etc. If you are the kind of developper that want full control and no presets, you may want to disable it by unchecking this box.
+3. **Choose a set of selectors to preload in Bricks**.  
+*Moderate ~600classes by default - I recommend you choose the biggest one.*  
+There was a time when Bricks did struggle when a high number of classes where registered in the editor. For users experiencing slowdowns in the editor, this option allows to reduce the number of pre-registered classes to improve performances. If you are not experiencing any slowdowns, you can choose the highest value. It is important to understand that this setting only impacts Bricks autosuggestion feature. If a class is not pre-registered, it will still be available in the editor, but you will have to type it manually.
+</Fragment>
+<Fragment slot="oxygen">
+  <ContentImage coverImage="/images/oxyprops-settings-oxygen.webp" caption="The builder features settings for Oxygen." alt="Screenshot of the OxyProps dashboard for Oxygen." aspectRatio="16:9" />
+  1. **Replace Oxygen Global Settings**.  
+*Disabled by default - Activation recommended.*  
+Unless you are installing OxyProps on an existing site with existing Global Settings, enable this feature. When enabled, OxyProps will populate Oxygen Global Settings with the framework defaults. This will set the default minimal OxyProps styles like fluid font sizes or responsive links colors. You can then safely tweak any initial setting to fit your need. You can restore the defaults by unchecking this option, save, then re-check it and save again. But be aware that this will reset all your Oxygen Global Settings to the default OxyProps values.
+2. **Apply normalize**.  
+*Enabled by default - Activation recommended.*  
+Normalize is an opinionated stylesheet that sets a lot of small detail styles so you don’t have to. For example, it sets maximum length for the text elements (headings and paragraphs), it applies you color scheme to html elements, it gives default outlines for keyboard navugation, etc. If you are the kind of developper that want full control and no presets, you may want to disable it by unchecking this box.
+  </Fragment>
+</BuilderTabs>
 
 ### Defaults
 
@@ -79,12 +135,14 @@ Learn more about [OxyProps context menu](/en/features/context-menu/) in our Feat
 - no need to type the full `var()` function around a long property name.
 
 It requires only :
+
 - One right click to open the menu,
 - One left click on your choice to populate instantly the input field value and the associated unit.
 
 ### OxyProps Elements (active by default)
 
 OxyProps has a limited (for now) library of custom elements:
+
 - A standard light/dark toggle
 - A customizable light/dark toggle
 - A color schemes switcher
@@ -98,6 +156,7 @@ When active, this option adds to the Oxygen editor Plus menu an OxyProps section
 ### Replace Global Settings (inactive by default)
 
 If you activate this option, OxyProps will replace your current Oxygen global settings with predefined settings from the OxyProps framework library.
+
 - Fonts will be set to `--o-font-sans`,
 - Headings text colors will be set to `--o-text-1`,
 - Body text color will be set to `--o-text-2`,
@@ -113,6 +172,7 @@ As this will erase your previous settings, this is not activated by default. If 
 ### Global color sets (active by default)
 
 This option will add 3 colors sets to Oxygen gloabl colors:
+
 - `OP Logical Colors` with all logical colors.
 - `OP Custom Palette` with all your custom colors.
 - `OP Color Palette` with all preset colors.
@@ -122,6 +182,7 @@ Learn more about [OxyProps global colors](/en/features/global-colors/) in our Fe
 :::
 
 You can delete these color sets:
+
 - Uncheck the option in your plugin dashboard,
 - Click the `Save Changes` button,
 - Open Oxygen editor,

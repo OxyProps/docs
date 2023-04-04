@@ -89,7 +89,7 @@ class IntegrationPagesBuilder {
 		const processor = remark()
 			.use(removeTOC)
 			.use(absoluteLinks, { base: githubLink })
-			.use(relativeLinks, { base: `https://docs.astro.build/` })
+			.use(relativeLinks, { base: `https://docs.oxyprops.com/` })
 			.use(githubVideos)
 			.use(replaceAsides)
 			.use(closeUnclosedLinebreaks);

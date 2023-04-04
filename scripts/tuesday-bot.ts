@@ -47,7 +47,7 @@ async function setDiscordMessage() {
 		Object.keys(toTranslate).length
 	} pages with major changes since last week. Please help us translate these pages to your language!\n\n${list}`;
 
-	const suffix = '\n\nSee our [Translation Status page](<https://i18n.docs.astro.build>) for more, including open PRs.';
+	const suffix = '\n\nSee our [Translation Status page](<https://i18n.docs.oxyprops.com>) for more, including open PRs.';
 
 	// Keep the entire message including the suffix within Discord's limits
 	const maxLengthWithoutSuffix = 2000 - suffix.length;

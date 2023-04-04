@@ -63,20 +63,21 @@ const { viewBox, d } = icons[type];
 <style>
 	aside {
 		--aside-color-base: var(--color-base-purple);
-		--aside-color-lightness: 54%;
+		--aside-color-lightness: 70%;
 		--aside-accent-color: hsl(var(--aside-color-base), var(--aside-color-lightness));
-		--aside-text-lightness: 20%;
+		--aside-text-lightness: 15%;
 		--aside-text-accent-color: hsl(var(--aside-color-base), var(--aside-text-lightness));
 
-		border-inline-start: 4px solid var(--aside-accent-color);
+		border-inline-start: var(--o-border-size-4) solid var(--aside-accent-color);
 		padding: 1rem;
 		background-color: hsla(var(--aside-color-base), var(--aside-color-lightness), var(--theme-accent-opacity));
 		/* Indicates the aside boundaries for forced colors users, transparent is changed to a solid color */
-		outline: 1px solid transparent;
+		outline: var(--o-border-size-1) solid transparent;
 	}
 
 	:global(.theme-dark) aside {
 		--aside-text-lightness: 85%;
+        --aside-color-lightness: 45%;
 	}
 
 	.title {
@@ -116,22 +117,38 @@ const { viewBox, d } = icons[type];
 	}
 
 	.tip {
-		--aside-color-lightness: 42%;
+		--aside-color-lightness: 32%;
 		--aside-color-base: var(--color-base-teal);
+	}
+    :global(.theme-dark) aside.tip {
+		--aside-color-lightness: 30%;
+        --aside-text-lightness: 85%;
 	}
 
 	.caution {
-		--aside-color-lightness: 59%;
+		--aside-color-lightness: 45%;
 		--aside-color-base: var(--color-base-yellow);
+	}
+    :global(.theme-dark) aside.caution {
+		--aside-color-lightness: 45%;
+        --aside-text-lightness: 85%;
 	}
 
 	.danger {
 		--aside-color-lightness: 54%;
 		--aside-color-base: var(--color-base-red);
 	}
+    :global(.theme-dark) aside.danger {
+		--aside-color-lightness: 50%;
+        --aside-text-lightness: 85%;
+	}
 	
     .announcement {
-		--aside-color-lightness: 54%;
-		--aside-color-base: var(--color-base-orange);
+		--aside-color-lightness: 45%;
+		--aside-color-base: var(--color-base-sky);
+	}
+    :global(.theme-dark) aside.announcement {
+		--aside-color-lightness: 40%;
+        --aside-text-lightness: 85%;
 	}
 </style>

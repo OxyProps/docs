@@ -6,7 +6,7 @@ import { visit } from 'unist-util-visit';
 
 export function remarkFallbackLang(): Plugin<[], Root> {
 	const pageSourceDir = path.resolve('./src/content/docs');
-	const baseUrl = 'https://docs.astro.build/';
+	const baseUrl = 'https://docs.oxyprops.com/';
 
 	const transformer: Transformer<Root> = (tree, file) => {
 		const pageUrl = mdFilePathToUrl(file.path, pageSourceDir, baseUrl);

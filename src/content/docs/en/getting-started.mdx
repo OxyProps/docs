@@ -3,46 +3,56 @@ title: Getting Started
 description: A basic intro to OxyProps.
 i18nReady: true
 ---
-
-import Button from '~/components/Button.astro';
 import BuilderTabs from '~/components/tabs/BuilderTabs.astro';
+import ContentImage from '~/components/ContentImage.astro';
 
+:::announcement[OxyProps v1.5.1 is now available!]
+Ready to upgrade? [Download the latest version from your user account](https://oxyprops.com/my-account/) 
+:::
 ## What is OxyProps?
 
-**OxyProps** is a modern CSS custom properties first CSS Framework for WordPress Page Builders. It helps **freelancers** and **agencies** work faster and build consistent UI through smart and instant access to the framework right in the buidler.
+OxyProps is a powerful plugin that revolutionizes your WordPress design workflow by integrating modern CSS custom properties and productivity features directly into your page builder.
 
-It is inspired, and built on top of [Open Props](https://open-props.style), an open source collection of expertly crafted web design token, aimed at creating consistent components.
+## OxyProps or BricksProps?
 
-Oxyprops aims to make the use of the framework as simple and intuitive as possible for the user while providing the latest CSS features.
+Two names, one plugin. OxyProps was first developped for Oxygen Builder, and therefore named OxyProps. When it was later made compatible with Bricks, sur users were annoyed by the name, so to bring their smile, the plugin renames itself in WordPress based on the page builder used. It also loads the appropriate CSS and Javascript files. So, if you use Oxygen Builder, you'll see OxyProps in your WordPress admin, and if you use Bricks, you'll see BricksProps, but it is the same plugin.
+
+## Key Features
+
+- **Powerful CSS Framework** — Create beautiful and consistent designs with OxyProps’ modern CSS custom properties and utility classes.
+- **Streamlined Workflow** — Save time and effort with OxyProps’ smart context menus that make it easy to add props and classes to your elements.
+- **Customizable Elements** — Build your site faster and with more flexibility using OxyProps’ library of custom elements and structure builder.
 
 ## Supported page builders
 
-When you install OxyProps on your WordPress site, OxyProps stylesheets are loaded. Therefore, the OxyProps CSS properties and utility classes will be available for any site builder accepting custom classes and CSS properties.
+When you install OxyProps on your WordPress site, the plugin's stylesheets are loaded, making the OxyProps CSS properties and utility classes available for any site builder that accepts custom classes and CSS properties.
 
-But OxyProps was particularly designed for, and supports:
+However, OxyProps was particularly designed for and supports Oxygen Builder and Bricks Builder. When you use OxyProps with one of these supported page builders, you gain access to builder enhancements that can speed up your workflow.
 
-- **Oxygen Builder**
-- **Bricks Builder**
-
-When you use OxyProps together with one of the supported page buidlers, you get access to builder enhancement to speed up your workflow.
+<BuilderTabs>
+<Fragment slot="bricks">
+  <ContentImage coverImage="/images/brx-tracking-context-menu.webp" caption="The OxyProps tracking (aka letter spacing) context menu in Bricks editor." alt="Preview of the OxyProps tracking context menu in Bricks editor." aspectRatio="16:9" />
+  </Fragment>
+<Fragment slot="oxygen">
+  <ContentImage coverImage="/images/oxy-leading-context-menu.webp" caption="The OxyProps leading (aka line height) context menu in Oxygen editor." alt="Preview of the OxyProps leading context menu in Oxygen editor." aspectRatio="16:9" />
+  </Fragment>
+</BuilderTabs>
 
 ## Start building with OxyProps
 
-Jump right in and add some props, classe and elements to your site!
+To start building with OxyProps, simply jump right in and add some props, classes, and elements to your site! Here are some examples of what you can do:
+
+Here are some examples:
 
 🏗️ Add a [light & dark](/en/features/custom-elements/) modes toggle to your site.
 
 🏗️ Create your first [Layout](/en/framework/layouts/).
 
-🏗️ Add additional [custom colors](/en/dashboard-setup/) to your site.
-
-*... check out even more under **Builder Features***
-
 
 
 ## Learn OxyProps
 
-See examples of some of the key concepts of building your site with OxyProps!
+To learn more about building your site with OxyProps, here are some resources to get you started:
 
 📽 Watch this video to [install and setup OxyProps](https://youtu.be/WffqhZojpYY).
 
@@ -50,12 +60,10 @@ See examples of some of the key concepts of building your site with OxyProps!
 
 📽 Explore OxyProps’s [RAM layout system](https://youtu.be/YIQYtykjsLg).
 
-*... find more material under **Reference***
-
 
 ## Join our Community
 
-Join us in the [OxyProps Discord](https://discord.gg/Np88J479Hr) to share with and get help from an active, friendly community!
+Join the OxyProps Discord server to share and get help from an active, friendly community!
 
 💬 Say hi in our `#general` channel!
 
@@ -66,7 +74,7 @@ Join us in the [OxyProps Discord](https://discord.gg/Np88J479Hr) to share with a
 
 ## Learn More
 
-[OxyProps Blog](https://oxyprops.com/blog/)
+Stay up to date with the latest news and tips on using OxyProps by checking out our YouTube channel. You can also view our changelog to see what's new in the latest version.
 
 [OxyProps Youtube channel](https://www.youtube.com/channel/UCKxy30xZGZlCEF23R7Y5hYA/)
 

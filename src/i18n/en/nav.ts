@@ -11,7 +11,7 @@ export default [
 	{ text: 'Start Here', header: true, type: 'learn', key: 'startHere' },
 	{ text: 'Getting Started', slug: 'getting-started', key: 'getting-started' },
 	{ text: 'Installation', slug: 'installation', key: 'installation' },
-	{ text: 'OxyProps Setup', slug: 'plugin-settings', key: 'plugin-settings' },
+	{ text: 'Basic Setup', slug: 'basic-setup', key: 'basic-setup' },
 
 	{ text: 'Core Concepts', header: true, type: 'learn', key: 'coreConcepts' },
 	{ text: 'Design Tokens', slug: 'core-concepts/design-tokens', key: 'core-concepts/design-tokens' },

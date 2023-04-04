@@ -15,7 +15,7 @@ const docsearchStrings = getDocSearchStrings(Astro);
 const t = useTranslations(Astro);
 ---
 
-<header>
+<header id="header">
 	<SkipToContent />
 	<nav class="nav-wrapper" aria-label={t('navbar.a11yTitle')}>
 		<div dir="ltr" lang="en" class="logo flex">
@@ -23,7 +23,7 @@ const t = useTranslations(Astro);
 				<li>
 					<a class="oxyprops" href="https://oxyprops.com/">
 						<OxyPropsLogo size="32" />
-						oxyprops
+						<span>oxyprops</span>
 					</a>
 				</li>
 				<li>
@@ -47,12 +47,14 @@ const t = useTranslations(Astro);
 		height: var(--theme-navbar-height);
 		z-index: 11;
 		padding: 2rem 0;
-		background-color: var(--theme-navbar-bg);
 		display: flex;
+        background-color: var(--theme-navbar-bg);
 		align-items: center;
 		justify-content: left;
 		overflow: hidden;
 	}
+
+
 
 	ul,
 	li {
@@ -79,7 +81,7 @@ const t = useTranslations(Astro);
 	.logo {
 		display: flex;
 		justify-content: flex-start;
-		font-size: 1rem;
+		font-size: 1.5rem;
 		flex-grow: 1;
 		flex-shrink: 0;
 		font-weight: var(--o-font-weight-7);
@@ -101,7 +103,6 @@ const t = useTranslations(Astro);
 		padding: 0.5em 0.25em;
 		margin: -0.5em -0.25em;
 		text-decoration: none;
-		font-size: var(--o-font-size-fluid-1);
 	}
 
 	.logo .hover {
@@ -130,9 +131,13 @@ const t = useTranslations(Astro);
 	.oxyprops {
 		overflow: hidden;
 		width: 41px;
-        color: var(--theme-text);
+		color: var(--theme-text);
 		font-weight: var(--o-font-weight-7);
 	}
+
+    .oxyprops span {
+        display: none;
+    }
 
 	.docs {
 		display: none;
@@ -142,9 +147,8 @@ const t = useTranslations(Astro);
 		.docs {
 			display: inherit;
 			max-width: 80px;
-            color: var(--theme-accent);
-            font-weight: var(--o-font-weight-4);
-
+			color: var(--theme-accent);
+			font-weight: var(--o-font-weight-7);
 		}
 	}
 
@@ -163,6 +167,13 @@ const t = useTranslations(Astro);
 		}
 		.oxyprops {
 			width: auto;
+		}
+
+        .oxyprops span {
+            display: inline;
+        }
+        .docs {
+			font-weight: var(--o-font-weight-4);
 		}
 	}
 

@@ -21,7 +21,8 @@
 }
 body::-webkit-scrollbar,
 body::-webkit-scrollbar-track {
-	background: transparent;
+    opacity: 0.5;
+	background: var(--theme-bg-gradient);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -49,6 +50,7 @@ html {
 	Use a pseudo-element to add a gradient background that covers the entire viewport.
 	Using a regular fixed background does not work properly on mobile browsers like iOS Safari.
 */
+
 body::before {
 	content: '';
 	display: block;
@@ -57,12 +59,27 @@ body::before {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	z-index: -999;
-	background: var(--theme-bg-gradient), var(--o-noise-4);
-    filter: var(--o-noise-filter-1);
-     background-blend-mode: overlay;
-    -webkit-mask-image: var(--_mask-gradient);
-    mask-image: var(--_mask-gradient);
+	z-index: -1000;
+    opacity: 1;
+	background: var(--theme-bg-gradient);
+}
+
+.theme-dark body::after {
+	content: '';
+	display: block;
+	position: fixed;
+	top: calc(var(--theme-navbar-height) + var(--theme-mobile-toc-height));
+	left: -25%;
+	right: -25%;
+	bottom: 25%;
+	z-index: -1;
+    rotate: 3deg;
+	background: var(--theme-navbar-noise),linear-gradient(160deg,var(--o-brand) 0%,var(--o-accent) 100%);
+    background-blend-mode: overlay;
+    background-size: cover;
+    filter: var(--theme-navbar-noise-filter);
+    -webkit-mask-image: radial-gradient(rgba(0,0,0,.4),transparent 70%);
+    mask-image: radial-gradient(rgba(0,0,0,.5),transparent 70%);
 }
 
 body {
@@ -71,8 +88,8 @@ body {
 	flex-direction: column;
 	min-height: 100vh;
 	font-family: var(--font-body);
-	font-size: 16px;
-	line-height: 1.5;
+	font-size: var(--o-fluid-font-0);
+	line-height: var(--o-font-lineheight-3);
 }
 
 nav ul {

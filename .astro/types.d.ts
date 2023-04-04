@@ -97,6 +97,13 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"docs": {
+"en/basic-setup.mdx": {
+  id: "en/basic-setup.mdx",
+  slug: "en/basic-setup",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] },
 "en/cheatsheet/a11y.mdx": {
   id: "en/cheatsheet/a11y.mdx",
   slug: "en/cheatsheet/a11y",
@@ -660,13 +667,6 @@ declare module 'astro:content' {
 "en/installation.mdx": {
   id: "en/installation.mdx",
   slug: "en/installation",
-  body: string,
-  collection: "docs",
-  data: InferEntrySchema<"docs">
-} & { render(): Render[".mdx"] },
-"en/plugin-settings.mdx": {
-  id: "en/plugin-settings.mdx",
-  slug: "en/plugin-settings",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">

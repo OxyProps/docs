@@ -73,13 +73,13 @@ export default function Search({ lang = 'en', labels }: Props) {
 					<p>{labels.resultsFooterLede}</p>
 					<ul style={{ display: 'flex', gap: '1em', marginBlock: '0.5em', flexWrap: 'wrap' }}>
 						<li>
-							<a href="https://astro.build/integrations/">{labels.resultsFooterIntegrations}</a>
+							<a href="https://oxyprops.com/integrations/">{labels.resultsFooterIntegrations}</a>
 						</li>
 						<li>
-							<a href="https://astro.build/themes/">{labels.resultsFooterThemes}</a>
+							<a href="https://oxyprops.com/themes/">{labels.resultsFooterThemes}</a>
 						</li>
 						<li>
-							<a href="https://astro.build/chat">{labels.resultsFooterDiscord}</a>
+							<a href="https://oxyprops.com/chat">{labels.resultsFooterDiscord}</a>
 						</li>
 					</ul>
 				</div>
