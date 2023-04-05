@@ -16,9 +16,10 @@ export default [
 	{ text: 'Core Concepts', header: true, type: 'learn', key: 'coreConcepts' },
 	{ text: 'Design Tokens', slug: 'core-concepts/design-tokens', key: 'core-concepts/design-tokens' },
 	{ text: 'CSS Custom Properties', slug: 'core-concepts/css-custom-properties', key: 'core-concepts/css-custom-properties' },
+
 	{ text: 'CSS Components', header: true, type: 'learn', key: 'components' },
-	{ text: 'Buttons', slug: 'framework/buttons', key: 'components/buttons' },
-	{ text: 'Cards', slug: 'framework/cards', key: 'components/cards' },
+	{ text: 'Buttons', slug: 'components/buttons', key: 'components/buttons' },
+	{ text: 'Cards', slug: 'components/cards', key: 'components/cards' },
 
 	{ text: 'CSS Framework', header: true, type: 'learn', key: 'framework' },
 	{ text: 'Animations', slug: 'framework/animations', key: 'framework/animations' },
@@ -125,7 +126,13 @@ export default [
 		slug: 'cheatsheet/svg-stroke',
 		key: 'cheatsheet/svg-stroke',
 	},
-	{ text: 'Cursors', header: true, type: 'cheat', key: 'gradients' },
+	{ text: 'Components', header: true, type: 'cheat', key: 'components' },
+	{
+		text: 'Buttons',
+		slug: 'cheatsheet/buttons',
+		key: 'cheatsheet/buttons',
+	},
+	{ text: 'Cursors', header: true, type: 'cheat', key: 'cursors' },
 	{
 		text: 'Shapes',
 		slug: 'cheatsheet/cursor-shapes',

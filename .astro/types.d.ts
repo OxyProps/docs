@@ -174,6 +174,13 @@ declare module 'astro:content' {
   collection: "docs",
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] },
+"en/cheatsheet/buttons.mdx": {
+  id: "en/cheatsheet/buttons.mdx",
+  slug: "en/cheatsheet/buttons",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] },
 "en/cheatsheet/conditional-radius.mdx": {
   id: "en/cheatsheet/conditional-radius.mdx",
   slug: "en/cheatsheet/conditional-radius",
@@ -433,6 +440,20 @@ declare module 'astro:content' {
   collection: "docs",
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] },
+"en/components/buttons.mdx": {
+  id: "en/components/buttons.mdx",
+  slug: "en/components/buttons",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] },
+"en/components/cards.md": {
+  id: "en/components/cards.md",
+  slug: "en/components/cards",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] },
 "en/core-concepts/css-custom-properties.mdx": {
   id: "en/core-concepts/css-custom-properties.mdx",
   slug: "en/core-concepts/css-custom-properties",
@@ -527,20 +548,6 @@ declare module 'astro:content' {
 "en/framework/borders.md": {
   id: "en/framework/borders.md",
   slug: "en/framework/borders",
-  body: string,
-  collection: "docs",
-  data: InferEntrySchema<"docs">
-} & { render(): Render[".md"] },
-"en/framework/buttons.md": {
-  id: "en/framework/buttons.md",
-  slug: "en/framework/buttons",
-  body: string,
-  collection: "docs",
-  data: InferEntrySchema<"docs">
-} & { render(): Render[".md"] },
-"en/framework/cards.md": {
-  id: "en/framework/cards.md",
-  slug: "en/framework/cards",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">
