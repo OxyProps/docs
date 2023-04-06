@@ -5,8 +5,8 @@ export default {
 	// Site settings
 	'site.title': 'OxyProps Documentation',
 	'site.description': 'The Ultimate Page Builder Companion.',
-	'site.og.imageSrc': '/default-og-image.png?v=1',
-	'site.og.imageAlt': 'astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground',
+	'site.og.imageSrc': '/default-og-image.webp?v=1',
+	'site.og.imageAlt': 'OxyProps logo on a colorful and textured background.',
 	// Left Sidebar
 	'leftSidebar.a11yTitle': 'Primary',
 	'leftSidebar.learnTab': 'Learn',

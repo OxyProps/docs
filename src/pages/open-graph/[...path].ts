@@ -23,25 +23,37 @@ export const { getStaticPaths, get } = OGImageRoute({
 				path: './src/docs-logo.png',
 				size: [400],
 			},
-			border: { color: [255, 93, 1], width: 20, side: 'inline-start' },
+			border: { color: [158, 76, 237], width: 20, side: 'inline-start' },
 			bgGradient: [
-				[42, 35, 62],
-				[23, 20, 36],
+				[42, 49, 60],
+				[2, 2, 2],
 			],
 			font: {
 				title: {
 					size: 78,
-					families: ['Work Sans', 'Noto Sans Black', 'Noto Sans Arabic', 'Noto Sans SC Black', 'Noto Sans TC Black', 'Noto Sans JP Black', 'Noto Sans KR Black'],
-					weight: 'ExtraBold',
+					families: [
+						'Atkinson Hyperlegible',
+						'Work Sans',
+						'Noto Sans Black',
+						'Noto Sans Arabic',
+						'Noto Sans SC Black',
+						'Noto Sans TC Black',
+						'Noto Sans JP Black',
+						'Noto Sans KR Black',
+					],
+					weight: 'Bold',
 				},
 				description: {
 					size: 45,
 					lineHeight: 1.25,
-					families: ['Work Sans', 'Noto Sans', 'Noto Sans Arabic', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans JP', 'Noto Sans KR'],
+					families: ['Atkinson Hyperlegible', 'Work Sans', 'Noto Sans', 'Noto Sans Arabic', 'Noto Sans SC', 'Noto Sans TC', 'Noto Sans JP', 'Noto Sans KR'],
 					weight: 'Normal',
 				},
 			},
 			fonts: [
+				'https://api.fontsource.org/v1/fonts/atkinson-hyperlegible/latin-400-normal.ttf',
+				'https://api.fontsource.org/v1/fonts/atkinson-hyperlegible/latin-700-normal.ttf',
+
 				'https://api.fontsource.org/v1/fonts/work-sans/latin-400-normal.ttf',
 				'https://api.fontsource.org/v1/fonts/work-sans/latin-800-normal.ttf',
 
