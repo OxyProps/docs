@@ -804,7 +804,7 @@
     --o_text-hover: var(--o_text-light-hover);
     --o_bg-light: var(--o_card-match-light, var(--o-surface-1));
     --o_bg-light-hover: var(--o_bg-light);
-    --o_bg-dark: var(--o_bg-light);
+    --o_bg-dark: var(--o_card-match-light, var(--o-surface-2));
     --o_bg-dark-hover: var(--o_bg-dark);
     --o_bg: var(--o_bg-light);
     --o_bg-hover: var(--o_bg-light-hover);
@@ -819,7 +819,7 @@
     --o_border-size: var(--o-border-size-2);
     --o_border-radius: 0.5ch;
     --o_border-light: var(--o-surface-4);
-    --o_border-light-hover: var(-o_border-light);
+    --o_border-light-hover: var(--o_border-light);
     --o_border-dark: var(--o_bg-dark);
     --o_border-dark-hover: var(--o_border-dark);
     --o_border: var(--o_border-light);
@@ -841,7 +841,7 @@
     --o_icon-color-dark: var(--o_accent-dark);
     --o_icon-color-dark-hover: var(--o_icon-color-dark);
     --o_icon-color: var(--o_icon-color-light);
-    --o_icon-color-hover: var(--o_icon-color);
+    --o_icon-color-hover: var(--o_icon-color-light-hover);
     --o_shadow-color-light: var(--o-shadow-color-light);
     --o_shadow-color-dark: var(--o-shadow-color-dark);
     --o_shadow-color: var(--o_shadow-color-light);
@@ -861,7 +861,8 @@
     --o_text-decoration-hover: none;
     --o_text-font-weight: var(--o-font-weight-7);
     --o_transition-motion-reduce: none;
-    --o_transition-motion-ok: box-shadow 145ms ease, outline-offset 145ms ease;
+    --o_transition-motion-ok: box-shadow 145ms var(--o-ease-3),
+      outline-offset 145ms var(--o-ease-3);
     --o_transition: var(--o_transition-motion-reduce);
     border-radius: var(--o_border-radius);
     font: inherit;
@@ -988,8 +989,10 @@
   .o-btn.o-btn-outline {
     --o_bg-hover: none;
     --o_bg: none;
-    --o_text-light: var(--o_border-light, var(--o-text-1));
-    --o_text-dark: var(--o_border-dark, var(--o-text-1));
+    --o_text-light: var(--o_outline-text-light, var(--o-text-1));
+    --o_text-light-hover: var(--o_outline-text-light-hover, var(--o-text-1));
+    --o_text-dark: var(--o_outline-text-dark, var(--o-text-1));
+    --o_text-dark-hover: var(--o_outline-text-dark-hover, var(--o-text-1));
   }
   .o-btn.o-btn-disabled {
     --o_bg-hover: none;
@@ -1053,6 +1056,10 @@
     --o_border-dark-hover: var(--o_bg-dark-hover);
     --o_text-light: var(--o-surface-1);
     --o_text-dark: var(--o-surface-1);
+    --o_outline-text-light: var(--o_bg-light);
+    --o_outline-text-light-hover: var(--o_bg-light-hover);
+    --o_outline-text-dark: var(--o_bg-dark);
+    --o_outline-text-dark-hover: var(--o_bg-dark-hover);
     --o_ink-shadow-light: 0 1px 0 hsl(var(--o-black-hsl) / 80%);
     --o_ink-shadow-dark: 0 1px 0 hsl(var(--o-black-hsl) / 20%);
     --o_highlight-light: hsl(var(--o-brand-light-hsl) / 20%);
@@ -1123,6 +1130,10 @@
     --o_border-dark-hover: var(--o_bg-dark-hover);
     --o_text-light: var(--o-surface-1);
     --o_text-dark: var(--o-surface-1);
+    --o_outline-text-light: var(--o_bg-light);
+    --o_outline-text-light-hover: var(--o_bg-light-hover);
+    --o_outline-text-dark: var(--o_bg-dark);
+    --o_outline-text-dark-hover: var(--o_bg-dark-hover);
     --o_ink-shadow-light: 0 1px 0 hsl(var(--o-black-hsl) / 80%);
     --o_ink-shadow-dark: 0 1px 0 hsl(var(--o-black-hsl) / 20%);
     --o_highlight-light: hsl(var(--o-accent-light-hsl) / 20%);
@@ -1193,6 +1204,10 @@
     --o_border-dark-hover: var(--o_bg-dark-hover);
     --o_text-light: var(--o-surface-1);
     --o_text-dark: var(--o-surface-1);
+    --o_outline-text-light: var(--o_bg-light);
+    --o_outline-text-light-hover: var(--o_bg-light-hover);
+    --o_outline-text-dark: var(--o_bg-dark);
+    --o_outline-text-dark-hover: var(--o_bg-dark-hover);
     --o_ink-shadow-light: 0 1px 0 hsl(var(--o-black-hsl) / 80%);
     --o_ink-shadow-dark: 0 1px 0 hsl(var(--o-black-hsl) / 20%);
     --o_highlight-light: hsl(var(--o-links-light-hsl) / 20%);
@@ -1263,6 +1278,10 @@
     --o_border-dark-hover: var(--o_bg-dark-hover);
     --o_text-light: var(--o-surface-1);
     --o_text-dark: var(--o-surface-1);
+    --o_outline-text-light: var(--o_bg-light);
+    --o_outline-text-light-hover: var(--o_bg-light-hover);
+    --o_outline-text-dark: var(--o_bg-dark);
+    --o_outline-text-dark-hover: var(--o_bg-dark-hover);
     --o_ink-shadow-light: 0 1px 0 hsl(var(--o-black-hsl) / 80%);
     --o_ink-shadow-dark: 0 1px 0 hsl(var(--o-black-hsl) / 20%);
     --o_highlight-light: hsl(var(--o-visited-light-hsl) / 20%);
@@ -1333,6 +1352,10 @@
     --o_border-dark-hover: var(--o_bg-dark-hover);
     --o_text-light: var(--o-surface-1);
     --o_text-dark: var(--o-surface-1);
+    --o_outline-text-light: var(--o_bg-light);
+    --o_outline-text-light-hover: var(--o_bg-light-hover);
+    --o_outline-text-dark: var(--o_bg-dark);
+    --o_outline-text-dark-hover: var(--o_bg-dark-hover);
     --o_ink-shadow-light: 0 1px 0 hsl(var(--o-black-hsl) / 80%);
     --o_ink-shadow-dark: 0 1px 0 hsl(var(--o-black-hsl) / 20%);
     --o_highlight-light: hsl(var(--o-canvas-light-hsl) / 20%);
@@ -1400,6 +1423,10 @@
     --o_border: hsl(var(--o-bw-hsl));
     --o_text-light: var(--o-wb);
     --o_text-dark: var(--o-wb);
+    --o_outline-text-light: var(--o_bg-light);
+    --o_outline-text-light-hover: var(--o_bg-light-hover);
+    --o_outline-text-dark: var(--o_bg-dark);
+    --o_outline-text-dark-hover: var(--o_bg-dark-hover);
     --o_ink-shadow-light: 0 1px 0 hsl(var(--o-wb-hsl) / 20%);
     --o_ink-shadow-dark: 0 1px 0 hsl(var(--o-wb-hsl) / 20%);
     --o_highlight-light: hsl(var(--o-bw-hsl) / 20%);
@@ -1467,6 +1494,10 @@
     --o_border: hsl(var(--o-wb-hsl));
     --o_text-light: var(--o-bw);
     --o_text-dark: var(--o-bw);
+    --o_outline-text-light: var(--o_bg-light);
+    --o_outline-text-light-hover: var(--o_bg-light-hover);
+    --o_outline-text-dark: var(--o_bg-dark);
+    --o_outline-text-dark-hover: var(--o_bg-dark-hover);
     --o_ink-shadow-light: 0 1px 0 hsl(var(--o-bw-hsl) / 20%);
     --o_ink-shadow-dark: 0 1px 0 hsl(var(--o-bw-hsl) / 20%);
     --o_highlight-light: hsl(var(--o-wb-hsl) / 20%);

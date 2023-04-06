@@ -2674,8 +2674,7 @@
 :where(h1, h2, h3, h4, h5, h6) {
 	font-size: var(--o-fluid-font);
 }
-:root,
-::backdrop {
+:root {
 	--o-text-1-light: var(--o-canvas-900);
 	--o-text-1-light-hsl: var(--o-canvas-900-hsl);
 	--o-text-2-light: var(--o-canvas-700);
@@ -2838,7 +2837,7 @@
 	--o-surface-3-visited-dark-hsl: var(--o-visited-700-hsl);
 	--o-surface-4-visited-dark: var(--o-visited-600);
 	--o-surface-4-visited-dark-hsl: var(--o-visited-600-hsl);
-	background-color: var(--o-surface-1);
+	/* background-color: var(--o-surface-1); */
 }
 :root {
 	color-scheme: light;
