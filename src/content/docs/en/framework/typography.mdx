@@ -3,45 +3,130 @@ title: Typography
 description: An intro to the OxyProps Typography properties and classes syntax.
 i18nReady: false
 ---
+import Button from '~/components/Button.astro';
 
 import ClipboardCopy from '~/components/ClipboardCopy.astro';
 import ContentImage from '~/components/ContentImage.astro';
 import BuilderTabs from '~/components/tabs/BuilderTabs.astro';
 
-Typography is an important aspect of web design that can greatly affect the readability and overall aesthetic of your website. With OxyProps, you have access to a powerful CSS framework that includes a wide range of font families, CSS variables, and utility classes to help you achieve the perfect typographic style for your website.
+Typography is a crucial element in web design that can have a significant impact on the readability and overall appearance of your website. With OxyProps, you have access to a powerful CSS framework that includes an extensive selection of font families, CSS variables, and utility classes. These resources will help you to achieve the perfect typographic style for your website.
+
+OxyProps provides an extensive range of typography tools that will allow you to customize every aspect of your text, including font size, font weight, line height, letter spacing, and more. Whether you're looking to create a minimalist, modern look or a bold, eye-catching design, OxyProps has everything you need to make your typography stand out.
 
 ## TL, DR
 
-If you don’t need explanations but just want the props and classes, the full list is at the bottom of this page.
+If you're looking for a quick reference guide to the typography props and classes, you can find the full list on the Typography Cheat Sheet.
 
-<a href="#cheat-sheet">Skip to full list</a>
+<div style="display: flex; width:100%; justify-content: center;">
+	<Button href="/en/cheatsheet/families-and-weights/">Check the Typography cheat sheet</Button>
+</div>
+
 
 ## Font Families
 
-The font-family property in CSS allows you to specify the font that will be used for text content on your website. OxyProps provides a range of font families that can be easily used in your CSS styles or with utility classes.
+The font-family property in CSS is a powerful tool that allows web designers and developers to specify the font used for text content on a website. By setting the font-family property to a specific font, designers can control the visual appearance of text content and create a consistent visual identity for a website.
+
+Choosing the right font family is crucial for creating a website that is both aesthetically pleasing and functional. Different font families can convey different moods and emotions, and some are more legible than others at different sizes and in different contexts.
+
+In this section, we will explore the font families available in OxyProps, which can be easily used in your CSS styles or with utility classes. We will discuss the benefits of using system fonts and self-hosted fonts, and provide examples of how to use the OxyProps font families in your web projects.
+
+### OxyProps font families
+
+Oxyprops offers 4 font families available as CSS variables. 3 of them are using your website visitor system fonts instead of external server-hosted fonts. This has several benefits.  
+
+Firstly, system fonts are pre-installed on most devices, which means that the website's text will load faster as the browser doesn't have to download the font file from an external server. This can lead to improved website performance and user experience.  
+
+Additionally, system fonts are typically designed to be highly readable and legible, making them a reliable choice for website text content.  
+
+By using Oxyprops font families, which are system fonts optimized for the web, developers can ensure a consistent and optimized text experience across various devices and platforms.
 
 <ContentImage coverImage="/images/oxyprops-font-families.webp" alt="Preview of the OxyProps font families in Bricks editor." aspectRatio="16:9" />
 
-To use a font family with CSS, you can set the font-family property to the name of the font you want to use, like this:
+#### <ClipboardCopy value="var(--o-font-sans)">`--o-font-sans`</ClipboardCopy>
 
-```css
-body {
-	font-family: 'Open Sans', sans-serif;
-}
-```
-
-In this example, we’re setting the font-family of the body element to "Open Sans", which is a popular sans-serif font. The sans-serif fallback ensures that if "Open Sans" is not available on the user’s device, a generic sans-serif font will be used instead.
-
-OxyProps includes four font families available as CSS variables:
+The sans serif font stack is <ClipboardCopy value="var(--o-font-sans)">`--o-font-sans`</ClipboardCopy>. It is a system font stack that will use the system font on the user’s device. If the system font is not available, it will fall back to the next font in the stack. If none of the fonts in the stack are available, it will fall back to a generic font.
 
 ```css
 :where(html) {
-	--o-font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, Segoe UI, Roboto,
-		Ubuntu, Cantarell, Noto Sans, sans-serif;
-	--o-font-serif: ui-serif, serif;
-	--o-font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
+	--o-font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 }
 ```
+<div style="background-color: var(--o-surface-1); color: var(--o-text-1); padding: var(--o-size-fluid-2);">
+    <p style="font-family: var(--o-font-sans);font-weight: var(--o-font-weight-7);">The --o-font-sans font family</p>
+    <p style="font-family: var(--o-font-sans);font-weight: var(--o-font-weight-4);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+
+The font stack `system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif` is interesting to use because it specifies a range of font families that are commonly available on different operating systems and devices.
+
+The `system-ui` and `-apple-system` values are generic font family names that will use the default UI font of the operating system or device, which ensures that the website text will match the overall look and feel of the device or operating system.
+
+The other font families in the stack such as `Segoe UI`, `Roboto`, `Ubuntu`, `Cantarell`, and `Noto Sans` are widely used and popular font families that provide good readability and legibility. The `sans-serif` value at the end is a fallback font family that is used if none of the other font families are available on the user's device.
+
+By using this font stack, web developers can ensure that their website text is legible, readable, and consistent across different devices and operating systems.
+
+#### <ClipboardCopy value="var(--o-font-serif)">`--o-font-serif`</ClipboardCopy>
+
+The serif font stack is <ClipboardCopy value="var(--o-font-serif)">`--o-font-serif`</ClipboardCopy>. It is a system font stack that will use the system font on the user’s device. If the system font is not available, it will fall back to the next font in the stack. If none of the fonts in the stack are available, it will fall back to a generic font.
+
+```css
+:where(html) {
+	--o-font-serif: ui-serif, serif;
+}
+```
+
+<div style="background-color: var(--o-surface-1); color: var(--o-text-1); padding: var(--o-size-fluid-2);">
+    <p style="font-family: var(--o-font-serif);font-weight: var(--o-font-weight-7);">The --o-font-serif font family</p>
+    <p style="font-family: var(--o-font-serif);font-weight: var(--o-font-weight-4);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+The `ui-serif` value in the font stack refers to a font that is designed with serifs and optimized for on-screen use, while the `serif` value is a fallback that provides a generic serif font. This font stack is interesting because it allows for the use of a serif font that is specifically tailored for screen reading, improving readability and reducing eye strain for users. Additionally, using system fonts like `ui-serif` can improve website performance by reducing the need to load custom fonts from external servers.
+
+#### <ClipboardCopy value="var(--o-font-mono)">`--o-font-mono`</ClipboardCopy>
+
+The monotype font stack is <ClipboardCopy value="var(--o-font-mono)">`--o-font-mono`</ClipboardCopy>. It is a system font stack that will use the system font on the user’s device. If the system font is not available, it will fall back to the next font in the stack. If none of the fonts in the stack are available, it will fall back to a generic font.
+
+```css
+:where(html) {
+    --o-font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
+}
+```
+
+<div style="background-color: var(--o-surface-1); color: var(--o-text-1); padding: var(--o-size-fluid-2);">
+    <p style="font-family: var(--o-font-mono);font-weight: var(--o-font-weight-7);">The --o-font-mono font family</p>
+    <p style="font-family: var(--o-font-mono);font-weight: var(--o-font-weight-4);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+Using a font stack that includes popular monospace fonts like `Dank Mono`, `Inconsolata`, and `Source Code Pro` can improve the readability and legibility of text content on a website or application. Monospace fonts are designed with fixed-width characters that align horizontally, which makes them an ideal choice for coding, terminal, and other technical contexts where visual clarity is critical. Including fallbacks like `ui-monospace` and `monospace` ensures that the text will display legibly on a wider range of devices and browsers.
+
+:::tip[exact character count with ch]
+The `ch` unit is a relative unit that is based on the width of the character "0" in the font that is specified. In non-monospace fonts, using `ch` can result in slightly varying widths, as characters may have different widths depending on their shape. However, when using a monospace font, each character has an equal width, so the `ch` unit will always be equivalent to the width of a single character. For this reason, OxyProps uses `ch` as the default unit for text width. When using the `--o-font-mono` family, this ensures that `60ch` will always be exactly 60 characters wide, regardless of the specific characters used.
+:::
+
+#### <ClipboardCopy value="var(--o-font-atkinson)">`--o-font-atkinson`</ClipboardCopy>
+
+The atkinsontype font stack is <ClipboardCopy value="var(--o-font-atkinson)">`--o-font-atkinson`</ClipboardCopy>. It is a system font stack that will use the system font on the user’s device. If the system font is not available, it will fall back to the next font in the stack. If none of the fonts in the stack are available, it will fall back to a generic font.
+
+```css
+:where(html) {
+    --o-font-atkinson: 'Atkinson Hyperlegible', var(--o-font-sans), sans-serif;
+}
+```
+
+<div style="background-color: var(--o-surface-1); color: var(--o-text-1); padding: var(--o-size-fluid-2);">
+    <p style="font-family: var(--o-font-atkinson);font-weight: var(--o-font-weight-7);">The --o-font-atkinson font family</p>
+    <p style="font-family: var(--o-font-atkinson);font-weight: var(--o-font-weight-4);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
+Atkinson Hyperlegible is a font designed specifically for readability and legibility. It was created by Applied Design Works in collaboration with the Braille Institute, and its primary purpose is to make reading easier for people with visual impairments and dyslexia.
+
+The font features a unique design with exaggerated and open letterforms, high contrast between thick and thin strokes, and generous spacing between letters, making it easier to distinguish each character. The design also includes unique letterforms for characters that can be easily confused, such as "l" and "1", "p" and "q" or "O" and "0."
+
+The Atkinson Hyperlegible font has gained popularity beyond its intended audience due to its exceptional legibility and clean design. It is a great option for anyone looking to improve the readability of their website or printed materials.
+
+The Atkinson Hyperlegible font is embeded in OxyProps, so you can use it without having to download any additional files.
+
+#### Available as CSS variables and utility classes
 
 | Description             | CSS Variable                                                                | Utility Class                                            |
 | ----------------------- | --------------------------------------------------------------------------- | -------------------------------------------------------- |
@@ -49,26 +134,7 @@ OxyProps includes four font families available as CSS variables:
 | Serif, user system      | <ClipboardCopy value="var(--o-font-serif)">`--o-font-serif`</ClipboardCopy> | <ClipboardCopy value="o-serif">`o-serif`</ClipboardCopy> |
 | Monotype, user system   | <ClipboardCopy value="var(--o-font-mono)">`--o-font-mono`</ClipboardCopy>   | <ClipboardCopy value="o-mono">`o-mono`</ClipboardCopy>   |
 
-These 3 stacks use system fonts. This means that the fonts will be automatically updated when the user updates their operating system. This is a great way to ensure that your website will always look great on the latest operating systems.
-
-Using system fonts instead of external fonts from services like Google Fonts can have several benefits:
-
-1. **Faster Page Load**: Since system fonts are already installed on the user’s device, they don’t need to be downloaded, which can significantly reduce page load times.
-2. **Consistency**: System fonts are consistent across different devices and platforms. This means that the fonts on your website will look the same regardless of the device or platform that the user is using. In contrast, external fonts may not be available on all devices, and their appearance may vary depending on the device’s settings.
-3. **Privacy**: External fonts are loaded from third-party servers, which means that the user’s data is being sent to those servers. Using system fonts eliminates this potential privacy concern.
-4. **Design integrity**: System fonts are designed to work well in various scenarios, such as different font sizes, weights, and styles. This is because system fonts are optimized for the operating system they are used on. On the other hand, external fonts can sometimes appear distorted or blurry when used in certain scenarios.
-
-Overall, using system fonts can result in a faster, more consistent, and more private user experience while maintaining the design integrity of your website.
-
-| Description               | CSS Variable                                                                      | Utility Class                                                  |
-| ------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| Hyperlegible, self-hosted | <ClipboardCopy value="var(--o-font-atkinson)">`--o-font-atkinson`</ClipboardCopy> | <ClipboardCopy value="o-atkinson">`o-atkinson`</ClipboardCopy> |
-
-This one is a self hosted font. Using self-hosted fonts means that the font files are stored on the same server as your website or application, rather than being loaded from a third-party service like Google Fonts. There are several benefits to using self-hosted fonts instead of external fonts:
-
-1. **Improved page load speed**: By hosting the font files on your own server, you can reduce the number of external requests your website needs to make, which can help to improve page load times.
-2. **Increased control**: When you self-host your fonts, you have complete control over the font files and how they are served. This means that you can optimize the font files for your specific use case and ensure that they are served in the most efficient way possible.
-3. **Better privacy and security**: By not relying on third-party services to serve your fonts, you can help to protect your users’ privacy and security. When you use external font services, you are effectively outsourcing a part of your website to a third party, which could potentially compromise your users’ data.
+#### Also available as a font families in the Oxygen and Bricks editors
 
 <BuilderTabs>
 	<Fragment slot="oxygen">
@@ -121,8 +187,9 @@ In OxyProps, font weights are defined using CSS variables and utility classes. H
 | Extra-bold  | <ClipboardCopy value="var(--o-font-weight-8)">`--o-font-weight-8`</ClipboardCopy> | <ClipboardCopy value="o-extra-bold">`o-extra-bold`</ClipboardCopy> or <ClipboardCopy value="o-ultra-bold">`o-ultra-bold`</ClipboardCopy>     |
 | Heavy       | <ClipboardCopy value="var(--o-font-weight-9)">`--o-font-weight-9`</ClipboardCopy> | <ClipboardCopy value="o-black">`o-heavy`</ClipboardCopy>                                                                                     |
 
-> 💡 **Note:**  
-> Both Oxygen and Bricks use dropdowns to select the font weights. So there is no context menu for font weights CSS variables. But you can still use the utility classes to set the font weight, and use the CSS variables in your custom CSS.
+:::note[Font weights in page buidlers]  
+Both Oxygen and Bricks use dropdowns to select the font weights. So there is no context menu for font weights CSS variables. But you can still use the utility classes to set the font weight, and use the CSS variables in your custom CSS.
+:::
 
 By using these font weights and their corresponding CSS variables and classes, you can easily adjust the weight of your text to create visual emphasis and hierarchy on your page.
 
@@ -211,9 +278,9 @@ The default font size in the OxyProps system is 1rem, which is equivalent to the
 
 The OxyProps system provides a set of fixed font sizes that can be used to quickly and easily apply consistent font sizes to elements. These font sizes are defined in the CSS variables below.
 
-> 💡 **Note:**
->
-> These font sizes are not responsive, meaning that they will not change based on the size of the screen. They are usually used for headings, titles, and other large text or decorative elements.
+:::note[Fixed font sizes]
+These font sizes are not responsive, meaning that they will not change based on the size of the screen. They are usually used for headings, titles, and other large text or decorative elements.
+:::
 
 | Description | CSS Variable                                                                    | Utility Class                                                          |
 | ----------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -232,9 +299,9 @@ The OxyProps system provides a set of fixed font sizes that can be used to quick
 
 Fluid font sizes are responsive font sizes that change based on the size of the screen. They are defined using the CSS clamp() function, which allows to define a minimum, maximum, and preferred font size. The preferred font size is the font size that will be used when the screen size is between the minimum and maximum values.
 
-> 💡 **Note:**
->
-> This set of fluid font sizes is hard coded and the values are not modified by your OxyProps Typography settings. If you want to change the fluid font sizes, you will need to edit the CSS variables directly. For Custom fluid fond sizes, see <a href="#advanced-fluid-font-sizes">Advanced Fluid Font Sizes</a>.
+:::note[Fluid font sizes]
+This small set of fluid font sizes  comes from Open Props and is hard coded. The values are not modified by your OxyProps Typography settings. If you want to change these fluid font sizes, you will need to edit the CSS variables directly. For Custom fluid fond sizes, see [Advanced Fluid Font Sizes](#advanced-fluid-font-sizes).
+:::
 
 | Default value              | CSS Variable                                                                              | Utility Class                                                          |
 | -------------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
@@ -259,27 +326,27 @@ You can customize the fluid font sizes system by adjusting 5 parameters:
 
 This settings defines the base font size for your website. It will define the <ClipboardCopy value="var(--o-fluid-font-0)">`--o-fluid-font-0`</ClipboardCopy> value and will be used as the default for your body text and your `<h6>` headings. Its value is given in rems.
 
-> 💡 **Note:**
->
-> As most of us develop websites on a desktop computer, the base font size is defined for desktop at maximum viewport width. This means that the base font size will be smaller on mobile devices.
+:::note[desktop is the base value]
+As most of us develop websites on a desktop computer, the base font size is defined for desktop at maximum viewport width. This means that the base font size will be smaller on mobile devices. See [Mobile to Desktop ratio](#mobile-to-desktop-ratio) for more information.
+:::
 
 Define your base font size either by entering a value in the input field or by using the slider. In the following example, the base font size is set to 1.2rems. On most browsers with the default font size set to 16px, this will result in a font size of 19.2px. But is a user has set their browser font size to 20px, the base font size will be 24px for them.
 
 <ContentImage coverImage="/images/oxyprops-typography-base-size.webp" alt="Screenshot of the OxyProps base font size typography setting." aspectRatio="16:9" />
 
-> 💡 **Note:**
->
-> It is important for accessibility to define font sizes in rems because it allows users to adjust the font size according to their needs without compromising the layout or functionality of the website.
->
-> When font sizes are defined in pixels, they are fixed and do not respond to the user’s browser settings. This can make the text too small or too large for some users, especially those with visual impairments or who use assistive technology.
->
-> On the other hand, when font sizes are defined in rems, they are relative to the root element, which is usually set to the default font size of the browser. This means that when the user adjusts the font size in their browser settings, all font sizes defined in rems will adjust accordingly, maintaining the relative size and layout of the website.
->
-> This is important for accessibility because it ensures that all users, regardless of their visual abilities or preferences, can read and interact with the content on the website without difficulty.
+:::tip[Why use rems?]
+It is important for accessibility to define font sizes in rems because it allows users to adjust the font size according to their needs without compromising the layout or functionality of the website.  
+
+When font sizes are defined in pixels, they are fixed and do not respond to the user’s browser settings. This can make the text too small or too large for some users, especially those with visual impairments or who use assistive technology.  
+
+On the other hand, when font sizes are defined in rems, they are relative to the root element, which is usually set to the default font size of the browser. This means that when the user adjusts the font size in their browser settings, all font sizes defined in rems will adjust accordingly, maintaining the relative size and layout of the website.  
+
+This is important for accessibility because it ensures that all users, regardless of their visual abilities or preferences, can read and interact with the content on the website without difficulty.  
+:::
 
 #### Font scale ratio
 
-This settings defines the scale ratio used to calculate all the fluid font sizes. Starting from the base font size, which is <ClipboardCopy value="var(--o-fluid-font-0)">`--o-fluid-font-0`</ClipboardCopy>, it is multiplied by the scale ratio to get the next font size. This process is repeated until the maximum font size is reached. This reasults in an exponential scale and not a linear scale, which gives a better visual hierarchy.
+This setting defines the scale ratio used to calculate all the fluid font sizes. Starting from the base font size, which is <ClipboardCopy value="var(--o-fluid-font-0)">`--o-fluid-font-0`</ClipboardCopy>, it is multiplied by the scale ratio to get the next font size. This process is repeated until the maximum font size is reached. This reasults in an exponential scale and not a linear scale, which gives a better visual hierarchy.
 
 As an example, if you define your base font size to be 1rem and your scale ratio to be 1.25, the fluid font sizes will be calculated as follows:
 
@@ -296,15 +363,14 @@ In the following example, the font scale ratio is set to 1.33 which corresponds 
 
 <ContentImage coverImage="/images/oxyprops-typography-font-scale.webp" alt="Screenshot of the OxyProps font scale ratio typography setting." aspectRatio="16:9" />
 
-> 💡 **Fun fact:**
->
-> Presets are defined after the musical scale, which is a series of notes that increase in frequency by a factor of 2. The P4 preset is the fourth note of the scale, which is a 33% increase in frequency.
->
-> Learn more about the main intervals <a href="https://en.wikipedia.org/wiki/Interval_(music)#Main_intervals)" target="_blank" rel="noopener noreferrer">on Wikipedia</a>.
+:::tip[Fun fact]
+Presets are defined after the musical scale, which is a series of notes that increase in frequency by a factor of 2. The P4 preset is the fourth note of the scale, which is a 33% increase in frequency.  
+Learn more about the main intervals <a href="https://en.wikipedia.org/wiki/Interval_(music)#Main_intervals)" target="_blank" rel="noopener noreferrer">on Wikipedia</a>.
+:::
 
 #### Mobile to Desktop ratio
 
-This setting defines the ratio between font sizes at smallets breakpoint and largest breakpoint. This is useful when you want to have a different font size on mobile devices than on desktop devices. For example, you might want to have a smaller font size on mobile devices to make it easier to read.
+This setting defines the ratio between font sizes at smallest breakpoint and largest breakpoint. This is useful when you want to have a different font size on mobile devices than on desktop devices. For example, you might want to have a smaller font size on mobile devices to make it easier to read.
 
 If you set this value to 1, the font size will be the same on all devices. If you set it to 2, the font size will be half the size on mobile devices. Or in other words, the font size will be doubled on desktop devices.
 
@@ -500,181 +566,3 @@ Word breaks are a fundamental aspect of text layout and readability. When the av
 | Allows words to break anywhere in a line.                       | <ClipboardCopy value="o-word-break-break-all">`o-word-break-break-all`</ClipboardCopy> |
 | Prevents breaks between words, but allows breaks within words.  | <ClipboardCopy value="o-word-break-keep-all">`o-word-break-keep-all`</ClipboardCopy>   |
 
-## OxyProps Typography Cheat Sheet
-
-### Font Families
-
-| Description               | CSS Variable                                                                      | Utility Class                                                  |
-| ------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------- |
-| Sans serif, user system   | <ClipboardCopy value="var(--o-font-sans)">`--o-font-sans`</ClipboardCopy>         | <ClipboardCopy value="o-sans">`o-sans`</ClipboardCopy>         |
-| Serif, user system        | <ClipboardCopy value="var(--o-font-serif)">`--o-font-serif`</ClipboardCopy>       | <ClipboardCopy value="o-serif">`o-serif`</ClipboardCopy>       |
-| Monotype, user system     | <ClipboardCopy value="var(--o-font-mono)">`--o-font-mono`</ClipboardCopy>         | <ClipboardCopy value="o-mono">`o-mono`</ClipboardCopy>         |
-| Hyperlegible, self-hosted | <ClipboardCopy value="var(--o-font-atkinson)">`--o-font-atkinson`</ClipboardCopy> | <ClipboardCopy value="o-atkinson">`o-atkinson`</ClipboardCopy> |
-
-### Font Weights
-
-| Description | CSS Variable                                                                      | Utility Class                                                                                                                                |
-| ----------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Thin        | <ClipboardCopy value="var(--o-font-weight-1)">`--o-font-weight-1`</ClipboardCopy> | <ClipboardCopy value="o-thin">`o-thin`</ClipboardCopy>                                                                                       |
-| Extra-light | <ClipboardCopy value="var(--o-font-weight-2)">`--o-font-weight-2`</ClipboardCopy> | <ClipboardCopy value="o-extra-light">`o-extra-light`</ClipboardCopy> or <ClipboardCopy value="o-ultra-light">`o-ultra-light`</ClipboardCopy> |
-| Light       | <ClipboardCopy value="var(--o-font-weight-3)">`--o-font-weight-3`</ClipboardCopy> | <ClipboardCopy value="o-light">`o-light`</ClipboardCopy>                                                                                     |
-| Normal      | <ClipboardCopy value="var(--o-font-weight-4)">`--o-font-weight-4`</ClipboardCopy> | <ClipboardCopy value="o-normal">`o-normal`</ClipboardCopy>                                                                                   |
-| Medium      | <ClipboardCopy value="var(--o-font-weight-5)">`--o-font-weight-5`</ClipboardCopy> | <ClipboardCopy value="o-medium">`o-medium`</ClipboardCopy>                                                                                   |
-| Semi-Bold   | <ClipboardCopy value="var(--o-font-weight-6)">`--o-font-weight-6`</ClipboardCopy> | <ClipboardCopy value="o-semi-bold">`o-semi-bold`</ClipboardCopy>                                                                             |
-| Bold        | <ClipboardCopy value="var(--o-font-weight-7)">`--o-font-weight-7`</ClipboardCopy> | <ClipboardCopy value="o-bold">`o-bold`</ClipboardCopy>                                                                                       |
-| Extra-bold  | <ClipboardCopy value="var(--o-font-weight-8)">`--o-font-weight-8`</ClipboardCopy> | <ClipboardCopy value="o-extra-bold">`o-extra-bold`</ClipboardCopy> or <ClipboardCopy value="o-ultra-bold">`o-ultra-bold`</ClipboardCopy>     |
-| Heavy       | <ClipboardCopy value="var(--o-font-weight-9)">`--o-font-weight-9`</ClipboardCopy> | <ClipboardCopy value="o-black">`o-heavy`</ClipboardCopy>                                                                                     |
-
-### Letter Spacing _(aka Tracking)_
-
-| Default value | CSS Variable                                                                                    | Utility Class                                                      |
-| ------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| -0.05 em      | <ClipboardCopy value="var(--o-font-letterspacing-0)">`--o-font-letterspacing-0`</ClipboardCopy> | <ClipboardCopy value="o-tracking-0">`o-tracking-0`</ClipboardCopy> |
-| 0.025 em      | <ClipboardCopy value="var(--o-font-letterspacing-1)">`--o-font-letterspacing-1`</ClipboardCopy> | <ClipboardCopy value="o-tracking-1">`o-tracking-1`</ClipboardCopy> |
-| 0.05 em       | <ClipboardCopy value="var(--o-font-letterspacing-2)">`--o-font-letterspacing-2`</ClipboardCopy> | <ClipboardCopy value="o-tracking-2">`o-tracking-2`</ClipboardCopy> |
-| 0.075 em      | <ClipboardCopy value="var(--o-font-letterspacing-3)">`--o-font-letterspacing-3`</ClipboardCopy> | <ClipboardCopy value="o-tracking-3">`o-tracking-3`</ClipboardCopy> |
-| 0.15 em       | <ClipboardCopy value="var(--o-font-letterspacing-4)">`--o-font-letterspacing-4`</ClipboardCopy> | <ClipboardCopy value="o-tracking-4">`o-tracking-4`</ClipboardCopy> |
-| 0.5 em        | <ClipboardCopy value="var(--o-font-letterspacing-5)">`--o-font-letterspacing-5`</ClipboardCopy> | <ClipboardCopy value="o-tracking-5">`o-tracking-5`</ClipboardCopy> |
-| 0.75 em       | <ClipboardCopy value="var(--o-font-letterspacing-6)">`--o-font-letterspacing-6`</ClipboardCopy> | <ClipboardCopy value="o-tracking-6">`o-tracking-6`</ClipboardCopy> |
-| 1 em          | <ClipboardCopy value="var(--o-font-letterspacing-7)">`--o-font-letterspacing-7`</ClipboardCopy> | <ClipboardCopy value="o-tracking-7">`o-tracking-7`</ClipboardCopy> |
-
-### Line Height _(aka Leading)_
-
-| Default value | CSS Variable                                                                                | Utility Class                                                      |
-| ------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| 0.95          | <ClipboardCopy value="var(--o-font-lineheight-00)">`--o-font-lineheight-00`</ClipboardCopy> | <ClipboardCopy value="o-leading-00">`o-leading-00`</ClipboardCopy> |
-| 1.1           | <ClipboardCopy value="var(--o-font-lineheight-0)">`--o-font-lineheight-0`</ClipboardCopy>   | <ClipboardCopy value="o-leading-0">`o-leading-0`</ClipboardCopy>   |
-| 1.25          | <ClipboardCopy value="var(--o-font-lineheight-1)">`--o-font-lineheight-1`</ClipboardCopy>   | <ClipboardCopy value="o-leading-1">`o-leading-1`</ClipboardCopy>   |
-| 1.375         | <ClipboardCopy value="var(--o-font-lineheight-2)">`--o-font-lineheight-2`</ClipboardCopy>   | <ClipboardCopy value="o-leading-2">`o-leading-2`</ClipboardCopy>   |
-| 1.5           | <ClipboardCopy value="var(--o-font-lineheight-3)">`--o-font-lineheight-3`</ClipboardCopy>   | <ClipboardCopy value="o-leading-3">`o-leading-3`</ClipboardCopy>   |
-| 1.75          | <ClipboardCopy value="var(--o-font-lineheight-4)">`--o-font-lineheight-4`</ClipboardCopy>   | <ClipboardCopy value="o-leading-4">`o-leading-4`</ClipboardCopy>   |
-| 2             | <ClipboardCopy value="var(--o-font-lineheight-5)">`--o-font-lineheight-5`</ClipboardCopy>   | <ClipboardCopy value="o-leading-5">`o-leading-5`</ClipboardCopy>   |
-
-### Font Sizes
-
-| Default value | CSS Variable                                                                    | Utility Class                                                |
-| ------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------ |
-| 0.5 rem       | <ClipboardCopy value="var(--o-font-size-00)">`--o-font-size-00`</ClipboardCopy> | <ClipboardCopy value="o-font-00">`o-font-00`</ClipboardCopy> |
-| 0.75 rem      | <ClipboardCopy value="var(--o-font-size-0)">`--o-font-size-0`</ClipboardCopy>   | <ClipboardCopy value="o-font-0">`o-font-0`</ClipboardCopy>   |
-| 1 rem         | <ClipboardCopy value="var(--o-font-size-1)">`--o-font-size-1`</ClipboardCopy>   | <ClipboardCopy value="o-font-1">`o-font-1`</ClipboardCopy>   |
-| 1.1 rem       | <ClipboardCopy value="var(--o-font-size-2)">`--o-font-size-2`</ClipboardCopy>   | <ClipboardCopy value="o-font-2">`o-font-2`</ClipboardCopy>   |
-| 1.25 rem      | <ClipboardCopy value="var(--o-font-size-3)">`--o-font-size-3`</ClipboardCopy>   | <ClipboardCopy value="o-font-3">`o-font-3`</ClipboardCopy>   |
-| 1.5 rem       | <ClipboardCopy value="var(--o-font-size-4)">`--o-font-size-4`</ClipboardCopy>   | <ClipboardCopy value="o-font-4">`o-font-4`</ClipboardCopy>   |
-| 2 rem         | <ClipboardCopy value="var(--o-font-size-5)">`--o-font-size-5`</ClipboardCopy>   | <ClipboardCopy value="o-font-5">`o-font-5`</ClipboardCopy>   |
-| 2.5 rem       | <ClipboardCopy value="var(--o-font-size-6)">`--o-font-size-6`</ClipboardCopy>   | <ClipboardCopy value="o-font-6">`o-font-6`</ClipboardCopy>   |
-| 3 rem         | <ClipboardCopy value="var(--o-font-size-7)">`--o-font-size-7`</ClipboardCopy>   | <ClipboardCopy value="o-font-7">`o-font-7`</ClipboardCopy>   |
-| 3.5 rem       | <ClipboardCopy value="var(--o-font-size-8)">`--o-font-size-8`</ClipboardCopy>   | <ClipboardCopy value="o-font-8">`o-font-8`</ClipboardCopy>   |
-
-### Fluid Font Sizes
-
-| Default value              | CSS Variable                                                                              | Utility Class                                                          |
-| -------------------------- | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| clamp(.75rem, 1.5vw, 1rem) | <ClipboardCopy value="var(--o-font-size-fluid-0)">`--o-font-size-fluid-0`</ClipboardCopy> | <ClipboardCopy value="o-font-fluid-0">`o-font-fluid-0`</ClipboardCopy> |
-| clamp(1rem, 2vw, 1.5rem)   | <ClipboardCopy value="var(--o-font-size-fluid-1)">`--o-font-size-fluid-1`</ClipboardCopy> | <ClipboardCopy value="o-font-fluid-1">`o-font-fluid-1`</ClipboardCopy> |
-| clamp(1.5rem, 3vw, 2.5rem) | <ClipboardCopy value="var(--o-font-size-fluid-2)">`--o-font-size-fluid-2`</ClipboardCopy> | <ClipboardCopy value="o-font-fluid-2">`o-font-fluid-2`</ClipboardCopy> |
-| clamp(2rem, 4vw, 3.5rem)   | <ClipboardCopy value="var(--o-font-size-fluid-3)">`--o-font-size-fluid-3`</ClipboardCopy> | <ClipboardCopy value="o-font-fluid-3">`o-font-fluid-3`</ClipboardCopy> |
-
-### Advanced Fluid Font Sizes
-
-| Default value                        | CSS Variable                                                                              | Utility Class                                                                    |
-| ------------------------------------ | ----------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| Automatic size based on html element | <ClipboardCopy value="var(--o-fluid-font)">`--o-fluid-font`</ClipboardCopy>               | <ClipboardCopy value="o-fluid-font">`o-fluid-font`</ClipboardCopy>               |
-| 00: base ÷ scale ratio               | <ClipboardCopy value="var(--o-fluid-font-00)">`--o-fluid-font-00`</ClipboardCopy>         | <ClipboardCopy value="o-fluid-font-00">`o-fluid-font-00`</ClipboardCopy>         |
-| 0 = base font size                   | <ClipboardCopy value="var(--o-fluid-font-0)">`--o-fluid-font-0`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-0">`o-fluid-font-0`</ClipboardCopy>           |
-| 1: base × scale ratio                | <ClipboardCopy value="var(--o-fluid-font-1)">`--o-fluid-font-1`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-1">`o-fluid-font-1`</ClipboardCopy>           |
-| 2: base × scale ratio^2              | <ClipboardCopy value="var(--o-fluid-font-2)">`--o-fluid-font-2`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-2">`o-fluid-font-2`</ClipboardCopy>           |
-| 3: base × scale ratio^3              | <ClipboardCopy value="var(--o-fluid-font-3)">`--o-fluid-font-3`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-3">`o-fluid-font-3`</ClipboardCopy>           |
-| 4: base × scale ratio^4              | <ClipboardCopy value="var(--o-fluid-font-4)">`--o-fluid-font-4`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-4">`o-fluid-font-4`</ClipboardCopy>           |
-| 5: base × scale ratio^5              | <ClipboardCopy value="var(--o-fluid-font-5)">`--o-fluid-font-5`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-5">`o-fluid-font-5`</ClipboardCopy>           |
-| 6: base × scale ratio^6              | <ClipboardCopy value="var(--o-fluid-font-6)">`--o-fluid-font-6`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-6">`o-fluid-font-6`</ClipboardCopy>           |
-| 7: base × scale ratio^7              | <ClipboardCopy value="var(--o-fluid-font-7)">`--o-fluid-font-7`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-7">`o-fluid-font-7`</ClipboardCopy>           |
-| 8: base × scale ratio^8              | <ClipboardCopy value="var(--o-fluid-font-8)">`--o-fluid-font-8`</ClipboardCopy>           | <ClipboardCopy value="o-fluid-font-8">`o-fluid-font-8`</ClipboardCopy>           |
-| 00 sub: 00 × subheading ratio        | <ClipboardCopy value="var(--o-fluid-font-00-sub)">`--o-fluid-font-00-sub`</ClipboardCopy> | <ClipboardCopy value="o-fluid-font-00-sub">`o-fluid-font-00-sub`</ClipboardCopy> |
-| 0 sub: 0 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-0-sub)">`--o-fluid-font-0-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-0-sub">`o-fluid-font-0-sub`</ClipboardCopy>   |
-| 1 sub: 1 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-1-sub)">`--o-fluid-font-1-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-1-sub">`o-fluid-font-1-sub`</ClipboardCopy>   |
-| 2 sub: 2 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-2-sub)">`--o-fluid-font-2-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-2-sub">`o-fluid-font-2-sub`</ClipboardCopy>   |
-| 3 sub: 3 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-3-sub)">`--o-fluid-font-3-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-3-sub">`o-fluid-font-3-sub`</ClipboardCopy>   |
-| 4 sub: 4 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-4-sub)">`--o-fluid-font-4-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-4-sub">`o-fluid-font-4-sub`</ClipboardCopy>   |
-| 5 sub: 5 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-5-sub)">`--o-fluid-font-5-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-5-sub">`o-fluid-font-5-sub`</ClipboardCopy>   |
-| 6 sub: 6 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-6-sub)">`--o-fluid-font-6-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-6-sub">`o-fluid-font-6-sub`</ClipboardCopy>   |
-| 7 sub: 7 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-7-sub)">`--o-fluid-font-7-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-7-sub">`o-fluid-font-7-sub`</ClipboardCopy>   |
-| 8 sub: 8 × subheading ratio          | <ClipboardCopy value="var(--o-fluid-font-8-sub)">`--o-fluid-font-8-sub`</ClipboardCopy>   | <ClipboardCopy value="o-fluid-font-8-sub">`o-fluid-font-8-sub`</ClipboardCopy>   |
-
-| Default value                              | Utility Class                                            |
-| ------------------------------------------ | -------------------------------------------------------- |
-| Subheading Lvl 1 to match a `<h1>` heading | <ClipboardCopy value="o-subh1">`o-subh1`</ClipboardCopy> |
-| Subheading Lvl 2 to match a `<h2>` heading | <ClipboardCopy value="o-subh2">`o-subh2`</ClipboardCopy> |
-| Subheading Lvl 3 to match a `<h3>` heading | <ClipboardCopy value="o-subh3">`o-subh3`</ClipboardCopy> |
-| Subheading Lvl 4 to match a `<h4>` heading | <ClipboardCopy value="o-subh4">`o-subh4`</ClipboardCopy> |
-| Subheading Lvl 5 to match a `<h5>` heading | <ClipboardCopy value="o-subh5">`o-subh5`</ClipboardCopy> |
-| Subheading Lvl 6 to match a `<h6>` heading | <ClipboardCopy value="o-subh6">`o-subh6`</ClipboardCopy> |
-
-### Text Orientation
-
-| Description                        | Utility Class                                                    |
-| ---------------------------------- | ---------------------------------------------------------------- |
-| Vertical top to bottom             | <ClipboardCopy value="o-text-down">`o-text-down`</ClipboardCopy> |
-| Vertical bottom to top             | <ClipboardCopy value="o-text-up">`o-text-up`</ClipboardCopy>     |
-| With upright character orientation | <ClipboardCopy value="o-upright">`o-upright`</ClipboardCopy>     |
-
-### Text Direction
-
-| Description   | Utility Class                                        |
-| ------------- | ---------------------------------------------------- |
-| Left to Right | <ClipboardCopy value="o-ltr">`o-ltr`</ClipboardCopy> |
-| Right to Left | <ClipboardCopy value="o-rtl">`o-rtl`</ClipboardCopy> |
-
-### Text Alignment
-
-| Description | Utility Class                                                          |
-| ----------- | ---------------------------------------------------------------------- |
-| Left        | <ClipboardCopy value="o-text-left">`o-text-left`</ClipboardCopy>       |
-| Right       | <ClipboardCopy value="o-text-right">`o-text-right`</ClipboardCopy>     |
-| Center      | <ClipboardCopy value="o-text-center">`o-text-center`</ClipboardCopy>   |
-| Justify     | <ClipboardCopy value="o-text-justify">`o-text-justify`</ClipboardCopy> |
-| Start       | <ClipboardCopy value="o-text-start">`o-text-start`</ClipboardCopy>     |
-| End         | <ClipboardCopy value="o-text-end">`o-text-end`</ClipboardCopy>         |
-
-### Text Decoration
-
-| Description                       | Utility Class                                                                    |
-| --------------------------------- | -------------------------------------------------------------------------------- |
-| Wing on left side                 | <ClipboardCopy value="o-wings-l">`o-wings-l`</ClipboardCopy>                     |
-| Wing on right side                | <ClipboardCopy value="o-wings-r">`o-wings-r`</ClipboardCopy>                     |
-| Wing on both sides                | <ClipboardCopy value="o-wings-2">`o-wings-2`</ClipboardCopy>                     |
-| Underline with your Brand Color   | <ClipboardCopy value="o-underline-brand">`o-underline-brand`</ClipboardCopy>     |
-| Underline with your Accent Color  | <ClipboardCopy value="o-underline-accent">`o-underline-accent`</ClipboardCopy>   |
-| Underline with your Links Color   | <ClipboardCopy value="o-underline-links">`o-underline-links`</ClipboardCopy>     |
-| Underline with your Visited Color | <ClipboardCopy value="o-underline-visited">`o-underline-visited`</ClipboardCopy> |
-| Squiggly with your Brand Color    | <ClipboardCopy value="o-wavy-brand">`o-wavy-brand`</ClipboardCopy>               |
-| Squiggly with your Accent Color   | <ClipboardCopy value="o-wavy-accent">`o-wavy-accent`</ClipboardCopy>             |
-| Squiggly with your Links Color    | <ClipboardCopy value="o-wavy-links">`o-wavy-links`</ClipboardCopy>               |
-| Squiggly with your Visited Color  | <ClipboardCopy value="o-wavy-visited">`o-wavy-visited`</ClipboardCopy>           |
-
-### Text Overflow
-
-| Description                                                   | Utility Class                                                                              |
-| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Excess text is clipped and not displayed                      | <ClipboardCopy value="o-overflow-text-clip">`o-overflow-text-clip`</ClipboardCopy>         |
-| Excess text is truncated and an ellipsis ("...") is displayed | <ClipboardCopy value="o-overflow-text-ellipsis">`o-overflow-text-ellipsis`</ClipboardCopy> |
-| Limit displayed text to 1 line.                               | <ClipboardCopy value="o-line-clamp-1">`o-line-clamp-1`</ClipboardCopy>                     |
-| Limit displayed text to 2 lines.                              | <ClipboardCopy value="o-line-clamp-2">`o-line-clamp-2`</ClipboardCopy>                     |
-| Limit displayed text to 3 lines.                              | <ClipboardCopy value="o-line-clamp-3">`o-line-clamp-3`</ClipboardCopy>                     |
-| Limit displayed text to 4 lines.                              | <ClipboardCopy value="o-line-clamp-4">`o-line-clamp-4`</ClipboardCopy>                     |
-| Limit displayed text to 5 lines.                              | <ClipboardCopy value="o-line-clamp-5">`o-line-clamp-5`</ClipboardCopy>                     |
-| Limit displayed text to 6 lines.                              | <ClipboardCopy value="o-line-clamp-6">`o-line-clamp-6`</ClipboardCopy>                     |
-| Limit displayed text to 7 lines.                              | <ClipboardCopy value="o-line-clamp-7">`o-line-clamp-7`</ClipboardCopy>                     |
-| Limit displayed text to 8 lines.                              | <ClipboardCopy value="o-line-clamp-8">`o-line-clamp-8`</ClipboardCopy>                     |
-| Limit displayed text to 9 lines.                              | <ClipboardCopy value="o-line-clamp-9">`o-line-clamp-9`</ClipboardCopy>                     |
-| Limit displayed text to 10 lines.                             | <ClipboardCopy value="o-line-clamp-10">`o-line-clamp-10`</ClipboardCopy>                   |
-
-### Word Breaks
-
-| Description                                                     | Utility Class                                                                          |
-| --------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| The default behavior is used.                                   | <ClipboardCopy value="o-word-wrap-normal">`o-word-wrap-normal`</ClipboardCopy>         |
-| Words are broken and wrapped to fit within the available space. | <ClipboardCopy value="o-word-wrap-anywhere">`o-word-wrap-anywhere`</ClipboardCopy>     |
-| Allows words to break between any two letters.                  | <ClipboardCopy value="o-word-wrap-break-word">`o-word-wrap-break-word`</ClipboardCopy> |
-| No special rules for line-breaking should be applied.           | <ClipboardCopy value="o-word-break-normal">`o-word-break-normal`</ClipboardCopy>       |
-| Allows words to break anywhere in a line.                       | <ClipboardCopy value="o-word-break-break-all">`o-word-break-break-all`</ClipboardCopy> |
-| Prevents breaks between words, but allows breaks within words.  | <ClipboardCopy value="o-word-break-keep-all">`o-word-break-keep-all`</ClipboardCopy>   |
