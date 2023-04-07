@@ -151,7 +151,7 @@
 
 	--theme-bg: hsla(var(--o-canvas-000-hsl) / 100%);
 	--theme-bg-gradient-top: var(--theme-bg);
-	--theme-bg-gradient-bottom: hsla(var(--o-canvas-75-hsl) / 100%);
+	--theme-bg-gradient-bottom: hsla(var(--o-canvas-015-hsl) / 100%);
 	--_mask-gradient: radial-gradient(ellipse at 50% 25%, black, black 60%, rgba(0, 0, 0, 0.85) 80%);
 
 	--theme-bg-hover: hsla(var(--o-brand-light-hsl) / 10%);

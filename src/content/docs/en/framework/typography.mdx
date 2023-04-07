@@ -3,6 +3,7 @@ title: Typography
 description: An intro to the OxyProps Typography properties and classes syntax.
 i18nReady: false
 ---
+
 import Button from '~/components/Button.astro';
 
 import ClipboardCopy from '~/components/ClipboardCopy.astro';
@@ -21,7 +22,6 @@ If you're looking for a quick reference guide to the typography props and classe
 	<Button href="/en/cheatsheet/families-and-weights/">Check the Typography cheat sheet</Button>
 </div>
 
-
 ## Font Families
 
 The font-family property in CSS is a powerful tool that allows web designers and developers to specify the font used for text content on a website. By setting the font-family property to a specific font, designers can control the visual appearance of text content and create a consistent visual identity for a website.
@@ -32,11 +32,11 @@ In this section, we will explore the font families available in OxyProps, which 
 
 ### OxyProps font families
 
-Oxyprops offers 4 font families available as CSS variables. 3 of them are using your website visitor system fonts instead of external server-hosted fonts. This has several benefits.  
+Oxyprops offers 4 font families available as CSS variables. 3 of them are using your website visitor system fonts instead of external server-hosted fonts. This has several benefits.
 
-Firstly, system fonts are pre-installed on most devices, which means that the website's text will load faster as the browser doesn't have to download the font file from an external server. This can lead to improved website performance and user experience.  
+Firstly, system fonts are pre-installed on most devices, which means that the website's text will load faster as the browser doesn't have to download the font file from an external server. This can lead to improved website performance and user experience.
 
-Additionally, system fonts are typically designed to be highly readable and legible, making them a reliable choice for website text content.  
+Additionally, system fonts are typically designed to be highly readable and legible, making them a reliable choice for website text content.
 
 By using Oxyprops font families, which are system fonts optimized for the web, developers can ensure a consistent and optimized text experience across various devices and platforms.
 
@@ -51,11 +51,15 @@ The sans serif font stack is <ClipboardCopy value="var(--o-font-sans)">`--o-font
 	--o-font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
 }
 ```
-<div style="background-color: var(--o-surface-1); color: var(--o-text-1); padding: var(--o-size-fluid-2);">
-    <p style="font-family: var(--o-font-sans);font-weight: var(--o-font-weight-7);">The --o-font-sans font family</p>
-    <p style="font-family: var(--o-font-sans);font-weight: var(--o-font-weight-4);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
 
+<div style="background-color: var(--o-surface-1); color: var(--o-text-1); padding: var(--o-size-fluid-2);">
+	<p style="font-family: var(--o-font-sans);font-weight: var(--o-font-weight-7);">The --o-font-sans font family</p>
+	<p style="font-family: var(--o-font-sans);font-weight: var(--o-font-weight-4);">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+		ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+		occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
+</div>
 
 The font stack `system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif` is interesting to use because it specifies a range of font families that are commonly available on different operating systems and devices.
 
@@ -76,8 +80,12 @@ The serif font stack is <ClipboardCopy value="var(--o-font-serif)">`--o-font-ser
 ```
 
 <div style="background-color: var(--o-surface-1); color: var(--o-text-1); padding: var(--o-size-fluid-2);">
-    <p style="font-family: var(--o-font-serif);font-weight: var(--o-font-weight-7);">The --o-font-serif font family</p>
-    <p style="font-family: var(--o-font-serif);font-weight: var(--o-font-weight-4);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p style="font-family: var(--o-font-serif);font-weight: var(--o-font-weight-7);">The --o-font-serif font family</p>
+	<p style="font-family: var(--o-font-serif);font-weight: var(--o-font-weight-4);">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+		ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+		occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
 </div>
 
 The `ui-serif` value in the font stack refers to a font that is designed with serifs and optimized for on-screen use, while the `serif` value is a fallback that provides a generic serif font. This font stack is interesting because it allows for the use of a serif font that is specifically tailored for screen reading, improving readability and reducing eye strain for users. Additionally, using system fonts like `ui-serif` can improve website performance by reducing the need to load custom fonts from external servers.
@@ -88,13 +96,17 @@ The monotype font stack is <ClipboardCopy value="var(--o-font-mono)">`--o-font-m
 
 ```css
 :where(html) {
-    --o-font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
+	--o-font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
 }
 ```
 
 <div style="background-color: var(--o-surface-1); color: var(--o-text-1); padding: var(--o-size-fluid-2);">
-    <p style="font-family: var(--o-font-mono);font-weight: var(--o-font-weight-7);">The --o-font-mono font family</p>
-    <p style="font-family: var(--o-font-mono);font-weight: var(--o-font-weight-4);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p style="font-family: var(--o-font-mono);font-weight: var(--o-font-weight-7);">The --o-font-mono font family</p>
+	<p style="font-family: var(--o-font-mono);font-weight: var(--o-font-weight-4);">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+		ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+		occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
 </div>
 
 Using a font stack that includes popular monospace fonts like `Dank Mono`, `Inconsolata`, and `Source Code Pro` can improve the readability and legibility of text content on a website or application. Monospace fonts are designed with fixed-width characters that align horizontally, which makes them an ideal choice for coding, terminal, and other technical contexts where visual clarity is critical. Including fallbacks like `ui-monospace` and `monospace` ensures that the text will display legibly on a wider range of devices and browsers.
@@ -109,13 +121,17 @@ The atkinsontype font stack is <ClipboardCopy value="var(--o-font-atkinson)">`--
 
 ```css
 :where(html) {
-    --o-font-atkinson: 'Atkinson Hyperlegible', var(--o-font-sans), sans-serif;
+	--o-font-atkinson: 'Atkinson Hyperlegible', var(--o-font-sans), sans-serif;
 }
 ```
 
 <div style="background-color: var(--o-surface-1); color: var(--o-text-1); padding: var(--o-size-fluid-2);">
-    <p style="font-family: var(--o-font-atkinson);font-weight: var(--o-font-weight-7);">The --o-font-atkinson font family</p>
-    <p style="font-family: var(--o-font-atkinson);font-weight: var(--o-font-weight-4);">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p style="font-family: var(--o-font-atkinson);font-weight: var(--o-font-weight-7);">The --o-font-atkinson font family</p>
+	<p style="font-family: var(--o-font-atkinson);font-weight: var(--o-font-weight-4);">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+		ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+		occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
 </div>
 
 Atkinson Hyperlegible is a font designed specifically for readability and legibility. It was created by Applied Design Works in collaboration with the Braille Institute, and its primary purpose is to make reading easier for people with visual impairments and dyslexia.
@@ -214,20 +230,21 @@ To use these props and classes, simply add them to the HTML element containing t
 | 0.75 em       | <ClipboardCopy value="var(--o-font-letterspacing-6)">`--o-font-letterspacing-6`</ClipboardCopy> | <ClipboardCopy value="o-tracking-6">`o-tracking-6`</ClipboardCopy> |
 | 1 em          | <ClipboardCopy value="var(--o-font-letterspacing-7)">`--o-font-letterspacing-7`</ClipboardCopy> | <ClipboardCopy value="o-tracking-7">`o-tracking-7`</ClipboardCopy> |
 
-### In Oxygen
+<BuilderTabs>
+	<Fragment slot="oxygen">
 
 Oxyprops creates a context menu for Oxygen Letter Spacing input fields to give you instant access to the corresponding CSS varaibles.  
 Simply right-click on the input field and select the desired value from the context menu.
 
 <ContentImage coverImage="/images/oxy-tracking-context-menu.webp" alt="Preview of the OxyProps context menu for letter spacing in Oxygen editor." aspectRatio="16:9" />
-
-### In Bricks
-
+</Fragment>
+<Fragment slot="bricks">
 Oxyprops creates a context menu for Bricks Letter Spacing input fields to give you instant access to the corresponding CSS varaibles.  
 Simply right-click on the input field and select the desired value from the context menu.
 
 <ContentImage coverImage="/images/brx-tracking-context-menu.webp" alt="Preview of the OxyProps context menu for letter spacing in Bricks editor." aspectRatio="16:9" />
-
+</Fragment>
+</BuilderTabs>
 Experiment with different letter spacing values to find the look that works best for your design. Remember that too much letter spacing can make the text difficult to read, while too little can make it look cramped and hard to read as well.
 
 ## Line Height
@@ -250,20 +267,22 @@ To use these classes, simply add them to the HTML element containing the text th
 | 1.75          | <ClipboardCopy value="var(--o-font-lineheight-4)">`--o-font-lineheight-4`</ClipboardCopy>   | <ClipboardCopy value="o-leading-4">`o-leading-4`</ClipboardCopy>   |
 | 2             | <ClipboardCopy value="var(--o-font-lineheight-5)">`--o-font-lineheight-5`</ClipboardCopy>   | <ClipboardCopy value="o-leading-5">`o-leading-5`</ClipboardCopy>   |
 
-### In Oxygen
+<BuilderTabs>
+	<Fragment slot="oxygen">
 
 Oxyprops creates a context menu for Oxygen Line Height input fields to give you instant access to the corresponding CSS varaibles.  
 Simply right-click on the input field and select the desired value from the context menu.
 
 <ContentImage coverImage="/images/oxy-leading-context-menu.webp" alt="Preview of the OxyProps context menu for line heigths in Oxygen editor." aspectRatio="16:9" />
-
-### In Bricks
+</Fragment>
+<Fragment slot="bricks">
 
 Oxyprops creates a context menu for Bricks Line Height input fields to give you instant access to the corresponding CSS varaibles.  
 Simply right-click on the input field and select the desired value from the context menu.
 
 <ContentImage coverImage="/images/brx-leading-context-menu.webp" alt="Preview of the OxyProps context menu for line heigths in Bricks editor." aspectRatio="16:9" />
-
+</Fragment>
+</BuilderTabs>
 By using these variables and classes, designers can adjust the line height of text to achieve the desired look and feel of their design.
 
 ## Font Sizes
@@ -300,7 +319,7 @@ These font sizes are not responsive, meaning that they will not change based on 
 Fluid font sizes are responsive font sizes that change based on the size of the screen. They are defined using the CSS clamp() function, which allows to define a minimum, maximum, and preferred font size. The preferred font size is the font size that will be used when the screen size is between the minimum and maximum values.
 
 :::note[Fluid font sizes]
-This small set of fluid font sizes  comes from Open Props and is hard coded. The values are not modified by your OxyProps Typography settings. If you want to change these fluid font sizes, you will need to edit the CSS variables directly. For Custom fluid fond sizes, see [Advanced Fluid Font Sizes](#advanced-fluid-font-sizes).
+This small set of fluid font sizes comes from Open Props and is hard coded. The values are not modified by your OxyProps Typography settings. If you want to change these fluid font sizes, you will need to edit the CSS variables directly. For Custom fluid fond sizes, see [Advanced Fluid Font Sizes](#advanced-fluid-font-sizes).
 :::
 
 | Default value              | CSS Variable                                                                              | Utility Class                                                          |
@@ -335,11 +354,11 @@ Define your base font size either by entering a value in the input field or by u
 <ContentImage coverImage="/images/oxyprops-typography-base-size.webp" alt="Screenshot of the OxyProps base font size typography setting." aspectRatio="16:9" />
 
 :::tip[Why use rems?]
-It is important for accessibility to define font sizes in rems because it allows users to adjust the font size according to their needs without compromising the layout or functionality of the website.  
+It is important for accessibility to define font sizes in rems because it allows users to adjust the font size according to their needs without compromising the layout or functionality of the website.
 
-When font sizes are defined in pixels, they are fixed and do not respond to the user’s browser settings. This can make the text too small or too large for some users, especially those with visual impairments or who use assistive technology.  
+When font sizes are defined in pixels, they are fixed and do not respond to the user’s browser settings. This can make the text too small or too large for some users, especially those with visual impairments or who use assistive technology.
 
-On the other hand, when font sizes are defined in rems, they are relative to the root element, which is usually set to the default font size of the browser. This means that when the user adjusts the font size in their browser settings, all font sizes defined in rems will adjust accordingly, maintaining the relative size and layout of the website.  
+On the other hand, when font sizes are defined in rems, they are relative to the root element, which is usually set to the default font size of the browser. This means that when the user adjusts the font size in their browser settings, all font sizes defined in rems will adjust accordingly, maintaining the relative size and layout of the website.
 
 This is important for accessibility because it ensures that all users, regardless of their visual abilities or preferences, can read and interact with the content on the website without difficulty.  
 :::
@@ -565,4 +584,3 @@ Word breaks are a fundamental aspect of text layout and readability. When the av
 | No special rules for line-breaking should be applied.           | <ClipboardCopy value="o-word-break-normal">`o-word-break-normal`</ClipboardCopy>       |
 | Allows words to break anywhere in a line.                       | <ClipboardCopy value="o-word-break-break-all">`o-word-break-break-all`</ClipboardCopy> |
 | Prevents breaks between words, but allows breaks within words.  | <ClipboardCopy value="o-word-break-keep-all">`o-word-break-keep-all`</ClipboardCopy>   |
-
