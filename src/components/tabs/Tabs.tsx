@@ -36,8 +36,8 @@ type Props = {
 
 export default function Tabs({ sharedStore, ...slots }: Props) {
 	const tabId = genTabId();
-	const tabs = Object.entries(slots).filter(isTabSlotEntry);
-	const panels = Object.entries(slots).filter(isPanelSlotEntry);
+	const tabs = Object.entries(slots).filter(isTabSlotEntry).sort();
+	const panels = Object.entries(slots).filter(isPanelSlotEntry).sort();
 	/** Used to focus next and previous tab on arrow key press */
 	const tabButtonRefs = useRef<Record<TabSlot, HTMLButtonElement | null>>({});
 	const scrollToTabRef = useRef<HTMLButtonElement | null>(null);

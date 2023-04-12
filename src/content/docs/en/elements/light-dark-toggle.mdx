@@ -1,0 +1,78 @@
+---
+title: Light Dark Toggle Element
+description: Add light/dark modes to your website with OxyProps. Customize the toggle size and colors to suit your needs. Provides accessibility and visual design benefits.
+i18nReady: true
+---
+import ContentImage from '~/components/ContentImage.astro';
+import BuilderTabs from '~/components/tabs/BuilderTabs.astro';
+import ClipboardCopy from '~/components/ClipboardCopy.astro';
+
+
+The light/dark toggle element is a UI component that allows users to switch between a light and dark color scheme on your website. The toggle is usually placed in a prominent position on the page, such as in the header or navigation menu, and when clicked, it switches the color scheme of the page.
+<BuilderTabs>
+    <Fragment slot="bricks">
+        <ContentImage coverImage="/images/brx-light-dark-toggle-element.webp" caption="An oversized view of the Light / Dark Toggle element." aspectRatio="16:9" />
+
+        Settings:
+        * **Icon Color**:  
+        The color of the toggle button. Use a logical color like <ClipboardCopy value="var(--o-links)">`--o-links`</ClipboardCopy> to have it responsive to light and dark modes.
+        * **Icon Color Hover**:  
+        The color of the toggle button on mouse hover. Use a logical color like <ClipboardCopy value="var(--o-links-hover)">`--o-links-hover`</ClipboardCopy> to have it responsive to light and dark modes.
+        * **Size**:  
+        The size of the toggle button. You can use any valid size. Defaults to <ClipboardCopy value="var(--o-size-3)">`--o-size-3`</ClipboardCopy> which is equivalent to 1rem.
+        * **Size on touchscreens**:  
+        It is useful to have a bigger toggle on touch screens because it makes it easier for users to interact with the toggle using their fingers, which have larger touch points than a mouse cursor. This is why this setting allows to define a specific size for touch screens. You can use any valid size. Defaults to <ClipboardCopy value="var(--o-size-8)">`--o-size-8`</ClipboardCopy> which is equivalent to 3rem.
+    </Fragment>
+	<Fragment slot="oxygen">
+        <ContentImage coverImage="/images/oxy-light-dark-toggle-element.webp" caption="An oversized view of the Light / Dark Toggle element." aspectRatio="16:9" />
+
+
+        Settings:
+        * **Size**:  
+        The size of the toggle button. You can use any valid size. Defaults to <ClipboardCopy value="var(--o-size-3)">`--o-size-3`</ClipboardCopy> which is equivalent to 1rem.
+        * **Size on touchscreens**:  
+        It is useful to have a bigger toggle on touch screens because it makes it easier for users to interact with the toggle using their fingers, which have larger touch points than a mouse cursor. This is why this setting allows to define a specific size for touch screens. You can use any valid size. Defaults to <ClipboardCopy value="var(--o-size-8)">`--o-size-8`</ClipboardCopy> which is equivalent to 3rem.
+        * **Icon Color in Light Mode**:  
+        Use a logical color like <ClipboardCopy value="var(--o-links)">`--o-links`</ClipboardCopy> to have it responsive to light and dark modes.
+        * **Icon Color on Hover in Light Mode**:  
+        Use a logical color like <ClipboardCopy value="var(--o-links-hover)">`--o-links-hover`</ClipboardCopy> to have it responsive to light and dark modes.
+        * **Icon Color in Dark Mode (Optional)**:  
+        Use a logical color like <ClipboardCopy value="var(--o-links)">`--o-links`</ClipboardCopy> to have it responsive to light and dark modes.
+        * **Icon Color on Hover in Dark Mode (Optional)**:  
+        Use a logical color like <ClipboardCopy value="var(--o-links-hover)">`--o-links-hover`</ClipboardCopy> to have it responsive to light and dark modes.
+    </Fragment>
+</BuilderTabs>
+
+## Usage
+
+To use the light/dark toggle element, simply drag and drop it into your page. You can then customize the element's settings to suit your needs.
+
+By default, OxyProps makes your site responsive to your WebSite visitor system color scheme preference. If your visitor prefers a light color scheme, your site will be displayed in light mode. If your visitor prefers a dark color scheme, your site will be displayed in dark mode. With the Light / Dark Toggle element, your visitor can force your site to be displayed in light mode or dark mode.
+
+### Choice persistence
+
+The light/dark toggle element uses the [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) API to store the user's choice. This means that the user's choice will be remembered even if they close the browser or tab and return to your site at a later time. localStorage is perfectly safe to use for this purpose, as it is not accessible to third-party scripts and is not sent to the server.
+
+### Custom CSS
+
+You can take advantage of the light/dark toggle in your custom CSS to further customize the appearance and behavior of your WebSite.
+
+Create custom CSS rules following this pattern:
+
+```css title="Light/Dark in your custom CSS"
+[color-scheme="light"] .my-element {
+    /* CSS rules for light mode */
+}
+
+[color-scheme="dark"] .my-element {
+    /* CSS rules for dark mode */
+}
+```
+
+## Benefits
+
+The use of a light/dark toggle can provide several benefits for users. For example, some users may prefer a darker color scheme, especially when using a website or application in low-light conditions, such as at night or in a dimly lit room. A darker color scheme can also help reduce eye strain and make text easier to read in certain situations.
+
+On the other hand, some users may prefer a lighter color scheme, especially if they have visual impairments or other accessibility needs that make it difficult to read text on a dark background.
+
+In addition to improving accessibility and user preferences, a light/dark toggle can also enhance the visual design of a website or application, as it provides an additional design element and can help convey a sense of personality or brand identity.

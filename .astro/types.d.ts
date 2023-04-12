@@ -468,9 +468,44 @@ declare module 'astro:content' {
   collection: "docs",
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] },
-"en/elements/light-dark-toggle.md": {
-  id: "en/elements/light-dark-toggle.md",
+"en/elements/faq-element.mdx": {
+  id: "en/elements/faq-element.mdx",
+  slug: "en/elements/faq-element",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] },
+"en/elements/icon-element.md": {
+  id: "en/elements/icon-element.md",
+  slug: "en/elements/icon-element",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] },
+"en/elements/light-dark-toggle.mdx": {
+  id: "en/elements/light-dark-toggle.mdx",
   slug: "en/elements/light-dark-toggle",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] },
+"en/elements/menubar-element.mdx": {
+  id: "en/elements/menubar-element.mdx",
+  slug: "en/elements/menubar-element",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] },
+"en/elements/menuburger-element.md": {
+  id: "en/elements/menuburger-element.md",
+  slug: "en/elements/menuburger-element",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] },
+"en/elements/menubutton-element.md": {
+  id: "en/elements/menubutton-element.md",
+  slug: "en/elements/menubutton-element",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">

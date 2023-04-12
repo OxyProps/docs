@@ -17,6 +17,14 @@ export default [
 	{ text: 'Design Tokens', slug: 'core-concepts/design-tokens', key: 'core-concepts/design-tokens' },
 	{ text: 'CSS Custom Properties', slug: 'core-concepts/css-custom-properties', key: 'core-concepts/css-custom-properties' },
 
+	{ text: 'Custom Elements', header: true, type: 'learn', key: 'elements' },
+	{ text: 'F.A.Q', slug: 'elements/faq-element', key: 'elements/faq-element' },
+	{ text: 'Light / Dark Toggle', slug: 'elements/light-dark-toggle', key: 'elements/light-dark-toggle' },
+	{ text: 'Menu Bar', slug: 'elements/menubar-element', key: 'elements/menubar-element' },
+	{ text: 'Menu Burger', slug: 'elements/menuburger-element', key: 'elements/menuburger-element' },
+	{ text: 'Menu Button', slug: 'elements/menubutton-element', key: 'elements/menubutton-element' },
+	{ text: 'Unlimited Icon', slug: 'elements/icon-element', key: 'elements/icon-element' },
+
 	{ text: 'CSS Components', header: true, type: 'learn', key: 'components' },
 	{ text: 'Buttons', slug: 'components/buttons', key: 'components/buttons' },
 	{ text: 'Cards', slug: 'components/cards', key: 'components/cards' },
@@ -49,8 +57,6 @@ export default [
 	{ text: 'Selectors', slug: 'features/selectors', key: 'features/selectors' },
 	{ text: 'Stylesheets', slug: 'features/stylesheets', key: 'features/stylesheets' },
 
-	{ text: 'Custom Elements', header: true, type: 'learn', key: 'elements' },
-	{ text: 'Light/Dark Toggle', slug: 'elements/light-dark-toggle', key: 'elements/light-dark-toggle' },
 	{ text: 'A11y', header: true, type: 'cheat', key: 'animations' },
 	{
 		text: 'Accessibility',
