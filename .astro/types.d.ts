@@ -475,13 +475,13 @@ declare module 'astro:content' {
   collection: "docs",
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] },
-"en/elements/icon-element.md": {
-  id: "en/elements/icon-element.md",
+"en/elements/icon-element.mdx": {
+  id: "en/elements/icon-element.mdx",
   slug: "en/elements/icon-element",
   body: string,
   collection: "docs",
   data: InferEntrySchema<"docs">
-} & { render(): Render[".md"] },
+} & { render(): Render[".mdx"] },
 "en/elements/light-dark-toggle.mdx": {
   id: "en/elements/light-dark-toggle.mdx",
   slug: "en/elements/light-dark-toggle",
