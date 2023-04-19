@@ -14,6 +14,7 @@ export default [
 	{ text: 'Basic Setup', slug: 'basic-setup', key: 'basic-setup' },
 
 	{ text: 'Core Concepts', header: true, type: 'learn', key: 'coreConcepts' },
+	{ text: 'Atomic Design System', slug: 'core-concepts/atomic-design-system', key: 'core-concepts/atomic-design-system' },
 	{ text: 'Design Tokens', slug: 'core-concepts/design-tokens', key: 'core-concepts/design-tokens' },
 	{ text: 'CSS Custom Properties', slug: 'core-concepts/css-custom-properties', key: 'core-concepts/css-custom-properties' },
 

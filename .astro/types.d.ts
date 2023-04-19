@@ -454,6 +454,13 @@ declare module 'astro:content' {
   collection: "docs",
   data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] },
+"en/core-concepts/atomic-design-system.mdx": {
+  id: "en/core-concepts/atomic-design-system.mdx",
+  slug: "en/core-concepts/atomic-design-system",
+  body: string,
+  collection: "docs",
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] },
 "en/core-concepts/css-custom-properties.mdx": {
   id: "en/core-concepts/css-custom-properties.mdx",
   slug: "en/core-concepts/css-custom-properties",
