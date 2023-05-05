@@ -49,8 +49,8 @@ function remarkAsides(): unified.Plugin<[], mdast.Root> {
 			let title: string | undefined;
 			remove(node, (child) => {
 				if (child.data?.directiveLabel) {
-					if ('children' in child && 'value' in child.children[0]) {
-						title = child.children[0].value;
+					if ('children' in child && 'value' in (child.children as Node[])[0]) {
+						title = (child.children as any[])[0].value;
 					}
 					return true;
 				}

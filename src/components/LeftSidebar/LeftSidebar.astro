@@ -1,12 +1,11 @@
 ---
-import Sponsors from './Sponsors.astro';
-import { removeLeadingSlash, removeTrailingSlash } from '../../util';
-import { getNav } from '../../util/getNav';
-import { useTranslations } from '../../i18n/util';
+import { removeLeadingSlash, removeTrailingSlash } from '~/util';
+import { getNav } from '~/util/getNav';
+import { useTranslations } from '~/i18n/util';
 import SidebarContent from './SidebarContent.astro';
-import SidebarToggleTabGroup from '../TabGroup/SidebarToggleTabGroup';
-import CommunityMenu from '../RightSidebar/CommunityMenu.astro';
-import ThemeToggleButton from '../Header/ThemeToggleButton';
+import SidebarToggleTabGroup from '~/components/TabGroup/SidebarToggleTabGroup';
+import CommunityMenu from '~/components/RightSidebar/CommunityMenu.astro';
+import ThemeToggleButton from '~/components/Header/ThemeToggleButton';
 import { getPageCategory } from '~/util/getPageCategory';
 
 export interface Props {
@@ -14,7 +13,6 @@ export interface Props {
 }
 
 const t = useTranslations(Astro);
-
 const { currentPage } = Astro.props as Props;
 const currentPageMatch = removeLeadingSlash(removeTrailingSlash(currentPage));
 

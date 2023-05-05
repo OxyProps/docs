@@ -55,9 +55,10 @@ const { ...attrs } = Astro.props as Props;
 	if (clipboardButtons) {
 		clipboardButtons.forEach((button) => {
             button.addEventListener('clipboard-copy', (e) => {
-                e.target.classList.add('o-copy--copied');
+                if(!e.target) return;
+                (e.target as HTMLElement).classList.add('o-copy--copied');
                 setTimeout(() => {
-                    e.target.classList.remove('o-copy--copied');
+                    (e.target as HTMLElement).classList.remove('o-copy--copied');
                 }, 2000);
             });
         });
