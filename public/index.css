@@ -21,7 +21,7 @@
 }
 body::-webkit-scrollbar,
 body::-webkit-scrollbar-track {
-    opacity: 0.5;
+	opacity: 0.5;
 	background: var(--theme-bg-gradient);
 }
 
@@ -60,7 +60,7 @@ body::before {
 	right: 0;
 	bottom: 0;
 	z-index: -1000;
-    opacity: 1;
+	opacity: 1;
 	background: var(--theme-bg-gradient);
 }
 
@@ -73,13 +73,13 @@ body::before {
 	right: -25%;
 	bottom: 25%;
 	z-index: -1;
-    rotate: 3deg;
-	background: var(--theme-navbar-noise),linear-gradient(160deg,var(--o-brand) 0%,var(--o-accent) 100%);
-    background-blend-mode: overlay;
-    background-size: cover;
-    filter: var(--theme-navbar-noise-filter);
-    -webkit-mask-image: radial-gradient(rgba(0,0,0,.4),transparent 70%);
-    mask-image: radial-gradient(rgba(0,0,0,.5),transparent 70%);
+	rotate: 3deg;
+	background: var(--theme-navbar-noise), linear-gradient(160deg, var(--o-brand) 0%, var(--o-accent) 100%);
+	background-blend-mode: overlay;
+	background-size: cover;
+	filter: var(--theme-navbar-noise-filter);
+	-webkit-mask-image: radial-gradient(rgba(0, 0, 0, 0.4), transparent 70%);
+	mask-image: radial-gradient(rgba(0, 0, 0, 0.5), transparent 70%);
 }
 
 body {

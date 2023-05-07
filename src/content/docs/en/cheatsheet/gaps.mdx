@@ -10,14 +10,14 @@ This page lists all Gaps CSS custom properties available in the OxyProps Framewo
 
 ## No Gap
 
-| Value            | Utility Class                                              |
-| ---------------- | ---------------------------------------------------------- |
+| Value            | Utility Class                                            |
+| ---------------- | -------------------------------------------------------- |
 | 0: cancels a gap | <ClipboardCopy value="o-nogap">`o-nogap`</ClipboardCopy> |
 
 ## Fluid Gaps
 
-| Value                      | CSS Variable                                                                      | Utility Class                                                |
-| -------------------------- | --------------------------------------------------------------------------------- | ------------------------------------------------------------ |
+| Value                      | CSS Variable                                                                      | Utility Class                                              |
+| -------------------------- | --------------------------------------------------------------------------------- | ---------------------------------------------------------- |
 | clamp(.5rem, 1vw, 1rem)    | <ClipboardCopy value="var(--o-size-fluid-1)">`--o-size-fluid-1`</ClipboardCopy>   | <ClipboardCopy value="o-gap-1">`o-gap-1`</ClipboardCopy>   |
 | clamp(1rem, 2vw, 1.5rem)   | <ClipboardCopy value="var(--o-size-fluid-2)">`--o-size-fluid-2`</ClipboardCopy>   | <ClipboardCopy value="o-gap-2">`o-gap-2`</ClipboardCopy>   |
 | clamp(1.5rem, 3vw, 2rem)   | <ClipboardCopy value="var(--o-size-fluid-3)">`--o-size-fluid-3`</ClipboardCopy>   | <ClipboardCopy value="o-gap-3">`o-gap-3`</ClipboardCopy>   |
@@ -31,8 +31,8 @@ This page lists all Gaps CSS custom properties available in the OxyProps Framewo
 
 ## Fluid Gaps (Row and Column)
 
-| Value                      | Row Gaps                                                             | Column Gaps                                                          |
-| -------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Value                      | Row Gaps                                                           | Column Gaps                                                        |
+| -------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
 | clamp(.5rem, 1vw, 1rem)    | <ClipboardCopy value="o-row-gap-1">`o-row-gap-1`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-1">`o-col-gap-1`</ClipboardCopy>   |
 | clamp(1rem, 2vw, 1.5rem)   | <ClipboardCopy value="o-row-gap-2">`o-row-gap-2`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-2">`o-col-gap-2`</ClipboardCopy>   |
 | clamp(1.5rem, 3vw, 2rem)   | <ClipboardCopy value="o-row-gap-3">`o-row-gap-3`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-3">`o-col-gap-3`</ClipboardCopy>   |
@@ -50,42 +50,40 @@ This page lists all Gaps CSS custom properties available in the OxyProps Framewo
 Negative values are invalid for `gap`, `row-gap`, and `column-gap`. This is why there are no `o-gap-fixed-000` and `o-gap-fixed-00` classes. If you need to use negative values, use margin classes on the children elements.
 :::
 
-| Value   | CSS Variable                                                            | Utility Class                                                                |
-| ------- | ----------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| .25rem  | <ClipboardCopy value="var(--o-size-1)">`--o-size-1`</ClipboardCopy>     | <ClipboardCopy value="o-gap-fixed-1">`o-gap-fixed-1`</ClipboardCopy>     |
-| .5rem   | <ClipboardCopy value="var(--o-size-2)">`--o-size-2`</ClipboardCopy>     | <ClipboardCopy value="o-gap-fixed-2">`o-gap-fixed-2`</ClipboardCopy>     |
-| 1rem    | <ClipboardCopy value="var(--o-size-3)">`--o-size-3`</ClipboardCopy>     | <ClipboardCopy value="o-gap-fixed-3">`o-gap-fixed-3`</ClipboardCopy>     |
-| 1.25rem | <ClipboardCopy value="var(--o-size-4)">`--o-size-4`</ClipboardCopy>     | <ClipboardCopy value="o-gap-fixed-4">`o-gap-fixed-4`</ClipboardCopy>     |
-| 1.5rem  | <ClipboardCopy value="var(--o-size-5)">`--o-size-5`</ClipboardCopy>     | <ClipboardCopy value="o-gap-fixed-5">`o-gap-fixed-5`</ClipboardCopy>     |
-| 1.75rem | <ClipboardCopy value="var(--o-size-6)">`--o-size-6`</ClipboardCopy>     | <ClipboardCopy value="o-gap-fixed-6">`o-gap-fixed-6`</ClipboardCopy>     |
-| 2rem    | <ClipboardCopy value="var(--o-size-7)">`--o-size-7`</ClipboardCopy>     | <ClipboardCopy value="o-gap-fixed-7">`o-gap-fixed-7`</ClipboardCopy>     |
-| 3rem    | <ClipboardCopy value="var(--o-size-8)">`--o-size-8`</ClipboardCopy>     | <ClipboardCopy value="o-gap-fixed-8">`o-gap-fixed-8`</ClipboardCopy>     |
-| 4rem    | <ClipboardCopy value="var(--o-size-9)">`--o-size-9`</ClipboardCopy>     | <ClipboardCopy value="o-gap-fixed-9">`o-gap-fixed-9`</ClipboardCopy>     |
-| 5rem    | <ClipboardCopy value="var(--o-size-10)">`--o-size-10`</ClipboardCopy>   | <ClipboardCopy value="o-gap-fixed-10">`o-gap-fixed-10`</ClipboardCopy>   |
-| 7.5rem  | <ClipboardCopy value="var(--o-size-11)">`--o-size-11`</ClipboardCopy>   | <ClipboardCopy value="o-gap-fixed-11">`o-gap-fixed-11`</ClipboardCopy>   |
-| 10rem   | <ClipboardCopy value="var(--o-size-12)">`--o-size-12`</ClipboardCopy>   | <ClipboardCopy value="o-gap-fixed-12">`o-gap-fixed-12`</ClipboardCopy>   |
-| 15rem   | <ClipboardCopy value="var(--o-size-13)">`--o-size-13`</ClipboardCopy>   | <ClipboardCopy value="o-gap-fixed-13">`o-gap-fixed-13`</ClipboardCopy>   |
-| 20rem   | <ClipboardCopy value="var(--o-size-14)">`--o-size-14`</ClipboardCopy>   | <ClipboardCopy value="o-gap-fixed-14">`o-gap-fixed-14`</ClipboardCopy>   |
-| 30rem   | <ClipboardCopy value="var(--o-size-15)">`--o-size-15`</ClipboardCopy>   | <ClipboardCopy value="o-gap-fixed-15">`o-gap-fixed-15`</ClipboardCopy>   |
+| Value   | CSS Variable                                                          | Utility Class                                                          |
+| ------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| .25rem  | <ClipboardCopy value="var(--o-size-1)">`--o-size-1`</ClipboardCopy>   | <ClipboardCopy value="o-gap-fixed-1">`o-gap-fixed-1`</ClipboardCopy>   |
+| .5rem   | <ClipboardCopy value="var(--o-size-2)">`--o-size-2`</ClipboardCopy>   | <ClipboardCopy value="o-gap-fixed-2">`o-gap-fixed-2`</ClipboardCopy>   |
+| 1rem    | <ClipboardCopy value="var(--o-size-3)">`--o-size-3`</ClipboardCopy>   | <ClipboardCopy value="o-gap-fixed-3">`o-gap-fixed-3`</ClipboardCopy>   |
+| 1.25rem | <ClipboardCopy value="var(--o-size-4)">`--o-size-4`</ClipboardCopy>   | <ClipboardCopy value="o-gap-fixed-4">`o-gap-fixed-4`</ClipboardCopy>   |
+| 1.5rem  | <ClipboardCopy value="var(--o-size-5)">`--o-size-5`</ClipboardCopy>   | <ClipboardCopy value="o-gap-fixed-5">`o-gap-fixed-5`</ClipboardCopy>   |
+| 1.75rem | <ClipboardCopy value="var(--o-size-6)">`--o-size-6`</ClipboardCopy>   | <ClipboardCopy value="o-gap-fixed-6">`o-gap-fixed-6`</ClipboardCopy>   |
+| 2rem    | <ClipboardCopy value="var(--o-size-7)">`--o-size-7`</ClipboardCopy>   | <ClipboardCopy value="o-gap-fixed-7">`o-gap-fixed-7`</ClipboardCopy>   |
+| 3rem    | <ClipboardCopy value="var(--o-size-8)">`--o-size-8`</ClipboardCopy>   | <ClipboardCopy value="o-gap-fixed-8">`o-gap-fixed-8`</ClipboardCopy>   |
+| 4rem    | <ClipboardCopy value="var(--o-size-9)">`--o-size-9`</ClipboardCopy>   | <ClipboardCopy value="o-gap-fixed-9">`o-gap-fixed-9`</ClipboardCopy>   |
+| 5rem    | <ClipboardCopy value="var(--o-size-10)">`--o-size-10`</ClipboardCopy> | <ClipboardCopy value="o-gap-fixed-10">`o-gap-fixed-10`</ClipboardCopy> |
+| 7.5rem  | <ClipboardCopy value="var(--o-size-11)">`--o-size-11`</ClipboardCopy> | <ClipboardCopy value="o-gap-fixed-11">`o-gap-fixed-11`</ClipboardCopy> |
+| 10rem   | <ClipboardCopy value="var(--o-size-12)">`--o-size-12`</ClipboardCopy> | <ClipboardCopy value="o-gap-fixed-12">`o-gap-fixed-12`</ClipboardCopy> |
+| 15rem   | <ClipboardCopy value="var(--o-size-13)">`--o-size-13`</ClipboardCopy> | <ClipboardCopy value="o-gap-fixed-13">`o-gap-fixed-13`</ClipboardCopy> |
+| 20rem   | <ClipboardCopy value="var(--o-size-14)">`--o-size-14`</ClipboardCopy> | <ClipboardCopy value="o-gap-fixed-14">`o-gap-fixed-14`</ClipboardCopy> |
+| 30rem   | <ClipboardCopy value="var(--o-size-15)">`--o-size-15`</ClipboardCopy> | <ClipboardCopy value="o-gap-fixed-15">`o-gap-fixed-15`</ClipboardCopy> |
 
 ## Fixed Gaps (Row and Column)
 
-| Value                      | Row Gaps                                                             | Column Gaps                                                          |
-| -------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| .25rem    | <ClipboardCopy value="o-row-gap-fixed-1">`o-row-gap-fixed-1`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-1">`o-col-gap-fixed-1`</ClipboardCopy>   |
-| .5rem     | <ClipboardCopy value="o-row-gap-fixed-2">`o-row-gap-fixed-2`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-2">`o-col-gap-fixed-2`</ClipboardCopy>   |
-| 1rem      | <ClipboardCopy value="o-row-gap-fixed-3">`o-row-gap-fixed-3`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-3">`o-col-gap-fixed-3`</ClipboardCopy>   |
-| 1.25rem   | <ClipboardCopy value="o-row-gap-fixed-4">`o-row-gap-fixed-4`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-4">`o-col-gap-fixed-4`</ClipboardCopy>   |
-| 1.5rem    | <ClipboardCopy value="o-row-gap-fixed-5">`o-row-gap-fixed-5`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-5">`o-col-gap-fixed-5`</ClipboardCopy>   |
-| 1.75rem   | <ClipboardCopy value="o-row-gap-fixed-6">`o-row-gap-fixed-6`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-6">`o-col-gap-fixed-6`</ClipboardCopy>   |
-| 2rem      | <ClipboardCopy value="o-row-gap-fixed-7">`o-row-gap-fixed-7`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-7">`o-col-gap-fixed-7`</ClipboardCopy>   |
-| 3rem      | <ClipboardCopy value="o-row-gap-fixed-8">`o-row-gap-fixed-8`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-8">`o-col-gap-fixed-8`</ClipboardCopy>   |
-| 4rem      | <ClipboardCopy value="o-row-gap-fixed-9">`o-row-gap-fixed-9`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-9">`o-col-gap-fixed-9`</ClipboardCopy>   |
-| 5rem      | <ClipboardCopy value="o-row-gap-fixed-10">`o-row-gap-fixed-10`</ClipboardCopy> | <ClipboardCopy value="o-col-gap-fixed-10">`o-col-gap-fixed-10`</ClipboardCopy> |
-| 7.5rem    | <ClipboardCopy value="o-row-gap-fixed-11">`o-row-gap-fixed-11`</ClipboardCopy> | <ClipboardCopy value="o-col-gap-fixed-11">`o-col-gap-fixed-11`</ClipboardCopy> |
-| 10rem     | <ClipboardCopy value="o-row-gap-fixed-12">`o-row-gap-fixed-12`</ClipboardCopy> | <ClipboardCopy value="o-col-gap-fixed-12">`o-col-gap-fixed-12`</ClipboardCopy> |
-| 15rem     | <ClipboardCopy value="o-row-gap-fixed-13">`o-row-gap-fixed-13`</ClipboardCopy> | <ClipboardCopy value="o-col-gap-fixed-13">`o-col-gap-fixed-13`</ClipboardCopy> |
-| 20rem     | <ClipboardCopy value="o-row-gap-fixed-14">`o-row-gap-fixed-14`</ClipboardCopy> | <ClipboardCopy value="o-col-gap-fixed-14">`o-col-gap-fixed-14`</ClipboardCopy> |
-| 30rem     | <ClipboardCopy value="o-row-gap-fixed-15">`o-row-gap-fixed-15`</ClipboardCopy> | <ClipboardCopy value="o-col-gap-fixed-15">`o-col-gap-fixed-15`</ClipboardCopy> |
-
-
+| Value   | Row Gaps                                                                       | Column Gaps                                                                    |
+| ------- | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| .25rem  | <ClipboardCopy value="o-row-gap-fixed-1">`o-row-gap-fixed-1`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-1">`o-col-gap-fixed-1`</ClipboardCopy>   |
+| .5rem   | <ClipboardCopy value="o-row-gap-fixed-2">`o-row-gap-fixed-2`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-2">`o-col-gap-fixed-2`</ClipboardCopy>   |
+| 1rem    | <ClipboardCopy value="o-row-gap-fixed-3">`o-row-gap-fixed-3`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-3">`o-col-gap-fixed-3`</ClipboardCopy>   |
+| 1.25rem | <ClipboardCopy value="o-row-gap-fixed-4">`o-row-gap-fixed-4`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-4">`o-col-gap-fixed-4`</ClipboardCopy>   |
+| 1.5rem  | <ClipboardCopy value="o-row-gap-fixed-5">`o-row-gap-fixed-5`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-5">`o-col-gap-fixed-5`</ClipboardCopy>   |
+| 1.75rem | <ClipboardCopy value="o-row-gap-fixed-6">`o-row-gap-fixed-6`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-6">`o-col-gap-fixed-6`</ClipboardCopy>   |
+| 2rem    | <ClipboardCopy value="o-row-gap-fixed-7">`o-row-gap-fixed-7`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-7">`o-col-gap-fixed-7`</ClipboardCopy>   |
+| 3rem    | <ClipboardCopy value="o-row-gap-fixed-8">`o-row-gap-fixed-8`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-8">`o-col-gap-fixed-8`</ClipboardCopy>   |
+| 4rem    | <ClipboardCopy value="o-row-gap-fixed-9">`o-row-gap-fixed-9`</ClipboardCopy>   | <ClipboardCopy value="o-col-gap-fixed-9">`o-col-gap-fixed-9`</ClipboardCopy>   |
+| 5rem    | <ClipboardCopy value="o-row-gap-fixed-10">`o-row-gap-fixed-10`</ClipboardCopy> | <ClipboardCopy value="o-col-gap-fixed-10">`o-col-gap-fixed-10`</ClipboardCopy> |
+| 7.5rem  | <ClipboardCopy value="o-row-gap-fixed-11">`o-row-gap-fixed-11`</ClipboardCopy> | <ClipboardCopy value="o-col-gap-fixed-11">`o-col-gap-fixed-11`</ClipboardCopy> |
+| 10rem   | <ClipboardCopy value="o-row-gap-fixed-12">`o-row-gap-fixed-12`</ClipboardCopy> | <ClipboardCopy value="o-col-gap-fixed-12">`o-col-gap-fixed-12`</ClipboardCopy> |
+| 15rem   | <ClipboardCopy value="o-row-gap-fixed-13">`o-row-gap-fixed-13`</ClipboardCopy> | <ClipboardCopy value="o-col-gap-fixed-13">`o-col-gap-fixed-13`</ClipboardCopy> |
+| 20rem   | <ClipboardCopy value="o-row-gap-fixed-14">`o-row-gap-fixed-14`</ClipboardCopy> | <ClipboardCopy value="o-col-gap-fixed-14">`o-col-gap-fixed-14`</ClipboardCopy> |
+| 30rem   | <ClipboardCopy value="o-row-gap-fixed-15">`o-row-gap-fixed-15`</ClipboardCopy> | <ClipboardCopy value="o-col-gap-fixed-15">`o-col-gap-fixed-15`</ClipboardCopy> |

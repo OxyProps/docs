@@ -24,9 +24,10 @@ const icons: Record<NonNullable<Props['type']>, { viewBox: string; d: string[] }
 	},
 	caution: {
 		viewBox: '0 0 32 32',
-		d: ['M15.999 22.898c-.78 0-1.4-.63-1.4-1.4v-9.17c0-.78.63-1.4 1.4-1.4c.78 0 1.4.63 1.4 1.4v9.16a1.4 1.4 0 0 1-1.4 1.41Zm1.4 2.579a1.4 1.4 0 1 1-2.8 0a1.4 1.4 0 0 1 2.8 0Z',
-        'M13.976 5.163c.906-1.55 3.14-1.55 4.046 0l.003.005l12.664 21.937c.882 1.556-.222 3.503-2.03 3.503H3.339c-1.807 0-2.915-1.959-2.028-3.508l.002-.003l12.66-21.93l.002-.004Zm1.727 1.007v.002L3.046 28.095h-.001a.343.343 0 0 0 .293.513h25.32a.34.34 0 0 0 .291-.515L16.296 6.172l-.001-.002a.342.342 0 0 0-.592 0Z'
-    ],
+		d: [
+			'M15.999 22.898c-.78 0-1.4-.63-1.4-1.4v-9.17c0-.78.63-1.4 1.4-1.4c.78 0 1.4.63 1.4 1.4v9.16a1.4 1.4 0 0 1-1.4 1.41Zm1.4 2.579a1.4 1.4 0 1 1-2.8 0a1.4 1.4 0 0 1 2.8 0Z',
+			'M13.976 5.163c.906-1.55 3.14-1.55 4.046 0l.003.005l12.664 21.937c.882 1.556-.222 3.503-2.03 3.503H3.339c-1.807 0-2.915-1.959-2.028-3.508l.002-.003l12.66-21.93l.002-.004Zm1.727 1.007v.002L3.046 28.095h-.001a.343.343 0 0 0 .293.513h25.32a.34.34 0 0 0 .291-.515L16.296 6.172l-.001-.002a.342.342 0 0 0-.592 0Z',
+		],
 	},
 	danger: {
 		viewBox: '0 0 32 32',
@@ -77,7 +78,7 @@ const { viewBox, d } = icons[type];
 
 	:global(.theme-dark) aside {
 		--aside-text-lightness: 85%;
-        --aside-color-lightness: 45%;
+		--aside-color-lightness: 45%;
 	}
 
 	.title {
@@ -120,35 +121,35 @@ const { viewBox, d } = icons[type];
 		--aside-color-lightness: 32%;
 		--aside-color-base: var(--color-base-teal);
 	}
-    :global(.theme-dark) aside.tip {
+	:global(.theme-dark) aside.tip {
 		--aside-color-lightness: 30%;
-        --aside-text-lightness: 85%;
+		--aside-text-lightness: 85%;
 	}
 
 	.caution {
 		--aside-color-lightness: 45%;
 		--aside-color-base: var(--color-base-yellow);
 	}
-    :global(.theme-dark) aside.caution {
+	:global(.theme-dark) aside.caution {
 		--aside-color-lightness: 45%;
-        --aside-text-lightness: 85%;
+		--aside-text-lightness: 85%;
 	}
 
 	.danger {
 		--aside-color-lightness: 54%;
 		--aside-color-base: var(--color-base-red);
 	}
-    :global(.theme-dark) aside.danger {
+	:global(.theme-dark) aside.danger {
 		--aside-color-lightness: 50%;
-        --aside-text-lightness: 85%;
+		--aside-text-lightness: 85%;
 	}
-	
-    .announcement {
+
+	.announcement {
 		--aside-color-lightness: 45%;
 		--aside-color-base: var(--color-base-sky);
 	}
-    :global(.theme-dark) aside.announcement {
+	:global(.theme-dark) aside.announcement {
 		--aside-color-lightness: 40%;
-        --aside-text-lightness: 85%;
+		--aside-text-lightness: 85%;
 	}
 </style>

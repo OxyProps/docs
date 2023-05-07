@@ -4262,7 +4262,7 @@ p {
 }
 @media (prefers-color-scheme: dark) {
 	:root,
-::backdrop {
+	::backdrop {
 		--o-shadow-color: 220 40% 2%;
 		--o-shadow-strength: 25%;
 	}

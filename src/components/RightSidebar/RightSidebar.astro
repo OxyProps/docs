@@ -16,7 +16,7 @@ const overview = t('rightSidebar.overview');
 	{headings && <TableOfContents client:media="(min-width: 50em)" toc={generateToc(headings, overview)} labels={{ onThisPage: t('rightSidebar.onThisPage') }} isMobile={false} />}
 	<ContributeMenu i18nReady={content.i18nReady} editHref={githubEditUrl} />
 	<CommunityMenu />
-    <TestMenu />
+	<TestMenu />
 </nav>
 
 <style>

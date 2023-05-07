@@ -26,6 +26,7 @@ On the dashboard home page, you will find:
 4. The Reset Settings button. To reset your settings to the default values.
 
 {' '}
+
 <ContentImage
 	coverImage="/images/oxyprops-dashboard.webp"
 	caption="The OxyProps tracking (aka letter spacing) context menu in Bricks editor."
@@ -44,27 +45,38 @@ In the settings page, you will find the “Builder Features” section. This is 
 We will not dive into all settings, but ss a quick start, I want to highlight a few of them.
 
 <BuilderTabs>
-<Fragment slot="bricks">
-  <ContentImage coverImage="/images/oxyprops-settings-bricks.webp" caption="The builder features settings for Bricks." alt="Screenshot of the OxyProps dashboard for Bricks." aspectRatio="16:9" />
-1. **Create a Bricks Styles Theme**.  
-*Disabled by default - Activation recommended.*  
-Unless you are installing OxyProps on an existing site with existing styles, enable this feature. When enabled, OxyProps will create a new theme in the Bricks Theme Styles feature. This theme will contain the default minimal OxyProps styles. You can then use this theme as a starting point for your own theme and safely tweak any initial setting to fit your need.
-2. **Apply normalize**.  
-*Enabled by default - Activation recommended.*  
-Normalize is an opinionated stylesheet that sets a lot of small detail styles so you don’t have to. For example, it sets maximum length for the text elements (headings and paragraphs), it applies you color scheme to html elements, it gives default outlines for keyboard navugation, etc. If you are the kind of developper that want full control and no presets, you may want to disable it by unchecking this box.
-3. **Choose a set of selectors to preload in Bricks**.  
-*Moderate ~600classes by default - I recommend you choose the biggest one.*  
-There was a time when Bricks did struggle when a high number of classes where registered in the editor. For users experiencing slowdowns in the editor, this option allows to reduce the number of pre-registered classes to improve performances. If you are not experiencing any slowdowns, you can choose the highest value. It is important to understand that this setting only impacts Bricks autosuggestion feature. If a class is not pre-registered, it will still be available in the editor, but you will have to type it manually.
-</Fragment>
-<Fragment slot="oxygen">
-  <ContentImage coverImage="/images/oxyprops-settings-oxygen.webp" caption="The builder features settings for Oxygen." alt="Screenshot of the OxyProps dashboard for Oxygen." aspectRatio="16:9" />
-  1. **Replace Oxygen Global Settings**.  
-*Disabled by default - Activation recommended.*  
-Unless you are installing OxyProps on an existing site with existing Global Settings, enable this feature. When enabled, OxyProps will populate Oxygen Global Settings with the framework defaults. This will set the default minimal OxyProps styles like fluid font sizes or responsive links colors. You can then safely tweak any initial setting to fit your need. You can restore the defaults by unchecking this option, save, then re-check it and save again. But be aware that this will reset all your Oxygen Global Settings to the default OxyProps values.
-2. **Apply normalize**.  
-*Enabled by default - Activation recommended.*  
-Normalize is an opinionated stylesheet that sets a lot of small detail styles so you don’t have to. For example, it sets maximum length for the text elements (headings and paragraphs), it applies you color scheme to html elements, it gives default outlines for keyboard navugation, etc. If you are the kind of developper that want full control and no presets, you may want to disable it by unchecking this box.
-  </Fragment>
+	<Fragment slot="bricks">
+		<ContentImage
+			coverImage="/images/oxyprops-settings-bricks.webp"
+			caption="The builder features settings for Bricks."
+			alt="Screenshot of the OxyProps dashboard for Bricks."
+			aspectRatio="16:9"
+		/>
+		1. **Create a Bricks Styles Theme**. *Disabled by default - Activation recommended.* Unless you are installing OxyProps on an existing site with existing styles, enable this feature.
+		When enabled, OxyProps will create a new theme in the Bricks Theme Styles feature. This theme will contain the default minimal OxyProps styles. You can then use this theme as a
+		starting point for your own theme and safely tweak any initial setting to fit your need. 2. **Apply normalize**. *Enabled by default - Activation recommended.* Normalize is an opinionated
+		stylesheet that sets a lot of small detail styles so you don’t have to. For example, it sets maximum length for the text elements (headings and paragraphs), it applies you color
+		scheme to html elements, it gives default outlines for keyboard navugation, etc. If you are the kind of developper that want full control and no presets, you may want to disable
+		it by unchecking this box. 3. **Choose a set of selectors to preload in Bricks**. *Moderate ~600classes by default - I recommend you choose the biggest one.* There was a time when
+		Bricks did struggle when a high number of classes where registered in the editor. For users experiencing slowdowns in the editor, this option allows to reduce the number of pre-registered
+		classes to improve performances. If you are not experiencing any slowdowns, you can choose the highest value. It is important to understand that this setting only impacts Bricks
+		autosuggestion feature. If a class is not pre-registered, it will still be available in the editor, but you will have to type it manually.
+	</Fragment>
+	<Fragment slot="oxygen">
+		<ContentImage
+			coverImage="/images/oxyprops-settings-oxygen.webp"
+			caption="The builder features settings for Oxygen."
+			alt="Screenshot of the OxyProps dashboard for Oxygen."
+			aspectRatio="16:9"
+		/>
+		1. **Replace Oxygen Global Settings**. *Disabled by default - Activation recommended.* Unless you are installing OxyProps on an existing site with existing Global Settings, enable
+		this feature. When enabled, OxyProps will populate Oxygen Global Settings with the framework defaults. This will set the default minimal OxyProps styles like fluid font sizes or
+		responsive links colors. You can then safely tweak any initial setting to fit your need. You can restore the defaults by unchecking this option, save, then re-check it and save
+		again. But be aware that this will reset all your Oxygen Global Settings to the default OxyProps values. 2. **Apply normalize**. *Enabled by default - Activation recommended.* Normalize
+		is an opinionated stylesheet that sets a lot of small detail styles so you don’t have to. For example, it sets maximum length for the text elements (headings and paragraphs), it
+		applies you color scheme to html elements, it gives default outlines for keyboard navugation, etc. If you are the kind of developper that want full control and no presets, you may
+		want to disable it by unchecking this box.
+	</Fragment>
 </BuilderTabs>
 
 ## Setting up your color scheme
@@ -74,8 +86,14 @@ Normalize is an opinionated stylesheet that sets a lot of small detail styles so
 OxyProps offers a versatile color management system, allowing you to choose from pre-set OxyProps colors or define your own custom color scheme. Here's how you can get started:
 
 First, Navigate to the “Colors” page in OxyProps dashboard. You will find first the section "Color schemes". This is where you can choose if you want your site to use a light or dark color scheme.
-  
-  <ContentImage coverImage="/images/oxyprops-color-schemes-setting.webp" caption="The color schemes settings." alt="Screenshot of the OxyProps dashboard to definne color schemes." aspectRatio="16:9" />
+
+{' '}
+<ContentImage
+	coverImage="/images/oxyprops-color-schemes-setting.webp"
+	caption="The color schemes settings."
+	alt="Screenshot of the OxyProps dashboard to definne color schemes."
+	aspectRatio="16:9"
+/>
 
 1. This switch allows you to lock the framework in light mode only.
 2. If the #1 switch is off, you can choose which color schemes you want OxyProps to create. You can choose between light, dark, dim, colorful light, colorful dark.
@@ -105,27 +123,38 @@ From the canvas logical color, you will choose whish shades to assign to the sur
 - **Text 1** is the default color for headings.
 - **Text 2** is the default color for body text.
 
-  <ContentImage coverImage="/images/oxyprops-canvas-color-setting.webp" caption="Defining your Canvas reference color." alt="Screenshot of the OxyProps dashboard for defining canvas color." aspectRatio="16:9" />
+  <ContentImage
+  	coverImage="/images/oxyprops-canvas-color-setting.webp"
+  	caption="Defining your Canvas reference color."
+  	alt="Screenshot of the OxyProps dashboard for defining canvas color."
+  	aspectRatio="16:9"
+  />
 
 1. **Choose a preset color**.  
-*Defaults to Zinc which is `#70707A`
-Oxyprops offers a choice of 9 neutral color presets. All of them are colors with low saturation. They are not pure greys. You can choose any of them by clicking the color sample in the palette, and click `Save Changes`.
+   \*Defaults to Zinc which is `#70707A`
+   Oxyprops offers a choice of 9 neutral color presets. All of them are colors with low saturation. They are not pure greys. You can choose any of them by clicking the color sample in the palette, and click `Save Changes`.
 2. **Set your custom color**.  
-If you want to set your own custom color, you can do so by clicking the wide color band. This will open a color picker where you can choose any color you want. You can also type the hex code of the color you want to use.
+   If you want to set your own custom color, you can do so by clicking the wide color band. This will open a color picker where you can choose any color you want. You can also type the hex code of the color you want to use.
 3. **Identify the shade for your reference color**.  
-When you select a color, OxyProps generates the full color swatch and maps your reference color to the closest Luminance value. You will notice your reference color is marked with a ★. In the exemple visible on the screenshot, the reference color is shade 400 of the canvas swatch. The CSS variable `--o-canvas-400` is the reference color for the canvas logical color and has the exact value you entered. All other shades are calculated automatically.
+   When you select a color, OxyProps generates the full color swatch and maps your reference color to the closest Luminance value. You will notice your reference color is marked with a ★. In the exemple visible on the screenshot, the reference color is shade 400 of the canvas swatch. The CSS variable `--o-canvas-400` is the reference color for the canvas logical color and has the exact value you entered. All other shades are calculated automatically.
 4. **Preview the full color swatch**.  
-The first line displays the 16 available shades with their values.
+   The first line displays the 16 available shades with their values.
 5. **Preview transaparencies**.  
-When you hover over a shade, the second line will reflect 16 different levels of transparency for that shade. This is useful to preview the opacity of a color.
+   When you hover over a shade, the second line will reflect 16 different levels of transparency for that shade. This is useful to preview the opacity of a color.
 6. **Define color schemes**.  
-When you are happy with your reference color, you can define the details of your color schemes. Click on one of the `Define the details of your Light mode` or `Define the details of your Dark mode` buttons to expand the panel.
+   When you are happy with your reference color, you can define the details of your color schemes. Click on one of the `Define the details of your Light mode` or `Define the details of your Dark mode` buttons to expand the panel.
 
 #### Setting your color schemes
 
 When you are happy with your reference color, you can define the details of your color schemes. Click on one of the `Define the details of your Light mode` or `Define the details of your Dark mode` buttons to expand the panel.
 
-  <ContentImage coverImage="/images/oxyprops-canvas-light-mode-setting.webp" caption="Defining the details of your color schemes." alt="Screenshot of the OxyProps dashboard for defining color schemes." aspectRatio="16:9" />
+{' '}
+<ContentImage
+	coverImage="/images/oxyprops-canvas-light-mode-setting.webp"
+	caption="Defining the details of your color schemes."
+	alt="Screenshot of the OxyProps dashboard for defining color schemes."
+	aspectRatio="16:9"
+/>
 
 1. Select the shade of your choice for defining **Surface 1** for this color scheme.
 2. Select the shade of your choice for defining **Surface 2** for this color scheme.
@@ -141,7 +170,13 @@ When you are happy with your reference color, you can define the details of your
 
 OxyProps will check the accessibility of your selection and display the calculated contrast ratio between the text and the background as well as the rating agains WCAG 2.1 (current) and APCA (future WCAG 3) standards.
 
-  <ContentImage coverImage="/images/oxyprops-canvas-a11y-check.webp" caption="Defining the details of your color schemes." alt="Screenshot of the OxyProps dashboard for defining color schemes." aspectRatio="16:9" />
+{' '}
+<ContentImage
+	coverImage="/images/oxyprops-canvas-a11y-check.webp"
+	caption="Defining the details of your color schemes."
+	alt="Screenshot of the OxyProps dashboard for defining color schemes."
+	aspectRatio="16:9"
+/>
 
 1. Foreground colors are text 1 and text 2 as defined in your color scheme settings.
 2. Background colors are surface 1, 2, 3 and 4 as defined in your color scheme settings.
@@ -161,7 +196,13 @@ For each chromatic color, you will set the refernce color as you did for the can
 It is a good practice to chose a more contrasting shade for the hover state. This will help users to identify the interactive elements of your site.
 :::
 
-  <ContentImage coverImage="/images/oxyprops-brand-color-setting.webp" caption="Defining your brand, accent, links and visited colors." alt="Screenshot of the OxyProps dashboard for defining logical colors." aspectRatio="16:9" />
+{' '}
+<ContentImage
+	coverImage="/images/oxyprops-brand-color-setting.webp"
+	caption="Defining your brand, accent, links and visited colors."
+	alt="Screenshot of the OxyProps dashboard for defining logical colors."
+	aspectRatio="16:9"
+/>
 
 1. **Choose a preset color**. In this example, we are setting the brand color to the `Indigo` preset.
 2. **Or set your custom color**. By clicking the color band.

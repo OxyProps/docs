@@ -18,9 +18,7 @@ const lang = getLanguageFromURL(Astro.url.pathname);
 
 const tutorialPages = getTutorialPages(pages, lang);
 const units = getTutorialUnits(tutorialPages);
-const currentUnitIndex = units.findIndex((unit) =>
-	unit.lessons.some((lesson) => currentUrl.endsWith(stripLangFromSlug(lesson.slug)))
-);
+const currentUnitIndex = units.findIndex((unit) => unit.lessons.some((lesson) => currentUrl.endsWith(stripLangFromSlug(lesson.slug))));
 const currentUnit = units[currentUnitIndex];
 
 const { next } = getPreviousAndNext(

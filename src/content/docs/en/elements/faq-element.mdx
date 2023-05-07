@@ -3,13 +3,14 @@ title: F.A.Q. Element
 description: Accessible and semantic, the OxyProps F.A.Q. custom element is perfect for displaying FAQs on your website.
 i18nReady: true
 ---
+
 import ContentImage from '~/components/ContentImage.astro';
 import BuilderTabs from '~/components/tabs/BuilderTabs.astro';
 
 The OxyProps F.A.Q. custom element is a semantic and accessible way to display frequently asked questions and their corresponding answers. This element is registered in the builder elements library under the OxyProps section.
 
 :::caution[known issue]
-Since Bricks v1.7.1, the OxyProps F.A.Q. custom element has a known issue where the element is not   rendered properly in the Bricks editor. It works fine on front-end. We are working on this problem.
+Since Bricks v1.7.1, the OxyProps F.A.Q. custom element has a known issue where the element is not rendered properly in the Bricks editor. It works fine on front-end. We are working on this problem.
 :::
 
 :::note[Bricks Only for now]
@@ -17,41 +18,36 @@ The OxyProps F.A.Q. custom element is currently only available for use in Bricks
 :::
 
 <BuilderTabs>
-    <Fragment slot="bricks">
-        <ContentImage coverImage="/images/brx-faq-element.webp" caption="Choose “Full Demo” from the structure menu to insert a complete blueprint." aspectRatio="16:9" />
-    </Fragment>
-	<Fragment slot="oxygen">
-        Coming soon to Oxygen Builder.
-    </Fragment>
+	<Fragment slot="bricks">
+		<ContentImage coverImage="/images/brx-faq-element.webp" caption="Choose “Full Demo” from the structure menu to insert a complete blueprint." aspectRatio="16:9" />
+	</Fragment>
+	<Fragment slot="oxygen">Coming soon to Oxygen Builder.</Fragment>
 </BuilderTabs>
 
 ## Usage
+
 To use the OxyProps F.A.Q. custom element, add it to your page and then add the questions and answers to the element. The questions and answers are added as children of the `o-faq` element.
 
 Each question is contained within a `dt` element, which also contains a `button` element that can be used to toggle the visibility of the answer. The answer content is a child of a `dd` element, ensuring that the list structure is communicated to assistive technologies.
 
 Use the OxyProps structure menu to easily add Questions, Answers, aor both to the F.A.Q. element.
+
 <BuilderTabs>
-    <Fragment slot="bricks">
-        <ContentImage coverImage="/images/brx-faq-context.webp" caption="Insert F.A.Q. elements with OxyProps Structure Menu." aspectRatio="16:9" />
-        1. Choose “Full Demo” from the structure menu to insert a complete blueprint.
-        2. Choose “Root” from the structure menu to insert an empty F.A.Q. container.
-        3. Choose “Q/A Pair” from the structure menu to insert a Question and an Answer.
-        3. Choose “Question” from the structure menu to insert a question.
-        4. Choose “Answer” from the structure menu to insert an answer.
-    </Fragment>
-	<Fragment slot="oxygen">
-        Coming soon to Oxygen Builder.
-    </Fragment>
+	<Fragment slot="bricks">
+		<ContentImage coverImage="/images/brx-faq-context.webp" caption="Insert F.A.Q. elements with OxyProps Structure Menu." aspectRatio="16:9" />
+		1. Choose “Full Demo” from the structure menu to insert a complete blueprint. 2. Choose “Root” from the structure menu to insert an empty F.A.Q. container. 3. Choose “Q/A Pair”
+		from the structure menu to insert a Question and an Answer. 3. Choose “Question” from the structure menu to insert a question. 4. Choose “Answer” from the structure menu to insert
+		an answer.
+	</Fragment>
+	<Fragment slot="oxygen">Coming soon to Oxygen Builder.</Fragment>
 </BuilderTabs>
 
 :::tip[Important]
 When inserting a new Q/A Pair, make sure that the aria-controls attribute of the button matches the id of the answer element. Also make sure that they are unique.
 :::
 
-
-
 ## Accessibility Features
+
 The OxyProps F.A.Q. custom element has several accessibility features that make it easy to use for all users:
 
 - The semantic structure of the F.A.Q. is conveyed with native `dl`, `dt`, and `dd` elements. Each question is contained within a `dt` element, which also contains a `button` element that can be used to toggle the visibility of the answer. The answer content is a child of a `dd` element, ensuring that the list structure is communicated to assistive technologies.
@@ -60,11 +56,12 @@ The OxyProps F.A.Q. custom element has several accessibility features that make 
 - To improve accessibility, the arrow graphics (created using a pseudo element) in the CSS are synchronized with the text content's color to ensure sufficient contrast when high contrast settings invert colors. This is achieved by specifying the CSS currentcolor value for the stroke and fill properties of the polygon elements used to draw the arrows. If specific colors were used instead, they would remain the same in high contrast mode and could lead to insufficient contrast or even make the arrows invisible if the color matched the high contrast mode background.
 
 ## Keyboard Support
+
 The OxyProps F.A.Q. custom element also provides keyboard support for users who prefer to navigate with the keyboard:
 
-| Key | Action |
-| --- | --- |
-|<kbd>Tab</kbd> | Moves keyboard focus to the disclosure button.|
-|<kbd>Space</kbd> or <kbd>Enter</kbd> | Activates the disclosure button, which toggles the visibility |of the answer to the question.
+| Key                                  | Action                                                        |
+| ------------------------------------ | ------------------------------------------------------------- | ------------------------------ |
+| <kbd>Tab</kbd>                       | Moves keyboard focus to the disclosure button.                |
+| <kbd>Space</kbd> or <kbd>Enter</kbd> | Activates the disclosure button, which toggles the visibility | of the answer to the question. |
 
 We hope you find the OxyProps F.A.Q. custom element useful for your projects. If you have any questions or feedback, please don't hesitate to contact us.
