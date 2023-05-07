@@ -95,6 +95,7 @@
     "@fontsource/ibm-plex-mono": "^4.5.13",
     "@github/clipboard-copy-element": "^1.1.2",
     "@nanostores/preact": "^0.4.1",
+    "@rollup/plugin-typescript": "^11.1.0",
     "@rollup/pluginutils": "^5.0.2",
     "astro-icon": "^0.8.0",
     "canvas-confetti": "^1.6.0",
