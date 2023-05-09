@@ -1,0 +1,82 @@
+---
+title: Known Issues
+description: This page lists common known issues when using OxyProps and the way to solve them.
+i18nReady: false
+---
+## My Paragraphs are not full width
+
+Studies show that there is an optimal line length for readability. The optimal line length for your content is based on the font size you are using. The optimal line length is usually between 50 and 75 characters per line.
+
+If Normalize is active on your site, the default maximum paragraph width is set to `--o-size-content-3` which is 60ch, or 60 characters per line, with the following rule:
+
+```css
+:where(p) {
+  max-inline-size: var(--o-size-content-3);
+}
+```
+
+If you don't want this behavior you can simply deactivate Normalize from your plugin dashboard.
+
+If you want to keep normalize active but only cancel this rule, you can add the following CSS snippet to your global CSS:
+
+```css
+p {
+  max-inline-size: initial;
+}
+```
+
+[[↑ Back to Top]](#top)
+
+## Structure context menu not working in Bricks
+
+Since version 1.5.1, Bricks uses the Clipboard API to copy and paste elements and styles in the structure tree.
+
+OxyProps structure menu uses Bricks native features to inject elements and styles in the structure tree. Therefore, OxyProps structure menu will not work if Bricks native copy / paste functions are not working.
+
+If you are experiencing this issue, please check if Bricks native copy / paste functions are working. You should be able to copy and paste elements in your structure tree. If not, please check the following:
+
+### Secure context
+:::caution[HTTPS]
+Your site must be served over https or localhost to use the Clipboard API.
+:::
+
+For security reasons, the Clipboard API is accessible only in [secure contexts (HTTPS)](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts).
+
+Locally environments using `http://127.0.0.1` URLs, `http://localhost` and `http://*.localhost` URLs (e.g. `http://dev.whatever.localhost/`), are also considered to have been delivered securely.
+
+If you are using Bricks in a local environment serving page on `http://*.test`, `http://*.local` URLs or any other extension, **you will need to use a local HTTPS server to make the Clipboard API work**.
+
+[[↑ Back to Top]](#top)
+
+### Explicit permission
+:::caution[Explicit permission]
+The Clipboard API requires explicit permission from the user before a web application can access the clipboard.
+:::
+
+A web application can not read anything from your clipboard without your explicit permission. When you copy something, you will be prompted to allow the web application to access your clipboard.
+
+You only need to allow the web application to access your clipboard once. If you deny the permission, you will need to reload the page to be prompted again. You can manage the permissions in your browser settings. The permission is granted for a specific domain. So, you will have to grant permission for each domain and each browser you are using Bricks on.
+
+[[↑ Back to Top]](#top)
+
+### Firefox users
+
+Firefox is even more restrictive than other browsers and doesn't allow any javascript application to read from your clipboard.
+
+You can still use the structure context menu in Firefox by explicitely activating the feature. To do so, follow these steps :
+1. type `about:config` in your address bar and press enter.
+2. search for `dom.events.asyncClipboard.readText` and set it to `true`.
+3. search for `dom.events.testing.asyncClipboard` and set it to `true`.
+4. restart Firefox.
+
+[[↑ Back to Top]](#top)
+
+## Plugin dashboard not loading after migration
+
+After migrating your site from a local environment to a production environment, you may experience an issue with the plugin dashboard not loading.
+
+This issue is caused by the plugin not being able to connect to your website Rest API. This is usually caused by broken permalink structure after the site migration.
+
+To fix this issue, go to your WordPress admin panel, then go to `Settings > Permalinks` and click on the `Save Changes` button. This will regenerate your permalink structure and fix the issue.
+
+[[↑ Back to Top]](#top)

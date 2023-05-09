@@ -12,6 +12,7 @@ export default [
 	{ text: 'Getting Started', slug: 'getting-started', key: 'getting-started' },
 	{ text: 'Installation', slug: 'installation', key: 'installation' },
 	{ text: 'Basic Setup', slug: 'basic-setup', key: 'basic-setup' },
+	{ text: 'Known Issues', slug: 'known-issues', key: 'known-issues' },
 
 	{ text: 'Core Concepts', header: true, type: 'learn', key: 'coreConcepts' },
 	{ text: 'Atomic Design System', slug: 'core-concepts/atomic-design-system', key: 'core-concepts/atomic-design-system' },
