@@ -36,7 +36,7 @@ function remarkAsides(): unified.Plugin<[], mdast.Root> {
 	const variants = new Set(['note', 'tip', 'caution', 'danger', 'announcement']);
 
 	const transformer: unified.Transformer<mdast.Root> = (tree) => {
-		// @ts-expect-error Possibly infinite type instantiation we can’t do anything about.
+		// @ts-expect-error Possibly infinite type instantiation we can’t do anything about
 		visit(tree, (node, index, parent) => {
 			if (!parent || index === null || node.type !== 'containerDirective') return;
 			const type = node.name;
@@ -57,7 +57,11 @@ function remarkAsides(): unified.Plugin<[], mdast.Root> {
 			});
 
 			// Replace this node with the aside component it represents.
-			parent.children[index] = makeComponentNode(AsideTagname, { attributes: { type, title } }, ...node.children);
+			parent.children[index] = makeComponentNode(
+				AsideTagname,
+				{ attributes: { type, title } },
+				...node.children
+				);
 		});
 	};
 

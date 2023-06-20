@@ -110,6 +110,9 @@ export default {
 	'feedback.submit': 'Send feedback',
 	'feedback.close': 'Close feedback form',
 	'feedback.success': 'Thanks! We received your feedback.',
+	// CopyButton class in `<CodeSnippet>` component
+	'copyButton.title': 'Copy to clipboard',
+	'copyButton.tooltip': 'Copied!',
 	// `<FileTree>` component
 	'fileTree.directoryLabel': 'Directory',
 };
