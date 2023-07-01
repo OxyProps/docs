@@ -31,11 +31,11 @@ export default defineConfig({
         replacesTitle: true,
       },
       editLink: {
-        baseUrl: "https://github.com/thewebforge/o-props-docs/edit/main/",
+        baseUrl: "https://github.com/OxyProps/docs/edit/main/",
       },
       social: {
         youtube: "https://youtube.com/@oxyprops",
-        github: "https://github.com/thewebforge/o-props-docs",
+        github: "https://github.com/OxyProps/docs",
         discord: "https://docs.oxyprops.com/discord",
       },
       head: head,
