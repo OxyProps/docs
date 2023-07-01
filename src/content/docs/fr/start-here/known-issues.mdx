@@ -1,0 +1,94 @@
+---
+title: Problèmes connus
+description: Cette page répertorie les problèmes courants connus lors de l'utilisation d'OxyProps et la manière de les résoudre.
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/fr/known-issues.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/fr/known-issues.png
+---
+
+## Mes paragraphes ne sont pas en pleine largeur
+
+Des études montrent qu'il existe une longueur de ligne optimale pour la lisibilité. La longueur de ligne optimale pour votre contenu dépend de la taille de police que vous utilisez. La longueur de ligne optimale est généralement comprise entre 50 et 75 caractères par ligne. [Plus d'informations dans cet article](https://baymard.com/blog/line-length-readability)
+
+Si “Normalize” est actif sur votre site, la largeur de paragraphe maximale par défaut est définie sur `--o-size-content-3` qui est de 60ch, ou 60 caractères par ligne, avec la règle suivante :
+
+```css title="oxyprops-normalize.css"
+:where(p) {
+  max-inline-size: var(--o-size-content-3);
+}
+```
+
+Si vous ne voulez pas ce comportement, vous pouvez simplement désactiver “Normalize” depuis votre tableau de bord de plugin.
+
+Si vous souhaitez conserver la normalisation active mais uniquement annuler cette règle, vous pouvez ajouter l'extrait de code CSS suivant à votre CSS global :
+
+```css title="Insert this snippet in your global CSS"
+p {
+  max-inline-size: initial;
+}
+```
+
+[[↑ Retour en Haut]](#_top)
+
+## Le menu contextuel de la structure ne fonctionne pas dans Bricks
+
+Depuis la version 1.5.1, Bricks utilise l'API Clipboard pour copier et coller des éléments et des styles dans l'arborescence.
+
+Le menu de structure d'OxyProps utilise les fonctionnalités natives de Bricks pour injecter des éléments et des styles dans l'arborescence de la structure. Par conséquent, le menu de structure d'OxyProps ne fonctionnera pas si les fonctions natives copier/coller de Bricks ne fonctionnent pas.
+
+Si vous rencontrez ce problème, veuillez vérifier si les fonctions natives copier/coller de Bricks fonctionnent. Vous devriez pouvoir copier et coller des éléments dans votre arborescence. Si ce n'est pas le cas, veuillez vérifier les points suivants :
+
+### Contexte sécurisé
+
+:::attention[HTTPS]
+Votre site doit être servi sur https ou localhost pour utiliser l'API Clipboard.
+:::
+
+Pour des raisons de sécurité, l'API Clipboard est accessible uniquement dans les [contextes sécurisés (HTTPS)](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts).
+
+Les environnements locaux utilisant les URL `http://127.0.0.1`, `http://localhost` et `http://*.localhost` (par exemple `http://dev.whatever.localhost/`), sont également considéré comme ayant été livré en toute sécurité.
+
+Si vous utilisez Bricks dans un environnement local servant une page sur les URL `http://*.test`, `http://*.local` ou toute autre extension, **vous devrez utiliser un serveur HTTPS local pour faire l'API Presse-papiers fonctionne **.
+
+[[↑ Retour en Haut]](#_top)
+
+### Autorisation explicite
+
+:::caution[Autorisation explicite]
+L'API Presse-papiers nécessite une autorisation explicite de l'utilisateur avant qu'une application Web puisse accéder au Presse-papiers.
+:::
+
+Une application Web ne peut rien lire de votre presse-papiers sans votre autorisation explicite. Lorsque vous copiez quelque chose, vous serez invité à autoriser l'application Web à accéder à votre presse-papiers.
+
+Il vous suffit d'autoriser l'application Web à accéder à votre presse-papiers une seule fois. Si vous refusez l'autorisation, vous devrez recharger la page pour être invité à nouveau. Vous pouvez gérer les autorisations dans les paramètres de votre navigateur. L'autorisation est accordée pour un domaine spécifique. Ainsi, vous devrez accorder une autorisation pour chaque domaine et chaque navigateur sur lequel vous utilisez Bricks.
+
+[[↑ Retour en haut]](#_top)
+
+### Utilisateurs de Firefox
+
+Firefox est encore plus restrictif que les autres navigateurs et n'autorise aucune application javascript à lire à partir de votre presse-papiers.
+
+Vous pouvez toujours utiliser le menu contextuel de la structure dans Firefox en activant explicitement la fonctionnalité. Pour ce faire, suivez ces étapes :
+
+1. Tapez `about:config` dans votre barre d'adresse et appuyez sur Entrée.
+2. recherchez `dom.events.asyncClipboard.readText` et réglez-le sur `true`.
+3. recherchez `dom.events.testing.asyncClipboard` et réglez-le sur `true`.
+4. Redémarrez Firefox.
+
+[[↑ Retour en Haut]](#_top)
+
+## Le tableau de bord du plugin ne se charge pas après la migration
+
+Après avoir migré votre site d'un environnement local vers un environnement de production, vous pouvez rencontrer un problème avec le tableau de bord du plug-in qui ne se charge pas.
+
+Ce problème est dû au fait que le plug-in ne peut pas se connecter à l'API Rest de votre site Web. Cela est généralement causé par une structure de permalien brisée après la migration du site.
+
+Pour résoudre ce problème, accédez à votre panneau d'administration WordPress, puis accédez à "Paramètres > Permaliens" et cliquez sur le bouton "Enregistrer les modifications". Cela régénérera votre structure de permalien et résoudra le problème.
+
+[[↑ Retour en Haut]](#_top)

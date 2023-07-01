@@ -1,0 +1,377 @@
+---
+title: Guide de démarrage rapide
+description: Configurez votre plugin OxyProps depuis le tableau de bord WordPress.
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/fr/quick-start-guide.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/fr/quick-start-guide.png
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Image } from "astro:assets";
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+import brxContext from "~/assets/oxyprops-dashboard.webp";
+import brxSettings from "~/assets/oxyprops-settings-bricks.webp";
+import oxySettings from "~/assets/oxyprops-settings-oxygen.webp";
+import schemesSettings from "~/assets/oxyprops-color-schemes-setting.webp";
+import canvasSetting from "~/assets/oxyprops-canvas-color-setting.webp";
+import canvasLightSetting from "~/assets/oxyprops-canvas-light-mode-setting.webp";
+import canvasA11yCheck from "~/assets/oxyprops-canvas-a11y-check.webp";
+import brandSetting from "~/assets/oxyprops-brand-color-setting.webp";
+import typoBase from "~/assets/oxyprops-typography-base-size.webp";
+import typoScale from "~/assets/oxyprops-typography-font-scale.webp";
+import typoMobile from "~/assets/oxyprops-typography-mobile-desktop.webp";
+import typoMin from "~/assets/oxyprops-typography-absolute-minimum.webp";
+import typoSub from "~/assets/oxyprops-typography-heading-subheading.webp";
+
+Êtes-vous prêt à faire passer votre productivité au niveau supérieur ? Si c'est le cas, OxyProps est l'outil que vous attendiez. Que vous soyez un professionnel occupé ou un pigiste cherchant à rationaliser votre flux de travail, OxyProps peut vous aider à en faire plus en moins de temps. Pour vous aider à démarrer, voici quelques étapes simples à suivre après l'installation du logiciel :
+
+:::tip[Démarrage rapide]
+Cette page vous donne un aperçu rapide de la configuration de base d'OxyProps. Si vous souhaitez en savoir plus sur le plugin, vous pouvez lire le [Guide de l'utilisateur OxyProps](/fr/).
+:::
+
+## Tableau de bord
+
+Le tableau de bord OxyProps est l'endroit où vous pouvez gérer vos paramètres OxyProps. Pour accéder au tableau de bord, cliquez sur l'icône OxyProps dans la barre de menu d'administration de WordPress.
+
+Sur la page d'accueil du tableau de bord, vous trouverez :
+
+1. Le constructeur de site détecté et sa compatibilité avec OxyProps.
+2. Le bouton Télécharger les paramètres. Pour télécharger vos paramètres dans un fichier JSON.
+3. Le bouton Télécharger les paramètres. Pour télécharger un fichier JSON avec vos paramètres. C'est pratique pour partager vos paramètres avec votre équipe ou pour importer des paramètres depuis un autre site.
+4. Le bouton Réinitialiser les paramètres. Pour réinitialiser vos paramètres aux valeurs par défaut.
+
+<Image
+  src={brxContext}
+  alt="Aperçu du menu contextuel d’espacement des caractères OxyProps dans l'éditeur de Bricks."
+  format="avif"
+  quality="mid"
+  width="900"
+  height="450"
+/>
+
+:::caution[Réinitialiser les options]
+La réinitialisation de vos paramètres supprimera tous vos paramètres OxyProps et les réinitialisera aux valeurs par défaut. Cette action est irréversible. Assurez-vous d'avoir téléchargé une sauvegarde de vos paramètres avant de les réinitialiser.
+:::
+
+[[↑ Retour en Haut]](#_top)
+
+## Paramètres
+
+Dans la page des paramètres, vous trouverez la section "Fonctionnalités". C'est ici que vous pouvez activer ou désactiver les fonctionnalités OxyProps pour votre constructeur de site. Les paramètres seront légèrement différents selon le constructeur de site que vous utilisez.
+
+Nous n'allons pas plonger dans tous les paramètres, mais comme un démarrage rapide, je veux en souligner quelques-uns.
+
+<Tabs>
+  <TabItem label="Bricks">
+    <Image
+      src={brxSettings}
+      alt="Capture d'écran du tableau de bord OxyProps pour Bricks."
+      format="avif"
+      quality="mid"
+      width="900"
+      height="450"
+    />
+    1. **Créez un thème de styles de briques**.
+     *Désactivé par défaut - Activation recommandée.*
+     Sauf si vous installez OxyProps sur un site existant avec des styles existants,
+     activer cette fonction. Lorsqu'il est activé, OxyProps créera un nouveau thème dans les briques
+     Fonction Styles de thème. Ce thème contiendra les styles OxyProps minimaux par défaut.
+     Vous pouvez ensuite utiliser ce thème comme point de départ pour votre propre thème et en toute sécurité
+     modifier n'importe quel réglage initial pour répondre à vos besoins.
+
+     2. **Appliquer la normalisation**.
+     *Activé par défaut - Activation recommandée.*
+     Normalize est une feuille de style avisée qui définit de nombreux styles de petits détails pour que vous n'ayez pas à le faire. Par exemple, il
+     définit la longueur maximale des éléments de texte (titres et paragraphes), il s'applique
+     votre schéma de couleurs aux éléments html, il donne des contours par défaut pour la navigation au clavier,
+     etc. Si vous êtes le genre de développeur qui veut un contrôle total et aucun préréglage,
+     vous pouvez le désactiver en décochant cette case.
+
+     3. **Choisissez un ensemble de sélecteurs à précharger dans Bricks**.
+     * Modéré ~ 600 cours par défaut - je vous recommande de choisir le plus grand. *
+     Il fut un temps où Bricks avait du mal quand un nombre élevé
+     de classes où enregistré dans l'éditeur. Pour les utilisateurs confrontés à des ralentissements dans
+     l'éditeur, cette option permet de réduire le nombre de cours pré-inscrits
+     pour améliorer les performances. Si vous ne rencontrez aucun ralentissement, vous pouvez choisir
+     la valeur la plus élevée. Il est important de comprendre que ce paramètre n'affecte que
+     Fonction d'autosuggestion de briques. Si une classe n'est pas pré-enregistrée, elle sera quand même
+     être disponible dans l'éditeur, mais vous devrez le saisir manuellement.
+  </TabItem>
+  <TabItem label="Oxygen">
+    <Image
+      src={oxySettings}
+      alt="Capture d'écran du tableau de bord OxyProps pour Oxygen."
+      format="avif"
+      quality="mid"
+      width="900"
+      height="450"
+    />
+    1. **Remplacer les paramètres globaux d'Oxygen**.
+     *Désactivé par défaut - Activation recommandée.*
+     Sauf si vous installez OxyProps sur un site existant avec des paramètres globaux existants,
+     activer cette fonction. Lorsqu'il est activé, OxyProps remplira les paramètres globaux d'oxygène
+     avec les valeurs par défaut du framework. Cela définira les styles OxyProps minimaux par défaut
+     comme des tailles de police fluides ou des couleurs de liens réactifs. Vous pouvez ensuite modifier en toute sécurité
+     réglage initial pour répondre à vos besoins. Vous pouvez restaurer les valeurs par défaut en décochant
+     cette option, enregistrez, puis revérifiez-la et enregistrez à nouveau. Mais sachez que cela va
+     réinitialisez tous vos paramètres globaux d'oxygène aux valeurs par défaut d'OxyProps.
+    
+     2. **Appliquer la normalisation**.
+     *Activé par défaut - Activation recommandée.*
+     Normaliser est un opiniâtre
+     feuille de style qui définit de nombreux styles de petits détails pour que vous n'ayez pas à le faire. Par exemple,
+     il fixe la longueur maximale des éléments de texte (titres et paragraphes), il s'applique
+     votre schéma de couleurs aux éléments html, il donne des contours par défaut pour la navigation au clavier,
+     etc. Si vous êtes le genre de développeur qui veut un contrôle total et aucun préréglage,
+     vous pouvez le désactiver en décochant cette case.
+  </TabItem>
+</Tabs>
+
+[[↑ Retour en Haut]](#_top)
+
+## Configuration de votre jeu de couleurs
+
+### Schémas de couleurs
+
+OxyProps offre un système de gestion des couleurs polyvalent, vous permettant de choisir parmi des couleurs OxyProps prédéfinies ou de définir votre propre schéma de couleurs personnalisé. Voici comment vous pouvez commencer :
+
+Tout d'abord, accédez à la page "Couleurs" du tableau de bord OxyProps. Vous trouverez d'abord la section "Schémas de couleurs". C'est ici que vous pouvez choisir si vous souhaitez que votre site utilise une palette de couleurs claires ou foncées.
+    <Image
+      src={schemesSettings}
+      alt="Capture d'écran du tableau de bord OxyProps pour définir les schémas de couleurs."
+      format="avif"
+      quality="mid"
+      width="900"
+      height="450"
+    />
+
+1. Ce commutateur vous permet de verrouiller le cadre en mode lumière uniquement.
+2. Si le commutateur #1 est désactivé, vous pouvez choisir les schémas de couleurs que vous souhaitez créer avec OxyProps. Vous pouvez choisir entre clair, sombre, faible, clair coloré, foncé coloré.
+
+[[↑ Retour en Haut]](#_top)
+
+### Couleurs logiques
+
+Pour vous assurer que vos couleurs sont réactives, OxyProps utilise des couleurs logiques, un ensemble de 5 couleurs qui définissent le jeu de couleurs de votre site. Ces couleurs logiques sont mappées aux couleurs et nuances réelles que vous choisissez dans la section « Couleurs » :
+
+- **Canvas** est la couleur par défaut pour les arrière-plans et le texte. C'est généralement une couleur neutre avec une faible saturation.
+- **Marque** est la couleur principale de votre marque.
+- **Accent** est votre couleur d'accent secondaire.
+- **Liens** est la couleur par défaut des liens texte et des boutons, servant de couleur d'action pour votre site.
+- **Visited** est la couleur par défaut des liens visités, mais n'hésitez pas à l'utiliser comme bon vous semble !
+
+Pour chaque couleur logique, vous définirez une couleur de référence. OxyProps mappera votre couleur de référence sur la nuance la plus proche dans l'échelle des nuances de couleurs OxyProps. Ensuite, il générera automatiquement toutes les autres nuances pour remplir toutes les nuances de 000 à 1000.
+
+[[↑ Retour en Haut]](#_top)
+
+#### Définition de la couleur de référence de votre canevas.
+
+La couleur logique du canevas est la couleur par défaut des arrière-plans et du texte. C'est généralement une couleur neutre avec une faible saturation.
+
+A partir de la couleur logique du canevas, vous choisirez les teintes souhaitées à attribuer aux couleurs logiques surface 1, surface 2, surface 3, surface 4, texte 1, texte 2.
+
+- **Surface 1** est la couleur par défaut de l'arrière-plan de votre site.
+- **Surface 2** est la couleur par défaut pour les arrière-plans avec une élévation au-dessus de la surface 1.
+- **Surface 3** est la couleur par défaut pour les arrière-plans avec une élévation au-dessus de la surface 2.
+- **Surface 4** est la couleur par défaut pour les arrière-plans avec une élévation au-dessus de la surface 3.
+- **Texte 1** est la couleur par défaut des titres.
+- **Texte 2** est la couleur par défaut du corps du texte.
+
+<Image
+  src={canvasSetting}
+  alt="Preview of the OxyProps tracking context menu in Bricks editor."
+  format="avif"
+  quality="mid"
+  width="900"
+  height="450"
+/>
+
+1. **Choisissez une couleur prédéfinie**.
+    _Par défaut à Zinc qui est `#70707A`_
+    Oxyprops propose un choix de 9 préréglages de couleurs neutres. Toutes sont des couleurs à faible saturation. Ce ne sont pas des gris purs. Vous pouvez choisir n'importe lequel d'entre eux en cliquant sur l'échantillon de couleur dans la palette, puis en cliquant sur "Enregistrer les modifications".
+2. **Définissez votre couleur personnalisée**.
+    Si vous souhaitez définir votre propre couleur personnalisée, vous pouvez le faire en cliquant sur la large bande de couleur. Cela ouvrira un sélecteur de couleurs où vous pourrez choisir la couleur de votre choix. Vous pouvez également taper le code hexadécimal de la couleur que vous souhaitez utiliser.
+3. **Identifiez la teinte de votre couleur de référence**.
+    Lorsque vous sélectionnez une couleur, OxyProps génère l'échantillon de couleur complet et mappe votre couleur de référence à la valeur de luminance la plus proche. Vous remarquerez que votre couleur de référence est marquée d'un ★. Dans l'exemple visible sur la capture d'écran, la couleur de référence est la teinte 400 du swatch canvas. La variable CSS `--o-canvas-400` est la couleur de référence pour la couleur logique du canevas et a la valeur exacte que vous avez saisie. Toutes les autres nuances sont calculées automatiquement.
+4. **Aperçu de l'échantillon de couleur complet**.
+    La première ligne affiche les 16 teintes disponibles avec leurs valeurs.
+5. **Aperçu des transparents**.
+    Lorsque vous survolez une nuance, la deuxième ligne reflétera 16 niveaux de transparence différents pour cette nuance. Ceci est utile pour prévisualiser l'opacité d'une couleur.
+6. **Définissez les combinaisons de couleurs**.
+    Lorsque vous êtes satisfait de votre couleur de référence, vous pouvez définir les détails de vos combinaisons de couleurs. Cliquez sur l'un des boutons "Définir les détails de votre mode clair" ou "Définir les détails de votre mode sombre" pour développer le panneau.
+
+[[↑ Retour en Haut]](#_top)
+
+#### Définir vos jeux de couleurs
+
+Lorsque vous êtes satisfait de votre couleur de référence, vous pouvez définir les détails de vos combinaisons de couleurs. Cliquez sur l'un des boutons "Définir les détails de votre mode clair" ou "Définir les détails de votre mode sombre" pour développer le panneau.
+
+<Image
+  src={canvasLightSetting}
+  alt="Screenshot of the OxyProps dashboard for defining color schemes."
+  format="avif"
+  quality="mid"
+  width="900"
+  height="450"
+/>
+
+1. Sélectionnez la teinte de votre choix pour définir **Surface 1** pour ce jeu de couleurs.
+2. Sélectionnez la teinte de votre choix pour définir **Surface 2** pour ce jeu de couleurs.
+3. Sélectionnez la teinte de votre choix pour définir **Surface 3** pour ce jeu de couleurs.
+4. Sélectionnez la teinte de votre choix pour définir **Surface 4** pour ce jeu de couleurs.
+5. Sélectionnez la teinte de votre choix pour définir **Texte 1** pour ce jeu de couleurs.
+6. Sélectionnez la teinte de votre choix pour définir **Texte 2** pour ce jeu de couleurs.
+7. Sélectionnez la teinte de votre choix pour définir la **barre de défilement** pour ce jeu de couleurs. S'applique aux navigateurs prenant en charge la propriété CSS `scrollbar-color`.
+8. Sélectionnez la teinte de votre choix pour définir la **couleur des ombres** pour ce jeu de couleurs.
+9. Déplacez le curseur ou saisissez une valeur pour définir la **force des ombres** pour ce jeu de couleurs.
+
+[[↑ Retour en Haut]](#_top)
+
+#### Vérifiez l'accessibilité de votre sélection
+
+OxyProps vérifiera l'accessibilité de votre sélection et affichera le rapport de contraste calculé entre le texte et l'arrière-plan ainsi que la note par rapport aux normes WCAG 2.1 (actuelle) et APCA (future WCAG 3).<Image
+  src={canvasA11yCheck}
+  alt="Screenshot of the OxyProps dashboard for defining color schemes."
+  format="avif"
+  quality="mid"
+  width="900"
+  height="450"
+/>
+
+1. Les couleurs de premier plan sont le texte 1 et le texte 2, telles que définies dans les paramètres de votre jeu de couleurs.
+2. Les couleurs d'arrière-plan sont les surfaces 1, 2, 3 et 4 telles que définies dans les paramètres de votre jeu de couleurs.
+3. APCA est la future norme WCAG 3. Il n'est pas encore implémenté dans les navigateurs, mais c'est une bonne idée de vérifier votre rapport de contraste par rapport à lui. WCAG 2.1 est la norme WCAG actuelle. Il est implémenté dans les navigateurs et est la norme à vérifier pour l'instant.
+4. Le rapport de contraste est calculé automatiquement entre les couleurs de premier plan et d'arrière-plan. Dans cet exemple, le contraste APCA est de 104 pour le texte-1 sur la surface-1 et de 99,4 pour le texte-2 sur la surface-1.
+5. Ces très bonnes valeurs de contraste évaluent à la fois text-1 et text-2 L<sup>c</sup>90 sur surfac-1 selon l'APCA. Cela signifie que text-1 et text-2 sont accessibles sur surface-1.
+6. Par rapport à WCAG 2.1, text-1 a un rapport de contraste de 15,1:1 et text-2 a un rapport de contraste de 11,6:1.
+7. Les deux sont classés AAA et sont accessibles.
+
+#### Définition de votre marque, accent, liens et couleurs visitées
+
+Une fois que vous avez défini la couleur de votre toile, vous pouvez définir les autres couleurs logiques.
+
+Pour chaque couleur chromatique, vous définirez la couleur de référence comme vous l'avez fait pour la couleur de la toile. Ensuite, vous définirez les nuances pour l'état normal et pour l'état de survol.
+
+:::tip[États normaux et survolés]
+C'est une bonne pratique de choisir une teinte plus contrastée pour l'état de survol. Cela aidera les utilisateurs à identifier les éléments interactifs de votre site.
+:::
+
+<Image
+  src={brandSetting}
+  alt="Capture d'écran du tableau de bord OxyProps pour définir les couleurs logiques."
+  format="avif"
+  quality="mid"
+  width="900"
+  height="450"
+/>
+
+1. **Choisissez une couleur prédéfinie**. Dans cet exemple, nous définissons la couleur de la marque sur le préréglage "Indigo".
+2. **Ou définissez votre couleur personnalisée**. En cliquant sur la bande de couleur.
+3. **Identifiez la teinte de votre couleur de référence**. Dans cet exemple, la couleur de référence est la teinte 300 du nuancier de la marque.
+4. **Sélectionnez la teinte pour l'état normal**. Dans cet exemple, nous définissons l'état normal sur 500.
+5. **Sélectionnez la teinte pour l'état de survol**. Dans cet exemple, nous réglons l'état de survol sur la teinte 700, ce qui donnera un contraste plus élevé sur un fond clair.
+6. **Vérification de l'accessibilité**. Notre état de survol pour la couleur de la marque a un rapport de contraste WCAG 2.1 de 13,1:1 par rapport à la surface 1. L'état normal a un rapport de contraste WCAG 2.1 de 6,4:1 par rapport à la surface 1.
+7. **Classement WCAG 2.1**. L'état stationnaire est noté AAA et l'état normal est noté AA. Les deux sont accessibles.
+
+[[↑ Retour en Haut]](#_top)
+
+## Configurer votre typographie
+
+Vous pouvez personnaliser le système de tailles de police fluides en ajustant 5 paramètres :
+
+- **Taille de police de base :** La taille de police de base de votre site Web.
+- **Font scale ratio :** Le rapport d'échelle utilisé pour calculer les tailles de police fluides.
+- **Rapport mobile sur ordinateur :** Le rapport entre les tailles de police au plus petit point d'arrêt et au plus grand point d'arrêt.
+- **Taille minimale absolue :** La taille de police minimale quelle que soit la taille de l'écran.
+- **Rapport entre le titre et le sous-titre :** Le rapport entre un titre et la taille de la police de son sous-titre.
+[[↑ Retour en Haut]](#_top)
+
+### Taille de police de base
+
+Ce paramètre définit la taille de police de base de votre site Web. Il définira la valeur <ClipboardCopy value="var(--o-fluid-font-0)">`--o-fluid-font-0`</ClipboardCopy> et sera utilisé par défaut pour votre corps de texte et vos en-têtes `<h6>`. Sa valeur est donnée en rems.
+
+<Image
+  src={typoBase}
+  alt="Capture d'écran du paramètre de typographie de la taille de police de base d'OxyProps."
+  format="avif"
+  quality="mid"
+  width="900"
+  height="450"
+/>
+
+[[↑ Retour en Haut]](#_top)
+
+### Rapport d'échelle de la police
+
+Ce paramètre définit le rapport d'échelle utilisé pour calculer toutes les tailles de police fluides. À partir de la taille de police de base, qui est <ClipboardCopy value="var(--o-fluid-font-0)">`--o-fluid-font-0`</ClipboardCopy>, elle est multipliée par l'échelle ratio pour obtenir la taille de police suivante. Ce processus est répété jusqu'à ce que la taille de police maximale soit atteinte. Il en résulte une échelle exponentielle et non une échelle linéaire, ce qui donne une meilleure hiérarchie visuelle.
+
+Dans l'exemple suivant, le rapport d'échelle de la police est défini sur 1,33, ce qui correspond au préréglage P4 (Quatrième parfait).
+
+<Image
+  src={typoScale}
+  alt="Capture d'écran du paramètre de typographie du rapport d'échelle de police OxyProps."
+  format="avif"
+  quality="mid"
+  width="900"
+  height="450"
+/>
+
+[[↑ Retour en Haut]](#_top)
+
+### Ratio mobile/ordinateur de bureau
+
+Ce paramètre définit le rapport entre les tailles de police au plus petit point d'arrêt et au plus grand point d'arrêt. Ceci est utile lorsque vous souhaitez avoir une taille de police différente sur les appareils mobiles que sur les appareils de bureau. Par exemple, vous souhaiterez peut-être avoir une taille de police plus petite sur les appareils mobiles pour faciliter la lecture.
+
+Si vous définissez cette valeur sur 1, la taille de la police sera la même sur tous les appareils. Si vous le réglez sur 2, la taille de la police sera la moitié de la taille sur les appareils mobiles. Ou en d'autres termes, la taille de la police sera doublée sur les appareils de bureau.
+
+Dans l'exemple suivant, le rapport mobile/ordinateur de bureau est défini sur 1,78, ce qui correspond au préréglage m7 (septième mineur).
+
+Avec ce préréglage, si la taille de la police de base de mon bureau est définie sur 1,2 rem, la taille de la police de base mobile sera de 1,2 rem ÷ 1,78 = 0,67 rem.
+
+<Image
+  src={typoMobile}
+  alt="Capture d'écran du paramètre de typographie du rapport mobile/ordinateur de bureau d'OxyProps."
+  format="avif"
+  quality="mid"
+  width="900"
+  height="450"
+/>
+
+[[↑ Retour en Haut]](#_top)
+
+### Taille minimale absolue
+
+Ce paramètre définit la taille de police minimale pouvant être utilisée. Ceci est utile lorsque vous souhaitez éviter que la taille de la police ne devienne trop petite sur les appareils mobiles. C'est un arrêt brutal dans les calculs. Par exemple, vous souhaiterez peut-être avoir une taille de police minimale de 0,9 rem sur les appareils mobiles pour faciliter la lecture.
+
+<Image
+  src={typoMin}
+  alt="Capture d'écran du paramètre de typographie minimum absolu d'OxyProps."
+  format="avif"
+  quality="mid"
+  width="900"
+  height="450"
+/>
+
+[[↑ Retour en Haut]](#_top)
+
+### Ratio titre/sous-titre
+
+Ce paramètre définit le rapport entre les tailles de police des titres et les tailles de police des sous-titres. Ceci est utile lorsque vous souhaitez avoir une taille de police différente pour les titres que pour les sous-titres et conserver un rapport constant sur tous vos niveaux de titre.
+
+Dans l'exemple suivant, le rapport titre/sous-titre est défini sur 0,6. Cela signifie que la taille de la police d'un sous-titre sera égale à 60 % de la taille de la police du titre de niveau correspondant.
+<Image
+  src={typoSub}
+  alt="Capture d'écran du paramètre de typographie du rapport entre les titres et les sous-titres d'OxyProps."
+  format="avif"
+  quality="mid"
+  width="900"
+  height="450"
+/>
+
+[[↑ Retour en Haut]](#_top)

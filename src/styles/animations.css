@@ -1,0 +1,493 @@
+@import "./oxyprops.css";
+
+@keyframes fade-in {
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fade-in-bloom {
+	0% {
+		filter: brightness(1) blur(20px);
+		opacity: 0;
+	}
+	10% {
+		filter: brightness(2) blur(10px);
+		filter: brightness(0.5) blur(10px);
+		opacity: 1;
+	}
+	to {
+		filter: brightness(1) blur(0);
+		opacity: 1;
+	}
+}
+@keyframes fade-out {
+	to {
+		opacity: 0;
+	}
+}
+@keyframes fade-out-bloom {
+	to {
+		filter: brightness(1) blur(20px);
+		opacity: 0;
+	}
+	10% {
+		filter: brightness(2) blur(10px);
+		filter: brightness(0.5) blur(10px);
+		opacity: 1;
+	}
+	0% {
+		filter: brightness(1) blur(0);
+		opacity: 1;
+	}
+}
+@keyframes scale-up {
+	to {
+		transform: scale(1.25);
+	}
+}
+@keyframes scale-down {
+	to {
+		transform: scale(0.75);
+	}
+}
+@keyframes slide-out-up {
+	to {
+		transform: translateY(-100%);
+	}
+}
+@keyframes slide-out-down {
+	to {
+		transform: translateY(100%);
+	}
+}
+@keyframes slide-out-right {
+	to {
+		transform: translateX(100%);
+	}
+}
+@keyframes slide-out-left {
+	to {
+		transform: translateX(-100%);
+	}
+}
+@keyframes slide-in-up {
+	0% {
+		transform: translateY(100%);
+	}
+}
+@keyframes slide-in-down {
+	0% {
+		transform: translateY(-100%);
+	}
+}
+@keyframes slide-in-right {
+	0% {
+		transform: translateX(-100%);
+	}
+}
+@keyframes slide-in-left {
+	0% {
+		transform: translateX(100%);
+	}
+}
+@keyframes shake-x {
+	0%,
+	to {
+		transform: translateX(0);
+	}
+	20% {
+		transform: translateX(-5%);
+	}
+	40% {
+		transform: translateX(5%);
+	}
+	60% {
+		transform: translateX(-5%);
+	}
+	80% {
+		transform: translateX(5%);
+	}
+}
+@keyframes shake-y {
+	0%,
+	to {
+		transform: translateY(0);
+	}
+	20% {
+		transform: translateY(-5%);
+	}
+	40% {
+		transform: translateY(5%);
+	}
+	60% {
+		transform: translateY(-5%);
+	}
+	80% {
+		transform: translateY(5%);
+	}
+}
+@keyframes spin {
+	to {
+		transform: rotate(1turn);
+	}
+}
+@keyframes ping {
+	90%,
+	to {
+		opacity: 0;
+		transform: scale(2);
+	}
+}
+@keyframes blink {
+	0%,
+	to {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+@keyframes float {
+	50% {
+		transform: translateY(-25%);
+	}
+}
+@keyframes bounce {
+	25% {
+		transform: translateY(-20%);
+	}
+	40% {
+		transform: translateY(-3%);
+	}
+	0%,
+	60%,
+	to {
+		transform: translateY(0);
+	}
+}
+@keyframes pulse {
+	50% {
+		transform: scale(0.9);
+	}
+}
+html {
+	--o-ease-1: cubic-bezier(0.25, 0, 0.5, 1);
+	--o-ease-2: cubic-bezier(0.25, 0, 0.4, 1);
+	--o-ease-3: cubic-bezier(0.25, 0, 0.3, 1);
+	--o-ease-4: cubic-bezier(0.25, 0, 0.2, 1);
+	--o-ease-5: cubic-bezier(0.25, 0, 0.1, 1);
+	--o-ease-in-1: cubic-bezier(0.25, 0, 1, 1);
+	--o-ease-in-2: cubic-bezier(0.5, 0, 1, 1);
+	--o-ease-in-3: cubic-bezier(0.7, 0, 1, 1);
+	--o-ease-in-4: cubic-bezier(0.9, 0, 1, 1);
+	--o-ease-in-5: cubic-bezier(1, 0, 1, 1);
+	--o-ease-out-1: cubic-bezier(0, 0, 0.75, 1);
+	--o-ease-out-2: cubic-bezier(0, 0, 0.5, 1);
+	--o-ease-out-3: cubic-bezier(0, 0, 0.3, 1);
+	--o-ease-out-4: cubic-bezier(0, 0, 0.1, 1);
+	--o-ease-out-5: cubic-bezier(0, 0, 0, 1);
+	--o-ease-in-out-1: cubic-bezier(0.1, 0, 0.9, 1);
+	--o-ease-in-out-2: cubic-bezier(0.3, 0, 0.7, 1);
+	--o-ease-in-out-3: cubic-bezier(0.5, 0, 0.5, 1);
+	--o-ease-in-out-4: cubic-bezier(0.7, 0, 0.3, 1);
+	--o-ease-in-out-5: cubic-bezier(0.9, 0, 0.1, 1);
+	--o-ease-elastic-1: cubic-bezier(0.5, 0.75, 0.75, 1.25);
+	--o-ease-elastic-2: cubic-bezier(0.5, 1, 0.75, 1.25);
+	--o-ease-elastic-3: cubic-bezier(0.5, 1.25, 0.75, 1.25);
+	--o-ease-elastic-4: cubic-bezier(0.5, 1.5, 0.75, 1.25);
+	--o-ease-elastic-5: cubic-bezier(0.5, 1.75, 0.75, 1.25);
+	--o-ease-squish-1: cubic-bezier(0.5, -0.1, 0.1, 1.5);
+	--o-ease-squish-2: cubic-bezier(0.5, -0.3, 0.1, 1.5);
+	--o-ease-squish-3: cubic-bezier(0.5, -0.5, 0.1, 1.5);
+	--o-ease-squish-4: cubic-bezier(0.5, -0.7, 0.1, 1.5);
+	--o-ease-squish-5: cubic-bezier(0.5, -0.9, 0.1, 1.5);
+	--o-ease-step-1: steps(2);
+	--o-ease-step-2: steps(3);
+	--o-ease-step-3: steps(4);
+	--o-ease-step-4: steps(7);
+	--o-ease-step-5: steps(10);
+}
+.o-fade-in-active:active {
+	-webkit-animation: var(--o-animation-fade-in);
+	animation: var(--o-animation-fade-in);
+}
+.o-fade-in {
+	-webkit-animation: var(--o-animation-fade-in);
+	animation: var(--o-animation-fade-in);
+}
+.o-fade-in-hover:hover {
+	-webkit-animation: var(--o-animation-fade-in);
+	animation: var(--o-animation-fade-in);
+}
+.o-fade-out-active:active {
+	-webkit-animation: var(--o-animation-fade-out);
+	animation: var(--o-animation-fade-out);
+}
+.o-fade-out {
+	-webkit-animation: var(--o-animation-fade-out);
+	animation: var(--o-animation-fade-out);
+}
+.o-fade-out-hover:hover {
+	-webkit-animation: var(--o-animation-fade-out);
+	animation: var(--o-animation-fade-out);
+}
+.o-fade-in-bloom-active:active {
+	-webkit-animation: var(--o-animation-fade-in-bloom);
+	animation: var(--o-animation-fade-in-bloom);
+}
+.o-fade-in-bloom {
+	-webkit-animation: var(--o-animation-fade-in-bloom);
+	animation: var(--o-animation-fade-in-bloom);
+}
+.o-fade-in-bloom-hover:hover {
+	-webkit-animation: var(--o-animation-fade-in-bloom);
+	animation: var(--o-animation-fade-in-bloom);
+}
+.o-fade-out-bloom-active:active {
+	-webkit-animation: var(--o-animation-fade-out-bloom);
+	animation: var(--o-animation-fade-out-bloom);
+}
+.o-fade-out-bloom {
+	-webkit-animation: var(--o-animation-fade-out-bloom);
+	animation: var(--o-animation-fade-out-bloom);
+}
+.o-fade-out-bloom-hover:hover {
+	-webkit-animation: var(--o-animation-fade-out-bloom);
+	animation: var(--o-animation-fade-out-bloom);
+}
+.o-scale-up-active:active {
+	-webkit-animation: var(--o-animation-scale-up);
+	animation: var(--o-animation-scale-up);
+}
+.o-scale-up {
+	-webkit-animation: var(--o-animation-scale-up);
+	animation: var(--o-animation-scale-up);
+}
+.o-scale-up-hover:hover {
+	-webkit-animation: var(--o-animation-scale-up);
+	animation: var(--o-animation-scale-up);
+}
+.o-scale-down-active:active {
+	-webkit-animation: var(--o-animation-scale-down);
+	animation: var(--o-animation-scale-down);
+}
+.o-scale-down {
+	-webkit-animation: var(--o-animation-scale-down);
+	animation: var(--o-animation-scale-down);
+}
+.o-scale-down-hover:hover {
+	-webkit-animation: var(--o-animation-scale-down);
+	animation: var(--o-animation-scale-down);
+}
+.o-slide-out-up-active:active {
+	-webkit-animation: var(--o-animation-slide-out-up);
+	animation: var(--o-animation-slide-out-up);
+}
+.o-slide-out-up {
+	-webkit-animation: var(--o-animation-slide-out-up);
+	animation: var(--o-animation-slide-out-up);
+}
+.o-slide-out-up-hover:hover {
+	-webkit-animation: var(--o-animation-slide-out-up);
+	animation: var(--o-animation-slide-out-up);
+}
+.o-slide-out-down-active:active {
+	-webkit-animation: var(--o-animation-slide-out-down);
+	animation: var(--o-animation-slide-out-down);
+}
+.o-slide-out-down {
+	-webkit-animation: var(--o-animation-slide-out-down);
+	animation: var(--o-animation-slide-out-down);
+}
+.o-slide-out-down-hover:hover {
+	-webkit-animation: var(--o-animation-slide-out-down);
+	animation: var(--o-animation-slide-out-down);
+}
+.o-slide-out-right-active:active {
+	-webkit-animation: var(--o-animation-slide-out-right);
+	animation: var(--o-animation-slide-out-right);
+}
+.o-slide-out-right {
+	-webkit-animation: var(--o-animation-slide-out-right);
+	animation: var(--o-animation-slide-out-right);
+}
+.o-slide-out-right-hover:hover {
+	-webkit-animation: var(--o-animation-slide-out-right);
+	animation: var(--o-animation-slide-out-right);
+}
+.o-slide-out-left-active:active {
+	-webkit-animation: var(--o-animation-slide-out-left);
+	animation: var(--o-animation-slide-out-left);
+}
+.o-slide-out-left {
+	-webkit-animation: var(--o-animation-slide-out-left);
+	animation: var(--o-animation-slide-out-left);
+}
+.o-slide-out-left-hover:hover {
+	-webkit-animation: var(--o-animation-slide-out-left);
+	animation: var(--o-animation-slide-out-left);
+}
+.o-slide-in-up-active:active {
+	-webkit-animation: var(--o-animation-slide-in-up);
+	animation: var(--o-animation-slide-in-up);
+}
+.o-slide-in-up {
+	-webkit-animation: var(--o-animation-slide-in-up);
+	animation: var(--o-animation-slide-in-up);
+}
+.o-slide-in-up-hover:hover {
+	-webkit-animation: var(--o-animation-slide-in-up);
+	animation: var(--o-animation-slide-in-up);
+}
+.o-slide-in-down-active:active {
+	-webkit-animation: var(--o-animation-slide-in-down);
+	animation: var(--o-animation-slide-in-down);
+}
+.o-slide-in-down {
+	-webkit-animation: var(--o-animation-slide-in-down);
+	animation: var(--o-animation-slide-in-down);
+}
+.o-slide-in-down-hover:hover {
+	-webkit-animation: var(--o-animation-slide-in-down);
+	animation: var(--o-animation-slide-in-down);
+}
+.o-slide-in-right-active:active {
+	-webkit-animation: var(--o-animation-slide-in-right);
+	animation: var(--o-animation-slide-in-right);
+}
+.o-slide-in-right {
+	-webkit-animation: var(--o-animation-slide-in-right);
+	animation: var(--o-animation-slide-in-right);
+}
+.o-slide-in-right-hover:hover {
+	-webkit-animation: var(--o-animation-slide-in-right);
+	animation: var(--o-animation-slide-in-right);
+}
+.o-slide-in-left-active:active {
+	-webkit-animation: var(--o-animation-slide-in-left);
+	animation: var(--o-animation-slide-in-left);
+}
+.o-slide-in-left {
+	-webkit-animation: var(--o-animation-slide-in-left);
+	animation: var(--o-animation-slide-in-left);
+}
+.o-slide-in-left-hover:hover {
+	-webkit-animation: var(--o-animation-slide-in-left);
+	animation: var(--o-animation-slide-in-left);
+}
+.o-spin-active:active {
+	-webkit-animation: var(--o-animation-spin);
+	animation: var(--o-animation-spin);
+}
+.o-spin {
+	-webkit-animation: var(--o-animation-spin);
+	animation: var(--o-animation-spin);
+}
+.o-spin-hover:hover {
+	-webkit-animation: var(--o-animation-spin);
+	animation: var(--o-animation-spin);
+}
+.o-ping-active:active {
+	-webkit-animation: var(--o-animation-ping);
+	animation: var(--o-animation-ping);
+}
+.o-ping {
+	-webkit-animation: var(--o-animation-ping);
+	animation: var(--o-animation-ping);
+}
+.o-ping-hover:hover {
+	-webkit-animation: var(--o-animation-ping);
+	animation: var(--o-animation-ping);
+}
+.o-blink-active:active {
+	-webkit-animation: var(--o-animation-blink);
+	animation: var(--o-animation-blink);
+}
+.o-blink {
+	-webkit-animation: var(--o-animation-blink);
+	animation: var(--o-animation-blink);
+}
+.o-blink-hover:hover {
+	-webkit-animation: var(--o-animation-blink);
+	animation: var(--o-animation-blink);
+}
+.o-float-active:active {
+	-webkit-animation: var(--o-animation-float);
+	animation: var(--o-animation-float);
+}
+.o-float {
+	-webkit-animation: var(--o-animation-float);
+	animation: var(--o-animation-float);
+}
+.o-float-hover:hover {
+	-webkit-animation: var(--o-animation-float);
+	animation: var(--o-animation-float);
+}
+.o-bounce-active:active {
+	-webkit-animation: var(--o-animation-bounce);
+	animation: var(--o-animation-bounce);
+}
+.o-bounce {
+	-webkit-animation: var(--o-animation-bounce);
+	animation: var(--o-animation-bounce);
+}
+.o-bounce-hover:hover {
+	-webkit-animation: var(--o-animation-bounce);
+	animation: var(--o-animation-bounce);
+}
+.o-pulse-active:active {
+	-webkit-animation: var(--o-animation-pulse);
+	animation: var(--o-animation-pulse);
+}
+.o-pulse {
+	-webkit-animation: var(--o-animation-pulse);
+	animation: var(--o-animation-pulse);
+}
+.o-pulse-hover:hover {
+	-webkit-animation: var(--o-animation-pulse);
+	animation: var(--o-animation-pulse);
+}
+.o-shake-x-active:active {
+	-webkit-animation: var(--o-animation-shake-x);
+	animation: var(--o-animation-shake-x);
+}
+.o-shake-x {
+	-webkit-animation: var(--o-animation-shake-x);
+	animation: var(--o-animation-shake-x);
+}
+.o-shake-x-hover:hover {
+	-webkit-animation: var(--o-animation-shake-x);
+	animation: var(--o-animation-shake-x);
+}
+.o-shake-y-active:active {
+	-webkit-animation: var(--o-animation-shake-y);
+	animation: var(--o-animation-shake-y);
+}
+.o-shake-y {
+	-webkit-animation: var(--o-animation-shake-y);
+	animation: var(--o-animation-shake-y);
+}
+.o-shake-y-hover:hover {
+	-webkit-animation: var(--o-animation-shake-y);
+	animation: var(--o-animation-shake-y);
+}
+.o-ping-pong-active:active {
+	-webkit-animation: var(--o-animation-ping-pong);
+	animation: var(--o-animation-ping-pong);
+}
+.o-ping-pong {
+	-webkit-animation: var(--o-animation-ping-pong);
+	animation: var(--o-animation-ping-pong);
+}
+.o-ping-pong-hover:hover {
+	-webkit-animation: var(--o-animation-ping-pong);
+	animation: var(--o-animation-ping-pong);
+}
+.o-forwards {
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+.o-reverse {
+	-webkit-animation-direction: reverse;
+	animation-direction: reverse;
+}

@@ -1,0 +1,392 @@
+---
+title: Border Radius
+description: The documentation for OxyProps Borders Radius CSS variables and utility classes.
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/borders/radius.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/borders/radius.png
+---
+
+:::note[Patterns]
+CSS Variable: `--o-radius-{1-6 | round}`  
+Utility Class: `o-radius-{ side | corner }-{ 1-6 | round }`
+:::
+
+```css title="OxyProps CSS Variables"
+  --o-radius-1: 2px;
+	--o-radius-2: 5px;
+	--o-radius-3: 1rem;
+	--o-radius-4: 2rem;
+	--o-radius-5: 4rem;
+	--o-radius-6: 8rem;
+	--o-radius-round: 1e5px;
+```
+
+## No Radius
+
+<div style="aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center;">o-noradius</div>
+
+Use this class to remove the border radius from an element.
+
+```html title="Utility Class"
+  o-noradius
+```
+
+## Radius 1
+
+<div style="border-radius: 2px;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center;">o-radius-1</div>
+  
+  ```css title="CSS Variable"
+    var(--o-radius-1)
+  ```
+  
+  ```html title="Utility Class (all corners)"
+    o-radius-1
+  ```
+
+### Set Radius on Corners of a specific side
+
+<div style="border-top-left-radius: 2px;border-bottom-left-radius: 2px;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center;">o-radius-left-1</div>
+  
+  ```html title="Utility Class (top corners)"
+    o-radius-top-1
+  ```
+  
+  ```html title="Utility Class (bottom corners)"
+    o-radius-bottom-1
+  ```
+
+  ```html title="Utility Class (left corners)"
+    o-radius-left-1
+  ```
+
+  ```html title="Utility Class (right corners)"
+    o-radius-right-1
+  ```
+
+### Set Radius on a specific corner
+
+<div style="border-bottom-right-radius: 2px;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center; text-align:center;">o-radius-bottom-right-1</div>
+
+  ```html title="Utility Class (top left corner)"
+    o-radius-top-left-1
+  ```
+
+  ```html title="Utility Class (top right corner)"
+    o-radius-top-right-1
+  ```
+
+  ```html title="Utility Class (bottom left corner)"
+    o-radius-bottom-left-1
+  ```
+
+  ```html title="Utility Class (bottom right corner)"
+    o-radius-bottom-right-1
+  ```
+
+## Radius 2
+
+<div style="border-radius: 5px;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center;">o-radius-2</div>
+  
+  ```css title="CSS Variable"
+    var(--o-radius-2)
+  ```
+  
+  ```html title="Utility Class (all corners)"
+    o-radius-2
+  ```
+
+### Set Radius on Corners of a specific side
+
+<div style="border-top-left-radius: 5px;border-bottom-left-radius: 5px;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center;">o-radius-left-2</div>
+  
+  ```html title="Utility Class (top corners)"
+    o-radius-top-2
+  ```
+  
+  ```html title="Utility Class (bottom corners)"
+    o-radius-bottom-2
+  ```
+
+  ```html title="Utility Class (left corners)"
+    o-radius-left-2
+  ```
+
+  ```html title="Utility Class (right corners)"
+    o-radius-right-2
+  ```
+### Set Radius on a specific corner
+
+<div style="border-bottom-right-radius: 5px;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center; text-align:center;">o-radius-bottom-right-2</div>
+
+  ```html title="Utility Class (top left corner)"
+    o-radius-top-left-2
+  ```
+
+  ```html title="Utility Class (top right corner)"
+    o-radius-top-right-2
+  ```
+
+  ```html title="Utility Class (bottom left corner)"
+    o-radius-bottom-left-2
+  ```
+
+  ```html title="Utility Class (bottom right corner)"
+    o-radius-bottom-right-2
+  ```
+
+## Radius 3
+
+<div style="border-radius: 1rem;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center;">o-radius-3</div>
+  
+  ```css title="CSS Variable"
+    var(--o-radius-3)
+  ```
+  
+  ```html title="Utility Class (all corners)"
+    o-radius-3
+  ```
+
+### Set Radius on Corners of a specific side
+
+<div style="border-top-left-radius: 1rem;border-bottom-left-radius: 1rem;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center;">o-radius-left-3</div>
+  
+  ```html title="Utility Class (top corners)"
+    o-radius-top-3
+  ```
+  
+  ```html title="Utility Class (bottom corners)"
+    o-radius-bottom-3
+  ```
+
+  ```html title="Utility Class (left corners)"
+    o-radius-left-3
+  ```
+
+  ```html title="Utility Class (right corners)"
+    o-radius-right-3
+  ```
+### Set Radius on a specific corner
+
+<div style="border-bottom-right-radius: 1rem;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center; text-align:center;">o-radius-bottom-right-3</div>
+
+  ```html title="Utility Class (top left corner)"
+    o-radius-top-left-3
+  ```
+
+  ```html title="Utility Class (top right corner)"
+    o-radius-top-right-3
+  ```
+
+  ```html title="Utility Class (bottom left corner)"
+    o-radius-bottom-left-3
+  ```
+
+  ```html title="Utility Class (bottom right corner)"
+    o-radius-bottom-right-3
+  ```
+
+## Radius 4
+
+<div style="border-radius: 2rem;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center;">o-radius-4</div>
+  
+  ```css title="CSS Variable"
+    var(--o-radius-4)
+  ```
+  
+  ```html title="Utility Class (all corners)"
+    o-radius-4
+  ```
+### Set Radius on Corners of a specific side
+
+<div style="border-top-left-radius: 2rem;border-bottom-left-radius: 2rem;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center;">o-radius-left-4</div>
+  
+  ```html title="Utility Class (top corners)"
+    o-radius-top-4
+  ```
+  
+  ```html title="Utility Class (bottom corners)"
+    o-radius-bottom-4
+  ```
+
+  ```html title="Utility Class (left corners)"
+    o-radius-left-4
+  ```
+
+  ```html title="Utility Class (right corners)"
+    o-radius-right-4
+  ```
+### Set Radius on a specific corner
+
+<div style="border-bottom-right-radius: 2rem;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center; text-align:center;">o-radius-bottom-right-4</div>
+
+  ```html title="Utility Class (top left corner)"
+    o-radius-top-left-4
+  ```
+
+  ```html title="Utility Class (top right corner)"
+    o-radius-top-right-4
+  ```
+
+  ```html title="Utility Class (bottom left corner)"
+    o-radius-bottom-left-4
+  ```
+
+  ```html title="Utility Class (bottom right corner)"
+    o-radius-bottom-right-4
+  ```
+## Radius 5
+
+<div style="border-radius: 3rem;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center;">o-radius-5</div>
+  
+  ```css title="CSS Variable"
+    var(--o-radius-5)
+  ```
+  
+  ```html title="Utility Class (all corners)"
+    o-radius-5
+  ```
+### Set Radius on Corners of a specific side
+
+<div style="border-top-left-radius: 3rem;border-bottom-left-radius: 3rem;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center;">o-radius-left-5</div>
+  
+  ```html title="Utility Class (top corners)"
+    o-radius-top-5
+  ```
+  
+  ```html title="Utility Class (bottom corners)"
+    o-radius-bottom-5
+  ```
+
+  ```html title="Utility Class (left corners)"
+    o-radius-left-5
+  ```
+
+  ```html title="Utility Class (right corners)"
+    o-radius-right-5
+  ```
+### Set Radius on a specific corner
+
+<div style="border-bottom-right-radius: 3rem;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center; text-align:center;">o-radius-bottom-right-5</div>
+
+  ```html title="Utility Class (top left corner)"
+    o-radius-top-left-5
+  ```
+
+  ```html title="Utility Class (top right corner)"
+    o-radius-top-right-5
+  ```
+
+  ```html title="Utility Class (bottom left corner)"
+    o-radius-bottom-left-5
+  ```
+
+  ```html title="Utility Class (bottom right corner)"
+    o-radius-bottom-right-5
+  ```
+
+## Radius 6
+
+<div style="border-radius: 4rem;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center;">o-radius-6</div>
+  
+  ```css title="CSS Variable"
+    var(--o-radius-6)
+  ```
+  
+  ```html title="Utility Class (all corners)"
+    o-radius-6
+  ```
+### Set Radius on Corners of a specific side
+
+<div style="border-top-left-radius: 4rem;border-bottom-left-radius: 4rem;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center;">o-radius-left-6</div>
+  
+  ```html title="Utility Class (top corners)"
+    o-radius-top-6
+  ```
+  
+  ```html title="Utility Class (bottom corners)"
+    o-radius-bottom-6
+  ```
+
+  ```html title="Utility Class (left corners)"
+    o-radius-left-6
+  ```
+
+  ```html title="Utility Class (right corners)"
+    o-radius-right-6
+  ```
+
+### Set Radius on a specific corner
+
+<div style="border-bottom-right-radius: 4rem;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center; text-align:center;">o-radius-bottom-right-6</div>
+
+  ```html title="Utility Class (top left corner)"
+    o-radius-top-left-6
+  ```
+
+  ```html title="Utility Class (top right corner)"
+    o-radius-top-right-6
+  ```
+
+  ```html title="Utility Class (bottom left corner)"
+    o-radius-bottom-left-6
+  ```
+
+  ```html title="Utility Class (bottom right corner)"
+    o-radius-bottom-right-6
+  ```
+## Radius round
+
+<div style="border-radius: 1e5px;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center;">o-radius-round</div>
+  
+  ```css title="CSS Variable"
+    var(--o-radius-round)
+  ```
+  
+  ```html title="Utility Class (all corners)"
+    o-radius-round
+  ```
+### Set Radius on Corners of a specific side
+
+<div style="border-top-left-radius: 1e5px;border-bottom-left-radius: 1e5px;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center;">o-radius-left-round</div>
+  
+  ```html title="Utility Class (top corners)"
+    o-radius-top-round
+  ```
+  
+  ```html title="Utility Class (bottom corners)"
+    o-radius-bottom-round
+  ```
+
+  ```html title="Utility Class (left corners)"
+    o-radius-left-round
+  ```
+
+  ```html title="Utility Class (right corners)"
+    o-radius-right-round
+  ```
+
+### Set Radius on a specific corner
+
+<div style="border-bottom-right-radius: 1e5px;aspect-ratio: 1; height: 10rem; border: 1px solid var(--sl-color-accent-high); display:grid; place-items:center; text-align:center;">o-radius-bottom-right-round</div>
+
+  ```html title="Utility Class (top left corner)"
+    o-radius-top-left-round
+  ```
+
+  ```html title="Utility Class (top right corner)"
+    o-radius-top-right-round
+  ```
+
+  ```html title="Utility Class (bottom left corner)"
+    o-radius-bottom-left-round
+  ```
+
+  ```html title="Utility Class (bottom right corner)"
+    o-radius-bottom-right-round
+  ```

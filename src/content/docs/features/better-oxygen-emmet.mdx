@@ -1,0 +1,418 @@
+---
+title: Better Oxygen Emmet
+description: An even better version of Oxygen Emmet Integration.
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/features/better-oxygen-emmet.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/features/better-oxygen-emmet.png
+---
+import { Image } from "astro:assets";
+import child from "~/assets/oxy-emmet-child-result.png";
+import sibling from "~/assets/oxy-emmet-sibling-result.png";
+import climbUp from "~/assets/oxy-emmet-climbup-result.png";
+import multiplication from "~/assets/oxy-emmet-multiplication-result.png";
+import grouping from "~/assets/oxy-emmet-grouping-result.png";
+import idClass from "~/assets/oxy-emmet-idClass-result.png";
+import grid from "~/assets/oxy-emmet-grid-result.webp";
+import cta from "~/assets/oxy-emmet-cta-result.webp";
+
+In version 1.8, OxyProps brings an even better version of Oxygen Emmet Integration.
+
+:::caution[Oxygen Only]
+Emmet is an Oxygen feature, therefore this OxyProps feature is only available in Oxygen.
+:::
+
+## What is Emmet?
+
+Imagine you are drawing a picture, like a tree. You want to draw many leaves on the tree, but drawing each leaf one by one takes a lot of time and effort.
+
+Now, imagine if you have a magical pencil that can help you draw all the leaves at once. That magical pencil is called Emmet!
+
+Emmet is like a special tool that helps web developers write HTML and CSS code really quickly. Instead of typing out every little detail, Emmet lets you use simple and short codes to create complex and beautiful web pages.
+
+For example, if you want to create a list with three items, instead of writing the code for each item like this:
+
+```html title="Without Emmet"
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+```
+
+You can use Emmet and just type something like this:
+
+```html title="With Emmet"
+ul>li*3
+```
+
+And magically, Emmet will expand that code into the complete list with three items for you!
+
+Emmet is like having a superpower that makes coding faster and easier. It helps you save time and energy, so you can focus on creating awesome websites without getting stuck in writing repetitive code.
+
+Just like a magic pencil, Emmet is a really handy tool for web developers to create amazing things with less effort.
+
+## Why a better Oxygen Emmet?
+
+Oxygen v4.5 release brought Emmet right in the editor. See [Oxygen Post](https://oxygenbuilder.com/documentation/code/emmet-integration/) for details.
+
+Oxygen Emmet is great, but it has some limitations. In particular, it doesn't allow to use only Oxygent elements with a very restricted list of semantic tags. The example ebove with a list of 3 items will not work in Oxygen Emmet.
+
+This is where OxyProps comes in. OxyProps extends possibilities and adds semantic tags support as well as a snippets context menu to Oxygen Emmet.
+
+## Available semantic tags with OxyProps
+
+### Grouping element
+
+These tags will generate a ct_div_block, the Oxygen grouping element, with the proper semantic tag applied.
+
+|   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|
+| `address` | `article` | `aside` | `blockquote` | `dd` | `details` | `dialog` |
+| `div` | `dl` | `dt` | `fieldset` | `figure` | `footer` | `form` |
+| `header` | `hgroup` | `hr` | `input` | `li` | `main` | `menu` 
+| `nav` | `ol` | `pre` | `summary` | `ul` |   |   |
+
+### Text level element
+
+|   |   |   |   |   |   |   |
+|---|---|---|---|---|---|---|
+| `abbr` | `address` | `b` | `bdi` | `bdo` | `big` | `cite` |
+| `code` | `del` | `dfn` | `em` | `i` | `ins` | `kbd` |
+| `label` | `legend` | `mark` | `p` | `q` | `rp` | `rt` |
+| `ruby` | `s` | `samp` | `small` | `span` | `strike` | `strong` |
+| `sub` | `sup` | `time` | `u` | `var` | `wbr` |   |
+
+## Emmet Syntax
+
+Emmet uses a syntax which is similar to CSS selectors for describing elements’ positions inside generated tree and elements’ attributes.
+
+### Elements
+
+You can use one of the above elements’ names like div or p to generate an Oxygen element with the corresponding HTML tags.
+- `div` → `<div></div>`
+- `p` → `<p></p>`
+- `article` → `<article></article>`
+- etc.
+
+### Nesting operators
+
+Nesting operators are used to position elements inside the generated structure tree.
+
+#### Child: `>`
+The child operator is used to describe elements that are direct children of the specified parent.
+
+Use it to nest elements inside other elements:
+
+```html title="Emmet snippet"
+div>hgroup>h1
+```
+
+```html title="Result"
+<div>
+  <hgroup>
+    <h1></h1>
+  </hgroup>
+</div>
+```
+
+<Image
+      src={child}
+      alt="Un menu contextuel OxyProps propose des boutons pour insérer des variables CSS et des mots clés CSS dans le champ de saisie Oxygen lineheight."
+      format="avif"
+      quality="mid"
+      width="900"
+    />
+
+#### Sibling: `+`
+The sibling operator is used to describe elements that are on the same level of nesting.
+
+Use it to create elements that are siblings of each other:
+
+```html title="Emmet snippet"
+hgroup>h1+p
+```
+
+```html title="Result"
+<hgroup>
+  <h1></h1>
+  <p></p>
+</hgroup>
+```
+
+<Image
+      src={sibling}
+      alt="Un menu contextuel OxyProps propose des boutons pour insérer des variables CSS et des mots clés CSS dans le champ de saisie Oxygen lineheight."
+      format="avif"
+      quality="mid"
+      width="900"
+    />
+
+#### Climb-up: `^`
+The climb-up operator is used to describe elements that are not direct children of the specified parent.
+
+Use it to create elements that are not direct children of each other:
+
+```html title="Emmet snippet"
+div>hgroup>h1+p^h2
+```
+
+```html title="Result"
+<div>
+  <hgroup>
+    <h1></h1>
+    <p></p>
+  </hgroup>
+  <h2></h2>
+</div>
+```
+
+<Image
+      src={climbUp}
+      alt="Un menu contextuel OxyProps propose des boutons pour insérer des variables CSS et des mots clés CSS dans le champ de saisie Oxygen lineheight."
+      format="avif"
+      quality="mid"
+      width="900"
+    />
+
+#### Multiplication: `*`
+
+The multiplication operator is used to describe elements that are repeated a specified number of times.
+
+Use it to create multiple elements:
+
+```html title="Emmet snippet"
+ul>li*3
+```
+
+```html title="Result"
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+```
+
+<Image
+      src={multiplication}
+      alt="Un menu contextuel OxyProps propose des boutons pour insérer des variables CSS et des mots clés CSS dans le champ de saisie Oxygen lineheight."
+      format="avif"
+      quality="mid"
+      width="900"
+    />
+
+
+#### Grouping: `()`
+
+The grouping operator is used to describe elements that are grouped together.
+
+Use it to create multiple elements that are grouped together:
+
+```html title="Emmet snippet"
+div>(h1+p)*3
+```
+
+```html title="Result"
+<div>
+  <h1></h1>
+  <p></p>
+  <h1></h1>
+  <p></p>
+  <h1></h1>
+  <p></p>
+</div>
+```
+
+<Image
+      src={grouping}
+      alt="Un menu contextuel OxyProps propose des boutons pour insérer des variables CSS et des mots clés CSS dans le champ de saisie Oxygen lineheight."
+      format="avif"
+      quality="mid"
+      width="900"
+    />
+
+### Attributes operators
+
+Attributes operators are used to describe elements’ attributes.
+
+#### ID and class: `#` and `.`
+The ID and class operators are used to describe elements’ ID and class attributes.
+
+Use them to create elements with ID and class attributes:
+
+##### ID
+
+```html title="Emmet snippet"
+div#main
+```
+
+```html title="Result"
+<div id="main"></div>
+```
+
+##### Class
+
+```html title="Emmet snippet"
+div.main
+```
+
+```html title="Result"
+<div class="main"></div>
+```
+
+##### ID and class
+
+```html title="Emmet snippet"
+div#main.main
+```
+
+```html title="Result"
+<div id="main" class="main"></div>
+```
+
+<Image
+      src={idClass}
+      alt="Un menu contextuel OxyProps propose des boutons pour insérer des variables CSS et des mots clés CSS dans le champ de saisie Oxygen lineheight."
+      format="avif"
+      quality="mid"
+      width="900"
+    />
+
+#### Custom Attributes: `[]`
+The custom attributes operator is used to describe elements’ custom attributes.
+
+Use it to create elements with custom attributes:
+
+```html title="Emmet snippet"
+div[title=Hello world]
+```
+
+```html title="Result"
+<div title="Hello world"></div>
+```
+:::caution[Oxygen limitation]
+Oxygen does not support quotes and multiple custom attributes.
+:::
+
+#### Item numbering: `$`
+The item numbering operator is used to describe elements’ item numbering attributes.
+
+Use it to create elements with item numbering attributes:
+
+```html title="Emmet snippet"
+ul>li.item$*3
+```
+
+```html title="Result"
+<ul>
+  <li class="item1"></li>
+  <li class="item2"></li>
+  <li class="item3"></li>
+</ul>
+```
+
+:::caution[Oxygen limitation]
+Oxygen does not support emmet numbreing modifiers `@-` or `@N`.
+:::
+
+### Text `{}`
+
+The text operator is used to describe elements’ text content.
+
+Use it to create elements with text content:
+
+```html title="Emmet snippet"
+p{Hello world}
+```
+
+```html title="Result"
+<p>Hello world</p>
+```
+
+## Examples combining Emmet and the OxyProps framework
+
+Here are some examples of Emmet snippets that you can copy and paste directly in the Oxygen Emmet input.
+
+### A section with a responsive 3 columns CSS grid
+
+```html title="Emmet snippet"
+    section.o-grid-3.o-md-grid-1.o-pad-bl-4.o-gap-4>(article>h3+p)*3
+```
+
+#### Snippet explanation
+
+- `section.o-grid-3.o-md-grid-1.o-pad-bl-4.o-gap-4` creates the container and styles it:
+  - `section` creates a section element
+  - `.o-grid-3` creates a CSS grid with 3 columns
+  - `.o-md-grid-1` creates a CSS grid with 1 column on medium screens and below
+  - `.o-pad-bl-4` adds a block padding (top and bottom for horizontal languages) of size 4.
+  - `.o-gap-4` adds a gap between the grid columns of size 4.
+
+- `>(article>h3+p)*3` creates 3 times an article element with a heading and a paragraph
+  - `>` creates a child element
+  - `(` and `)` group the elements
+  - `article` creates an article element
+  - `>h3+p` creates a heading and a paragraph
+  - `*3` repeats the previous element 3 times
+
+#### Result
+
+<Image
+      src={grid}
+      alt="In Oxygen, a section with 3 columns, and an article with heading and paragraph in each column."
+      format="avif"
+      quality="mid"
+      width="900"
+    />
+
+### A Call to Action section
+
+```html title="Emmet snippet"
+    section.o-pad-bl-4.o-pad-in-4.o-surface-1-brand>div.o-flex-row.o-flex-center.o-items-center.o-gap-2.o-wrap.o-content-full.o-radius-2.o-shadow-2.o-invert.o-card-1-brand>p.o-fluid-font-3.o-semi-bold{Learn more about our awesome products}+a.o-btn.o-btn-brand{Learn More}
+```
+
+#### Snippet explanation
+
+- `section.o-pad-bl-4.o-pad-in-4.o-surface-1-brand` creates the container and styles it:
+  - `section` creates a section element
+  - `.o-pad-bl-4` adds a block padding (top and bottom for horizontal languages) of size 4.
+  - `.o-pad-in-4` adds an inline padding (left and right for horizontal languages) of size 4.
+  - `.o-surface-1-brand` adds a background color of the brand color.
+- `>div.o-flex-row.o-flex-center.o-items-center.o-gap-2.o-wrap.o-content-full.o-radius-2.o-shadow-2.o-invert.o-card-1-brand` creates a div element and styles it:
+  - `>` creates a child element
+  - `div` creates a div element
+  - `.o-flex-row` creates a flex container with a row direction
+  - `.o-flex-center` centers the flex items horizontally and vertically
+  - `.o-items-center` centers the flex items horizontally
+  - `.o-gap-2` adds a gap between the flex items of size 2.
+  - `.o-wrap` wraps the flex items on multiple lines
+  - `.o-content-full` makes the flex items take the full width of the container
+  - `.o-radius-2` adds a border radius of size 2.
+  - `.o-shadow-2` adds a shadow of size 2.
+  - `.o-invert` inverts the color scheme
+  - `.o-card-1-brand` adds a background color of the brand color.
+- `>p.o-fluid-font-3.o-semi-bold{Learn more about our awesome products}` creates a paragraph element and styles it:
+  - `>` creates a child element
+  - `p` creates a paragraph element
+  - `.o-fluid-font-3` sets the font size to 3rem
+  - `.o-semi-bold` sets the font weight to semi-bold
+- `+a.o-btn.o-btn-brand{Learn More}` creates a link element and styles it:
+  - `+` creates a sibling element
+  - `a` creates a link element
+  - `.o-btn` styles the link as a button
+  - `.o-btn-brand` styles the button with the brand color.
+
+#### Result
+
+<Image
+      src={cta}
+      alt="In Oxygen, a section with a dark blue background, a text that says Learn more about our awesome products, and a Learn More button."
+      format="avif"
+      quality="mid"
+      width="900"
+    />

@@ -6,10 +6,11 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": [
+        "./src/*"
+      ]
     },
     "jsx": "react-jsx",
-    "jsxImportSource": "preact",
-    "types": ["@astrojs/image/client"]
+    "jsxImportSource": "react"
   }
 }

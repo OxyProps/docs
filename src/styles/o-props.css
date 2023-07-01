@@ -1,0 +1,662 @@
+@import "./animations.css";
+
+::selection {
+  background-color: var(--sl-color-accent-high)!important;
+  color: var(--sl-color-black)!important;
+}
+
+:root {
+  --purple-hsl: 255, 60%, 60%;
+  --overlay-blurple: hsla(var(--purple-hsl), 0.2);
+  --sl-hue-accent: var(--sl-hue-purple);
+  --sl-font: "Atkinson Hyperlegible", sans-serif;
+}
+
+:root[data-theme="light"] {
+  --purple-hsl: 255, 85%, 65%;
+}
+
+:focus-visible {
+  outline-color: var(--sl-color-text-accent);
+  outline-style: solid;
+  outline-width: 2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :focus-visible {
+    transition: outline-offset 145ms ease;
+  }
+
+  :where(:not(:active)):focus-visible {
+    transition-duration: 0.25s;
+  }
+}
+:where(:not(:active)):focus-visible {
+  outline-offset: 5px;
+}
+
+starlight-theme-select select,
+starlight-lang-select select,
+a.site-title,
+body > a[href] {
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+header a[rel="me"],
+a.anchor-link {
+  border-radius: 100vmax;
+  outline-offset: 8px;
+}
+
+[data-has-hero] .page {
+  background: linear-gradient(215deg, var(--overlay-blurple), transparent 40%),
+    radial-gradient(var(--overlay-blurple), transparent 40%) no-repeat -60vw -40vh /
+      105vw 200vh,
+    radial-gradient(var(--overlay-blurple), transparent 65%) no-repeat 50%
+      calc(100% + 20rem) / 60rem 30rem;
+}
+
+[data-has-hero] header {
+  border-bottom: 1px solid transparent;
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+[data-has-hero] .hero > img {
+  filter: drop-shadow(0 0 3rem var(--overlay-blurple));
+}
+/* Heading Anchor Links added by rehype-autolink-headings */
+
+.heading-wrapper {
+  --icon-size-x: 1.5rem;
+  --icon-size-y: 1.5rem;
+  margin-inline-end: var(--icon-size-x);
+}
+
+.heading-wrapper > * {
+  display: inline;
+  margin-bottom: 0;
+}
+
+.heading-wrapper > .anchor-link {
+  position: relative;
+  display: inline-flex;
+  margin-inline-end: calc(-1 * var(--icon-size-x));
+  width: var(--icon-size-x);
+  height: var(--icon-size-y);
+  color: var(--theme-text-light);
+  text-decoration: none;
+  justify-content: center;
+  vertical-align: baseline;
+}
+
+.heading-wrapper > .anchor-link > .anchor-icon {
+  display: inline-flex;
+}
+.heading-wrapper > .anchor-link > .anchor-icon > svg {
+  line-height: 1;
+}
+
+/* Float anchor links to the left of headings on larger screens. */
+@media (min-width: 50em) {
+  .heading-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: baseline;
+    margin-inline-start: calc(-1 * var(--icon-size-x));
+  }
+
+  .heading-wrapper > .anchor-link {
+    margin-inline-end: 0;
+  }
+}
+
+.heading-wrapper > .anchor-link {
+  opacity: 0.5;
+}
+
+@media (hover: hover) {
+  .heading-wrapper > .anchor-link {
+    opacity: 0;
+  }
+}
+
+.heading-wrapper:hover > .anchor-link,
+.anchor-link:focus {
+  opacity: 1;
+}
+
+.external-link-icon {
+  display: inline-block;
+  margin-inline-start: 0.25rem;
+  vertical-align: middle;
+  opacity: 0.7;
+}
+
+.is-terminal .header {
+  background-color: var(--sl-color-gray-5);
+}
+
+:is(.is-terminal, .has-title) .header {
+  border-start-start-radius: 5px;
+  border-start-end-radius: 5px;
+}
+.hero > img {
+  transition: rotate 0.5s ease, scale 0.5s ease;
+}
+  @media(prefers-reduced-motion: no-preference) {
+  .hero > img:hover {
+    rotate: 3deg;
+    scale: 1.05;
+    cursor: cell;
+  }
+}
+
+.content ul ul {
+  margin-block-start: 0;
+  margin-block-end: 1.5rem;
+}
+
+.content :is(h1, h2, h3, h4, h5, h6) {
+  margin-block-start: 2em;
+}
+
+/* ==================================================================== */
+/* ==================================================================== */
+/* ==================================================================== */
+/* ==================================================================== */
+
+@keyframes fade-in {
+	to {
+		opacity: 1;
+	}
+}
+@keyframes fade-in-bloom {
+	0% {
+		filter: brightness(1) blur(20px);
+		opacity: 0;
+	}
+	10% {
+		filter: brightness(2) blur(10px);
+		filter: brightness(0.5) blur(10px);
+		opacity: 1;
+	}
+	to {
+		filter: brightness(1) blur(0);
+		opacity: 1;
+	}
+}
+@keyframes fade-out {
+	to {
+		opacity: 0;
+	}
+}
+@keyframes fade-out-bloom {
+	to {
+		filter: brightness(1) blur(20px);
+		opacity: 0;
+	}
+	10% {
+		filter: brightness(2) blur(10px);
+		filter: brightness(0.5) blur(10px);
+		opacity: 1;
+	}
+	0% {
+		filter: brightness(1) blur(0);
+		opacity: 1;
+	}
+}
+@keyframes scale-up {
+	to {
+		transform: scale(1.25);
+	}
+}
+@keyframes scale-down {
+	to {
+		transform: scale(0.75);
+	}
+}
+@keyframes slide-out-up {
+	to {
+		transform: translateY(-100%);
+	}
+}
+@keyframes slide-out-down {
+	to {
+		transform: translateY(100%);
+	}
+}
+@keyframes slide-out-right {
+	to {
+		transform: translateX(100%);
+	}
+}
+@keyframes slide-out-left {
+	to {
+		transform: translateX(-100%);
+	}
+}
+@keyframes slide-in-up {
+	0% {
+		transform: translateY(100%);
+	}
+}
+@keyframes slide-in-down {
+	0% {
+		transform: translateY(-100%);
+	}
+}
+@keyframes slide-in-right {
+	0% {
+		transform: translateX(-100%);
+	}
+}
+@keyframes slide-in-left {
+	0% {
+		transform: translateX(100%);
+	}
+}
+@keyframes shake-x {
+	0%,
+	to {
+		transform: translateX(0);
+	}
+	20% {
+		transform: translateX(-5%);
+	}
+	40% {
+		transform: translateX(5%);
+	}
+	60% {
+		transform: translateX(-5%);
+	}
+	80% {
+		transform: translateX(5%);
+	}
+}
+@keyframes shake-y {
+	0%,
+	to {
+		transform: translateY(0);
+	}
+	20% {
+		transform: translateY(-5%);
+	}
+	40% {
+		transform: translateY(5%);
+	}
+	60% {
+		transform: translateY(-5%);
+	}
+	80% {
+		transform: translateY(5%);
+	}
+}
+@keyframes spin {
+	to {
+		transform: rotate(1turn);
+	}
+}
+@keyframes ping {
+	90%,
+	to {
+		opacity: 0;
+		transform: scale(2);
+	}
+}
+@keyframes blink {
+	0%,
+	to {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.5;
+	}
+}
+@keyframes float {
+	50% {
+		transform: translateY(-25%);
+	}
+}
+@keyframes bounce {
+	25% {
+		transform: translateY(-20%);
+	}
+	40% {
+		transform: translateY(-3%);
+	}
+	0%,
+	60%,
+	to {
+		transform: translateY(0);
+	}
+}
+@keyframes pulse {
+	50% {
+		transform: scale(0.9);
+	}
+}
+:where(html) {
+	--o-ease-1: cubic-bezier(0.25, 0, 0.5, 1);
+	--o-ease-2: cubic-bezier(0.25, 0, 0.4, 1);
+	--o-ease-3: cubic-bezier(0.25, 0, 0.3, 1);
+	--o-ease-4: cubic-bezier(0.25, 0, 0.2, 1);
+	--o-ease-5: cubic-bezier(0.25, 0, 0.1, 1);
+	--o-ease-in-1: cubic-bezier(0.25, 0, 1, 1);
+	--o-ease-in-2: cubic-bezier(0.5, 0, 1, 1);
+	--o-ease-in-3: cubic-bezier(0.7, 0, 1, 1);
+	--o-ease-in-4: cubic-bezier(0.9, 0, 1, 1);
+	--o-ease-in-5: cubic-bezier(1, 0, 1, 1);
+	--o-ease-out-1: cubic-bezier(0, 0, 0.75, 1);
+	--o-ease-out-2: cubic-bezier(0, 0, 0.5, 1);
+	--o-ease-out-3: cubic-bezier(0, 0, 0.3, 1);
+	--o-ease-out-4: cubic-bezier(0, 0, 0.1, 1);
+	--o-ease-out-5: cubic-bezier(0, 0, 0, 1);
+	--o-ease-in-out-1: cubic-bezier(0.1, 0, 0.9, 1);
+	--o-ease-in-out-2: cubic-bezier(0.3, 0, 0.7, 1);
+	--o-ease-in-out-3: cubic-bezier(0.5, 0, 0.5, 1);
+	--o-ease-in-out-4: cubic-bezier(0.7, 0, 0.3, 1);
+	--o-ease-in-out-5: cubic-bezier(0.9, 0, 0.1, 1);
+	--o-ease-elastic-1: cubic-bezier(0.5, 0.75, 0.75, 1.25);
+	--o-ease-elastic-2: cubic-bezier(0.5, 1, 0.75, 1.25);
+	--o-ease-elastic-3: cubic-bezier(0.5, 1.25, 0.75, 1.25);
+	--o-ease-elastic-4: cubic-bezier(0.5, 1.5, 0.75, 1.25);
+	--o-ease-elastic-5: cubic-bezier(0.5, 1.75, 0.75, 1.25);
+	--o-ease-squish-1: cubic-bezier(0.5, -0.1, 0.1, 1.5);
+	--o-ease-squish-2: cubic-bezier(0.5, -0.3, 0.1, 1.5);
+	--o-ease-squish-3: cubic-bezier(0.5, -0.5, 0.1, 1.5);
+	--o-ease-squish-4: cubic-bezier(0.5, -0.7, 0.1, 1.5);
+	--o-ease-squish-5: cubic-bezier(0.5, -0.9, 0.1, 1.5);
+	--o-ease-step-1: steps(2);
+	--o-ease-step-2: steps(3);
+	--o-ease-step-3: steps(4);
+	--o-ease-step-4: steps(7);
+	--o-ease-step-5: steps(10);
+}
+:where(.o-fade-in-active):where(:active) {
+	-webkit-animation: var(--o-animation-fade-in);
+	animation: var(--o-animation-fade-in);
+}
+:where(.o-fade-in) {
+	-webkit-animation: var(--o-animation-fade-in);
+	animation: var(--o-animation-fade-in);
+}
+:where(.o-fade-in-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-fade-in);
+	animation: var(--o-animation-fade-in);
+}
+:where(.o-fade-out-active):where(:active) {
+	-webkit-animation: var(--o-animation-fade-out);
+	animation: var(--o-animation-fade-out);
+}
+:where(.o-fade-out) {
+	-webkit-animation: var(--o-animation-fade-out);
+	animation: var(--o-animation-fade-out);
+}
+:where(.o-fade-out-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-fade-out);
+	animation: var(--o-animation-fade-out);
+}
+:where(.o-fade-in-bloom-active):where(:active) {
+	-webkit-animation: var(--o-animation-fade-in-bloom);
+	animation: var(--o-animation-fade-in-bloom);
+}
+:where(.o-fade-in-bloom) {
+	-webkit-animation: var(--o-animation-fade-in-bloom);
+	animation: var(--o-animation-fade-in-bloom);
+}
+:where(.o-fade-in-bloom-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-fade-in-bloom);
+	animation: var(--o-animation-fade-in-bloom);
+}
+:where(.o-fade-out-bloom-active):where(:active) {
+	-webkit-animation: var(--o-animation-fade-out-bloom);
+	animation: var(--o-animation-fade-out-bloom);
+}
+:where(.o-fade-out-bloom) {
+	-webkit-animation: var(--o-animation-fade-out-bloom);
+	animation: var(--o-animation-fade-out-bloom);
+}
+:where(.o-fade-out-bloom-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-fade-out-bloom);
+	animation: var(--o-animation-fade-out-bloom);
+}
+:where(.o-scale-up-active):where(:active) {
+	-webkit-animation: var(--o-animation-scale-up);
+	animation: var(--o-animation-scale-up);
+}
+:where(.o-scale-up) {
+	-webkit-animation: var(--o-animation-scale-up);
+	animation: var(--o-animation-scale-up);
+}
+:where(.o-scale-up-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-scale-up);
+	animation: var(--o-animation-scale-up);
+}
+:where(.o-scale-down-active):where(:active) {
+	-webkit-animation: var(--o-animation-scale-down);
+	animation: var(--o-animation-scale-down);
+}
+:where(.o-scale-down) {
+	-webkit-animation: var(--o-animation-scale-down);
+	animation: var(--o-animation-scale-down);
+}
+:where(.o-scale-down-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-scale-down);
+	animation: var(--o-animation-scale-down);
+}
+:where(.o-slide-out-up-active):where(:active) {
+	-webkit-animation: var(--o-animation-slide-out-up);
+	animation: var(--o-animation-slide-out-up);
+}
+:where(.o-slide-out-up) {
+	-webkit-animation: var(--o-animation-slide-out-up);
+	animation: var(--o-animation-slide-out-up);
+}
+:where(.o-slide-out-up-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-slide-out-up);
+	animation: var(--o-animation-slide-out-up);
+}
+:where(.o-slide-out-down-active):where(:active) {
+	-webkit-animation: var(--o-animation-slide-out-down);
+	animation: var(--o-animation-slide-out-down);
+}
+:where(.o-slide-out-down) {
+	-webkit-animation: var(--o-animation-slide-out-down);
+	animation: var(--o-animation-slide-out-down);
+}
+:where(.o-slide-out-down-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-slide-out-down);
+	animation: var(--o-animation-slide-out-down);
+}
+:where(.o-slide-out-right-active):where(:active) {
+	-webkit-animation: var(--o-animation-slide-out-right);
+	animation: var(--o-animation-slide-out-right);
+}
+:where(.o-slide-out-right) {
+	-webkit-animation: var(--o-animation-slide-out-right);
+	animation: var(--o-animation-slide-out-right);
+}
+:where(.o-slide-out-right-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-slide-out-right);
+	animation: var(--o-animation-slide-out-right);
+}
+:where(.o-slide-out-left-active):where(:active) {
+	-webkit-animation: var(--o-animation-slide-out-left);
+	animation: var(--o-animation-slide-out-left);
+}
+:where(.o-slide-out-left) {
+	-webkit-animation: var(--o-animation-slide-out-left);
+	animation: var(--o-animation-slide-out-left);
+}
+:where(.o-slide-out-left-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-slide-out-left);
+	animation: var(--o-animation-slide-out-left);
+}
+:where(.o-slide-in-up-active):where(:active) {
+	-webkit-animation: var(--o-animation-slide-in-up);
+	animation: var(--o-animation-slide-in-up);
+}
+:where(.o-slide-in-up) {
+	-webkit-animation: var(--o-animation-slide-in-up);
+	animation: var(--o-animation-slide-in-up);
+}
+:where(.o-slide-in-up-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-slide-in-up);
+	animation: var(--o-animation-slide-in-up);
+}
+:where(.o-slide-in-down-active):where(:active) {
+	-webkit-animation: var(--o-animation-slide-in-down);
+	animation: var(--o-animation-slide-in-down);
+}
+:where(.o-slide-in-down) {
+	-webkit-animation: var(--o-animation-slide-in-down);
+	animation: var(--o-animation-slide-in-down);
+}
+:where(.o-slide-in-down-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-slide-in-down);
+	animation: var(--o-animation-slide-in-down);
+}
+:where(.o-slide-in-right-active):where(:active) {
+	-webkit-animation: var(--o-animation-slide-in-right);
+	animation: var(--o-animation-slide-in-right);
+}
+:where(.o-slide-in-right) {
+	-webkit-animation: var(--o-animation-slide-in-right);
+	animation: var(--o-animation-slide-in-right);
+}
+:where(.o-slide-in-right-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-slide-in-right);
+	animation: var(--o-animation-slide-in-right);
+}
+:where(.o-slide-in-left-active):where(:active) {
+	-webkit-animation: var(--o-animation-slide-in-left);
+	animation: var(--o-animation-slide-in-left);
+}
+:where(.o-slide-in-left) {
+	-webkit-animation: var(--o-animation-slide-in-left);
+	animation: var(--o-animation-slide-in-left);
+}
+:where(.o-slide-in-left-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-slide-in-left);
+	animation: var(--o-animation-slide-in-left);
+}
+:where(.o-spin-active):where(:active) {
+	-webkit-animation: var(--o-animation-spin);
+	animation: var(--o-animation-spin);
+}
+:where(.o-spin) {
+	-webkit-animation: var(--o-animation-spin);
+	animation: var(--o-animation-spin);
+}
+:where(.o-spin-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-spin);
+	animation: var(--o-animation-spin);
+}
+:where(.o-ping-active):where(:active) {
+	-webkit-animation: var(--o-animation-ping);
+	animation: var(--o-animation-ping);
+}
+:where(.o-ping) {
+	-webkit-animation: var(--o-animation-ping);
+	animation: var(--o-animation-ping);
+}
+:where(.o-ping-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-ping);
+	animation: var(--o-animation-ping);
+}
+:where(.o-blink-active):where(:active) {
+	-webkit-animation: var(--o-animation-blink);
+	animation: var(--o-animation-blink);
+}
+:where(.o-blink) {
+	-webkit-animation: var(--o-animation-blink);
+	animation: var(--o-animation-blink);
+}
+:where(.o-blink-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-blink);
+	animation: var(--o-animation-blink);
+}
+:where(.o-float-active):where(:active) {
+	-webkit-animation: var(--o-animation-float);
+	animation: var(--o-animation-float);
+}
+:where(.o-float) {
+	-webkit-animation: var(--o-animation-float);
+	animation: var(--o-animation-float);
+}
+:where(.o-float-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-float);
+	animation: var(--o-animation-float);
+}
+:where(.o-bounce-active):where(:active) {
+	-webkit-animation: var(--o-animation-bounce);
+	animation: var(--o-animation-bounce);
+}
+:where(.o-bounce) {
+	-webkit-animation: var(--o-animation-bounce);
+	animation: var(--o-animation-bounce);
+}
+:where(.o-bounce-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-bounce);
+	animation: var(--o-animation-bounce);
+}
+:where(.o-pulse-active):where(:active) {
+	-webkit-animation: var(--o-animation-pulse);
+	animation: var(--o-animation-pulse);
+}
+:where(.o-pulse) {
+	-webkit-animation: var(--o-animation-pulse);
+	animation: var(--o-animation-pulse);
+}
+:where(.o-pulse-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-pulse);
+	animation: var(--o-animation-pulse);
+}
+:where(.o-shake-x-active):where(:active) {
+	-webkit-animation: var(--o-animation-shake-x);
+	animation: var(--o-animation-shake-x);
+}
+:where(.o-shake-x) {
+	-webkit-animation: var(--o-animation-shake-x);
+	animation: var(--o-animation-shake-x);
+}
+:where(.o-shake-x-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-shake-x);
+	animation: var(--o-animation-shake-x);
+}
+:where(.o-shake-y-active):where(:active) {
+	-webkit-animation: var(--o-animation-shake-y);
+	animation: var(--o-animation-shake-y);
+}
+:where(.o-shake-y) {
+	-webkit-animation: var(--o-animation-shake-y);
+	animation: var(--o-animation-shake-y);
+}
+:where(.o-shake-y-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-shake-y);
+	animation: var(--o-animation-shake-y);
+}
+:where(.o-ping-pong-active):where(:active) {
+	-webkit-animation: var(--o-animation-ping-pong);
+	animation: var(--o-animation-ping-pong);
+}
+:where(.o-ping-pong) {
+	-webkit-animation: var(--o-animation-ping-pong);
+	animation: var(--o-animation-ping-pong);
+}
+:where(.o-ping-pong-hover):where(:hover) {
+	-webkit-animation: var(--o-animation-ping-pong);
+	animation: var(--o-animation-ping-pong);
+}
+:where(.o-forwards) {
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+:where(.o-reverse) {
+	-webkit-animation-direction: reverse;
+	animation-direction: reverse;
+}

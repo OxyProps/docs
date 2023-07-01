@@ -1,0 +1,99 @@
+---
+title: Aspect Ratios
+description: Documentation for the OxyProps Aspect Ratios properties and classes syntax.
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/aspect-ratios.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/aspect-ratios.png
+---
+
+import ClipboardCopy from '~/components/ClipboardCopy.astro';
+
+## Square
+
+Applies an aspect ratio of 1:1 to an element.
+
+<div style="aspect-ratio: 1; height: 10rem; border: 3px solid var(--sl-color-accent-high); display:grid; place-items:center;">square</div>
+
+```html title="CSS Variable"
+var(--o-ratio-square)
+```
+
+```html title="Utility Class"
+o-square
+```
+
+## Landscape
+
+Applies an aspect ratio of 4:3 to an element.
+
+<div style="aspect-ratio: 4/3; height: 10rem; border: 3px solid var(--sl-color-accent-high); display:grid; place-items:center;">landscape</div>
+
+```html title="CSS Variable"
+var(--o-ratio-landscape)
+```
+
+```html title="Utility Class"
+o-landscape
+```
+
+## Portrait
+
+Applies an aspect ratio of 3:4 to an element.
+
+<div style="aspect-ratio: 3/4; height: 10rem; border: 3px solid var(--sl-color-accent-high); display:grid; place-items:center;">portrait</div>
+
+```html title="CSS Variable"
+var(--o-ratio-portrait)
+```
+
+```html title="Utility Class"
+o-portrait
+```
+
+## Widescreen
+
+Applies an aspect ratio of 16:9 to an element.
+
+<div style="aspect-ratio: 16/9; height: 10rem; border: 3px solid var(--sl-color-accent-high); display:grid; place-items:center;">widescreen</div>
+
+```html title="CSS Variable"
+var(--o-ratio-widescreen)
+```
+
+```html title="Utility Class"
+o-widescreen
+```
+
+## Ultrawide
+
+Applies an aspect ratio of 18:5 to an element.
+
+<div style="aspect-ratio: 18/5; height: 10rem; border: 3px solid var(--sl-color-accent-high); display:grid; place-items:center;">ultrawide</div>
+
+```html title="CSS Variable"
+var(--o-ratio-ultrawide)
+```
+
+```html title="Utility Class"
+o-ultrawide
+```
+
+## Golden
+
+Applies an aspect ratio of 1.618:1 to an element.
+
+<div style="aspect-ratio: 1.618/1; height: 10rem; border: 3px solid var(--sl-color-accent-high); display:grid; place-items:center;">golden</div>
+
+```html title="CSS Variable"
+var(--o-ratio-golden)
+```
+
+```html title="Utility Class"
+o-golden
+```

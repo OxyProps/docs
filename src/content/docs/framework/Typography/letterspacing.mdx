@@ -1,0 +1,80 @@
+---
+title: Letter Spacing
+description: The documentation for OxyProps Letter Spacing CSS variables and utility classes.
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/typography/letter-spacing.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/typography/letter-spacing.png
+---
+
+import ClipboardCopy from '~/components/ClipboardCopy.astro';
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Image } from "astro:assets";
+
+import spacing from "~/assets/oxyprops-font-letterspacing.webp";
+import oxySpacing from "~/assets/oxy-tracking-context-menu.webp";
+import brxSpacing from "~/assets/brx-tracking-context-menu.webp";
+
+Letter spacing, also known as tracking, refers to the amount of space between each character in a word. It can be adjusted to create a specific look or improve the readability of the text. The letter spacing can be increased or decreased depending on the desired effect.
+
+<Image
+      src={spacing}
+      alt="Preview of the OxyProps font letter spacing."
+      format="avif"
+      quality="mid"
+      width="900"
+      height="450"
+    />
+
+OxyProps includes a range of CSS variables and utility classes for controlling letter spacing. The available CSS variables and utility classes range from -0.5em to 1em, with the values increasing. For example, the o-tracking-1 class adds a letter spacing of 0.025em to the text, while the o-tracking-7 class adds a letter spacing of 1em.
+
+To use these props and classes, simply add them to the HTML element containing the text that you want to modify.
+
+| Default value | CSS Variable                                                                                    | Utility Class                                                      |
+| ------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| -0.05 em      | <ClipboardCopy value="var(--o-font-letterspacing-0)">`--o-font-letterspacing-0`</ClipboardCopy> | <ClipboardCopy value="o-tracking-0">`o-tracking-0`</ClipboardCopy> |
+| 0.025 em      | <ClipboardCopy value="var(--o-font-letterspacing-1)">`--o-font-letterspacing-1`</ClipboardCopy> | <ClipboardCopy value="o-tracking-1">`o-tracking-1`</ClipboardCopy> |
+| 0.05 em       | <ClipboardCopy value="var(--o-font-letterspacing-2)">`--o-font-letterspacing-2`</ClipboardCopy> | <ClipboardCopy value="o-tracking-2">`o-tracking-2`</ClipboardCopy> |
+| 0.075 em      | <ClipboardCopy value="var(--o-font-letterspacing-3)">`--o-font-letterspacing-3`</ClipboardCopy> | <ClipboardCopy value="o-tracking-3">`o-tracking-3`</ClipboardCopy> |
+| 0.15 em       | <ClipboardCopy value="var(--o-font-letterspacing-4)">`--o-font-letterspacing-4`</ClipboardCopy> | <ClipboardCopy value="o-tracking-4">`o-tracking-4`</ClipboardCopy> |
+| 0.5 em        | <ClipboardCopy value="var(--o-font-letterspacing-5)">`--o-font-letterspacing-5`</ClipboardCopy> | <ClipboardCopy value="o-tracking-5">`o-tracking-5`</ClipboardCopy> |
+| 0.75 em       | <ClipboardCopy value="var(--o-font-letterspacing-6)">`--o-font-letterspacing-6`</ClipboardCopy> | <ClipboardCopy value="o-tracking-6">`o-tracking-6`</ClipboardCopy> |
+| 1 em          | <ClipboardCopy value="var(--o-font-letterspacing-7)">`--o-font-letterspacing-7`</ClipboardCopy> | <ClipboardCopy value="o-tracking-7">`o-tracking-7`</ClipboardCopy> |
+
+## Context Menu
+<Tabs>
+	<TabItem label="oxygen">
+
+Oxyprops creates a context menu for Oxygen Letter Spacing input fields to give you instant access to the corresponding CSS varaibles.  
+Simply right-click on the input field and select the desired value from the context menu.
+
+<Image
+      src={oxySpacing}
+      alt="Preview of the OxyProps font letter spacing."
+      format="avif"
+      quality="mid"
+      width="900"
+      height="450"
+    />
+</TabItem>
+<TabItem label="bricks">
+Oxyprops creates a context menu for Bricks Letter Spacing input fields to give you instant access to the corresponding CSS varaibles.  
+Simply right-click on the input field and select the desired value from the context menu.
+
+<Image
+      src={brxSpacing}
+      alt="Preview of the OxyProps context menu for letter spacing in Bricks editor."
+      format="avif"
+      quality="mid"
+      width="900"
+      height="450"
+    />
+</TabItem>
+</Tabs>
+
+Experiment with different letter spacing values to find the look that works best for your design. Remember that too much letter spacing can make the text difficult to read, while too little can make it look cramped and hard to read as well.

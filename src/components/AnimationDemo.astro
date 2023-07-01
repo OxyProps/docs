@@ -1,0 +1,50 @@
+---
+export interface Props {
+	name?: string;
+    hidden?: boolean;
+    iterations?: string;
+    duration?: string;
+}
+const { name, hidden, iterations = 'infinite', duration = '2s' } = Astro.props as Props;
+const initialOpacity = hidden ? 0 : 1;
+---
+<div class="grid">
+    <div class="grid__item">
+        <p>Base</p>
+        <img class={`o-${name}`} style=`animation-iteration-count: ${iterations};animation-duration: ${duration};` src="https://doodleipsum.com/150x150/avatar-2?i=b403f32a10b2a7473c695c3cc705a8ea" />
+    </div>
+    <div class="grid__item">
+        <p>Hover</p>
+        <img class={`o-${name}-hover`} style=`animation-iteration-count: ${iterations};animation-duration: ${duration};` src="https://doodleipsum.com/150x150/avatar-2?i=b403f32a10b2a7473c695c3cc705a8ea" />
+    </div>
+    <div class="grid__item">
+        <p>Active</p>
+        <img class={`o-${name}-active`} style=`animation-iteration-count: ${iterations};animation-duration: ${duration};` src="https://doodleipsum.com/150x150/avatar-2?i=b403f32a10b2a7473c695c3cc705a8ea" />
+    </div>
+</div>
+
+<style define:vars={{initialOpacity}}>
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    width: 100%;
+}
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+img {
+    opacity: var(--initialOpacity);
+}
+.grid__item.grid__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+.grid__item.grid__item * {
+    margin: 0;
+}
+</style>

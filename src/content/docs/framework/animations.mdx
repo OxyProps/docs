@@ -1,0 +1,374 @@
+---
+title: Animations
+description: An intro to the OxyProps Animations properties and classes syntax.
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/animations.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/animations.png
+---
+
+import ClipboardCopy from '~/components/ClipboardCopy.astro';
+import AnimationDemo from '~/components/AnimationDemo.astro';
+
+CSS animations allow you to create smooth and engaging visual effects on your website or web application without using JavaScript. Animations can be used to add visual interest to interactive elements like buttons and menus, or to create immersive effects like parallax scrolling and transitions between different sections of a page.
+
+:::caution[High Motion]
+This page contains high motion elements as it demonstrates the framework animation props and classes
+:::
+
+## TL;DR
+
+OxyProps includes a set of premade animations that you can use to add visual interest to your website or web application. You can use these animations to add visual interest to interactive elements like buttons and menus, or to create immersive effects like parallax scrolling and transitions between different sections of a page.
+
+Here is the list of available animations CSS variables and utility classes. If you want to learn more about CSS animations, and see samples of how to use them, read on.
+
+### Blink
+
+<AnimationDemo name="blink" />
+
+```css title="CSS Variable"
+var(--o-animation-blink)
+```
+
+```html title="Utility Classes"
+o-blink
+o-blink-hover
+o-blink-active
+```
+
+### Bounce
+
+<AnimationDemo name="bounce" />
+
+```css title="CSS Variable"
+var(--o-animation-bounce)
+```
+
+```html title="Utility Classes"
+o-bounce
+o-bounce-hover
+o-bounce-active
+```
+
+### Fade-in
+
+<AnimationDemo name="fade-in" hidden />
+
+```css title="CSS Variable"
+var(--o-animation-fade-in)
+```
+
+```html title="Utility Class"
+o-fade-in
+o-fade-in-hover
+o-fade-in-active
+```
+
+### Fade In Bloom
+
+<AnimationDemo name="fade-in-bloom" hidden />
+
+```css title="CSS Variable"
+var(--o-animation-fade-in-bloom)
+```
+
+```html title="Utility Class"
+o-fade-in-bloom
+o-fade-in-bloom-hover
+o-fade-in-bloom-active
+```
+
+### Fade Out
+
+<AnimationDemo name="fade-out" />
+
+```css title="CSS Variable"
+var(--o-animation-fade-out)
+```
+
+```html title="Utility Class"
+o-fade-out
+o-fade-out-hover
+o-fade-out-active
+```
+
+### Fade Out Bloom
+
+<AnimationDemo name="fade-out-bloom" />
+
+```css title="CSS Variable"
+var(--o-animation-fade-out-bloom)
+```
+
+```html title="Utility Class"
+o-fade-out-bloom
+o-fade-out-bloom-hover
+o-fade-out-bloom-active
+```
+
+### Float
+
+<AnimationDemo name="float" />
+
+```css title="CSS Variable"
+var(--o-animation-float)
+```
+
+```html title="Utility Class"
+o-float
+o-float-hover
+o-float-active
+```
+
+### Ping
+
+<AnimationDemo name="ping" />
+
+```css title="CSS Variable"
+var(--o-animation-ping)
+```
+
+```html title="Utility Class"
+o-ping
+o-ping-hover
+o-ping-active
+```
+
+### Pulse
+
+<AnimationDemo name="pulse" />
+
+```css title="CSS Variable"
+var(--o-animation-pulse)
+```
+
+```html title="Utility Class"
+o-pulse
+o-pulse-hover
+o-pulse-active
+```
+
+### Scale Down
+
+<AnimationDemo name="scale-down" />
+
+```css title="CSS Variable"
+var(--o-animation-scale-down)
+```
+
+```html title="Utility Class"
+o-scale-down
+o-scale-down-hover
+o-scale-down-active
+```
+
+### Scale Up
+
+<AnimationDemo name="scale-up" />
+
+```css title="CSS Variable"
+var(--o-animation-scale-up)
+```
+
+```html title="Utility Class"
+o-scale-up
+o-scale-up-hover
+o-scale-up-active
+```
+
+### Shake X
+
+<AnimationDemo name="shake-x" />
+
+```css title="CSS Variable"
+var(--o-animation-shake-x)
+```
+
+```html title="Utility Class"
+o-shake-x
+o-shake-x-hover
+o-shake-x-active
+```
+
+### Shake Y
+
+<AnimationDemo name="shake-y" />
+
+```css title="CSS Variable"
+var(--o-animation-shake-y)
+```
+
+```html title="Utility Class"
+o-shake-y
+o-shake-y-hover
+o-shake-y-active
+```
+
+### Slide In Down
+
+<AnimationDemo name="slide-in-down" />
+
+```css title="CSS Variable"
+var(--o-animation-slide-in-down)
+```
+
+```html title="Utility Class"
+o-slide-in-down
+o-slide-in-down-hover
+o-slide-in-down-active
+```
+
+### Slide In Left
+
+<AnimationDemo name="slide-in-left" />
+
+```css title="CSS Variable"
+var(--o-animation-slide-in-left)
+```
+
+```html title="Utility Class"
+o-slide-in-left
+o-slide-in-left-hover
+o-slide-in-left-active
+```
+
+### Slide In Right
+
+<AnimationDemo name="slide-in-right" />
+
+```css title="CSS Variable"
+var(--o-animation-slide-in-right)
+```
+
+```html title="Utility Class"
+o-slide-in-right
+o-slide-in-right-hover
+o-slide-in-right-active
+```
+
+### Slide In Up
+
+<AnimationDemo name="slide-in-up" />
+
+```css title="CSS Variable"
+var(--o-animation-slide-in-up)
+```
+
+```html title="Utility Class"
+o-slide-in-up
+o-slide-in-up-hover
+o-slide-in-up-active
+```
+
+### Slide Out Down
+
+<AnimationDemo name="slide-out-down" />
+
+```css title="CSS Variable"
+var(--o-animation-slide-out-down)
+```
+
+```html title="Utility Class"
+o-slide-out-down
+o-slide-out-down-hover
+o-slide-out-down-active
+```
+
+### Slide Out Left
+
+<AnimationDemo name="slide-out-left" />
+
+```css title="CSS Variable"
+var(--o-animation-slide-out-left)
+```
+
+```html title="Utility Class"
+o-slide-out-left
+o-slide-out-left-hover
+o-slide-out-left-active
+```
+
+### Slide Out Right
+
+<AnimationDemo name="slide-out-right" />
+
+```css title="CSS Variable"
+var(--o-animation-slide-out-right)
+```
+
+```html title="Utility Class"
+o-slide-out-right
+o-slide-out-right-hover
+o-slide-out-right-active
+```
+
+### Spin
+
+<AnimationDemo name="spin" />
+
+```css title="CSS Variable"
+var(--o-animation-spin)
+```
+
+```html title="Utility Class"
+o-spin
+o-spin-hover
+o-spin-active
+```
+
+## Introduction to CSS Animations
+
+To create a CSS animation, we need to use the `@keyframes` rule to define the animation's keyframes (or stages) and the animation property to specify the animation's duration, timing, and other settings.
+
+## Defining Keyframes
+
+The `@keyframes` rule allows you to define a series of keyframes that specify how the animation should change over time. Each keyframe represents a specific point in the animation, and can include properties that define the element's style at that point.
+
+Here's an example of a `@keyframes` rule that defines a simple animation that changes an element's opacity from 0 to 1 over a duration of 2 seconds:
+
+```css title="Opacity animation"
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+```
+
+In this example, we've named the animation fade-in and defined two keyframes: 0% and 100%. The 0% keyframe sets the element's opacity to 0 at the beginning of the animation, while the 100% keyframe sets the opacity to 1 at the end of the animation.
+
+## Applying Animations
+
+Once you've defined your `@keyframes` rule, you can apply the animation to an element using the animation property. Here's an example of how to apply the fade-in animation we defined earlier to a `<div>` element:
+
+```css title="Applying the animation"
+div {
+	animation: fade-in 2s;
+}
+```
+
+In this example, we've set the animation property to `fade-in 2s`, which applies the `fade-in` animation we defined earlier and specifies a duration of 2 seconds.
+
+## Animation Properties
+
+In addition to the `@keyframes` rule and the animation property, there are a number of other CSS properties that can be used to customize the behavior and appearance of CSS animations. Here are a few examples:
+
+- `animation-delay`: specifies a delay before the animation begins
+- `animation-direction`: specifies whether the animation should play forwards, backwards, or alternate between forwards and backwards
+- `animation-timing-function`: specifies the timing function used for the animation (e.g. linear, ease-in, ease-out, ease-in-out)
+- `animation-iteration-count`: specifies the number of times the animation should repeat (e.g. infinite, 3)
+- `animation-fill-mode`: specifies what styles should be applied to the element before and after the animation plays (e.g. forwards, backwards, both)
+
+## Conclusion
+
+CSS animations are a powerful tool for adding visual interest and interactivity to your website or web application. With the `@keyframes` rule and the animation property, you can create smooth, engaging effects without the need for JavaScript. So why not give it a try and see what you can create!
+
+## Examples of available animations
+

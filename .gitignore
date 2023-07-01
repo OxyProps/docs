@@ -1,6 +1,9 @@
 # build output
 dist
 
+# cafoutch
+bak
+
 # dependencies
 node_modules/
 package-lock.lock

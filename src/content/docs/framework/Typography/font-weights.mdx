@@ -1,0 +1,51 @@
+---
+title: Font Weights
+description: The documentation for OxyProps Font Weights CSS variables and utility classes.
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/typography/font-weights.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/typography/font-weights.png
+---
+
+import ClipboardCopy from '~/components/ClipboardCopy.astro';
+import { Image } from "astro:assets";
+
+import weights from "~/assets/oxyprops-font-weights.webp";
+
+Font weight refers to the thickness or boldness of a font. The weight of a font is typically measured on a scale from 100 (thin) to 900 (black). Font weights can be used to create visual hierarchy and emphasize important information on a page.
+
+:::note[Font weights in page builders]  
+Both Oxygen and Bricks use dropdowns to select the font weights. So there is no context menu for font weights CSS variables. But you can still use the utility classes to set the font weight, and use the CSS variables in your custom CSS.
+:::
+
+<Image
+      src={weights}
+      alt="Preview of the OxyProps font weights in Oxygen editor."
+      format="avif"
+      quality="mid"
+      width="900"
+      height="450"
+    />
+
+In OxyProps, font weights are defined using CSS variables and utility classes. Here’s an explanation of each weight and its corresponding variable and class:
+
+| Description | CSS Variable                                                                      | Utility Class                                                                                                                                |
+| ----------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Thin        | <ClipboardCopy value="var(--o-font-weight-1)">`--o-font-weight-1`</ClipboardCopy> | <ClipboardCopy value="o-thin">`o-thin`</ClipboardCopy>                                                                                       |
+| Extra-light | <ClipboardCopy value="var(--o-font-weight-2)">`--o-font-weight-2`</ClipboardCopy> | <ClipboardCopy value="o-extra-light">`o-extra-light`</ClipboardCopy> or <ClipboardCopy value="o-ultra-light">`o-ultra-light`</ClipboardCopy> |
+| Light       | <ClipboardCopy value="var(--o-font-weight-3)">`--o-font-weight-3`</ClipboardCopy> | <ClipboardCopy value="o-light">`o-light`</ClipboardCopy>                                                                                     |
+| Normal      | <ClipboardCopy value="var(--o-font-weight-4)">`--o-font-weight-4`</ClipboardCopy> | <ClipboardCopy value="o-normal">`o-normal`</ClipboardCopy>                                                                                   |
+| Medium      | <ClipboardCopy value="var(--o-font-weight-5)">`--o-font-weight-5`</ClipboardCopy> | <ClipboardCopy value="o-medium">`o-medium`</ClipboardCopy>                                                                                   |
+| Semi-Bold   | <ClipboardCopy value="var(--o-font-weight-6)">`--o-font-weight-6`</ClipboardCopy> | <ClipboardCopy value="o-semi-bold">`o-semi-bold`</ClipboardCopy>                                                                             |
+| Bold        | <ClipboardCopy value="var(--o-font-weight-7)">`--o-font-weight-7`</ClipboardCopy> | <ClipboardCopy value="o-bold">`o-bold`</ClipboardCopy>                                                                                       |
+| Extra-bold  | <ClipboardCopy value="var(--o-font-weight-8)">`--o-font-weight-8`</ClipboardCopy> | <ClipboardCopy value="o-extra-bold">`o-extra-bold`</ClipboardCopy> or <ClipboardCopy value="o-ultra-bold">`o-ultra-bold`</ClipboardCopy>     |
+| Heavy       | <ClipboardCopy value="var(--o-font-weight-9)">`--o-font-weight-9`</ClipboardCopy> | <ClipboardCopy value="o-black">`o-heavy`</ClipboardCopy>                                                                                     |
+
+
+
+By using these font weights and their corresponding CSS variables and classes, you can easily adjust the weight of your text to create visual emphasis and hierarchy on your page.

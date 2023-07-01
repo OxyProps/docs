@@ -2,7 +2,7 @@ import { toString } from 'hast-util-to-string';
 import { h } from 'hastscript';
 import { escape } from 'html-escaper';
 import type { Options } from 'rehype-autolink-headings';
-import { useTranslationsForLang } from '../src/i18n/util';
+// import { useTranslationsForLang } from '../src/i18n/util';
 
 const AnchorLinkIcon = h(
 	'span',
@@ -25,8 +25,8 @@ const AnchorLinkIcon = h(
 );
 
 const createSROnlyLabel = (text: string) => {
-	const t = useTranslationsForLang('en');
-	return h('span', { 'is:raw': true, class: 'sr-only' }, `${t('a11y.sectionLink')} ${escape(text)}`);
+	// const t = useTranslationsForLang('en'); link = ${('a11y.sectionLink')}
+	return h('span', { 'is:raw': true, class: 'sr-only' }, `link ${escape(text)}`);
 };
 
 /**

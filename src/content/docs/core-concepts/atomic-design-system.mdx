@@ -1,0 +1,178 @@
+---
+title: The Atomic Design System
+description: Learn about design tokens and their importance in building a consistent and cohesive user experience across your website.
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/core-concepts/atomic-design-system.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/core-concepts/atomic-design-system.png
+---
+
+Design systems are a vital component in modern web development, providing a unified approach to design across an organization. However, many web developers using WordPress and page builders may have a limited understanding of what a design system is and how it can benefit them. In this article, we will explore the Atomic Design methodology, one of the most popular approaches to design systems. This methodology inspired the development of OxyProps, a WordPress plugin that brings a CSS framework and productivity features to page builders, using design tokens as CSS variables in utility classes, components, elements, patterns, and more. By understanding the Atomic Design methodology, WordPress developers can take full advantage of the benefits of design systems and use OxyProps to streamline their web development workflows.
+
+## What Are Design Systems?
+
+A design system is a set of guidelines, rules, and components that ensure consistency across a product or service. It provides a unified approach to design and helps to make the work of creators and consumers fast and efficient. Design systems help teams to focus on the user experience of the product instead of the design resources. They create a unified language within large cross-functional teams, which leads to consistency across a product and channels.
+
+Here are a few examples of well-known companies that have successfully implemented design systems:
+
+- **<a href="https://carbondesignsystem.com/" target="_blank">IBM Carbon Design System</a>**  
+  IBM's open source design system is a comprehensive collection of guidelines, components, and tools that enable their teams to create cohesive and consistent products. The design language includes detailed documentation, an extensive library of UI components, and a design thinking methodology that helps IBM teams create solutions that meet the needs of their users.
+  :::tip[Carbon icons set]
+  The IBM’s Carbon icon set is available in the OxyProps [Unlimited Icon](/elements/icon-element/) Element using the following syntax: `carbon:icon-name`.
+  
+  For example:
+  ```sh
+    # insert the icon named "home" from the Carbon icon set
+    carbon:home
+  ```
+  :::
+- **<a href="https://m3.material.io/" target="_blank">Material Design by Google</a>**  
+  Google's Material Design system is a visual language that provides a consistent user experience across platforms and devices. It includes guidelines for typography, color, iconography, and animation, as well as a library of UI components and tools that make it easy for designers and developers to create beautiful and functional products.
+  :::tip[Material icons set]
+  The Google's Material Symbols icon set is available in the OxyProps [Unlimited Icon](/elements/icon-element/) Element using the following syntax: `material-symbols:icon-name`   For example:
+  ```sh
+    # insert the icon named "wind-power-rounded" from the Material icon set
+    material-symbols:wind-power-rounded
+  ```
+  :::
+- **<a href="https://www.lightningdesignsystem.com/" target="_blank">Salesforce Lightning Design System</a>**  
+  Salesforce's Lightning Design System is a framework for building enterprise-level web applications. It includes a set of UI components, design guidelines, and accessibility standards that help teams create scalable, accessible, and consistent products. The design system also includes tools for prototyping, testing, and building custom applications.
+
+These examples demonstrate how design systems can provide a standardized approach to design, enabling teams to create consistent and cohesive products that meet the needs of their users. By using a design system, teams can work more efficiently, reduce inconsistencies, and focus on delivering high-quality user experiences.
+
+## Why Are Design Systems Important?
+
+Design systems are essential in web development because they solve the problem of inconsistent design and lack of standardization. Without a design system, developers and designers must create new components and design patterns from scratch, leading to inefficiencies and inconsistencies. By providing pre-built components and design patterns, design systems enable creators to work faster and more efficiently. Additionally, design systems provide a shared language for teams, ensuring consistency across a product and channels, and freeing up time and resources for designers and developers to focus on the user experience of the product. In this section, we will explore the main reasons why design systems are so important in web development.
+
+### Faster and More Efficient Design with Design Systems
+
+Design systems provide creators with pre-built components and design patterns, enabling them to work faster and more efficiently. Instead of starting from scratch with each new design project, creators can easily access and implement existing design elements that are part of the design system. This not only saves time and effort but also ensures consistency in design across different products and channels.
+
+For example, a web designer working on a new project can use the pre-built design components from the design system, such as buttons, icons, and typography styles, instead of creating these elements from scratch. This not only saves time but also ensures consistency in design across different parts of the website. Similarly, a content creator using a page builder can quickly access design elements from the design system, such as pre-built layouts and templates, to create professional-looking pages without having to design them from scratch.
+
+Overall, design systems help creators to work faster and more efficiently, enabling them to focus on other important aspects of the project such as the user experience and content creation.
+
+### Prioritizing UX with Design Systems
+
+One of the key benefits of a design system is that it frees up time and resources for designers and developers to focus on the user experience (UX) of the product. By providing pre-built components and design patterns, design systems allow teams to spend less time on designing individual elements and more time on creating a seamless and intuitive user experience.
+
+For example, instead of spending time designing custom buttons, icons, and other elements for a new website, designers can quickly access pre-built components from the design system and focus on creating a cohesive and engaging user experience. Similarly, developers can spend less time coding and more time testing and optimizing the website for a better user experience.
+
+Overall, design systems help teams prioritize the user experience of the product, which is essential for creating a successful website or application. By streamlining the design process and providing pre-built components, design systems enable teams to focus on what really matters - delivering a product that meets the needs and expectations of the users.
+
+### Creating a Shared Language with Design Systems
+
+In any large cross-functional team, communication can be a challenge. When designers, developers, and stakeholders are all working on the same project, they may use different terms, concepts, and tools to describe their work. This can lead to confusion, misunderstandings, and mistakes.
+
+A design system can help to create a shared language that everyone on the team can understand. By defining common terminology, design patterns, and guidelines, a design system can help to ensure that everyone is on the same page. This can be especially useful when working on complex projects that involve multiple teams, disciplines, or departments.
+
+For example, a design system might include a library of pre-built components, each with a clear name and description. This library can help to ensure that everyone is using the same components in the same way, reducing the risk of errors or inconsistencies. Similarly, a design system might define a set of design principles, such as typography rules or color palettes, that everyone on the team can follow.
+
+By creating a shared language, a design system can help to break down silos and foster collaboration between different teams and disciplines. It can also help to improve the quality and consistency of the final product, leading to a better user experience for customers.
+
+### Consistency is Key
+
+Consistency is key in web design, especially when it comes to user experience. A user should be able to navigate a website or app with ease, no matter which device they're using or which page they're on. This is where design systems come in, ensuring that every aspect of a product or service is consistent, from the typography and color palette to the layout and interactions.
+
+By using a design system, teams can create a set of guidelines and components that define how elements should look and behave. This means that no matter who is working on the project, they have a clear understanding of how to design and implement each component. As a result, the final product is consistent across all channels, whether it's a website, app, or social media platform.
+
+Consistency not only creates a better user experience, but it also helps to build brand recognition and trust. Users are more likely to return to a site or app if they know what to expect and can easily navigate it. Consistency in design also helps to establish a visual identity that users can associate with a brand, making it more memorable and recognizable.
+
+Without a design system, teams may struggle to create a cohesive user experience across different channels. They may also waste time designing and implementing the same elements repeatedly, leading to inefficiencies and inconsistencies. Design systems help to streamline the design process and ensure that every aspect of a product or service is consistent, leading to a better user experience overall.
+
+## What is the Atomic Design Methodology?
+
+The Atomic Design methodology, developed by Brad Frost, is a popular approach to designing complex systems. The methodology is based on the idea that breaking down a system into smaller, simpler components can make it easier to manage and maintain. The methodology is structured hierarchically, with each component building on the one below it. The components in this methodology include Design Tokens, Atoms, Molecules, Organisms, Templates, and Pages. By using this methodology, designers can create scalable and consistent design systems that are easy to work with and maintain over time.
+
+1. [Design Tokens](#design-tokens): These are variables that define the visual design of a product, such as color, typography, and spacing.
+2. [Atoms](#atoms): These are the smallest components of a design system, such as buttons, icons, and form inputs.
+3. [Molecules](#molecules): These are groups of atoms that work together to form a more complex UI element, such as a search bar or a navigation menu.
+4. [Organisms](#organisms): These are groups of molecules that form a distinct section of a user interface, such as a header or a footer.
+5. [Templates](#templates): These are the basic layout structures for a page or a section of a page.
+6. [Pages](#pages): These are the final design compositions that include content and images.
+
+## The basic components of the Atomic Design Methodology
+
+In this section, we'll explore each of these components in detail, discussing their purpose, function, and best practices. Whether you're new to Atomic Design or a seasoned practitioner, this guide will provide you with a solid foundation for creating robust and scalable design systems.
+
+### Design Tokens: Building Consistency in Visual Design
+
+Design tokens are variables that define the visual design of a product, such as color, typography, and spacing. They are used consistently throughout the design system to ensure a cohesive look and feel. This helps designers and developers maintain consistency and make changes more efficiently.
+
+Design tokens can be used across different platforms, devices, and media, such as web, mobile, and print. By using design tokens, design teams can create a unified visual language that can be easily maintained and updated.
+
+For example, a color palette can be defined using design tokens, which can be used to define the color of buttons, headings, and other UI elements. Similarly, typography tokens can be used to define font sizes, weights, and styles, which can be applied consistently across the design system.
+
+In OxyProps, everything is defined using design tokens. Three levels of design tokens are part of the OxyProps system:
+
+- Global design tokens
+- Alias design tokens
+- Component specific design tokens
+
+:::note[dedicated article]
+More about design tokens in the [design tokens](/core-concepts/design-tokens/) dedicated documentation page.
+:::
+
+In summary, design tokens help create consistency in visual design by providing a systematic way to define and apply design elements across a project.
+
+### Atoms - Building Blocks of a Design System
+
+Atoms are the smallest components in the Atomic Design methodology. They represent the basic building blocks of a design system, such as buttons, icons, and form inputs. Atoms are simple and stand-alone elements that can't be broken down any further without losing their meaning. They can be reused in various combinations to create more complex UI elements, such as forms, cards, or even entire pages.
+
+When creating atoms, it's important to consider their functionality, appearance, and behavior. They should be designed to be flexible and customizable to suit various contexts and needs. Consistency is key when working with atoms since they are used to create larger, more complex components. As a result, they should follow a set of design rules and guidelines to ensure that they look and function the same way across different parts of the application or website.
+
+In summary, atoms are the foundational building blocks of a design system. They are simple, reusable, and highly customizable elements that can be combined to create more complex components. By designing atoms with flexibility and consistency in mind, designers can ensure that their design system is cohesive, user-friendly, and efficient.
+
+### Molecules
+
+In the Atomic Design methodology, molecules are groups of atoms that work together to form a more complex UI element. These UI elements could be a search bar, a navigation menu, or any other more complex user interface element. The idea behind using molecules is to create reusable components that can be used in multiple contexts within a design system. By combining atoms in various ways, designers can create unique molecules that fit the specific needs of their design system. These molecules are then used as the building blocks for larger components called organisms.
+
+### Organisms
+
+Organisms are groups of molecules that work together to form a distinct section of a user interface. They are used to build templates and provide a higher level of complexity than molecules. Examples of organisms include headers, footers, and sidebars.
+
+An organism is made up of multiple molecules and atoms, and it can be reused across multiple templates. This helps to maintain consistency in the design and ensures that the same UI elements are used throughout the system.
+
+Organisms should be designed to be flexible and adaptable to different contexts. They should be able to work in different templates and with different content while maintaining their visual identity.
+
+When designing organisms, it's important to keep in mind the user's experience and how they will interact with the UI elements. Organisms should be designed with the user's goals and needs in mind, and they should be intuitive and easy to use.
+
+### Templates in Atomic Design Methodology
+
+Templates are the basic layout structures for a page or a section of a page in the Atomic Design methodology. They provide a framework for building consistent, reusable designs by combining various organisms together. A template defines the main structural components of a page, including its grid system, header, footer, navigation, and main content area.
+
+The purpose of templates is to create a consistent look and feel throughout a website or application. By using pre-defined templates, designers and developers can save time and ensure that all pages on the website have a consistent layout, which can improve user experience and make navigation more intuitive. Templates are also essential for maintaining a consistent brand identity and ensuring that the design language of the product is consistent across all devices and platforms.
+
+Templates can be customized to fit specific needs, but the overall structure remains the same. For example, a blog template might have a header, navigation, and main content area, but the specific layout and design of each of these sections can be customized to fit the needs of the blog.
+
+Overall, templates play a crucial role in the Atomic Design methodology by providing a consistent structure for building and designing pages. They ensure that the design language of the product is consistent throughout and make it easier to create new pages or sections while maintaining a consistent look and feel.
+
+### Pages
+
+Pages are the final design compositions that include content and images. At this level, all the smaller components - design tokens, atoms, molecules, organisms, and templates - are combined to create fully-realized layouts.
+
+When designing pages, it's important to ensure that the design is consistent with the overall design system and that the content is easily accessible and understandable for the user. Pages should also be designed with responsiveness in mind, meaning that they should be able to adapt to different screen sizes and orientations.
+
+Designers often use wireframes or mockups to plan out the layout of a page before moving on to the final design. This allows them to experiment with different layouts and content arrangements, as well as to get feedback from stakeholders and users before investing time in the final design.
+
+Overall, the Pages level of Atomic Design is where all the smaller components come together to create a cohesive and effective user interface.
+
+## Conclusion
+
+In conclusion, design tokens are a vital part of any design system, and understanding them is crucial to building a cohesive user experience. By using design tokens, you can ensure consistency, maintainability, and flexibility across your website.
+
+## Further Reading
+
+If you want to learn more about the Atomic Design methodology and its applications, check out these resources:
+
+- <a href="https://atomicdesign.bradfrost.com/" target="_blank">
+  	Atomic Design Methodology
+  </a>
+  , by Brad Frost
+
+These articles provide an in-depth understanding of the Atomic Design methodology, as well as practical tips on how to implement it in your design process.
