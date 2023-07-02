@@ -6,6 +6,12 @@ export const head = [
       },
     },
     {
+      tag: "meta",
+      attrs: {
+        "fb:app_id": "282029934322337",
+      },
+    },
+    {
       tag: "script",
       attrs: {
         src: "https://cdn.usefathom.com/script.js",

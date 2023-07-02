@@ -1,12 +1,76 @@
 ---
-title: Backdrop Colors
-description: Cheat Sheet for the OxyProps Backdrop Colors CSS Variables and Utility Classes.
-i18nReady: true
+title: Backdrop Colors CheatSheet
+description: CheatSheet for the OxyProps Backdrop Colors CSS properties and utility classes.
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/cheatsheet/backdrop-colors.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/cheatsheet/backdrop-colors.png
 ---
 
-import ClipboardCopy from '~/components/ClipboardCopy.astro';
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+import { Tabs, TabItem } from "@astrojs/starlight/components";
 
 This page lists all Backdrop Colors CSS custom properties and utility classes available in the OxyProps Framework
+## Target CSS properties
+
+- [`background`](https://developer.mozilla.org/en-US/docs/Web/CSS/background) (shorthand)
+- [`background-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/background-color)
+- [`border`](https://developer.mozilla.org/en-US/docs/Web/CSS/border) (shorthand)
+- [`border-bottom`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom) (shorthand)
+- [`border-bottom-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-bottom-color)
+- [`border-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-color)
+- [`border-left`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-left) (shorthand)
+- [`border-left-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-left-color)
+- [`border-right`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-right) (shorthand)
+- [`border-right-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-right-color)
+- [`border-top`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-top) (shorthand)
+- [`border-top-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/border-top-color)
+- [`box-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow) (shorthand)
+- [`caret-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/caret-color)
+- [`color`](https://developer.mozilla.org/en-US/docs/Web/CSS/color) (SVG only)
+- [`column-rule`](https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule) (shorthand)
+- [`column-rule-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/column-rule-color)
+- [`fill`](https://developer.mozilla.org/en-US/docs/Web/CSS/fill)
+- [`outline`](https://developer.mozilla.org/en-US/docs/Web/CSS/outline) (shorthand)
+- [`outline-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/outline-color)
+- [`stroke`](https://developer.mozilla.org/en-US/docs/Web/CSS/stroke) (SVG only)    
+- [`text-decoration`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration) (shorthand)
+- [`text-decoration-color`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color)
+- [`text-shadow`](https://developer.mozilla.org/en-US/docs/Web/CSS/text-shadow)
+
+<Tabs>
+    <TabItem label="bricks">
+```css title=".custom-link Custom CSS" {3}
+root {
+    text-decoration-style: underline;
+    text-decoration-color: hsl(var(--o-accent-500-hsl) / 50%);
+}
+```
+
+```css title=".my-svg Custom CSS" {2,3}
+root {
+    fill: hsl(var(--o-canvas-300-hsl) / 85%);
+    stroke: hsl(var(--o-brand-400-hsl) / 85%);
+}
+```
+    </TabItem>
+    <TabItem label="oxygen">
+```css title=".custom-link Custom CSS" {2}
+    text-decoration-style: underline;
+    text-decoration-color: hsl(var(--o-accent-500-hsl) / 50%);
+```
+
+```css title=".my-svg Custom CSS" {1,2}
+    fill: hsl(var(--o-canvas-300-hsl) / 85%);
+    stroke: hsl(var(--o-brand-400-hsl) / 85%);
+```
+    </TabItem>
+</Tabs>
 
 ## Canvas
 
