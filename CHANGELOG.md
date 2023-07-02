@@ -1,3 +1,9 @@
+## v0.0.9 (2023-07-02)
+
+### Fix
+
+- fix table width in content and improve docs
+
 ## v0.0.8 (2023-07-01)
 
 ### Fix
