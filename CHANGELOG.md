@@ -1,3 +1,9 @@
+## v0.0.10 (2023-07-02)
+
+### Fix
+
+- add fb:appid for FB debugger + improve docs
+
 ## v0.0.9 (2023-07-02)
 
 ### Fix
