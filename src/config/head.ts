@@ -8,7 +8,8 @@ export const head = [
     {
       tag: "meta",
       attrs: {
-        "fb:app_id": "282029934322337",
+        property: "fb:app_id",
+        content: "282029934322337",
       },
     },
     {
