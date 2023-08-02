@@ -1,3 +1,14 @@
+## v0.1.0 (2023-08-02)
+
+### Feat
+
+- **brx**: add know issue with heading font size in bricks 1.8.4
+
+### Fix
+
+- add additional cta to enter the docs
+- properly define the fb:app_id head object
+
 ## v0.0.10 (2023-07-02)
 
 ### Fix
