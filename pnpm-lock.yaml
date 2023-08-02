@@ -7,28 +7,28 @@ settings:
 dependencies:
   '@astrojs/react':
     specifier: 2.2.1
-    version: 2.2.1(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
+    version: 2.2.1(@types/react-dom@18.2.7)(@types/react@18.2.15)(react-dom@18.2.0)(react@18.2.0)
   '@astrojs/starlight':
-    specifier: ^0.4.0
-    version: 0.4.0(astro@2.7.2)
+    specifier: ^0.5.3
+    version: 0.5.3(astro@2.8.3)
   '@github/clipboard-copy-element':
     specifier: 1.2.1
     version: 1.2.1
   '@thewebforge/astro-code-blocks':
     specifier: 0.2.0
-    version: 0.2.0(astro@2.7.2)(chroma-js@2.4.2)(sass@1.63.6)
+    version: 0.2.0(astro@2.8.3)(chroma-js@2.4.2)(sass@1.63.6)
   '@thewebforge/astro-og-images':
     specifier: 1.1.13
-    version: 1.1.13(astro@2.7.2)
+    version: 1.1.13(astro@2.8.3)
   '@types/react':
-    specifier: ^18.2.14
-    version: 18.2.14
+    specifier: ^18.2.15
+    version: 18.2.15
   '@types/react-dom':
-    specifier: ^18.2.6
-    version: 18.2.6
+    specifier: ^18.2.7
+    version: 18.2.7
   astro:
-    specifier: ^2.7.2
-    version: 2.7.2(sass@1.63.6)(sharp@0.32.1)
+    specifier: ^2.8.3
+    version: 2.8.3(sass@1.63.6)(sharp@0.32.3)
   chroma-js:
     specifier: ^2.4.2
     version: 2.4.2
@@ -44,6 +44,12 @@ dependencies:
   html-escaper:
     specifier: 3.0.3
     version: 3.0.3
+  prettier:
+    specifier: 3.0.0
+    version: 3.0.0
+  prettier-plugin-astro:
+    specifier: 0.11.0
+    version: 0.11.0
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -66,11 +72,11 @@ dependencies:
     specifier: 5.1.0
     version: 5.1.0
   sharp:
-    specifier: ^0.32.1
-    version: 0.32.1
+    specifier: ^0.32.3
+    version: 0.32.3
   unist-util-visit:
-    specifier: 4.1.2
-    version: 4.1.2
+    specifier: 5.0.0
+    version: 5.0.0
 
 devDependencies:
   sass:
@@ -87,8 +93,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.18
     dev: false
 
-  /@astrojs/compiler@1.5.2:
-    resolution: {integrity: sha512-EZ3d5UTqN71N2zE3VdzVJeM+dM+pu0wV/jOi6g2VDU21LQTWozafsFMpbcLE/ksmTmbQM90/Tnn19/IR9fWGUw==}
+  /@astrojs/compiler@1.5.7:
+    resolution: {integrity: sha512-dFU7GAMbpTUGPkRoCoMQrGFlTe3qIiQMSOxIXp/nB1Do4My9uogjEmBHdR5Cwr4i6rc5/1R3Od9v8kU/pkHXGQ==}
     dev: false
 
   /@astrojs/internal-helpers@0.1.1:
@@ -99,7 +105,7 @@ packages:
     resolution: {integrity: sha512-gssRxLGb8XnvKpqSzrDW5jdzdFnXD7eBXVkPCkkt2hv7Qzb+SAzv6hVgMok3jDCxpR1aeB+XNd9Qszj2h29iog==}
     hasBin: true
     dependencies:
-      '@astrojs/compiler': 1.5.2
+      '@astrojs/compiler': 1.5.7
       '@jridgewell/trace-mapping': 0.3.18
       '@vscode/emmet-helper': 2.9.2
       events: 3.3.0
@@ -114,13 +120,13 @@ packages:
       vscode-uri: 3.0.7
     dev: false
 
-  /@astrojs/markdown-remark@2.2.1(astro@2.7.2):
+  /@astrojs/markdown-remark@2.2.1(astro@2.8.3):
     resolution: {integrity: sha512-VF0HRv4GpC1XEMLnsKf6jth7JSmlt9qpqP0josQgA2eSpCIAC/Et+y94mgdBIZVBYH/yFnMoIxgKVe93xfO2GA==}
     peerDependencies:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.7.2(sass@1.63.6)(sharp@0.32.1)
+      astro: 2.8.3(sass@1.63.6)(sharp@0.32.3)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -137,11 +143,11 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/mdx@0.19.7(astro@2.7.2):
+  /@astrojs/mdx@0.19.7(astro@2.8.3):
     resolution: {integrity: sha512-mfEbBD7oi8yBHhcJucEjnrquREkJ3os+jioURP8BR2B8tOV2rV2j8trvmLUgfS+P/+HevGObxCTjcRYxn6T7eg==}
     engines: {node: '>=16.12.0'}
     dependencies:
-      '@astrojs/markdown-remark': 2.2.1(astro@2.7.2)
+      '@astrojs/markdown-remark': 2.2.1(astro@2.8.3)
       '@astrojs/prism': 2.1.2
       '@mdx-js/mdx': 2.3.0
       acorn: 8.9.0
@@ -171,7 +177,7 @@ packages:
       prismjs: 1.29.0
     dev: false
 
-  /@astrojs/react@2.2.1(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0):
+  /@astrojs/react@2.2.1(@types/react-dom@18.2.7)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-nq5Zr8iWdwjSp5fh1NReaCplwsnL4w5PXAY5XWu1jE/frxEfF/ycGHrrhwWW0uJHX9G+kUtmQLR0GBhlR4FmAw==}
     engines: {node: '>=16.12.0'}
     peerDependencies:
@@ -183,7 +189,26 @@ packages:
       '@babel/core': 7.22.5
       '@babel/plugin-transform-react-jsx': 7.22.5(@babel/core@7.22.5)
       '@types/react': 18.2.14
-      '@types/react-dom': 18.2.6
+      '@types/react-dom': 18.2.7
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@astrojs/react@2.2.1(@types/react-dom@18.2.7)(@types/react@18.2.15)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-nq5Zr8iWdwjSp5fh1NReaCplwsnL4w5PXAY5XWu1jE/frxEfF/ycGHrrhwWW0uJHX9G+kUtmQLR0GBhlR4FmAw==}
+    engines: {node: '>=16.12.0'}
+    peerDependencies:
+      '@types/react': ^17.0.50 || ^18.0.21
+      '@types/react-dom': ^17.0.17 || ^18.0.6
+      react: ^17.0.2 || ^18.0.0
+      react-dom: ^17.0.2 || ^18.0.0
+    dependencies:
+      '@babel/core': 7.22.5
+      '@babel/plugin-transform-react-jsx': 7.22.5(@babel/core@7.22.5)
+      '@types/react': 18.2.15
+      '@types/react-dom': 18.2.7
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
     transitivePeerDependencies:
@@ -197,18 +222,19 @@ packages:
       zod: 3.21.4
     dev: false
 
-  /@astrojs/starlight@0.4.0(astro@2.7.2):
-    resolution: {integrity: sha512-R+ttZ2rNOyXiEzLt8F3/YX4tdbiIbjj3ap40MARQS+iHNfEQ5KhwBuLZ0kwwyyrFwggBOdD2GQpukYckg5dbOg==}
+  /@astrojs/starlight@0.5.3(astro@2.8.3):
+    resolution: {integrity: sha512-Rj+i+Ic+wMABkrrbBevlkzsvXw1STLAynHRm5wPxNkw3J8P3ViPq52u6Vv+RulSBkxZ0/W2dGgjdhYC2CJ6dfw==}
     peerDependencies:
       astro: ^2.5.0
     dependencies:
-      '@astrojs/mdx': 0.19.7(astro@2.7.2)
+      '@astrojs/mdx': 0.19.7(astro@2.8.3)
       '@astrojs/sitemap': 1.3.3
       '@pagefind/default-ui': 1.0.0-alpha.5
       '@types/mdast': 3.0.11
-      astro: 2.7.2(sass@1.63.6)(sharp@0.32.1)
+      astro: 2.8.3(sass@1.63.6)(sharp@0.32.3)
       bcp-47: 2.1.0
       execa: 7.1.1
+      hast-util-select: 5.0.5
       hastscript: 7.2.0
       pagefind: 1.0.0-alpha.5
       rehype: 12.0.1
@@ -982,7 +1008,7 @@ packages:
       string.prototype.codepointat: 0.2.1
     dev: false
 
-  /@thewebforge/astro-code-blocks@0.2.0(astro@2.7.2)(chroma-js@2.4.2)(sass@1.63.6):
+  /@thewebforge/astro-code-blocks@0.2.0(astro@2.8.3)(chroma-js@2.4.2)(sass@1.63.6):
     resolution: {integrity: sha512-w78g0VPcki0+ZDSqJbQGM5gPo3FKGlfWyxynIAGSuBsyKdc+yusCifgROqGYYOLMuD0BC8OicNVny9XwK2sEgg==}
     peerDependencies:
       astro: '>=2.0.0'
@@ -992,8 +1018,8 @@ packages:
       '@types/chroma-js': 2.4.0
       '@types/html-escaper': 3.0.0
       '@types/mdast': 3.0.11
-      astro: 2.7.2(sass@1.63.6)(sharp@0.32.1)
-      astro-auto-import: 0.3.0(astro@2.7.2)
+      astro: 2.8.3(sass@1.63.6)(sharp@0.32.3)
+      astro-auto-import: 0.3.0(astro@2.8.3)
       chroma-js: 2.4.2
       html-escaper: 3.0.3
       mdast-util-mdx-jsx: 2.1.4
@@ -1006,17 +1032,17 @@ packages:
       - supports-color
     dev: false
 
-  /@thewebforge/astro-og-images@1.1.13(astro@2.7.2):
+  /@thewebforge/astro-og-images@1.1.13(astro@2.8.3):
     resolution: {integrity: sha512-jaY1jXvtQu/2fpk78UoISBvU3qu9t9A8IVdzSmquJJpsj++rwb6ZD6Nfo3Fv3JO/Tlr7dsvHezZN01EYA5VJnw==}
     peerDependencies:
       astro: '>=2.0.0'
     dependencies:
-      '@astrojs/react': 2.2.1(@types/react-dom@18.2.6)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
+      '@astrojs/react': 2.2.1(@types/react-dom@18.2.7)(@types/react@18.2.14)(react-dom@18.2.0)(react@18.2.0)
       '@resvg/resvg-js': 2.4.1
       '@types/node-fetch-cache': 3.0.0
       '@types/react': 18.2.14
-      '@types/react-dom': 18.2.6
-      astro: 2.7.2(sass@1.63.6)(sharp@0.32.1)
+      '@types/react-dom': 18.2.7
+      astro: 2.8.3(sass@1.63.6)(sharp@0.32.3)
       kleur: 4.1.5
       node-fetch-cache: 3.1.3
       react: 18.2.0
@@ -1148,14 +1174,22 @@ packages:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
     dev: false
 
-  /@types/react-dom@18.2.6:
-    resolution: {integrity: sha512-2et4PDvg6PVCyS7fuTc4gPoksV58bW0RwSxWKcPRcHZf0PRUGq03TKcD/rUHe3azfV6/5/biUBJw+HhCQjaP0A==}
+  /@types/react-dom@18.2.7:
+    resolution: {integrity: sha512-GRaAEriuT4zp9N4p1i8BDBYmEyfo+xQ3yHjJU4eiK5NDa1RmUZG+unZABUTK4/Ox/M+GaHwb6Ow8rUITrtjszA==}
     dependencies:
-      '@types/react': 18.2.14
+      '@types/react': 18.2.15
     dev: false
 
   /@types/react@18.2.14:
     resolution: {integrity: sha512-A0zjq+QN/O0Kpe30hA1GidzyFjatVvrpIvWLxD+xv67Vt91TWWgco9IvrJBkeyHm1trGaFS/FSGqPlhyeZRm0g==}
+    dependencies:
+      '@types/prop-types': 15.7.5
+      '@types/scheduler': 0.16.3
+      csstype: 3.1.2
+    dev: false
+
+  /@types/react@18.2.15:
+    resolution: {integrity: sha512-oEjE7TQt1fFTFSbf8kkNuc798ahTUzn3Le67/PWjE8MAfYAD/qB7O8hSTcromLFqHCt9bcdOg5GXMokzTjJ5SA==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.3
@@ -1178,6 +1212,10 @@ packages:
 
   /@types/unist@2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
+    dev: false
+
+  /@types/unist@3.0.0:
+    resolution: {integrity: sha512-MFETx3tbTjE7Uk6vvnWINA/1iJ7LuMdO4fcq8UfF0pRbj01aGLduVvQcRyswuACJdpnHgg8E3rQLhaRdNEJS0w==}
     dev: false
 
   /@types/yargs-parser@21.0.0:
@@ -1289,7 +1327,7 @@ packages:
     hasBin: true
     dev: false
 
-  /astro-auto-import@0.3.0(astro@2.7.2):
+  /astro-auto-import@0.3.0(astro@2.8.3):
     resolution: {integrity: sha512-EfpraN8R1K27ka+/qj3rsUXPf0Zd/74gZTP2IHd+4dvZsXeCEB/ZzxoxLG4QJ3n5Zpxh0uHiWFUcjomJLGWUEw==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
@@ -1297,11 +1335,11 @@ packages:
     dependencies:
       '@types/node': 18.16.18
       acorn: 8.9.0
-      astro: 2.7.2(sass@1.63.6)(sharp@0.32.1)
+      astro: 2.8.3(sass@1.63.6)(sharp@0.32.3)
     dev: false
 
-  /astro@2.7.2(sass@1.63.6)(sharp@0.32.1):
-    resolution: {integrity: sha512-2+vjXeVGU04aecs0mm93Qx9KdeVDw4OTeBIijs2Z+QLoe4RUYZnkqx5gR70VNfnoMdXoPp7+wB+ARcb0+ee/yg==}
+  /astro@2.8.3(sass@1.63.6)(sharp@0.32.3):
+    resolution: {integrity: sha512-UopGl3WubMnl15TWlR6PTCcH54TooZ+JoAloErfoXQtz4PAvmEEqEVc7tHoJ45iC7rhKgzILsvDhqzitBeRihw==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
     peerDependencies:
@@ -1310,10 +1348,10 @@ packages:
       sharp:
         optional: true
     dependencies:
-      '@astrojs/compiler': 1.5.2
+      '@astrojs/compiler': 1.5.7
       '@astrojs/internal-helpers': 0.1.1
       '@astrojs/language-server': 1.0.8
-      '@astrojs/markdown-remark': 2.2.1(astro@2.7.2)
+      '@astrojs/markdown-remark': 2.2.1(astro@2.8.3)
       '@astrojs/telemetry': 2.1.1
       '@astrojs/webapi': 2.2.0
       '@babel/core': 7.22.5
@@ -1354,7 +1392,7 @@ packages:
       rehype: 12.0.1
       semver: 7.5.3
       server-destroy: 1.0.1
-      sharp: 0.32.1
+      sharp: 0.32.3
       shiki: 0.14.3
       string-width: 5.1.2
       strip-ansi: 7.1.0
@@ -1364,6 +1402,7 @@ packages:
       vfile: 5.3.7
       vite: 4.3.9(sass@1.63.6)
       vitefu: 0.2.4(vite@4.3.9)
+      which-pm: 2.0.0
       yargs-parser: 21.1.1
       zod: 3.21.4
     transitivePeerDependencies:
@@ -1378,6 +1417,10 @@ packages:
 
   /asynckit@0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
+    dev: false
+
+  /b4a@1.6.4:
+    resolution: {integrity: sha512-fpWrvyVHEKyeEvbKZTVOeZF3VSKKWtJxFIxX/jaVPf+cLbGUSitjb49pHLqPV2BUNNZ0LcoeEGfE/YCpyDYHIw==}
     dev: false
 
   /bail@2.0.2:
@@ -2059,6 +2102,10 @@ packages:
 
   /extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
+    dev: false
+
+  /fast-fifo@1.3.0:
+    resolution: {integrity: sha512-IgfweLvEpwyA4WgiQe9Nx6VV2QkML2NkvZnk1oKnIzXgXdWxuhF7zw4DvLTPZJn6PIUneiAXPF24QmoEqHTjyw==}
     dev: false
 
   /fast-glob@3.2.12:
@@ -3433,7 +3480,7 @@ packages:
     resolution: {integrity: sha512-iwXuFrMAcFVi/ZoZiqq8BzAdsLw9kxDfTC0HMyjXfSL/6CSDAGD5UmR7azrAgWV1zKYq7dUUMj4owusBWKLsiQ==}
     engines: {node: '>=10'}
     dependencies:
-      semver: 7.5.3
+      semver: 7.5.4
     dev: false
 
   /node-addon-api@6.1.0:
@@ -3742,11 +3789,20 @@ packages:
       which-pm: 2.0.0
     dev: false
 
+  /prettier-plugin-astro@0.11.0:
+    resolution: {integrity: sha512-rl2hJ4Kty/aEfGjk3i4JS+bpng9MjgvwqLRNzeb9NqYhqKoWNwOR39cIJXFjU1vR3zYOPnwWNRMelKb0orunYA==}
+    engines: {node: ^14.15.0 || >=16.0.0, pnpm: '>=7.14.0'}
+    dependencies:
+      '@astrojs/compiler': 1.5.7
+      prettier: 3.0.0
+      sass-formatter: 0.7.6
+    dev: false
+
   /prettier-plugin-astro@0.9.1:
     resolution: {integrity: sha512-pYZXSbdq0eElvzoIMArzv1SBn1NUXzopjlcnt6Ql8VW32PjC12NovwBjXJ6rh8qQLi7vF8jNqAbraKW03UPfag==}
     engines: {node: ^14.15.0 || >=16.0.0, pnpm: '>=7.14.0'}
     dependencies:
-      '@astrojs/compiler': 1.5.2
+      '@astrojs/compiler': 1.5.7
       prettier: 2.8.8
       sass-formatter: 0.7.6
       synckit: 0.8.5
@@ -3755,6 +3811,12 @@ packages:
   /prettier@2.8.8:
     resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
+    hasBin: true
+    dev: false
+
+  /prettier@3.0.0:
+    resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: false
 
@@ -3793,6 +3855,10 @@ packages:
 
   /queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
+    dev: false
+
+  /queue-tick@1.0.1:
+    resolution: {integrity: sha512-kJt5qhMxoszgU/62PLP1CJytzd2NKetjSRnyuj31fDd3Rlcz3fzlFdFLD1SItunPwyqEOkca6GbV612BWfaBag==}
     dev: false
 
   /rc@1.2.8:
@@ -4147,6 +4213,14 @@ packages:
       lru-cache: 6.0.0
     dev: false
 
+  /semver@7.5.4:
+    resolution: {integrity: sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: false
+
   /server-destroy@1.0.1:
     resolution: {integrity: sha512-rb+9B5YBIEzYcD6x2VKidaa+cqYBJQKnU4oe4E3ANwRRN56yk/ua1YCJT1n21NTS8w6CcOclAKNP3PhdCXKYtQ==}
     dev: false
@@ -4163,6 +4237,21 @@ packages:
       semver: 7.5.3
       simple-get: 4.0.1
       tar-fs: 2.1.1
+      tunnel-agent: 0.6.0
+    dev: false
+
+  /sharp@0.32.3:
+    resolution: {integrity: sha512-i1gFPiNqyqxC4ouVvCKj5G8WfPIMeeSxpKcMrjic6NY4e8zktW7bIdqHPc3FCG+pNKU/XCEabKA57hhvZi8UmQ==}
+    engines: {node: '>=14.15.0'}
+    requiresBuild: true
+    dependencies:
+      color: 4.2.3
+      detect-libc: 2.0.1
+      node-addon-api: 6.1.0
+      prebuild-install: 7.1.1
+      semver: 7.5.4
+      simple-get: 4.0.1
+      tar-fs: 3.0.4
       tunnel-agent: 0.6.0
     dev: false
 
@@ -4258,6 +4347,13 @@ packages:
   /streamsearch@1.1.0:
     resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==}
     engines: {node: '>=10.0.0'}
+    dev: false
+
+  /streamx@2.15.0:
+    resolution: {integrity: sha512-HcxY6ncGjjklGs1xsP1aR71INYcsXFJet5CU1CHqihQ2J5nOsbd4OjgjHO42w/4QNv9gZb3BueV+Vxok5pLEXg==}
+    dependencies:
+      fast-fifo: 1.3.0
+      queue-tick: 1.0.1
     dev: false
 
   /string-width@4.2.3:
@@ -4387,6 +4483,14 @@ packages:
       tar-stream: 2.2.0
     dev: false
 
+  /tar-fs@3.0.4:
+    resolution: {integrity: sha512-5AFQU8b9qLfZCX9zp2duONhPmZv0hGYiBPJsyUdqMjzq/mqVpy/rEUSeHk1+YitmxugaptgBh5oDGU3VsAJq4w==}
+    dependencies:
+      mkdirp-classic: 0.5.3
+      pump: 3.0.0
+      tar-stream: 3.1.6
+    dev: false
+
   /tar-stream@2.2.0:
     resolution: {integrity: sha512-ujeqbceABgwMZxEJnk2HDY2DlnUZ+9oEcb1KzTVfYHio0UE6dG71n60d8D2I4qNvleWrrXpmjpt7vZeF1LnMZQ==}
     engines: {node: '>=6'}
@@ -4396,6 +4500,14 @@ packages:
       fs-constants: 1.0.0
       inherits: 2.0.4
       readable-stream: 3.6.2
+    dev: false
+
+  /tar-stream@3.1.6:
+    resolution: {integrity: sha512-B/UyjYwPpMBv+PaFSWAmtYjwdrlEaZQEhMIBFNC5oEG8lpiW8XjcSdmEaClj28ArfKScKHs2nshz3k2le6crsg==}
+    dependencies:
+      b4a: 1.6.4
+      fast-fifo: 1.3.0
+      streamx: 2.15.0
     dev: false
 
   /tar@6.1.15:
@@ -4531,6 +4643,12 @@ packages:
       '@types/unist': 2.0.6
     dev: false
 
+  /unist-util-is@6.0.0:
+    resolution: {integrity: sha512-2qCTHimwdxLfz+YzdGfkqNlH0tLi9xjTnHddPmJwtIG9MGsdbutfTc4P+haPD7l7Cjxf/WZj+we5qfVPvvxfYw==}
+    dependencies:
+      '@types/unist': 3.0.0
+    dev: false
+
   /unist-util-modify-children@3.1.1:
     resolution: {integrity: sha512-yXi4Lm+TG5VG+qvokP6tpnk+r1EPwyYL04JWDxLvgvPV40jANh7nm3udk65OOWquvbMDe+PL9+LmkxDpTv/7BA==}
     dependencies:
@@ -4584,12 +4702,27 @@ packages:
       unist-util-is: 5.2.1
     dev: false
 
+  /unist-util-visit-parents@6.0.1:
+    resolution: {integrity: sha512-L/PqWzfTP9lzzEa6CKs0k2nARxTdZduw3zyh8d2NVBnsyvHjSX4TWse388YrrQKbvI8w20fGjGlhgT96WwKykw==}
+    dependencies:
+      '@types/unist': 3.0.0
+      unist-util-is: 6.0.0
+    dev: false
+
   /unist-util-visit@4.1.2:
     resolution: {integrity: sha512-MSd8OUGISqHdVvfY9TPhyK2VdUrPgxkUtWSuMHF6XAAFuL4LokseigBnZtPnJMu+FbynTkFNnFlyjxpVKujMRg==}
     dependencies:
       '@types/unist': 2.0.6
       unist-util-is: 5.2.1
       unist-util-visit-parents: 5.1.3
+    dev: false
+
+  /unist-util-visit@5.0.0:
+    resolution: {integrity: sha512-MR04uvD+07cwl/yhVuVWAtw+3GOR/knlL55Nd/wAdblk27GCVt3lqpTivy/tkJcZoNPzTwS1Y+KMojlLDhoTzg==}
+    dependencies:
+      '@types/unist': 3.0.0
+      unist-util-is: 6.0.0
+      unist-util-visit-parents: 6.0.1
     dev: false
 
   /untildify@4.0.0:

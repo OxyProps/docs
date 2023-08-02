@@ -166,6 +166,7 @@ a.anchor-link {
 
 .content :is(table) {
   inline-size: 100%;
+  word-break: break-word;
   display: table;
 }
 

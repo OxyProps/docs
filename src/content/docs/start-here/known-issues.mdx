@@ -92,3 +92,23 @@ This issue is caused by the plugin not being able to connect to your website Res
 To fix this issue, go to your WordPress admin panel, then go to `Settings > Permalinks` and click on the `Save Changes` button. This will regenerate your permalink structure and fix the issue.
 
 [[↑ Back to Top]](#top)
+
+## Different heading font size between editor and front-en with Bricks 1.8.4
+A user reported a font size problem (you may have seen his post a few days ago), and since then helped me troubleshoot it.
+
+### Problem
+- On front end, headings font size are rendered as expected.
+- In editor, they are not the expected ones.
+
+### Cause
+- in `v1.8.4`, Bricks modified the selector it uses for outputing Theme Styles in the editor. For the Typography > All headings css settings, it wraps the selector in a `:where()` pseudo class.
+- You know the effect of the `:where()` pseudo class is to create a zero specificity selector.
+- But because of this, the value defined in the theme styles is overriden by Bricks primary default font size for `h1`, `2.4rem`, which has a specificity of `(0,0,1)`. Not much, bu enough to cancel them styles.
+- This is not desirable as user settings should always have priority over builder defaults.
+
+### Quick Fix
+- If you face the problem, in the OxyProps theme styles, you can set the font size to `var(--o-fluid-font)` for each individual heading level you are actually using.
+- On my side, I will modify the plugin defaults to set individual values instead of a global one. But this will only aplly to new installs.
+- I will also report this problem to the Bricks team.
+
+[[↑ Back to Top]](#top)
