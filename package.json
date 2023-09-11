@@ -15,7 +15,7 @@
     "@astrojs/starlight": "^0.9.1",
     "@github/clipboard-copy-element": "1.2.1",
     "@thewebforge/astro-code-blocks": "0.2.0",
-    "@thewebforge/astro-og-images": "1.1.13",
+    "@thewebforge/astro-og-images": "2.0.1",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "astro": "^3.0.12",
