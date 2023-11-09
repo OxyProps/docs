@@ -655,6 +655,13 @@ declare module 'astro:content' {
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
+"framework/Buttons/buttons.mdx": {
+	id: "framework/Buttons/buttons.mdx";
+  slug: "framework/buttons/buttons";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
 "framework/Typography/font-families.mdx": {
 	id: "framework/Typography/font-families.mdx";
   slug: "framework/typography/font-families";
