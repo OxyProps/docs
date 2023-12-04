@@ -1,0 +1,44 @@
+---
+title: Custom Highlight Size
+description: How to customize the border thickness of the buttons.
+sidebar:
+  label: Highlight Size
+  order: 130
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-highlight-size.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-highlight-size.png
+---
+
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+
+The button has a default highlight size of `0rem`, expanding to `0.5rem` on hover. You can change this value by using the following CSS custom properties:
+
+| description             | custom property                                                                             |
+| ----------------------- | ------------------------------------------------------------------------------------------- |
+| Highlight size at rest  | <ClipboardCopy value="--o_highlight-size-rest:">`--o_highlight-size-rest`</ClipboardCopy>   |
+| Highlight size on hover | <ClipboardCopy value="--o_highlight-size-hover:">`--o_highlight-size-hover`</ClipboardCopy> |
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;padding-block: 4rem;">
+    <a href="#custom-highlight-size" class="o-btn o-btn-links" style="--o_ink-shadow-light: none; --o_highlight-size-rest: 0rem;--o_highlight-size-hover: 4rem;"><span>button</span></a>
+    <a href="#custom-highlight-size" class="o-btn o-btn-links" style="--o_ink-shadow-light: none; --o_highlight-size-rest: 0.25rem;--o_highlight-size-hover: 0.75rem;"><span>button</span></a>
+    <a href="#custom-highlight-size" class="o-btn o-btn-links" style="--o_ink-shadow-light: none; --o_highlight-size-rest: 0.5rem;--o_highlight-size-hover: 1rem;"><span>button</span></a>
+</div>
+    
+    ```css title="Custom highlight size site wide"  
+    .o-btn {
+      --o_highlight-size-rest: 0.5rem;
+      --o_highlight-size-hover: 1rem;
+    }
+    ```
+    ```css title="Custom highlight size modifier class"
+    .o-btn-fancy {
+      --o_highlight-size-rest: 0.5rem;
+      --o_highlight-size-hover: 1rem;
+    }
+    ```

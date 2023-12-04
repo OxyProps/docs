@@ -1,0 +1,79 @@
+---
+title: Introduction
+sidebar:
+  order: 15
+description: Introduction to using the o-props o-btn Buttons props andclasses.
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/introduction.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/introduction.png
+---
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Image } from "astro:assets";
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+import iconify from "~/assets/iconify-get-svg-uri.webp";
+import brxstructure from "~/assets/brx-btn-svg-structure.webp";
+import oxystructure from "~/assets/oxy-btn-svg-structure.webp";
+
+
+Buttons are an essential element of any website or application. They allow users to perform actions or navigate through your interface. This series of CSS properties and utility classes is designed to be flexible and easy to use.
+
+## Samples
+
+:::note
+The actual colors of these samples are based on this website theme. The colors on your own site will depend on your settigns for your logical colors canvas, brand, accent, links and visited.
+:::
+
+<div style="display: flex; flex-wrap: wrap; gap: var(--o-size-4);margin-block: var(--o-size-fluid-2)">
+	<a href="#samples" class="o-btn">
+		<span>o-btn</span>
+	</a>
+	<a href="#samples" class="o-btn o-btn-outline">
+		<span>o-btn-outline</span>
+	</a>
+	<a href="#samples" class="o-btn">
+		<span data-icon="cloud"></span>
+		<span>o-btn with icon</span>
+	</a>
+	<a href="#samples" class="o-btn o-btn-brand">
+		<span>o-btn-brand</span>
+	</a>
+	<a href="#samples" class="o-btn o-btn-bw">
+		<span>o-btn-bw</span>
+	</a>
+	<a href="#samples" class="o-btn o-btn-visited-gr">
+		<span>o-btn-visited-gr</span>
+	</a>
+</div>
+
+## Buttons or links ?
+
+A button is a user interface element that is used to trigger an action, such as submitting a form or navigating to a new page. It is typically represented as a rectangular or rounded rectangle shape that can be clicked or tapped. Buttons can be created using HTML and CSS or through programming languages such as JavaScript.
+
+On the other hand, a link styled as a button is a hyperlink that is designed to look like a button. It can be created by applying CSS styles to a standard hyperlink, such as changing the background color, border, and font size. When clicked, a link styled as a button can also trigger an action, such as opening a new page or submitting a form.
+
+The main difference between a button and a link styled as a button is their intended use. Buttons are best used for actions that change the state of an application, such as submitting a form, saving data, or deleting content. Links styled as buttons, on the other hand, are best used for actions that navigate to a different page or location, such as going to a new section of a website or opening a new window.
+
+In general, if the user is performing an action that changes the state of an application, a button is the appropriate choice. If the user is navigating to a different page or location, a link styled as a button may be a better choice.
+
+## The base button
+
+This is the base class to use on each button. It sets all properties and their defaults.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#the-base-button" class="o-btn">
+		<span>button</span>
+	</a>
+	<a href="#the-base-button" class="o-btn o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+```html title="The base button class"
+o-btn
+```

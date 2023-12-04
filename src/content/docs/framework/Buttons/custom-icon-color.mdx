@@ -1,0 +1,57 @@
+---
+title: Custom Icon Color
+description: How to customize the border thickness of the buttons.
+sidebar:
+  label: Icon Color
+  order: 140
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-icon-color.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-icon-color.png
+---
+
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+
+The button has a default icon color of `var(--o-accent-700)` in dark mode, `var(--o-accent-050)` in light mode. This is the color used to style the icon if you use one. You can change this value by using the following CSS custom properties:
+| description | custom property |
+| --- | --- |
+| Icon color in light mode |<ClipboardCopy value="--o_icon-color-light:">`--o_icon-color-light`</ClipboardCopy> |
+| Icon color in light mode on hover |<ClipboardCopy value="--o_icon-color-light-hover:">`--o_icon-color-light-hover`</ClipboardCopy> |
+| Icon color in dark mode |<ClipboardCopy value="--o_icon-color-dark-hover:">`--o_icon-color-dark-hover`</ClipboardCopy> |
+| Icon color in dark mode on hover |<ClipboardCopy value="--o_icon-color-dark-hover:">`--o_icon-color-dark-hover`</ClipboardCopy> |
+| Icon color |<ClipboardCopy value="--o_icon-color:">`--o_icon-color`</ClipboardCopy> |
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;padding-block: 4rem;">
+    <a href="#custom-icon-color" class="o-btn" style="--o_ink-shadow-light: none; --o_icon-color-light: forestgreen;--o_icon-color-light-hover: darkgreen;--o_icon-color-dark: chocolate;--o_icon-color-dark-hover: coral;">
+        <span data-icon style="--o_data-icon: url('https://api.iconify.design/material-symbols/privacy-tip.svg') no-repeat center center / contain;"></span>
+        <span>CSS Icon</span>
+    </a>
+    <a href="#custom-icon-color" class="o-btn" style="--o_ink-shadow-light: none; --o_icon-color-light: forestgreen;--o_icon-color-light-hover: darkgreen;--o_icon-color-dark: chocolate;--o_icon-color-dark-hover: coral;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+        <path d="M11 17h2v-6h-2v6Zm1-8q.425 0 .713-.288T13 8q0-.425-.288-.713T12 7q-.425 0-.713.288T11 8q0 .425.288.713T12 9Zm0 13q-3.475-.875-5.738-3.988T4 11.1V5l8-3l8 3v6.1q0 3.8-2.263 6.913T12 22Z"/>
+    </svg>
+        <span>SVG Inlined</span>
+    </a>
+</div>
+    
+    ```css title="Custom icon color site wide"
+    .o-btn {
+      --o_icon-color-light: forestgreen;
+      --o_icon-color-light-hover: darkgreen;
+      --o_icon-color-dark: chocolate;
+      --o_icon-color-dark-hover: coral;
+    }
+    ```
+    ```css title="Custom icon color modifier class"
+    .o-btn-fancy {
+      --o_icon-color-light: forestgreen;
+      --o_icon-color-light-hover: darkgreen;
+      --o_icon-color-dark: chocolate;
+      --o_icon-color-dark-hover: coral;
+    }
+    ```

@@ -1,0 +1,45 @@
+---
+title: Custom Depth Shadow
+description: How to customize the border thickness of the buttons.
+sidebar:
+  label: Depth Shadow
+  order: 90
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-depth-shadow.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-depth-shadow.png
+---
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+
+The button has a default depth shadow of `0 1px var(--o_border-light)` in light mode and `0 1px var(--o_border-dark)` in dark mode. This shadow adds a subtle line under the button giving a slight 3D effect. You can change this value by using the following CSS custom property:
+
+The expected value is a CSS box-shadow value.
+
+| description                | custom property                                                                         |
+| -------------------------- | --------------------------------------------------------------------------------------- |
+| Depth shadow in light mode | <ClipboardCopy value="--o_shadow-depth-light:">`--o_shadow-depth-light`</ClipboardCopy> |
+| Depth shadow in dark mode  | <ClipboardCopy value="--o_shadow-depth-dark:">`--o_shadow-depth-dark`</ClipboardCopy>   |
+| Depth shadow               | <ClipboardCopy value="--o_shadow-depth:">`--o_shadow-depth`</ClipboardCopy>             |
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;padding-block: 4rem;">
+    <a href="#custom-depth-shadow" class="o-btn" style="--o_ink-shadow-light: none;"><span>button</span></a>
+    <a href="#custom-depth-shadow" class="o-btn" style="--o_ink-shadow-light: none; --o_shadow-depth-light: 0 1px red; --o_shadow-depth-dark: 0 1px yellow;"><span>button</span></a>
+</div>
+    
+    ```css title="Custom depth shadow site wide"
+    .o-btn {
+      --o_shadow-depth-light: 0 1px var(--o_border-light);
+      --o_shadow-depth-dark: 0 1px var(--o_border-dark);
+    }
+    ```
+    ```css title="Custom depth shadow modifier class"
+    .o-btn-fancy {
+      --o_shadow-depth-light: 0 1px var(--o_border-light);
+      --o_shadow-depth-dark: 0 1px var(--o_border-dark);
+    }
+    ```

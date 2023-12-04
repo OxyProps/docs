@@ -1,0 +1,45 @@
+---
+title: Custom Highlight Color
+description: How to customize the border thickness of the buttons.
+sidebar:
+  label: Highlight Color
+  order: 120
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-highlight-color.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-highlight-color.png
+---
+
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+
+The button has a default highlight color of `hsl(
+    var(--o-canvas-hue) var(--o-canvas-saturation) / 25%)` in light mode, `hsl(var(--o-shadow-color-dark) / 25%)` in dark mode. You can change this value by using the following CSS custom properties:
+
+| description                   | custom property                                                                   |
+| ----------------------------- | --------------------------------------------------------------------------------- |
+| Highlight color in light mode | <ClipboardCopy value="--o_highlight-light:">`--o_highlight-light`</ClipboardCopy> |
+| Highlight color in dark mode  | <ClipboardCopy value="--o_highlight-dark:">`--o_highlight-dark`</ClipboardCopy>   |
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;padding-block: 4rem;">
+    <a href="#custom-highlight-color" class="o-btn o-btn-links" style="--o_highlight-size-hover: 1rem;--o_ink-shadow-light: none; --o_highlight-light: hsl(var(--o-indigo-200-hsl) / 30%);--o_highlight-dark: hsl(var(--o-indigo-300-hsl) / 50%);"><span>button</span></a>
+    <a href="#custom-highlight-color" class="o-btn o-btn-links" style="--o_highlight-size-hover: 1rem;--o_ink-shadow-light: none; --o_highlight-light: hsl(var(--o-teal-400-hsl) / 30%);--o_highlight-dark: hsl(var(--o-teal-200-hsl) / 50%);"><span>button</span></a>
+    <a href="#custom-highlight-color" class="o-btn o-btn-links" style="--o_highlight-size-hover: 1rem;--o_ink-shadow-light: none; --o_highlight-light: hsl(var(--o-grape-200-hsl) / 30%);--o_highlight-dark: hsl(var(--o-grape-400-hsl) / 50%);"><span>button</span></a>
+</div>
+    
+    ```css title="Custom highlight color site wide" 
+    .o-btn {
+      --o_highlight-light: hsl(var(--o-indigo-500-hsl) / 50%);
+      --o_highlight-dark: hsl(var(--o-indigo-300-hsl) / 50%);
+    }
+    ```
+    ```css title="Custom highlight color modifier class"
+    .o-btn-fancy {
+      --o_highlight-light: hsl(var(--o-purple-500-hsl) / 50%);
+      --o_highlight-dark: hsl(var(--o-purple-300-hsl) / 50%);
+    }
+    ```

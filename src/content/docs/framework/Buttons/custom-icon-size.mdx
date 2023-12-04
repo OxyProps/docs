@@ -1,0 +1,55 @@
+---
+title: Custom Icon Size
+description: How to customize the border thickness of the buttons.
+sidebar:
+  label: Icon Size
+  order: 150
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-icon-size.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-icon-size.png
+---
+
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+
+The button has a default icon size of `2ch`. You can change this value by using the following CSS custom property:
+
+| description | custom property                                                       |
+| ----------- | --------------------------------------------------------------------- |
+| Icon size   | <ClipboardCopy value="--o_icon-size:">`--o_icon-size`</ClipboardCopy> |
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;padding-block: 4rem;">
+    <a href="#custom-icon-size" class="o-btn" style="--o_ink-shadow-light: none; --o_icon-size: 1ch;">
+        <span data-icon style="--o_data-icon: url('https://api.iconify.design/material-symbols/privacy-tip.svg') no-repeat center center / contain;"></span>
+        <span>CSS Icon</span>
+    </a>
+    <a href="#custom-icon-size" class="o-btn" style="--o_ink-shadow-light: none; --o_icon-size: 2ch;">
+        <span data-icon style="--o_data-icon: url('https://api.iconify.design/material-symbols/privacy-tip.svg') no-repeat center center / contain;"></span>
+        <span>CSS Icon</span>
+    </a>
+    <a href="#custom-icon-size" class="o-btn" style="--o_ink-shadow-light: none; --o_icon-size: 3ch;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+        <path d="M11 17h2v-6h-2v6Zm1-8q.425 0 .713-.288T13 8q0-.425-.288-.713T12 7q-.425 0-.713.288T11 8q0 .425.288.713T12 9Zm0 13q-3.475-.875-5.738-3.988T4 11.1V5l8-3l8 3v6.1q0 3.8-2.263 6.913T12 22Z"/>
+    </svg>
+        <span>SVG Inlined</span>
+    </a>
+</div>
+    
+    ```css title="Custom icon size site wide"   
+    .o-btn {
+      --o_icon-size: 3ch;
+    }
+    ```
+    ```css title="Custom icon size modifier class"
+    .o-btn-fancy {
+      --o_icon-size: 3ch;
+    }
+    ```
+:::tip
+You can use any unit of measurement for the icon size. The default is `ch` which is the height of the letter `0` in the current font. This is a good default because it scales with the font size.
+:::

@@ -1,0 +1,63 @@
+---
+title: Custom Padding
+description: How to customize the padding of the buttons.
+sidebar:
+  label: Padding
+  order: 170
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-padding.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-padding.png
+---
+
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+
+The button has a default padding inline of `1.75ch` and a default padding block of `0.75ch`. You can change this value by using the `--o_padding-inline` and `--o_padding-block` custom properties.
+
+| description    | custom property                                                                 |
+| -------------- | ------------------------------------------------------------------------------- |
+| Padding inline | <ClipboardCopy value="--o_padding-inline:">`--o_padding-inline`</ClipboardCopy> |
+| Padding block  | <ClipboardCopy value="--o_padding-block:">`--o_padding-block`</ClipboardCopy>   |
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;padding-block: 4rem;">
+  <a
+    href="#custom-padding"
+    class="o-btn o-btn-links o-btn-outline"
+    style="--o_padding-inline: 1ch;--o_padding-block: 0.5ch;"
+  >
+    <span>button</span>
+  </a>
+  <a
+    href="#custom-padding"
+    class="o-btn o-btn-links o-btn-outline"
+    style="--o_padding-inline: 2ch;--o_padding-block: 1ch;"
+  >
+    <span>button</span>
+  </a>
+  <a
+    href="#custom-padding"
+    class="o-btn o-btn-links o-btn-outline"
+    style="--o_padding-inline: 5ch;--o_padding-block: 2ch;"
+  >
+    <span>button</span>
+  </a>
+</div>
+
+```css title="Narrow button site wide"
+.o-btn {
+  --o_padding-inline: 1ch;
+  --o_padding-block: 0.5ch;
+}
+```
+
+```css title="Fat button modifier class"
+.o-btn-fat {
+  --o_padding-inline: 5ch;
+  --o_padding-block: 2ch;
+}
+```

@@ -1,0 +1,144 @@
+---
+title: "Buttons - TL;DR:"
+sidebar:
+  label: "TL;DR"
+  order: 10
+description: If you are short of time, this is the minimal info to know in order to use the buttons.
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/tldr.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/tldr.png
+---
+
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+
+## The base class: <ClipboardCopy value="o-btn">`o-btn`</ClipboardCopy>
+
+To style an element as a button, use the <ClipboardCopy value="o-btn">`o-btn`</ClipboardCopy> class. This class carries all the base styles for a button add it to every element you want to style as a button.
+
+```html title="The base utility class"
+o-btn
+```
+
+```html title="Resulting html"
+<a href="#" class="o-btn">o-btn</a>
+```
+
+<a href="#" class="o-btn" style="margin-block: 2rem">
+  o-btn
+</a>
+
+## Button modifiers
+
+To add specific styles to a button, **add** a modifier class to the <ClipboardCopy value="o-btn">`o-btn`</ClipboardCopy> class. Do not use the modifier class alone.
+
+### Example: Brand Gradient Button
+
+```html title="The Brand Gradient modifier class"
+o-btn-brand-gr
+```
+
+```html title="Create a Brand Gradient button"
+<a href="#" class="o-btn o-btn-brand-gr">o-btn-brand-gr</a>
+```
+
+<a href="#" class="o-btn o-btn-brand-gr" style="margin-block: 2rem">
+  o-btn + o-btn-brand-gr
+</a>
+
+### Example: Outline Button
+
+```html title="The Outline modifier class"
+o-btn-outline
+```
+
+```html title="Create an Outline button"
+<a href="#" class="o-btn o-btn-outline">o-btn-outline</a>
+```
+
+<a href="#" class="o-btn o-btn-outline" style="margin-block: 2rem">
+  o-btn + o-btn-outline
+</a>
+
+### Combine modifiers
+
+You can combine multiple modifiers to create a button with multiple styles.
+
+```html title="Create an Accent Gradient Outline button"
+<a href="#" class="o-btn o-btn-accent-gr o-btn-outline"
+  >o-btn-accent-gr + o-btn-outline</a
+>
+```
+
+<a
+  href="#"
+  class="o-btn o-btn-accent-gr o-btn-outline"
+  style="margin-block: 2rem"
+>
+  o-btn + o-btn-accent-gr + o-btn-outline
+</a>
+
+Check all available modifiers in [the Button Modifiers documentation](/framework/buttons/modifiers/).
+
+## Buttons Customization
+
+To customize the buttons, use the buttons CSS custom properties.
+
+If you modify the <ClipboardCopy value="o-btn">`o-btn`</ClipboardCopy> class, you will affect all buttons in your site.
+
+```css title="Customize the buttons"
+/* All buttons will have square corners and a highlight size of 1rem */
+.o-btn {
+  --o_border-radius: 0px;
+  --o_highlight-size-hover: var(--o-size-3);
+}
+```
+
+<a
+  href="#"
+  class="o-btn"
+  style="--o_border-radius: 0px;
+  --o_highlight-size-hover: var(--o-size-3);margin-block: 2rem"
+>
+  Customized o-btn
+</a>
+
+You can also create your own modifier classes to add specific styles to a button.
+
+```css title="Create a custom button"
+.o-btn-custom {
+  --o_bg-light: black;
+  --o_bg-dark: white;
+  --o_text-light: silver;
+  --o_text-dark: darkgrey;
+  --o_border-radius: 1e5px;
+  --o_highlight-size-hover: var(--o-size-3);
+}
+```
+
+```html title="Use the custom button"
+<a href="#" class="o-btn o-btn-custom">o-btn-custom</a>
+```
+
+<a
+  href="#"
+  class="o-btn"
+  style="--o_bg-light: white;
+  --o_bg-dark: black;
+  --o_text-light: darkgrey;
+  --o_text-dark: silver;
+  --o_border-radius: 1e5px;
+  --o_highlight-size-hover: var(--o-size-3);
+  margin-block: 2rem"
+>
+  Custom modifier
+</a>
+
+<div style="display: flex; width:100%; justify-content: center;">
+  [Check the Buttons cheat sheet](/cheatsheet/buttons/)
+</div>

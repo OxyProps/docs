@@ -1,6 +1,9 @@
 ---
 title: Animations CheatSheet
 description: CheatSheet for the OxyProps Animations CSS properties and utility classes.
+sidebar:
+  badge: New
+  label: Animations
 head:
   - tag: meta
     attrs:
@@ -19,12 +22,21 @@ This page lists all Animations CSS custom properties and utility classes availab
 
 ## Target CSS properties
 
+The animation CSS custom properties include shorthand values for:
+- `animation-name`
+- `animation-duration`
+- `animation-timing-function`
+
+Therefore, they must be used on the `animation` shorthand CSS property.
+
 - [`animation`](https://developer.mozilla.org/en-US/docs/Web/CSS/animation)
+
+Example custom CSS:
 
 <Tabs>
     <TabItem label="bricks">
-```css title=".loaded Custom CSS"
-root {
+```css
+%root% {
     animation: var(--o-animation-fade-in) forwards;
 }
 ```
@@ -38,50 +50,77 @@ animation: var(--o-animation-fade-in) forwards;
 
 ## Animations
 
-| Description                | CSS Variable                                                                                              | Utility Class                                                                |
+| Description                | CSS Variable                                                                                              | Utility Class   / @keyframes                                                             |
 | -------------------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
-| Bounce animation.          | <ClipboardCopy value="var(--o-animation-bounce)">`--o-animation-bounce`</ClipboardCopy>                   | <ClipboardCopy value="o-bounce">`o-bounce`</ClipboardCopy>                   |
-| Fade-in animation.         | <ClipboardCopy value="var(--o-animation-fade-in)">`--o-animation-fade-in`</ClipboardCopy>                 | <ClipboardCopy value="o-fade-in">`o-fade-in`</ClipboardCopy>                 |
-| Fade-out animation.        | <ClipboardCopy value="var(--o-animation-fade-out)">`--o-animation-fade-out`</ClipboardCopy>               | <ClipboardCopy value="o-fade-out">`o-fade-out`</ClipboardCopy>               |
-| Float animation.           | <ClipboardCopy value="var(--o-animation-float)">`--o-animation-float`</ClipboardCopy>                     | <ClipboardCopy value="o-float">`o-float`</ClipboardCopy>                     |
-| ping animation.            | <ClipboardCopy value="var(--o-animation-ping)">`--o-animation-ping`</ClipboardCopy>                       | <ClipboardCopy value="o-ping">`o-ping`</ClipboardCopy>                       |
-| Plink animation.           | <ClipboardCopy value="var(--o-animation-blink)">`--o-animation-blink`</ClipboardCopy>                     | <ClipboardCopy value="o-blink">`o-blink`</ClipboardCopy>                     |
-| Pulse animation.           | <ClipboardCopy value="var(--o-animation-pulse)">`--o-animation-pulse`</ClipboardCopy>                     | <ClipboardCopy value="o-pulse">`o-pulse`</ClipboardCopy>                     |
-| Scale-down animation.      | <ClipboardCopy value="var(--o-animation-scale-down)">`--o-animation-scale-down`</ClipboardCopy>           | <ClipboardCopy value="o-scale-down">`o-scale-down`</ClipboardCopy>           |
-| Scale-up animation.        | <ClipboardCopy value="var(--o-animation-scale-up)">`--o-animation-scale-up`</ClipboardCopy>               | <ClipboardCopy value="o-scale-up">`o-scale-up`</ClipboardCopy>               |
-| Shake-x animation.         | <ClipboardCopy value="var(--o-animation-shake-x)">`--o-animation-shake-x`</ClipboardCopy>                 | <ClipboardCopy value="o-shake-x">`o-shake-x`</ClipboardCopy>                 |
-| Shake-y animation.         | <ClipboardCopy value="var(--o-animation-shake-y)">`--o-animation-shake-y`</ClipboardCopy>                 | <ClipboardCopy value="o-shake-y">`o-shake-y`</ClipboardCopy>                 |
-| Slide-in-down animation.   | <ClipboardCopy value="var(--o-animation-slide-in-down)">`--o-animation-slide-in-down`</ClipboardCopy>     | <ClipboardCopy value="o-slide-in-down">`o-slide-in-down`</ClipboardCopy>     |
-| Slide-in-left animation.   | <ClipboardCopy value="var(--o-animation-slide-in-left)">`--o-animation-slide-in-left`</ClipboardCopy>     | <ClipboardCopy value="o-slide-in-left">`o-slide-in-left`</ClipboardCopy>     |
-| Slide-in-right animation.  | <ClipboardCopy value="var(--o-animation-slide-in-right)">`--o-animation-slide-in-right`</ClipboardCopy>   | <ClipboardCopy value="o-slide-in-right">`o-slide-in-right`</ClipboardCopy>   |
-| Slide-in-up animation.     | <ClipboardCopy value="var(--o-animation-slide-in-up)">`--o-animation-slide-in-up`</ClipboardCopy>         | <ClipboardCopy value="o-slide-in-up">`o-slide-in-up`</ClipboardCopy>         |
-| Slide-out-down animation.  | <ClipboardCopy value="var(--o-animation-slide-out-down)">`--o-animation-slide-out-down`</ClipboardCopy>   | <ClipboardCopy value="o-slide-out-down">`o-slide-out-down`</ClipboardCopy>   |
-| Slide-out-left animation.  | <ClipboardCopy value="var(--o-animation-slide-out-left)">`--o-animation-slide-out-left`</ClipboardCopy>   | <ClipboardCopy value="o-slide-out-left">`o-slide-out-left`</ClipboardCopy>   |
-| Slide-out-right animation. | <ClipboardCopy value="var(--o-animation-slide-out-right)">`--o-animation-slide-out-right`</ClipboardCopy> | <ClipboardCopy value="o-slide-out-right">`o-slide-out-right`</ClipboardCopy> |
-| Slide-out-up animation.    | <ClipboardCopy value="var(--o-animation-slide-out-up)">`--o-animation-slide-out-up`</ClipboardCopy>       | <ClipboardCopy value="o-slide-out-up">`o-slide-out-up`</ClipboardCopy>       |
-| Spin animation.            | <ClipboardCopy value="var(--o-animation-spin)">`--o-animation-spin`</ClipboardCopy>                       | <ClipboardCopy value="o-spin">`o-spin`</ClipboardCopy>                       |
+| Bounce           | <ClipboardCopy value="var(--o-animation-bounce)">`--o-animation-bounce`</ClipboardCopy>                   | <ClipboardCopy value="o-bounce">`o-bounce`</ClipboardCopy>                   |
+| Fade-in          | <ClipboardCopy value="var(--o-animation-fade-in)">`--o-animation-fade-in`</ClipboardCopy>                 | <ClipboardCopy value="o-fade-in">`o-fade-in`</ClipboardCopy>                 |
+| Fade-out         | <ClipboardCopy value="var(--o-animation-fade-out)">`--o-animation-fade-out`</ClipboardCopy>               | <ClipboardCopy value="o-fade-out">`o-fade-out`</ClipboardCopy>               |
+| Float            | <ClipboardCopy value="var(--o-animation-float)">`--o-animation-float`</ClipboardCopy>                     | <ClipboardCopy value="o-float">`o-float`</ClipboardCopy>                     |
+| ping             | <ClipboardCopy value="var(--o-animation-ping)">`--o-animation-ping`</ClipboardCopy>                       | <ClipboardCopy value="o-ping">`o-ping`</ClipboardCopy>                       |
+| Plink            | <ClipboardCopy value="var(--o-animation-blink)">`--o-animation-blink`</ClipboardCopy>                     | <ClipboardCopy value="o-blink">`o-blink`</ClipboardCopy>                     |
+| Pulse            | <ClipboardCopy value="var(--o-animation-pulse)">`--o-animation-pulse`</ClipboardCopy>                     | <ClipboardCopy value="o-pulse">`o-pulse`</ClipboardCopy>                     |
+| Scale-down       | <ClipboardCopy value="var(--o-animation-scale-down)">`--o-animation-scale-down`</ClipboardCopy>           | <ClipboardCopy value="o-scale-down">`o-scale-down`</ClipboardCopy>           |
+| Scale-up         | <ClipboardCopy value="var(--o-animation-scale-up)">`--o-animation-scale-up`</ClipboardCopy>               | <ClipboardCopy value="o-scale-up">`o-scale-up`</ClipboardCopy>               |
+| Shake-x          | <ClipboardCopy value="var(--o-animation-shake-x)">`--o-animation-shake-x`</ClipboardCopy>                 | <ClipboardCopy value="o-shake-x">`o-shake-x`</ClipboardCopy>                 |
+| Shake-y          | <ClipboardCopy value="var(--o-animation-shake-y)">`--o-animation-shake-y`</ClipboardCopy>                 | <ClipboardCopy value="o-shake-y">`o-shake-y`</ClipboardCopy>                 |
+| Slide-in-down    | <ClipboardCopy value="var(--o-animation-slide-in-down)">`--o-animation-slide-in-down`</ClipboardCopy>     | <ClipboardCopy value="o-slide-in-down">`o-slide-in-down`</ClipboardCopy>     |
+| Slide-in-left    | <ClipboardCopy value="var(--o-animation-slide-in-left)">`--o-animation-slide-in-left`</ClipboardCopy>     | <ClipboardCopy value="o-slide-in-left">`o-slide-in-left`</ClipboardCopy>     |
+| Slide-in-right   | <ClipboardCopy value="var(--o-animation-slide-in-right)">`--o-animation-slide-in-right`</ClipboardCopy>   | <ClipboardCopy value="o-slide-in-right">`o-slide-in-right`</ClipboardCopy>   |
+| Slide-in-up      | <ClipboardCopy value="var(--o-animation-slide-in-up)">`--o-animation-slide-in-up`</ClipboardCopy>         | <ClipboardCopy value="o-slide-in-up">`o-slide-in-up`</ClipboardCopy>         |
+| Slide-out-down   | <ClipboardCopy value="var(--o-animation-slide-out-down)">`--o-animation-slide-out-down`</ClipboardCopy>   | <ClipboardCopy value="o-slide-out-down">`o-slide-out-down`</ClipboardCopy>   |
+| Slide-out-left   | <ClipboardCopy value="var(--o-animation-slide-out-left)">`--o-animation-slide-out-left`</ClipboardCopy>   | <ClipboardCopy value="o-slide-out-left">`o-slide-out-left`</ClipboardCopy>   |
+| Slide-out-right  | <ClipboardCopy value="var(--o-animation-slide-out-right)">`--o-animation-slide-out-right`</ClipboardCopy> | <ClipboardCopy value="o-slide-out-right">`o-slide-out-right`</ClipboardCopy> |
+| Slide-out-up     | <ClipboardCopy value="var(--o-animation-slide-out-up)">`--o-animation-slide-out-up`</ClipboardCopy>       | <ClipboardCopy value="o-slide-out-up">`o-slide-out-up`</ClipboardCopy>       |
+| Spin             | <ClipboardCopy value="var(--o-animation-spin)">`--o-animation-spin`</ClipboardCopy>                       | <ClipboardCopy value="o-spin">`o-spin`</ClipboardCopy>                       |
 
 ## On Hover and Active states
 
 | Description                | Triggers on Hover state                                                                  | Triggers on Active state                                                                   |
 | -------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| Blink animation.           | <ClipboardCopy value="o-blink-hover">`o-blink-hover`</ClipboardCopy>                     | <ClipboardCopy value="o-blink-active">`o-blink-active`</ClipboardCopy>                     |
-| Bounce animation.          | <ClipboardCopy value="o-bounce-hover">`o-bounce-hover`</ClipboardCopy>                   | <ClipboardCopy value="o-bounce-active">`o-bounce-active`</ClipboardCopy>                   |
-| Fade-in animation.         | <ClipboardCopy value="o-fade-in-hover">`o-fade-in-hover`</ClipboardCopy>                 | <ClipboardCopy value="o-fade-in-active">`o-fade-in-active`</ClipboardCopy>                 |
-| Fade-out animation.        | <ClipboardCopy value="o-fade-out-hover">`o-fade-out-hover`</ClipboardCopy>               | <ClipboardCopy value="o-fade-out-active">`o-fade-out-active`</ClipboardCopy>               |
-| Float animation.           | <ClipboardCopy value="o-float-hover">`o-float-hover`</ClipboardCopy>                     | <ClipboardCopy value="o-float-active">`o-float-active`</ClipboardCopy>                     |
-| Ping animation.            | <ClipboardCopy value="o-ping-hover">`o-ping-hover`</ClipboardCopy>                       | <ClipboardCopy value="o-ping-active">`o-ping-active`</ClipboardCopy>                       |
-| Pulse animation.           | <ClipboardCopy value="o-pulse-hover">`o-pulse-hover`</ClipboardCopy>                     | <ClipboardCopy value="o-pulse-active">`o-pulse-active`</ClipboardCopy>                     |
-| Scale-down animation.      | <ClipboardCopy value="o-scale-down-hover">`o-scale-down-hover`</ClipboardCopy>           | <ClipboardCopy value="o-scale-down-active">`o-scale-down-active`</ClipboardCopy>           |
-| Scale-up animation.        | <ClipboardCopy value="o-scale-up-hover">`o-scale-up-hover`</ClipboardCopy>               | <ClipboardCopy value="o-scale-up-active">`o-scale-up-active`</ClipboardCopy>               |
-| Shake-x animation.         | <ClipboardCopy value="o-shake-x-hover">`o-shake-x-hover`</ClipboardCopy>                 | <ClipboardCopy value="o-shake-x-active">`o-shake-x-active`</ClipboardCopy>                 |
-| Shake-y animation.         | <ClipboardCopy value="o-shake-y-hover">`o-shake-y-hover`</ClipboardCopy>                 | <ClipboardCopy value="o-shake-y-active">`o-shake-y-active`</ClipboardCopy>                 |
-| Slide-in-down animation.   | <ClipboardCopy value="o-slide-in-down-hover">`o-slide-in-down-hover`</ClipboardCopy>     | <ClipboardCopy value="o-slide-in-down-active">`o-slide-in-down-active`</ClipboardCopy>     |
-| Slide-in-left animation.   | <ClipboardCopy value="o-slide-in-left-hover">`o-slide-in-left-hover`</ClipboardCopy>     | <ClipboardCopy value="o-slide-in-left-active">`o-slide-in-left-active`</ClipboardCopy>     |
-| Slide-in-right animation.  | <ClipboardCopy value="o-slide-in-right-hover">`o-slide-in-right-hover`</ClipboardCopy>   | <ClipboardCopy value="o-slide-in-right-active">`o-slide-in-right-active`</ClipboardCopy>   |
-| Slide-in-up animation.     | <ClipboardCopy value="o-slide-in-up-hover">`o-slide-in-up-hover`</ClipboardCopy>         | <ClipboardCopy value="o-slide-in-up-active">`o-slide-in-up-active`</ClipboardCopy>         |
-| Slide-out-down animation.  | <ClipboardCopy value="o-slide-out-down-hover">`o-slide-out-down-hover`</ClipboardCopy>   | <ClipboardCopy value="o-slide-out-down-active">`o-slide-out-down-active`</ClipboardCopy>   |
-| Slide-out-left animation.  | <ClipboardCopy value="o-slide-out-left-hover">`o-slide-out-left-hover`</ClipboardCopy>   | <ClipboardCopy value="o-slide-out-left-active">`o-slide-out-left-active`</ClipboardCopy>   |
-| Slide-out-right animation. | <ClipboardCopy value="o-slide-out-right-hover">`o-slide-out-right-hover`</ClipboardCopy> | <ClipboardCopy value="o-slide-out-right-active">`o-slide-out-right-active`</ClipboardCopy> |
-| Slide-out-up animation.    | <ClipboardCopy value="o-slide-out-up-hover">`o-slide-out-up-hover`</ClipboardCopy>       | <ClipboardCopy value="o-slide-out-up-active">`o-slide-out-up-active`</ClipboardCopy>       |
-| Spin animation.            | <ClipboardCopy value="o-spin-hover">`o-spin-hover`</ClipboardCopy>                       | <ClipboardCopy value="o-spin-active">`o-spin-active`</ClipboardCopy>                       |
+| Blink           | <ClipboardCopy value="o-blink-hover">`o-blink-hover`</ClipboardCopy>                     | <ClipboardCopy value="o-blink-active">`o-blink-active`</ClipboardCopy>                     |
+| Bounce          | <ClipboardCopy value="o-bounce-hover">`o-bounce-hover`</ClipboardCopy>                   | <ClipboardCopy value="o-bounce-active">`o-bounce-active`</ClipboardCopy>                   |
+| Fade-in         | <ClipboardCopy value="o-fade-in-hover">`o-fade-in-hover`</ClipboardCopy>                 | <ClipboardCopy value="o-fade-in-active">`o-fade-in-active`</ClipboardCopy>                 |
+| Fade-out        | <ClipboardCopy value="o-fade-out-hover">`o-fade-out-hover`</ClipboardCopy>               | <ClipboardCopy value="o-fade-out-active">`o-fade-out-active`</ClipboardCopy>               |
+| Float           | <ClipboardCopy value="o-float-hover">`o-float-hover`</ClipboardCopy>                     | <ClipboardCopy value="o-float-active">`o-float-active`</ClipboardCopy>                     |
+| Ping            | <ClipboardCopy value="o-ping-hover">`o-ping-hover`</ClipboardCopy>                       | <ClipboardCopy value="o-ping-active">`o-ping-active`</ClipboardCopy>                       |
+| Pulse           | <ClipboardCopy value="o-pulse-hover">`o-pulse-hover`</ClipboardCopy>                     | <ClipboardCopy value="o-pulse-active">`o-pulse-active`</ClipboardCopy>                     |
+| Scale-down      | <ClipboardCopy value="o-scale-down-hover">`o-scale-down-hover`</ClipboardCopy>           | <ClipboardCopy value="o-scale-down-active">`o-scale-down-active`</ClipboardCopy>           |
+| Scale-up        | <ClipboardCopy value="o-scale-up-hover">`o-scale-up-hover`</ClipboardCopy>               | <ClipboardCopy value="o-scale-up-active">`o-scale-up-active`</ClipboardCopy>               |
+| Shake-x         | <ClipboardCopy value="o-shake-x-hover">`o-shake-x-hover`</ClipboardCopy>                 | <ClipboardCopy value="o-shake-x-active">`o-shake-x-active`</ClipboardCopy>                 |
+| Shake-y         | <ClipboardCopy value="o-shake-y-hover">`o-shake-y-hover`</ClipboardCopy>                 | <ClipboardCopy value="o-shake-y-active">`o-shake-y-active`</ClipboardCopy>                 |
+| Slide-in-down   | <ClipboardCopy value="o-slide-in-down-hover">`o-slide-in-down-hover`</ClipboardCopy>     | <ClipboardCopy value="o-slide-in-down-active">`o-slide-in-down-active`</ClipboardCopy>     |
+| Slide-in-left   | <ClipboardCopy value="o-slide-in-left-hover">`o-slide-in-left-hover`</ClipboardCopy>     | <ClipboardCopy value="o-slide-in-left-active">`o-slide-in-left-active`</ClipboardCopy>     |
+| Slide-in-right  | <ClipboardCopy value="o-slide-in-right-hover">`o-slide-in-right-hover`</ClipboardCopy>   | <ClipboardCopy value="o-slide-in-right-active">`o-slide-in-right-active`</ClipboardCopy>   |
+| Slide-in-up     | <ClipboardCopy value="o-slide-in-up-hover">`o-slide-in-up-hover`</ClipboardCopy>         | <ClipboardCopy value="o-slide-in-up-active">`o-slide-in-up-active`</ClipboardCopy>         |
+| Slide-out-down  | <ClipboardCopy value="o-slide-out-down-hover">`o-slide-out-down-hover`</ClipboardCopy>   | <ClipboardCopy value="o-slide-out-down-active">`o-slide-out-down-active`</ClipboardCopy>   |
+| Slide-out-left  | <ClipboardCopy value="o-slide-out-left-hover">`o-slide-out-left-hover`</ClipboardCopy>   | <ClipboardCopy value="o-slide-out-left-active">`o-slide-out-left-active`</ClipboardCopy>   |
+| Slide-out-right | <ClipboardCopy value="o-slide-out-right-hover">`o-slide-out-right-hover`</ClipboardCopy> | <ClipboardCopy value="o-slide-out-right-active">`o-slide-out-right-active`</ClipboardCopy> |
+| Slide-out-up    | <ClipboardCopy value="o-slide-out-up-hover">`o-slide-out-up-hover`</ClipboardCopy>       | <ClipboardCopy value="o-slide-out-up-active">`o-slide-out-up-active`</ClipboardCopy>       |
+| Spin            | <ClipboardCopy value="o-spin-hover">`o-spin-hover`</ClipboardCopy>                       | <ClipboardCopy value="o-spin-active">`o-spin-active`</ClipboardCopy>                       |
+
+## Scroll Driven Animations (from v1.12)
+
+### Entering and exiting viewport
+
+| Description                | Triggers on viewport entry                                                                  | Triggers on viewport exit                                                                   |
+| -------------------------- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| Blink           | <ClipboardCopy value="o-blink-enter">`o-blink-enter`</ClipboardCopy>                     | <ClipboardCopy value="o-blink-exit">`o-blink-exit`</ClipboardCopy>                     |
+| Bounce          | <ClipboardCopy value="o-bounce-enter">`o-bounce-enter`</ClipboardCopy>                   | <ClipboardCopy value="o-bounce-exit">`o-bounce-exit`</ClipboardCopy>                   |
+| Fade-in         | <ClipboardCopy value="o-fade-in-enter">`o-fade-in-enter`</ClipboardCopy>                 | <ClipboardCopy value="o-fade-in-exit">`o-fade-in-exit`</ClipboardCopy>                 |
+| Fade-out        | <ClipboardCopy value="o-fade-out-enter">`o-fade-out-enter`</ClipboardCopy>               | <ClipboardCopy value="o-fade-out-exit">`o-fade-out-exit`</ClipboardCopy>               |
+| Float           | <ClipboardCopy value="o-float-enter">`o-float-enter`</ClipboardCopy>                     | <ClipboardCopy value="o-float-exit">`o-float-exit`</ClipboardCopy>                     |
+| Ping            | <ClipboardCopy value="o-ping-enter">`o-ping-enter`</ClipboardCopy>                       | <ClipboardCopy value="o-ping-exit">`o-ping-exit`</ClipboardCopy>                       |
+| Pulse           | <ClipboardCopy value="o-pulse-enter">`o-pulse-enter`</ClipboardCopy>                     | <ClipboardCopy value="o-pulse-exit">`o-pulse-exit`</ClipboardCopy>                     |
+| Scale-down      | <ClipboardCopy value="o-scale-down-enter">`o-scale-down-enter`</ClipboardCopy>           | <ClipboardCopy value="o-scale-down-exit">`o-scale-down-exit`</ClipboardCopy>           |
+| Scale-up        | <ClipboardCopy value="o-scale-up-enter">`o-scale-up-enter`</ClipboardCopy>               | <ClipboardCopy value="o-scale-up-exit">`o-scale-up-exit`</ClipboardCopy>               |
+| Shake-x         | <ClipboardCopy value="o-shake-x-enter">`o-shake-x-enter`</ClipboardCopy>                 | <ClipboardCopy value="o-shake-x-exit">`o-shake-x-exit`</ClipboardCopy>                 |
+| Shake-y         | <ClipboardCopy value="o-shake-y-enter">`o-shake-y-enter`</ClipboardCopy>                 | <ClipboardCopy value="o-shake-y-exit">`o-shake-y-exit`</ClipboardCopy>                 |
+| Slide-in-down   | <ClipboardCopy value="o-slide-in-down-enter">`o-slide-in-down-enter`</ClipboardCopy>     | <ClipboardCopy value="o-slide-in-down-exit">`o-slide-in-down-exit`</ClipboardCopy>     |
+| Slide-in-left   | <ClipboardCopy value="o-slide-in-left-enter">`o-slide-in-left-enter`</ClipboardCopy>     | <ClipboardCopy value="o-slide-in-left-exit">`o-slide-in-left-exit`</ClipboardCopy>     |
+| Slide-in-right  | <ClipboardCopy value="o-slide-in-right-enter">`o-slide-in-right-enter`</ClipboardCopy>   | <ClipboardCopy value="o-slide-in-right-exit">`o-slide-in-right-exit`</ClipboardCopy>   |
+| Slide-in-up     | <ClipboardCopy value="o-slide-in-up-enter">`o-slide-in-up-enter`</ClipboardCopy>         | <ClipboardCopy value="o-slide-in-up-exit">`o-slide-in-up-exit`</ClipboardCopy>         |
+| Slide-out-down  | <ClipboardCopy value="o-slide-out-down-enter">`o-slide-out-down-enter`</ClipboardCopy>   | <ClipboardCopy value="o-slide-out-down-exit">`o-slide-out-down-exit`</ClipboardCopy>   |
+| Slide-out-left  | <ClipboardCopy value="o-slide-out-left-enter">`o-slide-out-left-enter`</ClipboardCopy>   | <ClipboardCopy value="o-slide-out-left-exit">`o-slide-out-left-exit`</ClipboardCopy>   |
+| Slide-out-right | <ClipboardCopy value="o-slide-out-right-enter">`o-slide-out-right-enter`</ClipboardCopy> | <ClipboardCopy value="o-slide-out-right-exit">`o-slide-out-right-exit`</ClipboardCopy> |
+| Slide-out-up    | <ClipboardCopy value="o-slide-out-up-enter">`o-slide-out-up-enter`</ClipboardCopy>       | <ClipboardCopy value="o-slide-out-up-exit">`o-slide-out-up-exit`</ClipboardCopy>       |
+| Spin            | <ClipboardCopy value="o-spin-enter">`o-spin-enter`</ClipboardCopy>                       | <ClipboardCopy value="o-spin-exit">`o-spin-exit`</ClipboardCopy>                       |

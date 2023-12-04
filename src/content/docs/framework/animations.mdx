@@ -12,7 +12,6 @@ head:
       content: https://docs.oxyprops.com/open-graph/framework/animations.png
 ---
 
-import ClipboardCopy from '~/components/ClipboardCopy.astro';
 import AnimationDemo from '~/components/AnimationDemo.astro';
 
 CSS animations allow you to create smooth and engaging visual effects on your website or web application without using JavaScript. Animations can be used to add visual interest to interactive elements like buttons and menus, or to create immersive effects like parallax scrolling and transitions between different sections of a page.
@@ -31,7 +30,7 @@ Here is the list of available animations CSS variables and utility classes. If y
 
 <AnimationDemo name="blink" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-blink)
 ```
 
@@ -45,7 +44,7 @@ o-blink-active
 
 <AnimationDemo name="bounce" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-bounce)
 ```
 
@@ -59,7 +58,7 @@ o-bounce-active
 
 <AnimationDemo name="fade-in" hidden />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-fade-in)
 ```
 
@@ -73,7 +72,7 @@ o-fade-in-active
 
 <AnimationDemo name="fade-in-bloom" hidden />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-fade-in-bloom)
 ```
 
@@ -87,7 +86,7 @@ o-fade-in-bloom-active
 
 <AnimationDemo name="fade-out" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-fade-out)
 ```
 
@@ -101,7 +100,7 @@ o-fade-out-active
 
 <AnimationDemo name="fade-out-bloom" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-fade-out-bloom)
 ```
 
@@ -115,7 +114,7 @@ o-fade-out-bloom-active
 
 <AnimationDemo name="float" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-float)
 ```
 
@@ -129,7 +128,7 @@ o-float-active
 
 <AnimationDemo name="ping" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-ping)
 ```
 
@@ -143,7 +142,7 @@ o-ping-active
 
 <AnimationDemo name="pulse" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-pulse)
 ```
 
@@ -157,7 +156,7 @@ o-pulse-active
 
 <AnimationDemo name="scale-down" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-scale-down)
 ```
 
@@ -171,7 +170,7 @@ o-scale-down-active
 
 <AnimationDemo name="scale-up" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-scale-up)
 ```
 
@@ -185,7 +184,7 @@ o-scale-up-active
 
 <AnimationDemo name="shake-x" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-shake-x)
 ```
 
@@ -199,7 +198,7 @@ o-shake-x-active
 
 <AnimationDemo name="shake-y" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-shake-y)
 ```
 
@@ -213,7 +212,7 @@ o-shake-y-active
 
 <AnimationDemo name="slide-in-down" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-slide-in-down)
 ```
 
@@ -227,7 +226,7 @@ o-slide-in-down-active
 
 <AnimationDemo name="slide-in-left" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-slide-in-left)
 ```
 
@@ -241,7 +240,7 @@ o-slide-in-left-active
 
 <AnimationDemo name="slide-in-right" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-slide-in-right)
 ```
 
@@ -255,7 +254,7 @@ o-slide-in-right-active
 
 <AnimationDemo name="slide-in-up" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-slide-in-up)
 ```
 
@@ -269,7 +268,7 @@ o-slide-in-up-active
 
 <AnimationDemo name="slide-out-down" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-slide-out-down)
 ```
 
@@ -283,7 +282,7 @@ o-slide-out-down-active
 
 <AnimationDemo name="slide-out-left" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-slide-out-left)
 ```
 
@@ -297,7 +296,7 @@ o-slide-out-left-active
 
 <AnimationDemo name="slide-out-right" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-slide-out-right)
 ```
 
@@ -311,7 +310,7 @@ o-slide-out-right-active
 
 <AnimationDemo name="spin" />
 
-```css title="CSS Variable"
+```html title="CSS Variable"
 var(--o-animation-spin)
 ```
 
@@ -331,7 +330,7 @@ The `@keyframes` rule allows you to define a series of keyframes that specify ho
 
 Here's an example of a `@keyframes` rule that defines a simple animation that changes an element's opacity from 0 to 1 over a duration of 2 seconds:
 
-```css title="Opacity animation"
+```html title="Opacity animation"
 @keyframes fade-in {
 	0% {
 		opacity: 0;
@@ -348,7 +347,7 @@ In this example, we've named the animation fade-in and defined two keyframes: 0%
 
 Once you've defined your `@keyframes` rule, you can apply the animation to an element using the animation property. Here's an example of how to apply the fade-in animation we defined earlier to a `<div>` element:
 
-```css title="Applying the animation"
+```html title="Applying the animation"
 div {
 	animation: fade-in 2s;
 }

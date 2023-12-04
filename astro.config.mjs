@@ -5,7 +5,6 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { autolinkConfig } from "./plugins/rehype-autolink-config";
 import rehypeExternalLinks from "rehype-external-links";
 import { externalLinkConfig } from "./plugins/rehype-external-link-config";
-import codeblocks from "@thewebforge/astro-code-blocks";
 import react from "@astrojs/react";
 
 // Config partials
@@ -19,10 +18,6 @@ const site = "https://docs.oxyprops.com/";
 export default defineConfig({
   site,
   integrations: [
-    codeblocks({
-      copyButtonTitle: "Copy",
-      copyButtonTooltip: "Copied!",
-    }),
     starlight({
       title: "o-props docs",
       logo: {

@@ -1,0 +1,349 @@
+---
+title: Buttons Modifiers
+description: A complete list of available modifier classes for buttons.
+sidebar:
+  label: Modifiers
+  order: 20
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/modifiers.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/modifiers.png
+---
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Image } from "astro:assets";
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+import iconify from "~/assets/iconify-get-svg-uri.webp";
+import brxstructure from "~/assets/brx-btn-svg-structure.webp";
+import oxystructure from "~/assets/oxy-btn-svg-structure.webp";
+
+## Outline
+
+The <ClipboardCopy value="o-btn-outline">`o-btn-outline`</ClipboardCopy> modifier class turns the base button into an outline button.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#outline" class="o-btn o-btn-outline">
+		<span>button</span>
+	</a>
+	<a href="#outline" class="o-btn o-btn-outline o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+## Brand
+
+The <ClipboardCopy value="o-btn-brand">`o-btn-brand`</ClipboardCopy> modifier class adds your brand color to the button.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#brand" class="o-btn o-btn-brand">
+		<span>button</span>
+	</a>
+	<a href="#brand" class="o-btn o-btn-brand o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+### Brand outline
+
+Combining the <ClipboardCopy value="o-btn-outline">`o-btn-outline`</ClipboardCopy> and <ClipboardCopy value="o-btn-brand">`o-btn-brand`</ClipboardCopy> modifier classes.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#brand-outline" class="o-btn o-btn-outline o-btn-brand">
+		<span>button</span>
+	</a>
+	<a href="#brand-outline" class="o-btn o-btn-outline o-btn-brand o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+## Accent
+
+The <ClipboardCopy value="o-btn-accent">`o-btn-accent`</ClipboardCopy> modifier class adds your accent color to the button.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#accent" class="o-btn o-btn-accent">
+		<span>button</span>
+	</a>
+	<a href="#accent" class="o-btn o-btn-accent o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+### Accent outline
+
+Combining the <ClipboardCopy value="o-btn-outline">`o-btn-outline`</ClipboardCopy> and <ClipboardCopy value="o-btn-accent">`o-btn-accent`</ClipboardCopy> modifier classes.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#accent-outline" class="o-btn o-btn-outline o-btn-accent">
+		<span>button</span>
+	</a>
+	<a href="#accent-outline" class="o-btn o-btn-outline o-btn-accent o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+## Links
+
+The <ClipboardCopy value="o-btn-links">`o-btn-links`</ClipboardCopy> modifier class adds the link color to the button.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#links" class="o-btn o-btn-links">
+		<span>button</span>
+	</a>
+	<a href="#links" class="o-btn o-btn-links o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+### Links outline
+
+Combining the <ClipboardCopy value="o-btn-outline">`o-btn-outline`</ClipboardCopy> and <ClipboardCopy value="o-btn-links">`o-btn-links`</ClipboardCopy> modifier classes.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#links-outline" class="o-btn o-btn-outline o-btn-links">
+		<span>button</span>
+	</a>
+	<a href="#links-outline" class="o-btn o-btn-outline o-btn-links o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+## Visited
+
+The  <ClipboardCopy value="o-btn-visited">`o-btn-visited`</ClipboardCopy> modifier class adds the visited color to the button.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#visited" class="o-btn o-btn-visited">
+		<span>button</span>
+	</a>
+	<a href="#visited" class="o-btn o-btn-visited o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+### Visited outline
+
+Combining the <ClipboardCopy value="o-btn-outline">`o-btn-outline`</ClipboardCopy> and <ClipboardCopy value="o-btn-visited">`o-btn-visited`</ClipboardCopy> modifier classes.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#visited-outline" class="o-btn o-btn-outline o-btn-visited">
+		<span>button</span>
+	</a>
+	<a href="#visited-outline" class="o-btn o-btn-outline o-btn-visited o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+## BW (responsive black)
+
+The <ClipboardCopy value="o-btn-bw">`o-btn-bw`</ClipboardCopy> modifier class adds the BW responsive color to the button.  
+It will be black in light mode and white in dark mode.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#bw-responsive-black" class="o-btn o-btn-bw">
+		<span>button</span>
+	</a>
+	<a href="#bw-responsive-black" class="o-btn o-btn-bw o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+### BW outline (responsive black)
+
+Combining the <ClipboardCopy value="o-btn-outline">`o-btn-outline`</ClipboardCopy> and <ClipboardCopy value="o-btn-bw">`o-btn-bw`</ClipboardCopy> modifier classes.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#bw-outline-responsive-black" class="o-btn o-btn-outline o-btn-bw">
+		<span>button</span>
+	</a>
+	<a href="#bw-outline-responsive-black" class="o-btn o-btn-outline o-btn-bw o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+## WB (responsive white)
+
+The <ClipboardCopy value="o-btn-wb">`o-btn-wb`</ClipboardCopy> modifier class adds the WB responsive color to the button.  
+It will be white in light mode and black in dark mode.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; background-color: var(--o-text-2);padding-block: var(--o-size-3);">
+	<a href="#wb-responsive-white" class="o-btn o-btn-wb">
+		<span>button</span>
+	</a>
+	<a href="#wb-responsive-white" class="o-btn o-btn-wb o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+### WB outline (responsive white)
+
+Combining the <ClipboardCopy value="o-btn-outline">`o-btn-outline`</ClipboardCopy> and <ClipboardCopy value="o-btn-wb">`o-btn-wb`</ClipboardCopy> modifier classes.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; background-color: var(--o-text-2);padding-block: var(--o-size-3);">
+	<a href="#wb-outline-responsive-white" class="o-btn o-btn-outline o-btn-wb">
+		<span>button</span>
+	</a>
+	<a href="#wb-outline-responsive-white" class="o-btn o-btn-outline o-btn-wb o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+## Brand gradient
+
+The <ClipboardCopy value="o-btn-brand-gr">`o-btn-brand-gr`</ClipboardCopy> modifier class adds the brand gradient to the button.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#brand-gradient" class="o-btn o-btn-brand-gr">
+		<span>button</span>
+	</a>
+	<a href="#brand-gradient" class="o-btn o-btn-brand-gr o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+### Brand gradient outline
+
+Combining the <ClipboardCopy value="o-btn-outline">`o-btn-outline`</ClipboardCopy> and <ClipboardCopy value="o-btn-brand-gr">`o-btn-brand-gr`</ClipboardCopy> modifier classes.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#brand-gradient-outline" class="o-btn o-btn-outline o-btn-brand-gr">
+		<span>button</span>
+	</a>
+	<a href="#brand-gradient-outline" class="o-btn o-btn-outline o-btn-brand-gr o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+## Accent gradient
+
+The <ClipboardCopy value="o-btn-accent-gr">`o-btn-accent-gr`</ClipboardCopy> modifier class adds the accent gradient to the button.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#accent-gradient" class="o-btn o-btn-accent-gr">
+		<span>button</span>
+	</a>
+	<a href="#accent-gradient" class="o-btn o-btn-accent-gr o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+### Accent gradient outline
+
+Combining the <ClipboardCopy value="o-btn-outline">`o-btn-outline`</ClipboardCopy> and <ClipboardCopy value="o-btn-accent-gr">`o-btn-accent-gr`</ClipboardCopy> modifier classes.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#accent-gradient-outline" class="o-btn o-btn-outline o-btn-accent-gr">
+		<span>button</span>
+	</a>
+	<a href="#accent-gradient-outline" class="o-btn o-btn-outline o-btn-accent-gr o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+## Links gradient
+
+The <ClipboardCopy value="o-btn-links-gr">`o-btn-links-gr`</ClipboardCopy> modifier class adds the links gradient to the button.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#links-gradient" class="o-btn o-btn-links-gr">
+		<span>button</span>
+	</a>
+	<a href="#links-gradient" class="o-btn o-btn-links-gr o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+### Links gradient outline
+
+Combining the <ClipboardCopy value="o-btn-outline">`o-btn-outline`</ClipboardCopy> and <ClipboardCopy value="o-btn-links-gr">`o-btn-links-gr`</ClipboardCopy> modifier classes.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#links-gradient-outline" class="o-btn o-btn-outline o-btn-links-gr">
+		<span>button</span>
+	</a>
+	<a href="#links-gradient-outline" class="o-btn o-btn-outline o-btn-links-gr o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+## Visited gradient
+
+The <ClipboardCopy value="o-btn-brand">`o-btn-brand`</ClipboardCopy> modifier class adds the visited gradient to the button.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#visited-gradient" class="o-btn o-btn-visited-gr">
+		<span>button</span>
+	</a>
+	<a href="#visited-gradient" class="o-btn o-btn-visited-gr o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+### Visited gradient outline
+
+Combining the <ClipboardCopy value="o-btn-outline">`o-btn-outline`</ClipboardCopy> and <ClipboardCopy value="o-btn-visited-gr">`o-btn-visited-gr`</ClipboardCopy> modifier classes.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#visited-gradient-outline" class="o-btn o-btn-outline o-btn-visited-gr">
+		<span>button</span>
+	</a>
+	<a href="#visited-gradient-outline" class="o-btn o-btn-outline o-btn-visited-gr o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+## Disabled
+
+The <ClipboardCopy value="o-btn-disabled">`o-btn-disabled`</ClipboardCopy> modifier class adds the disabled style to the button.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#disabled" class="o-btn o-btn-disabled">
+		<span>button</span>
+	</a>
+	<a href="#disabled" class="o-btn o-btn-disabled o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+## Success
+
+The <ClipboardCopy value="o-btn-success">`o-btn-success`</ClipboardCopy> modifier class adds the success style to the button.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#success" class="o-btn o-btn-success">
+		<span>button</span>
+	</a>
+	<a href="#success" class="o-btn o-btn-success o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+## Warning
+
+The <ClipboardCopy value="o-btn-warning">`o-btn-warning`</ClipboardCopy> modifier class adds the warning state to the button.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#warning" class="o-btn o-btn-warning">
+		<span>button</span>
+	</a>
+	<a href="#warning" class="o-btn o-btn-warning o-hover">
+		<span>hover state</span>
+	</a>
+</div>
+
+## Danger
+
+Th<ClipboardCopy value="o-btn-danger">`o-btn-danger`</ClipboardCopy> modifier class adds the danger state to the button.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+	<a href="#danger" class="o-btn o-btn-danger">
+		<span>button</span>
+	</a>
+	<a href="#danger" class="o-btn o-btn-danger o-hover">
+		<span>hover state</span>
+	</a>
+</div>

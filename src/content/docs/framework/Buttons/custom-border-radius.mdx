@@ -1,0 +1,57 @@
+---
+title: Custom Border Radius
+description: How to customize the border radius of the buttons.
+sidebar:
+  label: Border Radius
+  order: 80
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-border-radius.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-border-radius.png
+---
+
+The button has a default border radius of 0.5ch. You can change this value by using the `--o_border-radius` custom property.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;padding-block: 4rem;">
+  <a
+    href="#custom-corner-radius"
+    class="o-btn o-btn-links"
+    style="--o_border-radius: 0;"
+  >
+    <span>button</span>
+  </a>
+  <a href="#custom-corner-radius" class="o-btn o-btn-links">
+    <span>button</span>
+  </a>
+  <a
+    href="#custom-corner-radius"
+    class="o-btn o-btn-links"
+    style="--o_border-radius: 1ch;"
+  >
+    <span>button</span>
+  </a>
+  <a
+    href="#custom-corner-radius"
+    class="o-btn o-btn-links"
+    style="--o_border-radius: var(--o-radius-round);"
+  >
+    <span>button</span>
+  </a>
+</div>
+
+```css title="Square button site wide"
+.o-btn {
+  --o_border-radius: 0;
+}
+```
+
+```css title="Square button modifier class"
+.o-btn-square {
+  --o_border-radius: 0;
+}
+```

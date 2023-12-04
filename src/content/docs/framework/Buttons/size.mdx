@@ -1,0 +1,61 @@
+---
+title: Buttons Size
+description: Documentation about the size of buttons.
+sidebar:
+  label: Size
+  order: 40
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/size.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/size.png
+---
+## Size
+The button is built in a way that it scales automatically with the text size. This means that if you change the font size of the button, the button will scale accordingly.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;">
+  <a href="#button-size" class="o-btn" style="font-size: 1rem;">
+    <span>button</span>
+  </a>
+  <a href="#button-size" class="o-btn" style="font-size: 1.5rem;">
+    <span>button</span>
+  </a>
+  <a href="#button-size" class="o-btn" style="font-size: 2rem;">
+    <span>button</span>
+  </a>
+</div>
+
+## Icon Size
+When inserting an icon, the icon also scales automatically with the text (example with a CSS icon).
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;">
+  <a href="#button-size" class="o-btn" style="font-size: 1rem;">
+    <span
+      data-icon
+      style="--o_data-icon: url('https://api.iconify.design/material-symbols/privacy-tip.svg') no-repeat center center / contain;"
+    ></span>
+    <span>button</span>
+  </a>
+  <a href="#button-size" class="o-btn" style="font-size: 1.5rem;">
+    <span
+      data-icon
+      style="--o_data-icon: url('https://api.iconify.design/material-symbols/privacy-tip.svg') no-repeat center center / contain;"
+    ></span>
+    <span>button</span>
+  </a>
+  <a href="#button-size" class="o-btn" style="font-size: 2rem;">
+    <span
+      data-icon
+      style="--o_data-icon: url('https://api.iconify.design/material-symbols/privacy-tip.svg') no-repeat center center / contain;"
+    ></span>
+    <span>button</span>
+  </a>
+</div>
+
+## Padding Customization
+
+If you want to customize the padding of the button, you can use the custom padding CSS variable. Check the [dedicated padding customization page](/framework/buttons/custom-padding).

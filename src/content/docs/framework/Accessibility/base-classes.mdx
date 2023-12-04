@@ -1,18 +1,19 @@
 ---
 title: Accessibility
+sidebar:
+  order: 10
+  label: Base
 description: Documentation for the OxyProps Accessibility CSS properties and utility classes.
 head:
   - tag: meta
     attrs:
       property: og:image
-      content: https://docs.oxyprops.com/open-graph/framework/animations.png
+      content: https://docs.oxyprops.com/open-graph/framework/accessibility/base-classes.png
   - tag: meta
     attrs:
       property: twitter:image
-      content: https://docs.oxyprops.com/open-graph/framework/animations.png
+      content: https://docs.oxyprops.com/open-graph/framework/accessibility/base-classes.png
 ---
-
-import ClipboardCopy from "~/components/ClipboardCopy.astro";
 
 OxyProps goal is to help you build accessible websites. In addition to accessibility built in all CSS Variables and utility classes when possible, we also provide you with a set of specific utility classes that you can use to help include all of your website visitors.
 
@@ -22,7 +23,7 @@ OxyProps goal is to help you build accessible websites. In addition to accessibi
 
 The `.o-sr-only` utility class is used to hide content from all users except screen readers. This is useful for content that is only relevant to screen reader users, such as skip links.
 
-```css title="Utility Class"
+```html title="Utility Class"
 o-sr-only
 ```
 
@@ -46,7 +47,7 @@ If you wonder how this works, here is the CSS code:
 
 The `.o-not-sr-only` utility class is used to cancel the `.o-sr-only` utility class. This is useful for content that is only relevant to screen reader users, such as skip links.
 
-```css title="Utility Class"
+```html title="Utility Class"
 o-not-sr-only
 ```
 
@@ -63,70 +64,4 @@ If you wonder how this works, here is the CSS code:
   clip: auto;
   white-space: normal;
 }
-```
-
-### Breakpoints modifiers
-
-The `.o-sr-only` and `.o-not-sr-only` utility classes can be used with breakpoints modifiers.
-
-A typical use case is to hide a text on small screens and show it on larger screens.
-
-```html title="Example combined usage"
-<span class="o-not-sr-only o-sm-sr-only">Settings</span>
-```
-
-#### XXS and below
-```css title="SR Only"
-o-xxs-sr-only
-```
-```css title="Not SR Only"
-o-xxs-not-sr-only
-```
-
-#### XS and below
-```css title="SR Only"
-o-xs-sr-only
-```
-```css title="Not SR Only"
-o-xs-not-sr-only
-```
-
-#### SM and below
-```css title="SR Only"
-o-sm-sr-only
-```
-```css title="Not SR Only"
-o-sm-not-sr-only
-```
-
-#### MD and below
-```css title="SR Only"
-o-md-sr-only
-```
-```css title="Not SR Only"
-o-md-not-sr-only
-```
-
-#### LG and below
-```css title="SR Only"
-o-lg-sr-only
-```
-```css title="Not SR Only"
-o-lg-not-sr-only
-```
-
-#### XL and below
-```css title="SR Only"
-o-xl-sr-only
-```
-```css title="Not SR Only"
-o-xl-not-sr-only
-```
-
-#### XXL and below
-```css title="SR Only"
-o-xxl-sr-only
-```
-```css title="Not SR Only"
-o-xxl-not-sr-only
 ```

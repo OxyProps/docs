@@ -1,0 +1,70 @@
+---
+title: Custom Border Color
+description: How to customize the border color of the buttons.
+sidebar:
+  label: Border Color
+  order: 60
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-border-color.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-border-color.png
+---
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+
+The button has a default border color of `var(--o-surface-3)` in dark mode, `var(--o-surface-1)` in light mode. You can change this value by using the following CSS custom properties:
+
+| description                         | custom property                                                                         |
+| ----------------------------------- | --------------------------------------------------------------------------------------- |
+| Border color in light mode          | <ClipboardCopy value="--o_border-light:">`--o_border-light`</ClipboardCopy>             |
+| Border color in light mode on hover | <ClipboardCopy value="--o_border-light-hover:">`--o_border-light-hover`</ClipboardCopy> |
+| Border color in dark mode           | <ClipboardCopy value="--o_border-dark:">`--o_border-dark`</ClipboardCopy>               |
+| Border color in dark mode on hover  | <ClipboardCopy value="--o_border-dark-hover:">`--o_border-dark-hover`</ClipboardCopy>   |
+| Border color                        | <ClipboardCopy value="--o_border:">`--o_border`</ClipboardCopy>                         |
+| Border color on hover               | <ClipboardCopy value="--o_border-hover:">`--o_border-hover`</ClipboardCopy>             |
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;padding-block: 4rem;">
+  <a
+    href="#custom-border-color"
+    class="o-btn o-btn-outline"
+    style="--o_border-light: var(--o-links);--o_border-dark: var(--o-links);--o_border-light-hover: var(--o-text-1);--o_border-dark-hover: var(--o-text-1);"
+  >
+    <span>button</span>
+  </a>
+  <a
+    href="#custom-border-color"
+    class="o-btn o-btn-outline"
+    style="--o_border-light: var(--o-accent);--o_border-dark: var(--o-visited);--o_border-light-hover: var(--o-visited);--o_border-dark-hover: var(--o-accent);"
+  >
+    <span>button</span>
+  </a>
+  <a
+    href="#custom-border-color"
+    class="o-btn o-btn-outline"
+    style="--o_border-light: var(--o-links);--o_border-dark: var(--o-links);--o_border-light-hover: var(--o-brand);--o_border-dark-hover: var(--o-brand);"
+  >
+    <span>button</span>
+  </a>
+</div>
+
+```css title="Fancy button site wide"
+.o-btn {
+  --o_border-light: var(--o-accent);
+  --o_border-dark: var(--o-visited);
+  --o_border-light-hover: var(--o-visited);
+  --o_border-dark-hover: var(--o-accent);
+}
+```
+
+```css title="Fancy button modifier class"
+.o-btn-fancy {
+  --o_border-light: var(--o-accent);
+  --o_border-dark: var(--o-visited);
+  --o_border-light-hover: var(--o-visited);
+  --o_border-dark-hover: var(--o-accent);
+}
+```

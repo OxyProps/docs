@@ -1,0 +1,45 @@
+---
+title: Custom Transition
+description: How to customize the transition of the buttons.
+sidebar:
+  label: Transition
+  order: 210
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-transition.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-transition.png
+---
+
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+
+The button has a default transition of `none` for users who prefer reduced motion, and `box-shadow 145ms var(--o-ease-3), outline-offset 145ms var(--o-ease-3)` when motion is OK. You can change this value by using the following CSS custom property:
+
+| description                                        | custom property                                                                                     |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Transition when prefers reduced motion is enabled  | <ClipboardCopy value="--o_transition-motion-reduce:">`--o_transition-motion-reduce`</ClipboardCopy> |
+| Transition when prefers reduced motion is disabled | <ClipboardCopy value="--o_transition-motion-ok:">`--o_transition-motion-ok`</ClipboardCopy>         |
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;padding-block: 4rem;">
+    <a href="#custom-transition" class="o-btn o-btn-links" style="--o_highlight-size-hover: 1rem;--o_ink-shadow-light: none; --o_transition-motion-reduce: none; --o_transition-motion-ok: box-shadow 145ms var(--o-ease-3), outline-offset 145ms var(--o-ease-3);"><span>button</span></a>
+    <a href="#custom-transition" class="o-btn o-btn-links" style="--o_highlight-size-hover: 1rem;--o_ink-shadow-light: none; --o_transition-motion-reduce: none; --o_transition-motion-ok: box-shadow 500ms var(--o-ease-out-5), outline-offset 500ms var(--o-ease-out-5);"><span>button</span></a>
+    <a href="#custom-transition" class="o-btn o-btn-links" style="--o_highlight-size-hover: 1rem;--o_ink-shadow-light: none; --o_transition-motion-reduce: none; --o_transition-motion-ok: box-shadow 200ms var(--o-ease-squish-3), outline-offset 200ms var(--o-ease-squish-3);"><span>button</span></a>
+    <a href="#custom-transition" class="o-btn o-btn-links" style="--o_highlight-size-hover: 3rem;--o_ink-shadow-light: none; --o_transition-motion-reduce: none; --o_transition-motion-ok: box-shadow 500ms var(--o-ease-step-3), outline-offset 500ms var(--o-ease-step-3);"><span>button</span></a>
+</div>
+    
+    ```css title="Custom transition site wide"
+    .o-btn {
+      --o_transition-motion-reduce: none;
+      --o_transition-motion-ok: box-shadow 145ms var(--o-ease-3), outline-offset 145ms var(--o-ease-3);
+    }
+    ```
+    ```css title="Custom transition modifier class"
+    .o-btn-fancy {
+      --o_transition-motion-reduce: none;
+      --o_transition-motion-ok: box-shadow 145ms var(--o-ease-3), outline-offset 145ms var(--o-ease-3);
+    }
+    ```

@@ -50,4 +50,14 @@ export const siteNav = [
       directory: "cheatsheet",
     },
   },
+  {
+    label: "History",
+    translations: {
+      fr: "Historique",
+    },
+    collapsed: false,
+    autogenerate: {
+      directory: "history",
+    },
+  },
 ];

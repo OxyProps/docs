@@ -1,0 +1,50 @@
+---
+title: Custom Text Color
+description: How to customize the text color of the buttons.
+sidebar:
+  label: Text Color
+  order: 200
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-text-color.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-text-color.png
+---
+
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+
+The button has a default text color of `var(--o-text-1)` in dark mode, `var(--o-text-1)` in light mode. You can change this value by using the following CSS custom properties:
+| description | custom property |
+| --- | --- |
+| Text color in light mode |<ClipboardCopy value="--o_text-light:">`--o_text-light`</ClipboardCopy> |
+| Text color in light mode on hover |<ClipboardCopy value="--o_text-light-hover:">`--o_text-light-hover`</ClipboardCopy> |
+| Text color in dark mode |<ClipboardCopy value="--o_text-dark-hover:">`--o_text-dark-hover`</ClipboardCopy> |
+| Text color in dark mode on hover |<ClipboardCopy value="--o_text-dark-hover:">`--o_text-dark-hover`</ClipboardCopy> |
+| Text color |<ClipboardCopy value="--o_text:">`--o_text`</ClipboardCopy> |
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;padding-block: 4rem;">
+    <a href="#custom-text-color" class="o-btn" style="--o_ink-shadow-light: none; --o_text-light: forestgreen;--o_text-light-hover: darkgreen;--o_text-dark: chocolate;--o_text-dark-hover: coral;"><span>button</span></a>
+    <a href="#custom-text-color" class="o-btn" style="--o_ink-shadow-light: none; --o_text-light: coral;--o_text-light-hover: chocolate;--o_text-dark: darkgreen;--o_text-dark-hover: forestgreen;"><span>button</span></a>
+    <a href="#custom-text-color" class="o-btn" style="--o_ink-shadow-light: none; --o_text-light: cadetblue;--o_text-light-hover: darkcyan;--o_text-dark: limegreen;--o_text-dark-hover: chartreuse;"><span>button</span></a>
+</div>
+    
+    ```css title="Custom text color site wide"
+    .o-btn {
+      --o_text-light: forestgreen;
+      --o_text-light-hover: darkgreen;
+      --o_text-dark: chocolate;
+      --o_text-dark-hover: coral;
+    }
+    ```
+    ```css title="Custom text color modifier class"
+    .o-btn-fancy {
+      --o_text-light: forestgreen;
+      --o_text-light-hover: darkgreen;
+      --o_text-dark: chocolate;
+      --o_text-dark-hover: coral;
+    }
+    ```

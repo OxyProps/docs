@@ -1,0 +1,43 @@
+---
+title: Custom Ink Shadow
+description: How to customize the ink shadow of the buttons texts.
+sidebar:
+  label: Ink Shadow
+  order: 160
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-ink-shadow.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-ink-shadow.png
+---
+
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+
+The button has a default ink shadow (text shadow) of `0 1px 0 var(--o_border-light)` in light mode, `0 1px 0 var(--o_border-dark)` in dark mode. You can change this value by using the following CSS custom properties:
+| description | custom property |
+| --- | --- |
+| Ink shadow in light mode |<ClipboardCopy value="--o_ink-shadow-light:">`--o_ink-shadow-light`</ClipboardCopy> |
+| Ink shadow in dark mode |<ClipboardCopy value="--o_ink-shadow-dark-hover:">`--o_ink-shadow-dark-hover`</ClipboardCopy> |
+| Ink shadow |<ClipboardCopy value="--o_ink-shadow:">`--o_ink-shadow`</ClipboardCopy> |
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;padding-block: 4rem;">
+    <a href="#custom-ink-shadow" class="o-btn o-btn-bw" style="font-size: var(--o-fluid-font-4);--o_ink-shadow-light: 0 4px 0 darkgray; --o_ink-shadow-dark: 0 0 15px var(--o-brand);"><span>button</span></a>
+    <a href="#custom-ink-shadow" class="o-btn o-btn-brand-gr o-btn-outline" style="font-size: var(--o-fluid-font-4);--o_ink-shadow-light: 0 4px 0 darkgray; --o_ink-shadow-dark: 0 2px 2px black;"><span>button</span></a>
+</div>
+    
+    ```css title="Custom ink shadow site wide"
+    .o-btn {
+      --o_ink-shadow-light: 0 4px 0 darkgray;
+      --o_ink-shadow-dark: 0 0 15px var(--o-brand);
+    }
+    ```
+    ```css title="Custom ink shadow modifier class"
+    .o-btn-fancy {
+      --o_ink-shadow-light: 0 4px 0 darkgray;
+      --o_ink-shadow-dark: 0 0 15px var(--o-brand);
+    }
+    ```

@@ -1,0 +1,36 @@
+---
+title: Custom Border Thickness
+description: How to customize the border thickness of the buttons.
+sidebar:
+  label: Border Thickness
+  order: 70
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-border-thickness.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-border-thickness.png
+---
+
+The button has a default border thickness of `--o-border-size-2`. You can change this value by using the `--o_border-size` custom property.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;padding-block: 4rem;">
+    <a href="#custom-border-size" class="o-btn o-btn-outline o-btn-links" style="--o_border-size: 0;"><span>button</span></a>
+    <a href="#custom-border-size" class="o-btn o-btn-outline o-btn-links" style="--o_border-size: var(--o-border-size-1);"><span>button</span></a>
+    <a href="#custom-border-size" class="o-btn o-btn-outline o-btn-links"><span>button</span></a>
+    <a href="#custom-border-size" class="o-btn o-btn-outline o-btn-links" style="--o_border-size: var(--o-border-size-3);"><span>button</span></a>
+</div>
+    
+    ```css title="Borderless button site wide"
+    .o-btn {
+      --o_border-size: 0;
+    }
+    ```
+    ```css title="Thick border modifier class"
+    .o-btn-thick-border {
+      --o_border-size: var(--o-border-size-4);
+    }
+    ```

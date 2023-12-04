@@ -22,7 +22,12 @@ declare module 'astro:content' {
 	export { z } from 'astro/zod';
 
 	type Flatten<T> = T extends { [K: string]: infer U } ? U : never;
-	export type CollectionEntry<C extends keyof AnyEntryMap> = Flatten<AnyEntryMap[C]>;
+
+	export type CollectionKey = keyof AnyEntryMap;
+	export type CollectionEntry<C extends CollectionKey> = Flatten<AnyEntryMap[C]>;
+
+	export type ContentCollectionKey = keyof ContentEntryMap;
+	export type DataCollectionKey = keyof DataEntryMap;
 
 	// This needs to be in sync with ImageMetadata
 	export type ImageFunction = () => import('astro/zod').ZodObject<{
@@ -38,6 +43,7 @@ declare module 'astro:content' {
 				import('astro/zod').ZodLiteral<'webp'>,
 				import('astro/zod').ZodLiteral<'gif'>,
 				import('astro/zod').ZodLiteral<'svg'>,
+				import('astro/zod').ZodLiteral<'avif'>,
 			]
 		>;
 	}>;
@@ -627,6 +633,20 @@ declare module 'astro:content' {
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
+"framework/Accessibility/base-classes.mdx": {
+	id: "framework/Accessibility/base-classes.mdx";
+  slug: "framework/accessibility/base-classes";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Accessibility/breakpoints-modifiers.mdx": {
+	id: "framework/Accessibility/breakpoints-modifiers.mdx";
+  slug: "framework/accessibility/breakpoints-modifiers";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
 "framework/Borders/blobs.mdx": {
 	id: "framework/Borders/blobs.mdx";
   slug: "framework/borders/blobs";
@@ -655,9 +675,156 @@ declare module 'astro:content' {
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
-"framework/Buttons/buttons.mdx": {
-	id: "framework/Buttons/buttons.mdx";
-  slug: "framework/buttons/buttons";
+"framework/Buttons/custom-background.mdx": {
+	id: "framework/Buttons/custom-background.mdx";
+  slug: "framework/buttons/custom-background";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-border-color.mdx": {
+	id: "framework/Buttons/custom-border-color.mdx";
+  slug: "framework/buttons/custom-border-color";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-border-radius.mdx": {
+	id: "framework/Buttons/custom-border-radius.mdx";
+  slug: "framework/buttons/custom-border-radius";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-border-thickness.mdx": {
+	id: "framework/Buttons/custom-border-thickness.mdx";
+  slug: "framework/buttons/custom-border-thickness";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-depth-shadow.mdx": {
+	id: "framework/Buttons/custom-depth-shadow.mdx";
+  slug: "framework/buttons/custom-depth-shadow";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-font-weight.mdx": {
+	id: "framework/Buttons/custom-font-weight.mdx";
+  slug: "framework/buttons/custom-font-weight";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-gradient-direction.mdx": {
+	id: "framework/Buttons/custom-gradient-direction.mdx";
+  slug: "framework/buttons/custom-gradient-direction";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-highlight-color.mdx": {
+	id: "framework/Buttons/custom-highlight-color.mdx";
+  slug: "framework/buttons/custom-highlight-color";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-highlight-size.mdx": {
+	id: "framework/Buttons/custom-highlight-size.mdx";
+  slug: "framework/buttons/custom-highlight-size";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-icon-color.mdx": {
+	id: "framework/Buttons/custom-icon-color.mdx";
+  slug: "framework/buttons/custom-icon-color";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-icon-size.mdx": {
+	id: "framework/Buttons/custom-icon-size.mdx";
+  slug: "framework/buttons/custom-icon-size";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-ink-shadow.mdx": {
+	id: "framework/Buttons/custom-ink-shadow.mdx";
+  slug: "framework/buttons/custom-ink-shadow";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-padding.mdx": {
+	id: "framework/Buttons/custom-padding.mdx";
+  slug: "framework/buttons/custom-padding";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-shadow-color.mdx": {
+	id: "framework/Buttons/custom-shadow-color.mdx";
+  slug: "framework/buttons/custom-shadow-color";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-shadow-strength.mdx": {
+	id: "framework/Buttons/custom-shadow-strength.mdx";
+  slug: "framework/buttons/custom-shadow-strength";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-text-color.mdx": {
+	id: "framework/Buttons/custom-text-color.mdx";
+  slug: "framework/buttons/custom-text-color";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/custom-transition.mdx": {
+	id: "framework/Buttons/custom-transition.mdx";
+  slug: "framework/buttons/custom-transition";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/icon-buttons.mdx": {
+	id: "framework/Buttons/icon-buttons.mdx";
+  slug: "framework/buttons/icon-buttons";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/introduction.mdx": {
+	id: "framework/Buttons/introduction.mdx";
+  slug: "framework/buttons/introduction";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/modifiers.mdx": {
+	id: "framework/Buttons/modifiers.mdx";
+  slug: "framework/buttons/modifiers";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/size.mdx": {
+	id: "framework/Buttons/size.mdx";
+  slug: "framework/buttons/size";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"framework/Buttons/tldr.mdx": {
+	id: "framework/Buttons/tldr.mdx";
+  slug: "framework/buttons/tldr";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
@@ -679,13 +846,6 @@ declare module 'astro:content' {
 "framework/Typography/letterspacing.mdx": {
 	id: "framework/Typography/letterspacing.mdx";
   slug: "framework/typography/letterspacing";
-  body: string;
-  collection: "docs";
-  data: InferEntrySchema<"docs">
-} & { render(): Render[".mdx"] };
-"framework/a11y.mdx": {
-	id: "framework/a11y.mdx";
-  slug: "framework/a11y";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
@@ -805,6 +965,13 @@ declare module 'astro:content' {
 "framework/sizes.md": {
 	id: "framework/sizes.md";
   slug: "framework/sizes";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".md"] };
+"history/changelog.md": {
+	id: "history/changelog.md";
+  slug: "history/changelog";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">

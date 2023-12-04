@@ -1,0 +1,53 @@
+---
+title: Custom Shadow Color
+description: How to customize the shadow color of the buttons.
+sidebar:
+  label: Shadow Color
+  order: 180
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-shadow-color.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-shadow-color.png
+---
+
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+
+The button has a default shadow color of `--o-shadow-color-light` in light mode and `--o-shadow-color-dark` as they are defined in you plugin dashboard. You can change this value by using the following CSS custom property:
+
+The expected value is HSL components, like `0 0% 0%` or `43deg 0% 100%`.
+
+| description                | custom property                                                                         |
+| -------------------------- | --------------------------------------------------------------------------------------- |
+| Shadow color in light mode | <ClipboardCopy value="--o_shadow-color-light:">`--o_shadow-color-light`</ClipboardCopy> |
+| Shadow color in dark mode  | <ClipboardCopy value="--o_shadow-color-dark:">`--o_shadow-color-dark`</ClipboardCopy>   |
+| Shadow color               | <ClipboardCopy value="--o_shadow-color:">`--o_shadow-color`</ClipboardCopy>             |
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;padding-block: 4rem;">
+    <a href="#custom-shadow-color" class="o-btn" style="--o_shadow-strength-light: 100%;--o_ink-shadow-light: none; --o_shadow-color-light: 0 100% 50%; --o_shadow-color-dark: 0 100% 50%;">
+        <span>button</span>
+    </a>
+    <a href="#custom-shadow-color" class="o-btn" style="--o_shadow-strength-light: 100%;--o_ink-shadow-light: none; --o_shadow-color-light: 240deg 100% 50%; --o_shadow-color-dark: 240deg 100% 50%;">
+        <span>button</span>
+    </a>
+    <a href="#custom-shadow-color" class="o-btn" style="--o_shadow-strength-light: 100%;--o_ink-shadow-light: none; --o_shadow-color-light: 120deg 100% 50%; --o_shadow-color-dark: 120deg 100% 50%;">
+        <span>button</span>
+    </a>
+</div>
+    
+    ```css title="Custom shadow color site wide"
+    .o-btn {
+      --o_shadow-color-light: 120deg 100% 50%;
+      --o_shadow-color-dark: 120deg 100% 50%;
+    }
+    ```
+    ```css title="Custom shadow color modifier class"
+    .o-btn-fancy {
+      --o_shadow-color-light: 0 100% 50%;
+      --o_shadow-color-dark: 0 100% 50%;
+    }
+    ```

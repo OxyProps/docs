@@ -1,0 +1,51 @@
+---
+title: Custom Background
+description: How to customize the background of the buttons.
+sidebar:
+  label: Background
+  order: 50
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-background.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-background.png
+---
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+
+The button has a default background color of `var(--o-surface-3)` in dark mode, `var(--o-surface-1)` in light mode. You can change this value by using the following CSS custom properties:
+| description | custom property |
+| --- | --- |
+| Background color in light mode |<ClipboardCopy value="--o_bg-light:">`--o_bg-light`</ClipboardCopy> |
+| Background color in light mode on hover |<ClipboardCopy value="--o_bg-light-hover:">`--o_bg-light-hover`</ClipboardCopy> |
+| Background color in dark mode |<ClipboardCopy value="--o_bg-dark-hover:">`--o_bg-dark-hover`</ClipboardCopy> |
+| Background color in dark mode on hover |<ClipboardCopy value="--o_bg-dark-hover:">`--o_bg-dark-hover`</ClipboardCopy> |
+| Background color |<ClipboardCopy value="--o_bg:">`--o_bg`</ClipboardCopy> |
+
+You can use any valid CSS value for the background, including gradients and images. The second example below shows the use of gradients as background and the third example shows the use of random images as background.
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;padding-block: 4rem;">
+    <a href="#" class="o-btn" style="--o_ink-shadow-light: none; --o_bg-light: forestgreen;--o_bg-light-hover: darkgreen;--o_bg-dark: chocolate;--o_bg-dark-hover: coral;"><span>button</span></a>
+    <a href="#" class="o-btn" style="--o_ink-shadow-light: none; --o_bg-light: var(--o-gradient-1);--o_bg-light-hover: var(--o-gradient-2);--o_bg-dark: var(--o-gradient-30);--o_bg-dark-hover: var(--o-gradient-29);"><span>button</span></a>
+    <a href="#" class="o-btn" style="--o_ink-shadow-light: none; --o_bg-light: url(https://picsum.photos/103/53);--o_bg-light-hover: url(https://picsum.photos/99/49);--o_bg-dark: url(https://picsum.photos/100/50);--o_bg-dark-hover: url(https://picsum.photos/101/51);"><span>button</span></a>
+</div>
+    
+    ```css title="Custom background color site wide"
+    .o-btn {
+      --o_bg-light: forestgreen;
+      --o_bg-light-hover: darkgreen;
+      --o_bg-dark: chocolate;
+      --o_bg-dark-hover: coral;
+    }
+    ```
+    ```css title="Custom background color modifier class"
+    .o-btn-fancy {
+      --o_bg-light: forestgreen;
+      --o_bg-light-hover: darkgreen;
+      --o_bg-dark: url(https://picsum.photos/100/50);
+      --o_bg-dark-hover: coral;
+    }
+    ```

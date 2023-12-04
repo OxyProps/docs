@@ -1,0 +1,52 @@
+---
+title: Custom Font Weight
+description: How to customize the border thickness of the buttons.
+sidebar:
+  label: Font Weight
+  order: 100
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-font-weight.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/custom-font-weight.png
+---
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+
+The button has a default font weight of `--o-font-weight-7` which is a bold text. You can change this value by using the following CSS custom properties:
+
+| description | custom property                                                                     |
+| ----------- | ----------------------------------------------------------------------------------- |
+| Font weight | <ClipboardCopy value="--o_text-font-weight:">`--o_text-font-weight`</ClipboardCopy> |
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center; align-items: center;padding-block: 4rem;">
+  <a
+    href="#custom-font-weight"
+    class="o-btn"
+    style="--o_ink-shadow-light: none; --o_text-font-weight: var(--o-font-weight-4);"
+  >
+    <span>button</span>
+  </a>
+  <a
+    href="#custom-font-weight"
+    class="o-btn"
+    style="--o_ink-shadow-light: none; --o_text-font-weight: var(--o-font-weight-7);"
+  >
+    <span>button</span>
+  </a>
+</div>
+
+```css title="Custom font weight site wide"
+.o-btn {
+  --o_text-font-weight: var(--o-font-weight-4);
+}
+```
+
+```css title="Custom font weight modifier class"
+.o-btn-thin {
+  --o_text-font-weight: var(--o-font-weight-1);
+}
+```

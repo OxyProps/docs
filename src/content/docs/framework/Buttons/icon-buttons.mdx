@@ -1,0 +1,171 @@
+---
+title: Icon Buttons
+description: A complete list of available modifier classes for buttons.
+sidebar:
+  label: Icons
+  order: 30
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/icon-buttons.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/framework/buttons/icon-buttons.png
+---
+
+import { Tabs, TabItem } from "@astrojs/starlight/components";
+import { Image } from "astro:assets";
+import ClipboardCopy from "~/components/ClipboardCopy.astro";
+import iconify from "~/assets/iconify-get-svg-uri.webp";
+import brxstructure from "~/assets/brx-btn-svg-structure.webp";
+import oxystructure from "~/assets/oxy-btn-svg-structure.webp";
+
+You can add icons to your buttons using one of the following options.
+
+## SVG icon
+
+Use a `link wrapper` (Oxygen) or `div` (Bricks), insert your SVG code using a `code block` (Oxygen) or a `code element` (Bricks). Add the `o-btn` class to the container. OxyProps will take care of styling the SVG as the button icon.
+
+<Tabs>
+  <TabItem label="bricks">
+    <Image
+      src={brxstructure}
+      alt="Structure of the button in Bricks."
+      format="avif"
+      quality="mid"
+      width="900"
+      height="450"
+    />
+  </TabItem>
+  <TabItem label="oxygen">
+    <Image
+      src={oxystructure}
+      alt="Structure of the button in Oxygen."
+      format="avif"
+      quality="mid"
+      width="900"
+      height="450"
+    />
+  </TabItem>
+</Tabs>
+
+```html title="Resulting markup"
+<a href="#" class="o-btn">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    width="24px"
+    height="24px"
+  >
+    <path
+      d="M11 17h2v-6h-2v6Zm1-8q.425 0 .713-.288T13 8q0-.425-.288-.713T12 7q-.425 0-.713.288T11 8q0 .425.288.713T12 9Zm0 13q-3.475-.875-5.738-3.988T4 11.1V5l8-3l8 3v6.1q0 3.8-2.263 6.913T12 22Z"
+    />
+  </svg>
+  button
+</a>
+```
+
+<div style="display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;margin-block: 2rem;">
+  <a href="#svg-icon" class="o-btn">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24px"
+      height="24px"
+    >
+      <path d="M11 17h2v-6h-2v6Zm1-8q.425 0 .713-.288T13 8q0-.425-.288-.713T12 7q-.425 0-.713.288T11 8q0 .425.288.713T12 9Zm0 13q-3.475-.875-5.738-3.988T4 11.1V5l8-3l8 3v6.1q0 3.8-2.263 6.913T12 22Z" />
+    </svg>
+    <span>button</span>
+  </a>
+  <a href="#svg-icon" class="o-btn o-btn-outline">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24px"
+      height="24px"
+    >
+      <path d="M11 17h2v-6h-2v6Zm1-8q.425 0 .713-.288T13 8q0-.425-.288-.713T12 7q-.425 0-.713.288T11 8q0 .425.288.713T12 9Zm0 13q-3.475-.875-5.738-3.988T4 11.1V5l8-3l8 3v6.1q0 3.8-2.263 6.913T12 22Z" />
+    </svg>
+    <span>button</span>
+  </a>
+  <a href="#svg-icon" class="o-btn o-btn-outline o-btn-links-gr">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24px"
+      height="24px"
+    >
+      <path d="M11 17h2v-6h-2v6Zm1-8q.425 0 .713-.288T13 8q0-.425-.288-.713T12 7q-.425 0-.713.288T11 8q0 .425.288.713T12 9Zm0 13q-3.475-.875-5.738-3.988T4 11.1V5l8-3l8 3v6.1q0 3.8-2.263 6.913T12 22Z" />
+    </svg>
+    <span>button</span>
+  </a>
+</div>
+
+## CSS icon
+
+### Step 1
+
+Browse the icon library of your choice and copy the URL of the icon you want to use. In this example, we will use the [Iconify](https://icon-sets.iconify.design/) library.
+
+<Image
+  src={iconify}
+  alt="Getting an icon from the Iconify Library."
+  format="avif"
+  quality="mid"
+  width="900"
+  height="450"
+/>
+
+Once you have found your icon:
+
+1. Click the SVG button.
+2. Click the SVG as data: URI button.
+3. Click the copy button to copy the code to your clipboard.
+
+### Step 2
+
+Create a custom CSS rule in your global CSS using the following model. This way, you insert the SVG code once and can reuse it without duplication.
+
+```css
+[data-icon="icon-name"] {
+  --o_data-icon: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M11 17h2v-6h-2v6Zm1-8q.425 0 .713-.288T13 8q0-.425-.288-.713T12 7q-.425 0-.713.288T11 8q0 .425.288.713T12 9Zm0 13q-3.475-.875-5.738-3.988T4 11.1V5l8-3l8 3v6.1q0 3.8-2.263 6.913T12 22Z"%2F%3E%3C%2Fsvg%3E')
+    center / contain no-repeat;
+}
+```
+
+### Step 3
+
+Add the icon to the button by inserting an element with the `data-icon` attribute and the `icon-name` value. This can be a `span` or a `div` element.
+
+```html
+<a href="#" class="o-btn">
+  <span data-icon="icon-name"></span>
+  button
+</a>
+```
+
+<div style="margin-block: 2rem;display: flex; flex-wrap: wrap; column-gap:5rem;row-gap:1rem; width:100%; justify-content: center;">
+  <a href="#css-icon" class="o-btn">
+    <span
+      data-icon
+      style="--o_data-icon: url('https://api.iconify.design/material-symbols/privacy-tip.svg') no-repeat center center / contain;"
+    ></span>
+    <span>button</span>
+  </a>
+  <a href="#css-icon" class="o-btn o-btn-outline" style="">
+    <span
+      data-icon
+      style="--o_data-icon: url('https://api.iconify.design/material-symbols/privacy-tip.svg') no-repeat center center / contain;"
+    ></span>
+    <span>button</span>
+  </a>
+  <a href="#css-icon" class="o-btn o-btn-outline o-btn-links-gr" style="">
+    <span
+      data-icon
+      style="--o_data-icon: url('https://api.iconify.design/material-symbols/privacy-tip.svg') no-repeat center center / contain;"
+    ></span>
+    <span>button</span>
+  </a>
+</div>
