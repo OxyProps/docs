@@ -36,7 +36,13 @@ export default defineConfig({
       head: head,
       customCss: process.env.NO_GRADIENTS
         ? []
-        : ["/src/styles/o-props.css", "/src/fonts/font-face.css"],
+        : [
+            "/src/styles/o-props.css",
+            "@fontsource/atkinson-hyperlegible/400.css",
+            "@fontsource/atkinson-hyperlegible/700.css",
+            "@fontsource/atkinson-hyperlegible/400-italic.css",
+            "@fontsource/atkinson-hyperlegible/700-italic.css",
+          ],
       sidebar: siteNav,
       defaultLocale: "root",
       locales: locales,
@@ -52,11 +58,5 @@ export default defineConfig({
       // This adds rel and icon to external links
       [rehypeExternalLinks, externalLinkConfig],
     ],
-  },
-  // Process images with sharp: https://docs.astro.build/en/guides/assets/#using-sharp
-  image: {
-    service: {
-      entrypoint: "astro/assets/services/sharp",
-    },
   },
 });

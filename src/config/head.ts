@@ -20,44 +20,4 @@ export const head = [
         defer: true,
       },
     },
-    {
-      tag: "link",
-      attrs: {
-        rel: "preload",
-        href: "/fonts/atkinson-hyperlegible-latin-400-normal.woff2",
-        as: "font",
-        type: "font/woff2",
-        crossorigin: true
-      },
-    },
-    {
-      tag: "link",
-      attrs: {
-        rel: "preload",
-        href: "/fonts/atkinson-hyperlegible-latin-400-italic.woff2",
-        as: "font",
-        type: "font/woff2",
-        crossorigin: true
-      },
-    },
-    {
-      tag: "link",
-      attrs: {
-        rel: "preload",
-        href: "/fonts/atkinson-hyperlegible-latin-700-normal.woff2",
-        as: "font",
-        type: "font/woff2",
-        crossorigin: true
-      },
-    },
-    {
-      tag: "link",
-      attrs: {
-        rel: "preload",
-        href: "/fonts/atkinson-hyperlegible-latin-700-italic.woff2",
-        as: "font",
-        type: "font/woff2",
-        crossorigin: true
-      },
-    },
   ];
