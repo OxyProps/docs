@@ -1,0 +1,112 @@
+---
+title: Tutorial - Template for the future
+description: >-
+  Create simple tutorials to help people use o-props.
+sidebar:
+  order: 1
+  label: Tutorial Template
+---
+
+import BuilderTabs from "~/components/tabs/BuilderTabs.astro";
+import Box from "~/components/tutorial/Box.astro";
+import MultipleChoice from "~/components/tutorial/MultipleChoice.astro";
+import Option from "~/components/tutorial/Option.astro";
+import Spoiler from "~/components/Spoiler.astro";
+import PreCheck from "~/components/tutorial/PreCheck.astro";
+
+**Tutorials** are probably a good way to learn about o-props. This templates includes the base components so I can create tutorials for you in the future.
+
+<PreCheck>
+  - Learn about o-props CSS framework - Try all o-props feaetures in the browser
+  - Create you own cutom CSS using the most modern tools - Create your custom
+  elements using o-props
+</PreCheck>
+
+## Prerequisites
+
+You will need **an existing WordPress weebsite with either Bricks or Oxygen installed, and o-props lates version installed and activated.**.
+
+<Box icon="question-mark">
+### Test your knowledge
+
+1. Adding o-props to my WordPress site...
+
+   <MultipleChoice>
+     <Option>Requires a lot of code to implement</Option>
+     <Option isCorrect>
+       Gives you out-of-the box styling for all your WordPress elements
+     </Option>
+     <Option>Does not work with Oxygen</Option>
+   </MultipleChoice>
+
+2. Which is **not** a benefit of o-props?
+
+   <MultipleChoice>
+     <Option isCorrect>
+       Sending a lot of JavaScript to the browser for client-side rendering
+     </Option>
+     <Option>
+       Supporting by default all user preferences like color scheme, prefers
+       reduced motion, prefers reduced data, etc.
+     </Option>
+     <Option>Giving you access to all the latest CSS features</Option>
+   </MultipleChoice>
+
+3. The o-props framework...
+   <MultipleChoice>
+     <Option>Requires me to learn a new CSS syntax</Option>
+     <Option>Is not ready for production sites</Option>
+     <Option isCorrect>
+       Includes fallback behavior for browsers that do not yet fully support
+       most modern CSS features
+     </Option>
+   </MultipleChoice>
+
+</Box>
+
+### Builder Tabs are also available
+
+This is how to perform a task in Bricks, and in Oxygen:
+
+<BuilderTabs>
+  <Fragment slot="bricks">
+    <p>Do this in Bricks</p>
+  </Fragment>
+  <Fragment slot="oxygen">
+    <p>Do this in Oxygen</p>
+  </Fragment>
+</BuilderTabs>
+
+:::tip[Asides]
+Asides allow highlighting a specific idea.
+:::
+
+### And puzzles
+
+<Box icon="puzzle-piece">
+  ### Try it yourself - Create a Card component
+
+  Create a custom class that will style your card component.
+
+  <details>
+  <summary>Show me the solution.</summary>
+  ```css title=".c-card" ins='transition:animate="slide"'
+  .c-card {
+    background-color: var(--o-color-background);
+    border-radius: var(--o-border-radius);
+    box-shadow: var(--o-box-shadow);
+    padding: var(--o-space-2);
+    transition: var(--o-transition);
+  }
+  ```
+  </details>
+</Box>
+
+### And spoilers
+
+<Box icon="puzzle-piece">
+  ### Try it yourself - Create a Card component
+
+  This is a descriptive text but part of it is hidden. Try to <Spoiler>guess the answer</Spoiler> and then <Spoiler>click on the button to reveal it</Spoiler>.
+
+</Box>

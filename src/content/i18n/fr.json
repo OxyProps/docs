@@ -1,3 +1,21 @@
 {
-    
+  "checklist.or": "ou",
+
+  "expressiveCode.copyButtonCopied": "Copié !",
+  "expressiveCode.copyButtonTooltip": "Copier vers le presse papier",
+  "expressiveCode.terminalWindowFallbackTitle": "Fenêtre du Terminal",
+
+  "multipleChoice.defaultCorrect": "Correct !",
+  "multipleChoice.defaultIncorrect": "Réessayer !",
+  "multipleChoice.submitLabel": "Envoyer",
+  
+  "progress.todo": "À faire",
+  "progress.done": "Terminer",
+
+  "sidebarBanner.title": "Envie d’essayer o-props ?",
+  "sidebarBanner.description": "Obtenez votre license pour démarrer.",
+  
+  "tutorial.trackerLabel": "Suivi du tutoriel",
+  "tutorial.unit": "Unité",
+  "tutorial.getReady": "Préparez-vous à…"
 }

@@ -1,0 +1,12 @@
+---
+import { getTranslations } from "~/utils";
+
+const { slug } = Astro.params;
+const labels = getTranslations(slug);
+
+export interface Props {
+	key: keyof typeof labels;
+}
+---
+
+{labels[Astro.props.key]}

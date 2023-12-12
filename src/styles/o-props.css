@@ -1,4 +1,8 @@
 @import "./animations.css";
+@import "@thewebforge/o-props-tokens/dist/o-props.min.css";
+@import "@thewebforge/o-props-tokens/dist/o-props.colors-oklch.min.css";
+@import "@thewebforge/o-props-tokens/dist/o-props.colors-oklch-hues.min.css";
+@import "./starlight-overrides.css";
 
 ::selection {
   background-color: var(--sl-color-accent-high) !important;
@@ -8,7 +12,6 @@
 :root {
   --purple-hsl: 255, 60%, 60%;
   --overlay-blurple: hsla(var(--purple-hsl), 0.2);
-  --sl-hue-accent: var(--sl-hue-purple);
   --sl-font: "Atkinson Hyperlegible", sans-serif;
 }
 
@@ -65,16 +68,17 @@ a.anchor-link {
   backdrop-filter: blur(16px);
 }
 
-[data-has-hero] .hero > img {
+[data-has-hero] .hero-html > svg {
   filter: drop-shadow(0 0 3rem var(--overlay-blurple));
 }
 
 /* Home page Banner */
 
 [data-has-hero] .sl-banner {
-  --sl-color-banner-bg: rebeccapurple;
-  --sl-color-banner-text: #fff;
-  border-block: 1px solid #fff8;
+  --sl-color-banner-bg: transparent;
+  --sl-color-banner-bg: oklch(from var(--sl-color-accent-high) l c h / 0.1);
+  --sl-color-banner-text: var(--sl-color-white);
+  border-block: 1px solid var(--sl-color-accent-high);
   padding-block: 0;
   overflow: hidden;
 }
@@ -87,47 +91,47 @@ a.anchor-link {
   }
 }
 
-.ph-banner {
+.landing-banner {
   display: flex;
   align-items: center;
   gap: 1rem;
   font-size: clamp(1rem, calc(0.75rem + 1vw), 1.65rem);
 }
-.ph-houston {
+.landing-propsy {
   padding-block: 0.25rem;
 }
-.ph-text {
+.landing-text {
   display: flex;
   flex-direction: column;
   gap: 0.25rem 1rem;
   text-align: start;
   padding-block: var(--sl-nav-pad-y);
 }
-.ph-text strong {
+.landing-text strong {
   font-weight: 700;
 }
 
 @media (min-width: 23em) {
-  .ph-banner {
+  .landing-banner {
     justify-content: center;
   }
 
-  .ph-houston img {
+  .landing-propsy svg {
     vertical-align: middle;
   }
 }
 
 @media (min-width: 40em) {
-  .ph-banner {
+  .landing-banner {
     gap: 3.5rem;
   }
-  .ph-houston {
+  .landing-propsy {
     padding: 0;
   }
-  .ph-houston img {
-    scale: 1.45;
+  .landing-propsy svg {
+    scale: 1.15;
   }
-  .ph-text {
+  .landing-text {
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -210,13 +214,13 @@ a.anchor-link {
   border-start-start-radius: 5px;
   border-start-end-radius: 5px;
 }
-.hero > img {
+.hero-html > svg {
   transition:
     rotate 0.5s ease,
     scale 0.5s ease;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .hero > img:hover {
+  .hero-html > svg:hover {
     rotate: 3deg;
     scale: 1.05;
     cursor: cell;

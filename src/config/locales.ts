@@ -1,7 +1,6 @@
 export const locales = {
-    root: {
+    en: {
       label: "English",
-      lang: "en",
     },
     fr: {
       label: "Français",

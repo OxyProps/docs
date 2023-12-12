@@ -1,0 +1,74 @@
+---
+import PropsyIcon from "~/icons/PropsyIcon";
+import PropsyHappyIcon from "~/icons/PropsyHappyIcon";
+import UIString from "./UIString.astro";
+---
+
+<aside class="not-content">
+  <div>
+    <a href="https://oxyprops.com/">
+      <h2><UIString key="sidebarBanner.title" /></h2>
+    </a>
+    <p>
+      <UIString key="sidebarBanner.description" /> <b>→</b>
+    </p>
+  </div>
+  <div>
+    <PropsyIcon width="180" className="" />
+    <PropsyHappyIcon width="180" className="happy" />
+  </div>
+</aside>
+
+<style>
+  aside {
+    margin: 1rem 0;
+    position: relative;
+    background-color: var(--sl-color-gray-6);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    border: 1px solid var(--sl-color-text-accent);
+    box-shadow: var(--sl-shadow-md);
+    overflow-y: hidden;
+  }
+  aside a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+  }
+  aside h2 {
+    font-size: var(--sl-text-lg) !important;
+  }
+  aside p {
+    font-size: var(--sl-text-sm) !important;
+    line-height: normal;
+  }
+  aside > div:last-child {
+    display: flex;
+    align-items: end;
+  }
+  aside svg {
+    margin-bottom: -1rem;
+    translate: 0px 5px;
+    width: 5.5rem;
+    height: auto;
+    transition:
+      rotate 0.5s ease,
+      translate 0.5s ease,
+      scale 0.5s ease;
+    &.happy {
+      display: none;
+    }
+  }
+  aside:hover svg {
+    @media (prefers-reduced-motion: no-preference) {
+      translate: 0px;
+      rotate: 5deg;
+      scale: 1.1;
+    }
+    display: none;
+    &.happy {
+      display: block;
+    }
+  }
+</style>

@@ -1,0 +1,50 @@
+/* Dark mode colors. */
+:root {
+  --o-color-hue: var(--o-hue-green);
+  --sl-color-accent-low: var(--o-color-12);
+  --sl-color-accent-low: oklch(from var(--o-color-bright) 15% c h);
+  --sl-color-accent: var(--o-color-bright);
+  --sl-color-accent-high: var(--o-color-5);
+  --sl-color-accent-high: oklch(from var(--o-color-bright) 65% c h);
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: var(--o-gray-0);
+  --sl-color-gray-2: var(--o-gray-2);
+  --sl-color-gray-3: var(--o-gray-4);
+  --sl-color-gray-4: var(--o-gray-6);
+  --sl-color-gray-5: var(--o-gray-8);
+  --sl-color-gray-6: var(--o-gray-10);
+  --sl-color-black: var(--o-gray-12);
+}
+* {
+  --sl-color-accent-low: var(--o-color-12);
+  --sl-color-accent-low: oklch(from var(--o-color-bright) 15% c h);
+  --sl-color-accent: var(--o-color-bright);
+  --sl-color-accent-high: var(--o-color-5);
+  --sl-color-accent-high: oklch(from var(--o-color-bright) 65% c h);
+}
+/* Light mode colors. */
+:root[data-theme="light"] {
+  --sl-color-accent-low: var(--o-color-5);
+  --sl-color-accent-low: oklch(from var(--o-color-bright) 90% c h);
+  --sl-color-accent: var(--o-color-bright);
+  --sl-color-accent: oklch(from var(--o-color-bright) 55% c h);
+  --sl-color-accent-high: var(--o-color-12);
+  --sl-color-accent-high: oklch(from var(--o-color-bright) 45% c h);
+  --sl-color-white: var(--o-gray-12);
+  --sl-color-gray-1: var(--o-gray-10);
+  --sl-color-gray-2: var(--o-gray-8);
+  --sl-color-gray-3: var(--o-gray-6);
+  --sl-color-gray-4: var(--o-gray-4);
+  --sl-color-gray-5: var(--o-gray-2);
+  --sl-color-gray-6: var(--o-gray-1);
+  --sl-color-gray-7: var(--o-gray-0);
+  --sl-color-black: #ffffff;
+}
+[data-theme="light"] * {
+  --sl-color-accent-low: var(--o-color-2);
+  --sl-color-accent-low: oklch(from var(--o-color-bright) 99.5% 0.02 h);
+  --sl-color-accent: var(--o-color-bright);
+  --sl-color-accent: oklch(from var(--o-color-bright) 55% c h);
+  --sl-color-accent-high: var(--o-color-12);
+  --sl-color-accent-high: oklch(from var(--o-color-bright) 45% c h);
+}

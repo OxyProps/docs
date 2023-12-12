@@ -3,9 +3,9 @@ export const siteNav = [
   {
     label: "Start Here",
     translations: {
-      fr: "Débutez ici",
+      fr: "Commencer ici",
     },
-    collapsed: true,
+    collapsed: false,
     autogenerate: {
       directory: "start-here",
     },
@@ -13,11 +13,21 @@ export const siteNav = [
   {
     label: "Core Concepts",
     translations: {
-      fr: "Concepts de base",
+      fr: "Concepts fondamentaux",
     },
-    collapsed: true,
+    collapsed: false,
     autogenerate: {
       directory: "core-concepts",
+    },
+  },
+  {
+    label: "Tutorials",
+    translations: {
+      fr: "Tutoriels",
+    },
+    collapsed: false,
+    autogenerate: {
+      directory: "tutorials",
     },
   },
   {
@@ -25,7 +35,7 @@ export const siteNav = [
     translations: {
       fr: "Fonctionnalités",
     },
-    collapsed: true,
+    collapsed: false,
     autogenerate: {
       directory: "features",
     },
@@ -35,7 +45,7 @@ export const siteNav = [
     translations: {
       fr: "Framework CSS",
     },
-    collapsed: true,
+    collapsed: false,
     autogenerate: {
       directory: "framework",
     },
@@ -45,7 +55,7 @@ export const siteNav = [
     translations: {
       fr: "Référence (Cheatsheet)",
     },
-    collapsed: true,
+    collapsed: false,
     autogenerate: {
       directory: "cheatsheet",
     },

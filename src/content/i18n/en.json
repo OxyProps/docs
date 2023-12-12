@@ -1,0 +1,21 @@
+{
+  "checklist.or": "or",
+  
+  "expressiveCode.copyButtonCopied": "Copied!",
+  "expressiveCode.copyButtonTooltip": "Copy to clipboard",
+  "expressiveCode.terminalWindowFallbackTitle": "Terminal window",
+
+  "multipleChoice.defaultCorrect": "Correct!",
+  "multipleChoice.defaultIncorrect": "Try again!",
+  "multipleChoice.submitLabel": "Submit",
+
+  "progress.done": "Complete",
+  "progress.todo": "To-do",
+
+  "sidebarBanner.title": "Want to try o-props?",
+  "sidebarBanner.description": "Grab your license to get started.",
+
+  "tutorial.getReady": "Get ready to…",
+  "tutorial.trackerLabel": "Tutorial Tracker",
+  "tutorial.unit": "Unit"
+}
