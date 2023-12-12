@@ -1,3 +1,16 @@
+## v0.3.0 (2023-12-13)
+
+### Feat
+
+- **all**: big refactor - tutorials support
+- **deps**: bump deps mainly Astro to v4
+- **buttons**: more readable docs
+- **buttons**: upgrade buttons page to latest components
+
+### Fix
+
+- **buttons**: add og image to frontmatter
+
 ## v0.2.0 (2023-09-11)
 
 ## v0.1.0 (2023-08-02)
