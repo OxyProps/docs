@@ -1,3 +1,9 @@
+## v0.3.1 (2023-12-13)
+
+### Fix
+
+- **PreCheck**: fix filename case
+
 ## v0.3.0 (2023-12-13)
 
 ### Feat
