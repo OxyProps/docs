@@ -1,3 +1,9 @@
+## v0.3.2 (2023-12-13)
+
+### Fix
+
+- **index**: fix import path casing
+
 ## v0.3.1 (2023-12-13)
 
 ### Fix
