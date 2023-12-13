@@ -1,0 +1,105 @@
+---
+title: Documentation o‑props
+description: Toute la documention pour o‑props, le compagnon ultime pour votre constructeur de sites web.
+template: splash
+banner:
+  content: |
+    <span class="landing-banner">
+      <span class="landing-propsy">
+        <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill-rule="evenodd"
+        stroke-linejoin="round"
+        stroke-miterlimit="2"
+        clip-rule="evenodd"
+        height="72"
+        viewBox="0 0 800 400"
+        >
+          <path
+            fill="var(--sl-color-white)"
+            d="M680 200a25 25 0 0 0 25 25h70a25 25 0 0 0 0-50h-70a25 25 0 0 0-25 25ZM0 200a25 25 0 0 0 25 25h70a25 25 0 0 0 0-50H25a25 25 0 0 0-25 25ZM425 200a25 25 0 1 0-50 0 25 25 0 0 0 50 0ZM450 200a100 100 0 0 1 200 0h-50a50 50 0 0 0-100 0h-50ZM150 200a100 100 0 0 1 200 0h-50a50 50 0 0 0-100 0h-50ZM260.5 343.3a200.3 200.3 0 0 1-48.8-75.8H266A150.9 150.9 0 0 0 400 350a150.8 150.8 0 0 0 134-82.5h54.3A200.4 200.4 0 0 1 400 400a199.3 199.3 0 0 1-139.5-56.7Zm12.6-297.9A199.1 199.1 0 0 1 400 0c51.2 0 97.9 19.3 133.3 51A149 149 0 0 0 475 70a149.2 149.2 0 0 0-144.5-3A149 149 0 0 0 273 45.5Z"
+          />
+        </svg>
+      </span>
+      <span class="landing-text">
+        <strong>o-props 1.11.2 est disponible!&nbsp;✨</strong>
+        <a href="/en/history/changelog/#v1112-2023-08-01">En savoir plus ›</a>
+      </span>
+    </span>
+hero:
+  tagline: OxyProps, BricksProps, bienvue sur le site de documentation o-props ! Vous trouverez tout ce dont vous avez besoin pour construire des sites web stratospériques avec o-props et votre constructeur de sites favori. o-props est rapide, accessible, et facile à utiliser.
+  image:
+    html: |
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill-rule="evenodd"
+        stroke-linejoin="round"
+        stroke-miterlimit="2"
+        clip-rule="evenodd"
+        width="100%"
+        viewBox="0 0 800 400"
+        >
+        <path
+          fill="var(--sl-color-white)"
+          d="M680 200a25 25 0 0 0 25 25h70a25 25 0 0 0 0-50h-70a25 25 0 0 0-25 25ZM0 200a25 25 0 0 0 25 25h70a25 25 0 0 0 0-50H25a25 25 0 0 0-25 25ZM425 200a25 25 0 1 0-50 0 25 25 0 0 0 50 0ZM450 200a100 100 0 0 1 200 0h-50a50 50 0 0 0-100 0h-50ZM150 200a100 100 0 0 1 200 0h-50a50 50 0 0 0-100 0h-50ZM260.5 343.3a200.3 200.3 0 0 1-48.8-75.8H266A150.9 150.9 0 0 0 400 350a150.8 150.8 0 0 0 134-82.5h54.3A200.4 200.4 0 0 1 400 400a199.3 199.3 0 0 1-139.5-56.7Zm12.6-297.9A199.1 199.1 0 0 1 400 0c51.2 0 97.9 19.3 133.3 51A149 149 0 0 0 475 70a149.2 149.2 0 0 0-144.5-3A149 149 0 0 0 273 45.5Z"
+        />
+      </svg>
+  actions:
+    - text: Guide de Démarrage
+      link: /fr/start-here/quick-start-guide/
+      icon: rocket
+      variant: primary
+    - text: Besoin d’une licence ?
+      variant: secondary
+      link: https://oxyprops.com
+      icon: external
+    - text: Parcourir la doc
+      variant: minimal
+      link: /en/introduction/
+      icon: right-arrow
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/fr.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/fr.png
+---
+
+import { CardGrid } from "@astrojs/starlight/components";
+import Card from '~/components/landing/Card.astro'
+import ListCard from '~/components/landing/ListCard.astro'
+import SplitCard from '~/components/landing/SplitCard.astro'
+import Facebook from '~/components/landing/Facebook.astro'
+
+<CardGrid>
+    <Card title="Qu'allez-vous construire avec o‑props ?" icon="laptop">
+    Parcourez les [fonctionnalités o‑props](https://oxyprops.com) pour créer blogs, portfolios, docs, pages d’atterrissage, pages marketing, sites ecommerce, et bien plus !
+  </Card>
+
+  <Card title="Profitez d’une visite guidée" icon="star">
+    Suivez notre [tutoriel](/en/tutorials/tutorial-test/) de présentation pour apprendre les bases et créer votre premier site web avec o‑props.
+  </Card>
+
+    <SplitCard title="Démarrez un nouveau projet" icon="rocket">
+    ```sh
+    # créez un nouveau projet avec valet et wp cli
+    sh wpcrbr.sh o-props-training
+    ```
+    
+    Notre [guide de démarrage rapide](fr/start-here/quick-start-guide/) contient les instructions pas à pas pour installer o‑props et le configurer pour votre premier projet.
+  </SplitCard>
+
+  <ListCard title="Apprendre" icon="open-book">
+    - [Principales fonctionnalités d’o‑props](/fr/core-concepts/why-o-props/)
+    - [Propriétés personnalisées CSS](/fr/core-concepts/css-custom-properties/)
+  </ListCard>
+
+  <ListCard title="Aller plus loin" icon="puzzle">
+    - [Être plus efficace avec Emmet dans Oxygen](fr/features/better-oxygen-emmet/)
+    - [Personnaliser les composants](/fr/framework/buttons/modifiers/)
+  </ListCard>
+</CardGrid>
+<Facebook title="Une question ou envie de discuter ?" cta="Rejoignez notre Groupe Facebook"/>
