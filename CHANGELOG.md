@@ -1,3 +1,15 @@
+## v0.4.0 (2024-02-09)
+
+### Feat
+
+- **cli**: add cli and bump plugin to v1.12
+- **fr/index**: add french version of index
+
+### Fix
+
+- **en/index**: fix og image link
+- **index**: fix import path casing
+
 ## v0.3.2 (2023-12-13)
 
 ### Fix
