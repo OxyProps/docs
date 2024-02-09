@@ -1,0 +1,55 @@
+---
+title: Framework
+description: Framework global preferences are set in the customizer Framework tab.
+sidebar:
+  order: 10
+  hidden: true
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/customizer/framework.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/customizer/framework.png
+---
+
+## Root Selector
+
+You can customize the top level selector where main styles will be applied. Most props will be defined at this level, as well as basic styles like the default background color.
+
+You can choose from the following options:
+
+- `html`
+- `:root`
+- `body`
+
+## Layers and Specificity
+
+### Use CSS layer
+
+Cascade layers are most relevant when you’re working with CSS from multiple sources when there are conflicting CSS selectors and competing specificities, which is often the case when working in WordPress.
+
+:::caution[CSS Layers]
+Any styles not in a layer are gathered together and placed into a single anonymous layer that comes after all the declared layers, named and anonymous. This means that any styles declared outside of a layer will override styles declared in a layer, regardless of specificity.
+
+Currently, neither Bricks nor Oxygen use CSS layers. 3rd party plugins also rarely use CSS layers, this means that their CSS will take precedence over o-props styles when using `@layers`.
+:::
+
+### Wrap in `:where()`
+
+The `:where()` function is part of the CSS Selectors Level 4 specification and is used to group multiple selectors together. It's designed to improve selector performance and readability.
+
+By default, o-props uses the `:where()` function to wrap all CSS selectors. It takes advantage of a particularity of the `:where()` function that cancels the selectors natural specificity. This way, all o-props selectors have a specificity of (0, 0, 0) so it is easy for you to override any CSS rule with your own CSS.
+
+If you want to disable the `:where()` function, you can do so in the Framework tab of the customizer.
+
+## Custom Framework Prefix
+
+You can define a custom framework prefix if you need to avoid conflicts with other CSS. Don’t modify it once you started using o-props classes and props as it can’t scan your website and database to update the prefix on each occurence.
+
+Custom Framework Prefix
+You can define a custom framework prefix if you need to avoid conflicts with other CSS. Don’t modify it once you started using o-props classes and props as it can’t scan your website and database to update the prefix on each occurence.
+
+Keep the prefix short and simple. The prefix can be up to 3 characters and must contain only letters and numbers.

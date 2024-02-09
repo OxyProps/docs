@@ -4,7 +4,7 @@ import docs from "~/assets/logos/docs.svg?raw";
 import { pathWithBase } from "@nm/@astrojs/starlight/utils/base";
 import type { Props } from "@astrojs/starlight/props";
 
-const href = pathWithBase((Astro.props.locale || "") + "/introduction/");
+const href = pathWithBase(Astro.props.locale || "");
 ---
 
 <span class="site-title sl-flex">

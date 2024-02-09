@@ -1,0 +1,219 @@
+---
+title: Download Tokens
+description: o-props let you export your props in several format so you can use them anywhere.
+sidebar:
+  hidden: true
+  order: 40
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/settings/download-tokens.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/settings/download-tokens.png
+---
+
+import Figure from "~/components/Figure.astro";
+import { Picture } from "astro:assets";
+import figmaTokens from "~/assets/op-figma-tokens.png";
+import figmaTokens1 from "~/assets/op-figmatokens-step1.png";
+import figmaTokens2 from "~/assets/op-figmatokens-step2.png";
+import figmaTokens3 from "~/assets/op-figmatokens-step3.png";
+import figmaTokens4 from "~/assets/op-figmatokens-step4.png";
+import figmaTokens5 from "~/assets/op-figmatokens-step5.png";
+import figmaTokens6 from "~/assets/op-figmatokens-step6.png";
+import figmaTokensSync5 from "~/assets/op-figmatokenssync-step5.png";
+import figmaTokensSync6 from "~/assets/op-figmatokenssync-step6.png";
+import figmaTokensSync7 from "~/assets/op-figmatokenssync-step7.png";
+
+## Figma Tokens
+
+o-props makes it extremely easy to export your tokens to Figma when you use [Tokens Studio](https://tokens.studio/). Tokens Studio for Figma is a Figma plugin allowing you to integrate Tokens into your Figma designs.
+
+You can use either the Free or Pro version of Tokens Studio with o-props tokens. To install the plugin, go to the [Tokens Studio website](https://docs.tokens.studio/getting-started#installing-the-plugin) and follow the instructions.
+
+<Figure
+  src={figmaTokens}
+  width="900"
+  height="506"
+  formats={["avif", "webp"]}
+  alt="Screenshot of a design in the figma application. A heading is styled using the tokens from the o-props library."
+  caption="In Figma, styling a heading with the o-props library and Tokens Studio."
+/>
+
+There are 2 options to export your tokens to Tokens Studio:
+
+### Figma Tokens
+
+The first option is to export your tokens to Figma Tokens. This is the default option and the one we recommend for one time usage. It will create a new Figma file with all your tokens. You can then import this file in Tokens Studio for Figma.
+
+1. Click on the **Download Figma Tokens** button in your o-props dashboard.
+
+<Picture
+  src={figmaTokens1}
+  width="900"
+  height="506"
+  formats={["avif", "webp"]}
+  alt="Screenshot of the o-props dashbord highlighting the Download Figma Tokens button."
+/>
+
+2. In Figma, open the plugins tab and launch **Tokens Studio for Figma**.
+
+<Picture
+  src={figmaTokens2}
+  width="900"
+  height="506"
+  formats={["avif", "webp"]}
+  alt="Screenshot of the o-props dashbord highlighting the Download Figma Tokens button."
+/>
+3. If this is your first use in this design, choose **New Empty File**.
+
+<Picture
+  src={figmaTokens3}
+  width="900"
+  height="506"
+  formats={["avif", "webp"]}
+  alt="Screenshot of the o-props dashbord highlighting the Download Figma Tokens button."
+/>
+
+4. If you wish, you can safely delete the **Global** Set that was created by default. To do so, right click on it and choose delete.
+
+<Picture
+  src={figmaTokens4}
+  width="900"
+  height="506"
+  formats={["avif", "webp"]}
+  alt="Screenshot of the o-props dashbord highlighting the Download Figma Tokens button."
+/>
+5. To import your tokens, click **Tools** at the bottom left. Then click **Load from file/folder or preset** and select the JSON file you downloaded.
+
+<Picture
+  src={figmaTokens5}
+  width="900"
+  height="506"
+  formats={["avif", "webp"]}
+  alt="Screenshot of the o-props dashbord highlighting the Download Figma Tokens button."
+/>
+
+6. Congrats! Your Props (tokens) are now available for your design in Figma!
+
+<Picture
+  src={figmaTokens6}
+  width="900"
+  height="506"
+  formats={["avif", "webp"]}
+  alt="Screenshot of the o-props dashbord highlighting the Download Figma Tokens button."
+/>
+
+Learn more about using your props on the [Tokens Studio website](https://docs.tokens.studio/tokens/applying-tokens).
+
+### Figma Tokens Sync
+
+The second option is to export your tokens to Figma Tokens Sync. This option is also available with the free version of Tokens Studio! It will create a new Figma file with all your tokens and will keep it in sync with your o-props tokens. This is the option we recommend if you want to keep your tokens in sync with your o-props tokens.
+
+:::note
+The Figma Tokens Sync feature is read only. The sync is one way, from your website to figma. You can’t edit your o-props tokens from Figma.
+:::
+
+1. Click on the **Copy the Sync URL** button in your o-props dashboard to copy the URL to your clipboard.
+2. In Figma, open the plugins tab and launch **Tokens Studio for Figma**.
+
+<Picture
+  src={figmaTokens2}
+  width="900"
+  height="506"
+  formats={["avif", "webp"]}
+  alt="Screenshot of the o-props dashbord highlighting the Download Figma Tokens button."
+/>
+
+3. If this is your first use in this design, choose **New Empty File**.
+
+<Picture
+  src={figmaTokens3}
+  width="900"
+  height="506"
+  formats={["avif", "webp"]}
+  alt="Screenshot of the o-props dashbord highlighting the Download Figma Tokens button."
+/>
+
+4. If you wish, you can safely delete the **Global** Set that was created by default. To do so, right click on it and choose delete.
+
+<Picture
+  src={figmaTokens4}
+  width="900"
+  height="506"
+  formats={["avif", "webp"]}
+  alt="Screenshot of the o-props dashbord highlighting the Download Figma Tokens button."
+/>
+
+5. Click the **Settings** tab at the top of the **Tokens Studio for Figma** popup.
+
+<Picture
+  src={figmaTokensSync5}
+  width="900"
+  height="506"
+  formats={["avif", "webp"]}
+  alt="Screenshot of the o-props dashbord highlighting the Download Figma Tokens button."
+/>
+
+6. Under **Sync Providers**, select **URL** from the dropdomn menu.
+
+<Picture
+  src={figmaTokensSync6}
+  width="900"
+  height="506"
+  formats={["avif", "webp"]}
+  alt="Screenshot of the o-props dashbord highlighting the Download Figma Tokens button."
+/>
+
+7. Choose a name for your sync and paste the URL you copied from o-props in the **URL** field. Then click the **Save** button.
+
+<Picture
+  src={figmaTokensSync7}
+  width="900"
+  height="506"
+  formats={["avif", "webp"]}
+  alt="Screenshot of the o-props dashbord highlighting the Download Figma Tokens button."
+/>
+
+8. Congrats! Your Props (tokens) are now available for your design in Figma and will keep in Sync with your website!
+
+<Picture
+  src={figmaTokens6}
+  width="900"
+  height="506"
+  formats={["avif", "webp"]}
+  alt="Screenshot of the o-props dashbord highlighting the Download Figma Tokens button."
+/>
+
+## Design Tokens
+
+The [Design Tokens Community Group's](https://www.w3.org/community/design-tokens/) goal is to provide standards upon which products and design tools can rely for sharing stylistic pieces of a design system at scale.
+
+Thay have released the [Second Editors’ Draft](https://second-editors-draft.tr.designtokens.org/format/) for their Design Tokens Format Module. As stated in the document, this “is not a W3C Standard nor is it on the W3C Standards Track”.
+
+However, we think it is a great starting point for a standard format for design tokens, and are offering to export your props in this format.
+
+
+
+## Style Dictionary
+
+Transform your design tokens using [Style Dictionary](https://amzn.github.io/style-dictionary/#/). Style Dictionary is a build system that allows you to define styles in a way for any platform or language to consume.
+
+Download your tokens in the Style Dictionary format to use them in your build system.
+
+```sh
+npm install style-dictionary
+```
+
+Tokens Studio also offers a transform package for Style Dictionary.
+
+```sh
+npm install @tokens-studio/sd-transforms
+```
+
+You can also try these online UIs:
+- [Style Dictionary playground](https://www.style-dictionary-play.dev/)
+- [Tokens Studio Configurator](https://configurator.tokens.studio/)

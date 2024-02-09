@@ -1,0 +1,705 @@
+---
+title: CSS Processor
+description: Settings you can find in the CSS Processor tab of the Settings page in the o-props dashboard.
+sidebar:
+  hidden: true
+  order: 20
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/settings/css-processor.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/settings/css-processor.png
+---
+
+import { Image } from "astro:assets";
+import cssProcessor from "~/assets/op-db-css-processor.png";
+
+o-props v2.0 comes with a powerful built-in CSS processor that processes and optimizes your o-props framework CSS in real time. The CSS processor is enabled by default and you can find its settings in the CSS Processor tab of the Settings page in the o-props dashboard.
+
+<Image
+  src={cssProcessor}
+  alt="Screenshot of the o-props CSS Processor settigns page showing a list of availble options."
+  format="avif"
+  quality="mid"
+  width="900"
+  height="450"
+/>
+
+:::tip[Dev / Prod]
+Code Processing and Optimization is a process parsing your entires CSS to analyze, transform, and remove unnecessary items. It can be ressources intensive.  
+I suggest you to disable Optimization features while you are working on your project and enable it when you are ready to deploy your website.
+:::
+
+## Advanced CSS
+
+o-props CSS processor includes polyfills that let you use next generation CSS features today. You can enable or disable each feature individually.
+
+### Custom Media Queries
+
+This option lets you define `@custom-media` in your CSS following the Custom Media Specification. This option is mandatory as it is widely used by the framework itself.
+
+You can use o-props predefined custom media queries in your custom stylesheets, or ad your own, either by extending the Custom Media Queries Pack, or by defining them directly in your custom stylesheets.
+
+```css title="A Custom Media Query from o-props presets"
+@custom-media --o-portrait (orientation: portrait);
+@custom-media --o-xxs-only (0px <= width <= 240px);
+@custom-media --o-xxs-phone (--o-xxs-only) and (--o-portrait);
+```
+
+```css title="Before"
+/* I want my color to be red for all devices, except for phones */
+.c-my-class {
+  color: var(--o-red-5);
+}
+@media (--o-xxs-phone) {
+  .c-my-class {
+    color: var(--o-green-5);
+  }
+}
+```
+
+```css title="After"
+.c-my-class {
+  color: var(--o-red-5);
+}
+@media (0px <= width <= 240px) and (orientation: portrait) {
+  .c-my-class {
+    color: var(--o-green-5);
+  }
+}
+```
+
+### Custom Selectors
+
+Lets you define `@custom-selector` in your CSS following the Custom Selectors Specification. This option is mandatory as it is widely used by the framework.
+
+```css title="A Custom Selector from o-props presets"
+@custom-selector :--o-heading h1, h2, h3, h4, h5, h6;
+```
+
+```css title="Before"
+/* I want my color to be red for all headings */
+:--o-heading {
+  color: var(--o-red-5);
+}
+```
+
+```css title="After"
+:is(h1, h2, h3, h4, h5, h6) {
+  color: var(--o-red-5);
+}
+```
+
+### Nested Rules
+
+Lets you nest style rules and `@rules` inside each other. Not exacltly following the CSS Nesting specification to achieve, for example, B.E.M. like naming.
+
+```css title="Before"
+/* Let's create a component using B.E.M. syntax */
+
+.c-my-component {
+  color: var(--o-red-7);
+  /* As you can see, we can also nest custom media queries */
+  @media (--o-OSdark) {
+    color: var(--o-red-3);
+  }
+  &__title {
+    color: var(--o-green-7);
+    @media (--o-OSdark) {
+      color: var(--o-green-3);
+    }
+    &--highlighted {
+      background-color: var(--o-yellow-2);
+      @media (--o-OSdark) {
+        background-color: var(--o-yellow-9);
+      }
+    }
+  }
+  &__subtitle {
+    color: var(--o-green-5);
+    @media (--o-OSdark) {
+      color: var(--o-green-3);
+    }
+  }
+}
+```
+
+```css title="After"
+.c-my-component {
+  color: var(--o-red-7);
+}
+@media (prefers-color-scheme: dark) {
+  .c-my-component {
+    color: var(--o-red-3);
+  }
+}
+.c-my-component__title {
+  color: var(--o-green-7);
+}
+@media (prefers-color-scheme: dark) {
+  .c-my-component__title {
+    color: var(--o-green-3);
+  }
+}
+.c-my-component__title--highlighted {
+  background-color: var(--o-yellow-2);
+}
+@media (prefers-color-scheme: dark) {
+  .c-my-component__title--highlighted {
+    background-color: var(--o-yellow-9);
+  }
+}
+.c-my-component__subtitle {
+  color: var(--o-green-5);
+}
+@media (prefers-color-scheme: dark) {
+  .c-my-component__subtitle {
+    color: var(--o-green-3);
+  }
+}
+```
+
+### Nested Ancestors
+
+Adds the `^&` selector to the Nested Rules option which let you reference any parent ancestor selector, as the & direct parent selector if often not enough in modular CSS.
+
+```css title="Without the option"
+.c-my-component {
+  &__title {
+    color: var(--o-green-7);
+  }
+  &:hover {
+    /* Must manually repeat ".c-my-component" for each child */
+    > .c-my-component__title {
+      color: var(--o-blue-3);
+    }
+  }
+}
+```
+
+```css title="With the option"
+.c-my-component {
+  &__title {
+    color: var(--o-green-7);
+  }
+  &:hover {
+    /* Parent selector up one level (skips :hover) */
+    > ^&__title {
+      color: var(--o-blue-3);
+    }
+  }
+}
+```
+
+```css title="After"
+.c-my-component__title {
+  color: var(--o-green-7);
+}
+.c-my-component:hover > .c-my-component__title {
+  color: var(--o-blue-3);
+}
+```
+
+## Code Optimization
+
+### Combine Media Queries
+
+If you write the media queries of your components within those components (what you should do to keep things organized) you will end up with CSS that contains the same media query rule multiple times. While this is totally fine in development, it’s not that good for production where you want to keep your CSS as small as possible. This option looks for equal media query rules and appends them combined at the end of your stylesheet.
+
+You can see a good example of resulting duplication in the [Nested Rules](#nested-rules) example above where each nested @media rule unwraps. Here is how it looks like with this option enabled:
+
+```css title="Before"
+/* Let's create a component using B.E.M. syntax */
+
+.c-my-component {
+  color: var(--o-red-7);
+  /* As you can see, we can also nest custom media queries */
+  @media (--o-OSdark) {
+    color: var(--o-red-3);
+  }
+  &__title {
+    color: var(--o-green-7);
+    @media (--o-OSdark) {
+      color: var(--o-green-3);
+    }
+    &--highlighted {
+      background-color: var(--o-yellow-2);
+      @media (--o-OSdark) {
+        background-color: var(--o-yellow-9);
+      }
+    }
+  }
+  &__subtitle {
+    color: var(--o-green-5);
+    @media (--o-OSdark) {
+      color: var(--o-green-3);
+    }
+  }
+}
+```
+
+```css title="After without the option"
+.c-my-component {
+  color: var(--o-red-7);
+}
+@media (prefers-color-scheme: dark) {
+  .c-my-component {
+    color: var(--o-red-3);
+  }
+}
+.c-my-component__title {
+  color: var(--o-green-7);
+}
+@media (prefers-color-scheme: dark) {
+  .c-my-component__title {
+    color: var(--o-green-3);
+  }
+}
+.c-my-component__title--highlighted {
+  background-color: var(--o-yellow-2);
+}
+@media (prefers-color-scheme: dark) {
+  .c-my-component__title--highlighted {
+    background-color: var(--o-yellow-9);
+  }
+}
+.c-my-component__subtitle {
+  color: var(--o-green-5);
+}
+@media (prefers-color-scheme: dark) {
+  .c-my-component__subtitle {
+    color: var(--o-green-3);
+  }
+}
+```
+
+```css title="After with the option"
+.c-my-component {
+  color: var(--o-red-7);
+}
+.c-my-component__title {
+  color: var(--o-green-7);
+}
+.c-my-component__title--highlighted {
+  background-color: var(--o-yellow-2);
+}
+.c-my-component__subtitle {
+  color: var(--o-green-5);
+}
+@media (prefers-color-scheme: dark) {
+  .c-my-component {
+    color: var(--o-red-3);
+  }
+  .c-my-component__title {
+    color: var(--o-green-3);
+  }
+  .c-my-component__title--highlighted {
+    background-color: var(--o-yellow-9);
+  }
+  .c-my-component__subtitle {
+    color: var(--o-green-3);
+  }
+}
+```
+
+### Combine Selectors
+
+This feature will scan your bundled production stylesheet and automatically detect and combine duplicated css selectors so you don't have to worry about it.
+
+```css title="Before"
+body {
+  color: green;
+}
+.my-custom-class {
+  color: blue;
+}
+body {
+  background: red;
+}
+.my-custom-class {
+  background: yellow;
+}
+```
+
+```css title="After"
+body {
+  color: green;
+  background: red;
+}
+.my-custom-class {
+  color: blue;
+  background: yellow;
+}
+```
+
+### Discard Empty Rules
+
+With a large code base, it is easy to end-up with empty or incomplete rules or declarations. This option will scan your css for:
+
+- Empty `@rules`,
+  ```css
+  @media (prefers-color-scheme: dark) {
+  }
+  ```
+- Empty declaration blocks,
+  ```css
+  .c-my-class {
+  }
+  ```
+- Declaration blocks with no selector,
+  ```css
+  {
+    color: red;
+  }
+  ```
+- and declarations without a value.
+  ```css
+  .c-my-class {
+    color:;
+  }
+  ```
+
+It will discard them from your production stylesheet.
+
+### Remove Duplicate Declarations
+
+With modular CSS in multiple stylesheet, and even more with the combine selectors option activated, it is possible to get duplicate declarations. This can be intentional, to define fallbacks for example, but is useless when declarations have the exact same value. o-props will scan your production stylesheet for duplicate declarations and remove them only if both declarations have the same value.
+
+```css title="Before"
+/* Custom Stylesheet 1 */
+body {
+  color: green;
+  background-color: blue;
+}
+
+/* Later in Custom Stylesheet 1 or in Custom Stylesheet 2 */
+body {
+  color: yellow;
+  background-color: blue;
+}
+```
+
+```css title="After"
+/* Production Stylesheet */
+body {
+  color: green;
+  color: yellow;
+  background-color: blue;
+}
+```
+
+### Minify Stylesheets
+
+During development, we want our CSS to be as readable as possible. But in production, we want it to be as small as possible.
+
+This option will minify your production stylesheet to make it as small as possible. It will perform safe but efficient transforms, removing all comments, all unnecessary whitespace, and all line breaks.
+
+:::note
+You will find several `minify` or `view minified` toggles in the o-props AdminApp. They are there for visualization purpose only and will not impact your production stylesheet.  
+The `Minify Stylesheets` option toggle is the <mark>only one</mark> that will affect your production stylesheet.
+:::
+
+```css title="Before"
+/* Custom Stylesheet 1 */
+body {
+  /* make it large */
+  font-size: large;
+  /* And blue */
+  color: blue;
+}
+
+.my-class {
+  color: red;
+}
+.my-other-class {
+  font-size: 1rem;
+}
+```
+
+```css title="After"
+body {
+  font-size: large;
+  color: blue;
+}
+.my-class {
+  color: red;
+}
+.my-other-class {
+  font-size: 1rem;
+}
+```
+
+## Progressive Enhancement
+
+These polyfills let you use modern CSS syntax in your stylesheets and will add fallbacks for browsers not yet supporting the features.
+
+### Gamut Mapping
+
+This option lets you use wide gamut colors with gamut mapping for specific displays following the [CSS Color 4 Specification](https://www.w3.org/TR/css-color-4/#gamut-mapping).
+
+When out of gamut colors are naively clipped the result can be radically different. A saturated and bright color will be much darker after clipping.
+
+To correctly adjust colors for a narrow gamut display, the colors must be mapped. This is done by lowering the chroma in oklch until the color is in gamut.
+
+Using the `@media (color-gamut)` media feature makes it possible to only use the wide gamut colors on displays that support them.
+
+```css title="Before"
+p {
+  background-color: oklch(65% 0.3 0 / 0.75);
+  color: oklch(95% 0.03 0 / 0.95);
+  border-color: color(display-p3 1 1 0);
+}
+```
+
+```css title="After"
+p {
+  background-color: rgba(255, 4, 137, 0.75);
+  color: rgba(255, 231, 238, 0.95);
+  border-color: rgb(253, 254, 0);
+}
+@media (color-gamut: p3) {
+  p {
+    color: oklch(95% 0.03 0/0.95);
+    border-color: color(display-p3 1 1 0);
+  }
+}
+@media (color-gamut: rec2020) {
+  p {
+    background-color: oklch(65% 0.3 0/0.75);
+  }
+}
+```
+
+### Gradients Interpolation Method
+
+This option lets you use different interpolation methods in CSS gradient functions following [CSS Images Module 4](https://drafts.csswg.org/css-images-4/#linear-gradients).
+
+```css title="Before"
+.c-my-gradient {
+  background-image: linear-gradient(
+    in oklch,
+    hsl(0deg 85% 75%) 0%,
+    hsl(180deg 80% 65%) 100%
+  );
+}
+
+:root {
+  --c-my-gradient: linear-gradient(
+    in oklab,
+    hsl(96, 42%, 24%) 0%,
+    hsl(302, 67%, 25%) 100%
+  );
+}
+```
+
+```css title="After"
+.c-my-gradient {
+  background-image: linear-gradient(
+    rgb(245, 137, 137) 0%,
+    rgb(248, 146, 114),
+    rgb(244, 158, 94),
+    rgb(235, 171, 82),
+    rgb(220, 185, 81),
+    rgb(201, 199, 95),
+    rgb(177, 211, 118),
+    rgb(151, 221, 146),
+    rgb(125, 229, 177),
+    rgb(103, 235, 208),
+    rgb(94, 237, 237) 100%
+  );
+  background-image: linear-gradient(
+    in oklch,
+    hsl(0deg 85% 75%) 0%,
+    hsl(180deg 80% 65%) 100%
+  );
+}
+:root {
+  --c-my-gradient: linear-gradient(
+    rgb(56, 87, 35) 0%,
+    rgb(64, 83, 46),
+    rgb(70, 79, 54),
+    rgb(76, 74, 62),
+    rgb(82, 69, 68),
+    rgb(86, 64, 75),
+    rgb(91, 58, 81),
+    rgb(95, 51, 87),
+    rgb(99, 44, 93),
+    rgb(103, 34, 98),
+    rgb(106, 21, 104) 100%
+  );
+}
+@supports (background: linear-gradient(in oklch, red 0%, red 0% 1%, red 2%)) {
+  :root {
+    --c-my-gradient: linear-gradient(
+      in oklab,
+      hsl(96, 42%, 24%) 0%,
+      hsl(302, 67%, 25%) 100%
+    );
+  }
+}
+```
+
+### Relative Color Syntax
+
+This option lets you use the relative color syntax in CSS color functions following [CSS Color Module 5](https://www.w3.org/TR/css-color-5/#relative-colors).
+
+```css title="Before"
+.c-increase-chroma {
+  background: oklch(from orange l calc(c + 0.1) h);
+}
+.c-invert-each-rgb-channel {
+  background: rgb(from yellow calc(1 - r) calc(1 - g) calc(1 - b));
+}
+.c-well-contrasting-darker-color {
+  background: darkred;
+  color: oklch(from darkred calc(l + 60) c h);
+}
+```
+
+Before examples come from this excellent [Chrome for developers](https://developer.chrome.com/blog/css-relative-color-syntax) article.
+
+```css title="After"
+.c-increase-chroma {
+  background: rgb(255, 162, 0);
+  background: color(display-p3 0.98713 0.64212 0);
+}
+.c-invert-each-rgb-channel {
+  background: rgb(0, 0, 0);
+  background: color(display-p3 0 0 0);
+  background: rgb(from yellow calc(1 - r) calc(1 - g) calc(1 - b));
+}
+.c-well-contrasting-darker-color {
+  background: darkred;
+  color: rgb(255, 255, 255);
+  color: oklch(from darkred calc(l + 60) c h);
+}
+@media (color-gamut: rec2020) {
+  .c-increase-chroma {
+    background: oklch(from orange l calc(c + 0.1) h);
+  }
+}
+```
+
+### Exponential Functions
+
+Lets you use the `pow()`, `sqrt()`, `hypot()`, `log()`, `exp()` functions following the CSS Values 4 Specification.
+
+```css title="Before"
+.c-exponential-functions {
+  top: calc(1px * pow(2, 3));
+  line-height: sqrt(1.2);
+  padding: hypot(3px, 4px);
+  order: log(10, 10);
+  min-height: calc(e - exp(1));
+}
+```
+
+```css title="After"
+.c-exponential-functions {
+  top: 8px;
+  top: calc(1px * pow(2, 3));
+  line-height: 1.0954451150103;
+  line-height: sqrt(1.2);
+  padding: 5px;
+  padding: hypot(3px, 4px);
+  order: 1;
+  order: log(10, 10);
+  min-height: 0;
+  min-height: calc(e - exp(1));
+}
+```
+
+### Trigonometric Functions
+
+This feature lets you use `sin`, `cos`, `tan`, `asin`, `acos`, `atan` and `atan2` to be able to compute trigonometric relationships following the CSS Values 4 specification.
+
+```css title="Before"
+.c-trigonometry {
+  line-height: sin(pi / 4);
+  line-height: cos(0.125turn);
+  line-height: tan(50grad);
+  transform: rotate(asin(-1));
+  transform: rotate(asin(sin(30deg + 1.0471967rad)));
+  transform: rotate(acos(-1));
+  transform: rotate(acos(cos(0 / 2 + 1 - 1)));
+  transform: rotate(atan(infinity));
+  transform: rotate(atan(e - 2.7182818284590452354));
+  transform: rotate(atan2(-infinity, -infinity));
+  transform: rotate(atan2(-infinity, infinity));
+  transform: rotate(atan2(-infinity, infinity));
+  transform: rotate(atan2(90, 15));
+}
+```
+
+```css title="After"
+.c-trigonometry {
+  line-height: sin(pi/4);
+  line-height: 0.70711;
+  line-height: cos(0.125turn);
+  line-height: 1;
+  line-height: tan(50grad);
+  transform: rotate(-90deg);
+  transform: rotate(asin(-1));
+  transform: rotate(89.99995deg);
+  transform: rotate(asin(sin(30deg + 1.0471967rad)));
+  transform: rotate(180deg);
+  transform: rotate(acos(-1));
+  transform: rotate(acos(cos(0/2 + 1 - 1)));
+  transform: rotate(90deg);
+  transform: rotate(atan(infinity));
+  transform: rotate(0deg);
+  transform: rotate(atan(e - 2.7182818284590452354));
+  transform: rotate(-135deg);
+  transform: rotate(atan2(-infinity, -infinity));
+  transform: rotate(-45deg);
+  transform: rotate(atan2(-infinity, infinity));
+  transform: rotate(80.53768deg);
+  transform: rotate(atan2(90, 15));
+}
+```
+
+## Target Browsers
+
+o-props CSS processor uses browserslist, a config to share target browsers between different front-end tools.
+
+This target browsers list is then used by the embeded Autoprefixer and other processos tools to automatically add vendor prefixes to some CSS properties
+
+You can specify the browsers you want to target by writing your own query in the `Your Current Query` field of the CSS Processor tab of the Settings page in the o-props dashboard.
+
+o-props will display in real time the audience coverage of your current query.
+
+### Default Query
+
+The default query is `defaults` which is an alias for `> 0.5%, last 2 versions, Firefox ESR, not dead`.
+
+Which means that o-props will target:
+
+- all browsers that have more than 0.5% of global usage,
+- the last 2 versions of all browsers,
+- Firefox ESR (Extended Support Release),
+- but only if these browsers are not dead.
+
+Check current coverage of the `defaults` query [here](https://browsersl.ist/#q=defaults).
+
+### WordPress Query
+
+WordPress maintains an official package [`@wordpress/browserslist-config`](https://www.npmjs.com/package/@wordpress/browserslist-config) that exports their custom browserslist. It is different from the `defaults` query. o-props is not using it by default because it is slightly more restrictive than the `defaults` query.
+
+If you want to use WordPress Official query, here it is for you to copy and paste:
+
+```sh
+> 1%, last 1 Android versions, last 1 ChromeAndroid versions, last 2 Chrome versions, last 2 Firefox versions, last 2 Safari versions, last 2 iOS versions, last 2 Edge versions, last 2 Opera versions
+```
+
+Check current coverage of the WordPress query [here](https://browserl.ist/?q=%3E+1%25%2C+last+1+Android+versions%2C+last+1+ChromeAndroid+versions%2C+last+2+Chrome+versions%2C+last+2+Firefox+versions%2C+last+2+Safari+versions%2C+last+2+iOS+versions%2C+last+2+Edge+versions%2C+last+2+Opera+versions).
+
+### Learn More
+
+- [browserslist queries](https://github.com/browserslist/browserslist#queries)
+- [browsersl.ist playground](https://browsersl.ist/)
+
+[[↑ Back to Top]](#top)

@@ -1,0 +1,22 @@
+---
+import { Picture } from "astro:assets";
+import { z } from "astro/zod";
+
+type PictureType = Parameters<typeof Picture>[0];
+
+type Props = {caption: string} & PictureType;
+
+const {caption, ...rest}: Props = Astro.props;
+---
+
+<figure>
+<Picture {...rest} />
+  <figcaption>{caption}</figcaption>
+</figure>
+
+<style>
+  figcaption {
+    text-align: center;
+	font-style: italic;
+  }
+</style>

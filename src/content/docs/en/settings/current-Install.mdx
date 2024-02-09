@@ -1,0 +1,79 @@
+---
+title: Welcome to o-props!
+description: Information you can find in the Current Install tab of the Settings page in the o-props dashboard.
+sidebar:
+  hidden: true
+  label: Current Install
+  order: 10
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/settings/current-install.png
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/settings/current-install.png
+---
+import { Image } from "astro:assets";
+import currentInstall from "~/assets/op-db-current-install.png";
+import frameworkState from "~/assets/op-db-framework-state.png";
+
+## Current Install
+
+<Image
+  src={currentInstall}
+  alt="Preview of the OxyProps tracking context menu in Bricks editor."
+  format="avif"
+  quality="mid"
+  width="900"
+  height="450"
+/>
+
+### Detected site builder
+
+o-props will search your WordPress site for supported site builders and display the detected site builder here as well as the support status.
+
+o-props currently supports the following site builders:
+- [Bricks](https://bricksbuilder.io/)
+- [Oxygen](https://oxygenbuilder.com/)
+- [Breakdance](https://breakdance.io/) (partial support)
+
+[[↑ Back to Top]](#top)
+
+### Installed o-props version
+
+The current installed version of o-props is displayed here.
+
+If an update is available, you can update o-props by clicking the `Update` button. This will take you to your WordPress plugins manager.
+
+[[↑ Back to Top]](#top)
+
+## Framework State
+
+<Image
+  src={frameworkState}
+  alt="Preview of the OxyProps tracking context menu in Bricks editor."
+  format="avif"
+  quality="mid"
+  width="900"
+  height="450"
+/>
+
+o-props will display number of currently available [Groups](#groups), [Packs](#packs), [Props](#props).
+
+### Groups
+
+Groups contain related Packs. For example, the `Typography` group contains all the Packs related to fonts and typography. You will find all groups in the left sidebar of the `Customizer`.
+
+### Packs	
+
+Packs usually contain all Props having the same purpose. For example, the `Fluid Sizes` pack contains the whole range of Props defining fluid sizes. After picking a group in the `Customizer`, packs available for this group are visible at the top of the page in the Pack Selector.
+
+### Props	
+Props consist of `[key: value]` pairs. The key is what you will use in the builder or in your CSS, by calling it with the `var()` function. The value is the actual value of the CSS variable. You can customize part of the key (the `Suffix`), and values for each prop in the `Customizer`.
+
+### Classes	
+For each Pack, you are offered several Utility Classes options to generate. For exampe, the `Sizes` pack can generate classes for setting `margins`, `paddings`, `gaps`, `insets`, etc. When a Utility Classes Option is active, the corresponding classes are generated only for the Pack active Props.
+
+[[↑ Back to Top]](#top)

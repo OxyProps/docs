@@ -21,6 +21,39 @@ head:
       property: twitter:image
       content: https://docs.structeezy.com/open-graph/history/changelog.png
 ---
+## v1.12.0 (2024-02-09)
+
+### Feat
+
+- **cli**: add CLI API to o-props and create license activation and deactivation commands
+
+## v1.11.5 (2024-02-02)
+
+### Fix
+
+- **all**: fix compatibility with Matthias Altamnn's Quick Nav Snippet.
+
+### Refactor
+
+- **dev**: dev version
+
+## v1.11.4 (2024-01-28)
+
+### Fix
+
+- **all**: resolves a bug where some default gutenberg styles were not loaded even with the dequeue gutenberg styles option off
+
+### Refactor
+
+- **all**: Switch to WP_Filesystem
+- **enqueue**: replace php functions by wp own functions
+- **standards**: changed to Yoda style
+
+## v1.11.3 (2024-01-28)
+
+### Fix
+
+- **brx**: compatibility of the patch with Bricks v1.9.5
 
 ## v1.11.2 (2023-08-01)
 

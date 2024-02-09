@@ -1,0 +1,84 @@
+---
+title: o-props v1.12 Release Notes
+description: Short note about the main improvements brought by this new version.
+sidebar:
+  label: v1.12
+  badge: latest
+  order: -30
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/release-notes/v-1-12.png
+  - tag: meta
+    attrs:
+      property: og:image:width
+      content: "1200"
+  - tag: meta
+    attrs:
+      property: og:image:height
+      content: "630"
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/release-notes/v-1-12.png
+---
+
+import Youtube from "~/components/youtube/Youtube.astro";
+import { Image } from "astro:assets";
+import release from "~/assets/op-release-1-12.jpg";
+import activate from "~/assets/op-release-1-12-activate.png";
+import deactivate from "~/assets/op-release-1-12-deactivate.png";
+
+<Image src={release} alt="" width="900" />
+
+o-props 1.12 is available, and brings new CLI commands to help you save time when deploying sites, as well as performance and and UI improvements.
+
+- [CLI](#cli)
+- [Other improvements](#other-improvements)
+
+To take advantage of the latest features, make sure you’re running the latest version of o-props. You can upgrade to o-props 1.12 by:
+- running an automatic plugin update from you WordPress plugins dashboard,
+- by downloading the `.zip` file from your [user account](https://oxyprops.com/my-account/).
+- by running `wp plugin update oxyprops` from the command line.
+
+```sh
+  # update o-props from the cli
+  wp plugin update oxyprops
+```
+
+## CLI
+
+WP-CLI is the command-line interface for WordPress. It provides a command-line interface for many actions you would perform in the WordPress admin.
+
+In this release, o-props integrates with WP CLI and adds 2 commands to WP CLI to easily activate and deactivate the plugin license.
+
+### License Activation
+
+```sh
+  # activate your license from the cli
+  wp oxyprops activate YOUR-LICENSE-KEY me@domain.com
+```
+- `YOUR-LICENSE-KEY` is your o-props license key that can be found in your [user account](https://oxyprops.com/my-account/)
+- `me@domain.com` is the email address associated with your o-props license.
+
+<Image src={activate} alt="" width="900" />
+
+### License Deactivation
+
+```sh
+  # deactivate your license from the cli
+  wp oxyprops deactivate
+```
+
+<Image src={deactivate} alt="" width="900" />
+
+[Read more about WP CLI in o-props](/guides/wp-cli/)
+
+## Other improvements
+
+This release includes several minor fixes and performance improvements.
+
+In particular o-props code base step by step converges to WordPress Editor components and dependencies.
+
+

@@ -10,6 +10,28 @@ export const siteNav = [
       directory: "start-here",
     },
   },
+  // {
+  //   label: "Settings",
+  //   badge: "soon in v2.0",
+  //   translations: {
+  //     fr: "Réglages",
+  //   },
+  //   collapsed: false,
+  //   autogenerate: {
+  //     directory: "settings",
+  //   },
+  // },
+  // {
+  //   label: "Tokens Customizer",
+  //   badge: "soon in v2.0",
+  //   translations: {
+  //     fr: "Personnalisateur",
+  //   },
+  //   collapsed: false,
+  //   autogenerate: {
+  //     directory: "customizer",
+  //   },
+  // },
   {
     label: "Core Concepts",
     translations: {
@@ -19,6 +41,11 @@ export const siteNav = [
     autogenerate: {
       directory: "core-concepts",
     },
+  },
+  {
+    label: 'Guides',
+    collapsed: false,
+    autogenerate: { directory: 'guides' }
   },
   {
     label: "Tutorials",
@@ -45,7 +72,7 @@ export const siteNav = [
     translations: {
       fr: "Framework CSS",
     },
-    collapsed: false,
+    collapsed: true,
     autogenerate: {
       directory: "framework",
     },
@@ -55,10 +82,17 @@ export const siteNav = [
     translations: {
       fr: "Référence (Cheatsheet)",
     },
-    collapsed: false,
+    collapsed: true,
     autogenerate: {
       directory: "cheatsheet",
     },
+  },{
+    label: 'Release Notes',
+    collapsed: false,
+    translations: {
+      fr: "Notes de version",
+    },
+    autogenerate: { directory: 'release-notes' },
   },
   {
     label: "History",

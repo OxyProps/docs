@@ -1,0 +1,105 @@
+---
+title: WP CLI Integration
+description: This guide describes the o-props WP CLI integration and lists o-props WP CLI commands.
+sidebar:
+  order: 10
+  badge: new
+head:
+  - tag: meta
+    attrs:
+      property: og:image
+      content: https://docs.oxyprops.com/open-graph/guides/wp-cli.png
+  - tag: meta
+    attrs:
+      property: og:image:width
+      content: "1200"
+  - tag: meta
+    attrs:
+      property: og:image:height
+      content: "630"
+  - tag: meta
+    attrs:
+      property: twitter:image
+      content: https://docs.oxyprops.com/open-graph/guides/wp-cli.png
+---
+import { Image } from "astro:assets";
+import activate from "~/assets/op-release-1-12-activate.png";
+import deactivate from "~/assets/op-release-1-12-deactivate.png";
+
+Since v1.12.0, o-props integrates with WP CLI to help you save time in maintenance activities.
+
+## What is WP CLI?
+
+WP-CLI is the command-line interface for WordPress. It provides a command-line interface for many actions you would perform in the WordPress admin.
+
+- **Installation**: You can install wp cli by following the instructions on the [official website](https://wp-cli.org/).
+
+## Structeezy Commands
+
+For now, o-props adds 2 commands to WP CLI to easily activate and deactivate the plugin license. The list will grow with next versions depending on your feedback and needs.
+
+| Command | Description |
+| --- | --- 
+| `wp oxyprops activate <license-key> <email>` | Activate your license. 
+| `wp oxyprops deactivate` | Deactivate your license.
+
+
+### License Activation
+
+```sh
+  # activate your license from the cli
+  wp oxyprops activate YOUR-LICENSE-KEY me@domain.com
+```
+- `YOUR-LICENSE-KEY` is your Structeezy license key that can be found in your [user account](https://oxyprops.com/my-account/)
+- `me@domain.com` is the email address associated with your Structeezy license.
+
+<Image src={activate} alt="" width="900" />
+
+### License Deactivation
+
+```sh
+  # deactivate your license from the cli
+  wp oxyprops deactivate
+```
+
+<Image src={deactivate} alt="" width="900" />
+
+## Combine with other commands
+
+You can combine these commands with other WP CLI commands to automate your maintenance tasks. For example, you can deactivate your license before updating the plugin and activate it again after the update.
+
+```sh
+  # deactivate your license
+  wp oxyprops deactivate
+
+  # update the plugin
+  wp plugin update oxyprops
+
+  # activate your license
+  wp oxyprops activate YOUR-LICENSE-KEY me@domain.com
+```
+
+### Install from local `.zip` and activate
+
+```sh
+  # install the plugin
+  wp plugin install ./local/path/to/your/oxyprops.zip --activate
+
+  # activate your license
+  wp oxyprops activate YOUR-LICENSE-KEY me@domain.com
+```
+
+### Install from o-props server and activate
+
+```sh
+  # install the plugin
+  wp plugin install https://oxyprops.com/?download_file=your-personal-download-query --activate
+
+  # activate your license
+  wp oxyprops activate YOUR-LICENSE-KEY me@domain.com
+```
+
+:::tip
+You can find the download query in your [user account](https://oxyprops.com/my-account/)  
+Right-click on the download button and copy the link.
+:::
