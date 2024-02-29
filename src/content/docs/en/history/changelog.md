@@ -21,6 +21,16 @@ head:
       property: twitter:image
       content: https://docs.structeezy.com/open-graph/en/history/changelog.png
 ---
+## v1.12.1 (2024-02-29)
+
+### Fix
+
+- **brx**: Fixed some selector specificity issues in Bricks specific normalize stylesheet when used in the editor.
+
+### Refactor
+
+- **all**: under the hood improvements to prepare for future features in v2.0
+
 ## v1.12.0 (2024-02-09)
 
 ### Feat
