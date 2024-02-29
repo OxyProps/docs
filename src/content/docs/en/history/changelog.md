@@ -7,7 +7,7 @@ head:
   - tag: meta
     attrs:
       property: og:image
-      content: https://docs.structeezy.com/open-graph/en/history/changelog.png
+      content: https://docs.oxyprops.com/open-graph/en/history/changelog.png
   - tag: meta
     attrs:
       property: og:image:width
@@ -19,7 +19,7 @@ head:
   - tag: meta
     attrs:
       property: twitter:image
-      content: https://docs.structeezy.com/open-graph/en/history/changelog.png
+      content: https://docs.oxyprops.com/open-graph/en/history/changelog.png
 ---
 ## v1.12.1 (2024-02-29)
 
