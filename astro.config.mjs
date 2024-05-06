@@ -1,12 +1,16 @@
-import { defineConfig } from "astro/config";
-import starlight from "@astrojs/starlight";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { autolinkConfig } from "./plugins/rehype-autolink-config";
-import rehypeExternalLinks from "rehype-external-links";
+import { defineConfig } from "astro/config";
 import { externalLinkConfig } from "./plugins/rehype-external-link-config";
-import { rehypeTasklistEnhancer } from './plugins/rehype-tasklist-enhancer';
+import { rehypeTasklistEnhancer } from "./plugins/rehype-tasklist-enhancer";
+// https://astro-d2.vercel.app/getting-started/
+import astroD2 from 'astro-d2';
 import react from "@astrojs/react";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import rehypeExternalLinks from "rehype-external-links";
+import rehypeSlug from "rehype-slug";
+import starlight from "@astrojs/starlight";
+// https://starlight-links-validator.vercel.app/getting-started/
+import starlightLinksValidator from "starlight-links-validator";
 
 // Config partials
 import { siteNav } from "./src/config/nav";
@@ -19,6 +23,10 @@ const site = "https://docs.oxyprops.com/";
 export default defineConfig({
   site,
   integrations: [
+    astroD2({
+      sketch: true,
+      pad: 50,
+    }),
     starlight({
       title: "o-props docs",
       logo: {
@@ -48,19 +56,27 @@ export default defineConfig({
       locales: locales,
       lastUpdated: true,
       components: {
-				// EditLink: './src/components/starlight/EditLink.astro',
-				// Head: './src/components/starlight/Head.astro',
-				// Hero: './src/components/starlight/Hero.astro',
-				// MarkdownContent: './src/components/starlight/MarkdownContent.astro',
-				MobileTableOfContents: './src/components/starlight/MobileTableOfContents.astro',
-				TableOfContents: './src/components/starlight/TableOfContents.astro',
-				PageSidebar: './src/components/starlight/PageSidebar.astro',
-				Pagination: './src/components/starlight/Pagination.astro',
-				SiteTitle: './src/components/starlight/SiteTitle.astro',
-				// Search: './src/components/starlight/Search.astro',
-				// Sidebar: './src/components/starlight/Sidebar.astro',
-				// PageTitle: './src/components/starlight/PageTitle.astro',
-			},
+        // EditLink: './src/components/starlight/EditLink.astro',
+        // Head: './src/components/starlight/Head.astro',
+        // Hero: './src/components/starlight/Hero.astro',
+        // MarkdownContent: './src/components/starlight/MarkdownContent.astro',
+        MobileTableOfContents:
+          "./src/components/starlight/MobileTableOfContents.astro",
+        TableOfContents: "./src/components/starlight/TableOfContents.astro",
+        PageSidebar: "./src/components/starlight/PageSidebar.astro",
+        Pagination: "./src/components/starlight/Pagination.astro",
+        SiteTitle: "./src/components/starlight/SiteTitle.astro",
+        // Search: './src/components/starlight/Search.astro',
+        // Sidebar: './src/components/starlight/Sidebar.astro',
+        // PageTitle: './src/components/starlight/PageTitle.astro',
+      },
+      // plugins: [
+      //   starlightLinksValidator({
+      //     errorOnFallbackPages: false,
+      //     errorOnInconsistentLocale: true,
+      //     errorOnRelativeLinks: false,
+      //   }),
+      // ],
     }),
     react(),
   ],

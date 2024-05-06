@@ -21,6 +21,26 @@ head:
       property: twitter:image
       content: https://docs.oxyprops.com/open-graph/en/history/changelog.png
 ---
+## v1.13.1 (2024-05-06)
+
+### Fix
+
+- **brx**: fix color inheritance in MathML mrow elements
+- **brx**: fix specificity for h2 and h2 max-inline-size in normalize.
+- **brx**: Fix SVG size applying to AT superpowercss icon when svg with no width attribute is used.
+- **brx**: Fix Codemirror editor width when used inside a Bricks reapeater control (for coming SEZ v1.8).
+
+## v1.13.0 (2024-04-30)
+
+### Feat
+
+- **all**: Add scroll driven animation utilities on enter and exit. Try o-appear-enter for example.
+- **all**: Add Alpine.js directives to the custom attributes names context panel.
+
+### Fix
+
+- **brx**: fix cascade priority when the o-btn class was used with the Bricks Button element.
+
 ## v1.12.1 (2024-02-29)
 
 ### Fix
@@ -595,7 +615,7 @@ head:
 
 - **oxy:** Flex Cards CSS specificity conflict with Oxy ct_div_block.
 
-[[↑ Back to Top]](#top)
+
 
 ## 1.1.2 (2022-05-28)
 
@@ -614,7 +634,7 @@ head:
 
 - **oxy:** JS code clean-up.
 
-[[↑ Back to Top]](#top)
+
 
 ## 1.1.1 (2022-05-19)
 
@@ -626,7 +646,7 @@ head:
 
 - **oxy:** Font family utility classes specificity.
 
-[[↑ Back to Top]](#top)
+
 
 ## 1.1.0 (2022-05-19)
 
@@ -640,10 +660,10 @@ head:
 
 - **oxy:** Oxygen Plus menu CSS
 
-[[↑ Back to Top]](#top)
+
 
 ## 1.0.0 (2022-04-28)
 
 - First official release
 
-[[↑ Back to Top]](#top)
+

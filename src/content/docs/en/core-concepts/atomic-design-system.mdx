@@ -23,7 +23,7 @@ Here are a few examples of well-known companies that have successfully implement
 - **<a href="https://carbondesignsystem.com/" target="_blank">IBM Carbon Design System</a>**  
   IBM's open source design system is a comprehensive collection of guidelines, components, and tools that enable their teams to create cohesive and consistent products. The design language includes detailed documentation, an extensive library of UI components, and a design thinking methodology that helps IBM teams create solutions that meet the needs of their users.
   :::tip[Carbon icons set]
-  The IBM’s Carbon icon set is available in the OxyProps [Unlimited Icon](/elements/icon-element/) Element using the following syntax: `carbon:icon-name`.
+  The IBM’s Carbon icon set is available in the OxyProps [Unlimited Icon](/en/elements/icon-element/) Element using the following syntax: `carbon:icon-name`.
   
   For example:
   ```sh
@@ -34,7 +34,7 @@ Here are a few examples of well-known companies that have successfully implement
 - **<a href="https://m3.material.io/" target="_blank">Material Design by Google</a>**  
   Google's Material Design system is a visual language that provides a consistent user experience across platforms and devices. It includes guidelines for typography, color, iconography, and animation, as well as a library of UI components and tools that make it easy for designers and developers to create beautiful and functional products.
   :::tip[Material icons set]
-  The Google's Material Symbols icon set is available in the OxyProps [Unlimited Icon](/elements/icon-element/) Element using the following syntax: `material-symbols:icon-name`   For example:
+  The Google's Material Symbols icon set is available in the OxyProps [Unlimited Icon](/en/elements/icon-element/) Element using the following syntax: `material-symbols:icon-name`   For example:
   ```sh
     # insert the icon named "wind-power-rounded" from the Material icon set
     material-symbols:wind-power-rounded
@@ -87,6 +87,24 @@ Without a design system, teams may struggle to create a cohesive user experience
 
 ## What is the Atomic Design Methodology?
 
+```d2
+title: The Atomic Design System {
+  shape: text
+  near: top-center
+  style: {
+    font-size: 32
+  }
+}
+direction: right
+atoms: {shape: circle }
+molecules: {shape: circle }
+organisms: {shape: circle }
+pages: {shape: document }
+templates: {shape: document }
+
+atoms -> molecules -> organisms -> templates -> pages
+```
+
 The Atomic Design methodology, developed by Brad Frost, is a popular approach to designing complex systems. The methodology is based on the idea that breaking down a system into smaller, simpler components can make it easier to manage and maintain. The methodology is structured hierarchically, with each component building on the one below it. The components in this methodology include Design Tokens, Atoms, Molecules, Organisms, Templates, and Pages. By using this methodology, designers can create scalable and consistent design systems that are easy to work with and maintain over time.
 
 1. [Design Tokens](#design-tokens): These are variables that define the visual design of a product, such as color, typography, and spacing.
@@ -115,7 +133,7 @@ In OxyProps, everything is defined using design tokens. Three levels of design t
 - Component specific design tokens
 
 :::note[dedicated article]
-More about design tokens in the [design tokens](/core-concepts/design-tokens/) dedicated documentation page.
+More about design tokens in the [design tokens](/en/core-concepts/design-tokens/) dedicated documentation page.
 :::
 
 In summary, design tokens help create consistency in visual design by providing a systematic way to define and apply design elements across a project.
@@ -170,9 +188,6 @@ In conclusion, design tokens are a vital part of any design system, and understa
 
 If you want to learn more about the Atomic Design methodology and its applications, check out these resources:
 
-- <a href="https://atomicdesign.bradfrost.com/" target="_blank">
-  	Atomic Design Methodology
-  </a>
-  , by Brad Frost
+- <a href="https://atomicdesign.bradfrost.com/" target="_blank">Atomic Design Methodology</a>, by Brad Frost
 
 These articles provide an in-depth understanding of the Atomic Design methodology, as well as practical tips on how to implement it in your design process.
